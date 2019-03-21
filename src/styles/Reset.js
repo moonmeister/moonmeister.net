@@ -1,5 +1,5 @@
-import React from "react";
-import { Global, css } from "@emotion/core";
+import React from 'react';
+import { Global, css } from '@emotion/core';
 
 const Reset = () => (
   <Global
@@ -118,7 +118,7 @@ const Reset = () => (
       blockquote:after,
       q:before,
       q:after {
-        content: "";
+        content: '';
         content: none;
       }
 
@@ -251,9 +251,9 @@ const Reset = () => (
       }
 
       button,
-      html input[type="button"],
-      input[type="reset"],
-      input[type="submit"] {
+      html input[type='button'],
+      input[type='reset'],
+      input[type='submit'] {
         -webkit-appearance: button;
         cursor: pointer;
       }
@@ -273,24 +273,24 @@ const Reset = () => (
         line-height: normal;
       }
 
-      input[type="checkbox"],
-      input[type="radio"] {
+      input[type='checkbox'],
+      input[type='radio'] {
         box-sizing: border-box;
         padding: 0;
       }
 
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
         height: auto;
       }
 
-      input[type="search"] {
+      input[type='search'] {
         -webkit-appearance: textfield;
         box-sizing: content-box;
       }
 
-      input[type="search"]::-webkit-search-cancel-button,
-      input[type="search"]::-webkit-search-decoration {
+      input[type='search']::-webkit-search-cancel-button,
+      input[type='search']::-webkit-search-decoration {
         -webkit-appearance: none;
       }
 

@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+const CustomWebpack = require("./webpack.config");
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig(CustomWebpack);
+};

@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#efefef`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/headshot.jpg`, // This path is relative to the root of the site.
+        icon: `src/images/terminal-solid.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
@@ -41,7 +41,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss', // https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss
       options: {
         printRejected: true, // Print removed selectors and processed file names
-        develop: true, // Enable while using 'gatsby develop'
+        // develop: true, // Enable while using 'gatsby develop'
         // tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders

@@ -6,7 +6,7 @@
 
 
 [context."v2"] # 'staging' is a branch name
-  command = "yarn build"
+  command = "gatsby build"
   publish = "./public"
   base = "v2"
 

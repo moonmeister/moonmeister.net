@@ -1,22 +1,48 @@
 @import '~styles/variables';
+@import '~styles/responsive';
 
 .container {
   background-color: #efefef;
-  // min-height: vh;
   max-width: 100%;
 }
 .children {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  padding: 10% 0;
+  padding: 9% 0;
 }
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  // justify-content: space-around;
   background-color: $color_purple_background;
   min-height: 35vh;
-  padding: 20px;
+  padding: 3%;
   box-shadow: inset 0 10px 10px -10px #111111;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
+}
+
+.half {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+}
+
+#social {
+  font-size: 3rem;
+  a:link {
+    color: inherit;
+  }
+
+  a:visited {
+    color: inherit;
+  }
 }

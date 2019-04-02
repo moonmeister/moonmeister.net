@@ -1,0 +1,53 @@
+@import '~styles/responsive';
+
+.container {
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    width: 80%;
+  }
+}
+
+.contact {
+  width: 100%;
+  text-align: left;
+
+  label {
+    margin: auto;
+  }
+
+  input,
+  textarea {
+    width: 75%;
+    max-width: 400px;
+    display: block;
+    resize: none;
+    overflow: scroll;
+    margin: auto;
+    // margin-left: 1rem; /* adjust if necessary */
+  }
+
+  textarea {
+    margin-bottom: 3rem;
+  }
+
+  span {
+    display: block;
+    width: 75%;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+
+    width: 50%;
+    max-width: 300px;
+  }
+}
+
+// #submit {
+//   // margin: auto;
+//   display: block;
+// }

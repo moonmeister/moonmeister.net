@@ -28,6 +28,9 @@ const Layout = ({ children }) => (
           >
             <Icon icon={icons.GITHUB} />
           </ExtLink>
+          <ExtLink className={styles.icon} href="/alex-moon-resume.pdf">
+            <Icon icon={icons.DOCUMENT} />
+          </ExtLink>
           <ExtLink
             className={styles.icon}
             href="https://twitter.com/moon_meister"
@@ -38,7 +41,7 @@ const Layout = ({ children }) => (
 
         <p id={styles.copyright}>
           &copy;{new Date().getFullYear()} Alex Moon. All Rights Reserved. Built
-          with{'  '}
+          with&nbsp;
           <ExtLink href="https://gatsbyjs.org">Gatsby</ExtLink>.
         </p>
       </div>

@@ -13,7 +13,7 @@ const IndexPage = () => (
       <figure className={styles.headshot}>
         <Headshot />
       </figure>
-      <div className={styles.content}>
+      <section className={styles.content}>
         <p>
           Hi, I&#8217;m <b>Alex Moon</b> – a multi-disciplinary technology
           expert. My career has spanned a help desk, systems administration, and
@@ -22,17 +22,11 @@ const IndexPage = () => (
         </p>
         <p>
           These experiences have taught me that, as creators, we need to stop
-          building for ourselves and start build for our users. Too often we
-          sacrifice performance and usability for widgets and workflows.
-          Ultimately this diminishes the user experience.
+          building for ourselves and start build for our users. Regularly
+          evaluating our processes ensures our creations serve the user and
+          guards against the creation becoming Frankenstein&#8217;s monster.
         </p>
-        <p>
-          To help solve this problem, I am regularly evaluating what and how
-          I&#8217;m building. This ensures my creations serve the user and
-          guards against them becoming Frankenstein&#8217;s monster. Convenience
-          and ego as a engineer are second to the project&#8217;s success.
-        </p>
-      </div>
+      </section>
     </section>
   </Layout>
 );

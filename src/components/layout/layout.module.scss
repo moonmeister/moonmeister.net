@@ -18,7 +18,7 @@
   background-color: $color_purple_background;
   min-height: 35vh;
   padding: 3%;
-  box-shadow: inset 2px 12px 10px -10px $color_drop_shadow;
+  box-shadow: inset 0px 10px 10px -10px hsla(0, 0, 5%, 1);
   color: $color_text_light;
   text-shadow: 2px 2px 4px $color_drop_shadow;
 
@@ -27,10 +27,6 @@
   button {
     color: $color_text;
     text-shadow: 0;
-  }
-
-  a {
-    // text-decoration: ;
   }
 
   a:visited {
@@ -63,6 +59,7 @@
 
 #social {
   font-size: 3rem;
+  margin-top: 2.4rem;
 
   display: inherit;
   justify-content: inherit;

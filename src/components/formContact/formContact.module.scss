@@ -25,8 +25,14 @@
     resize: none;
     overflow: auto;
     margin: auto;
+    line-height: 1.3em;
+
     border-top: 2px solid $color_drop_shadow;
     border-left: 2px solid $color_drop_shadow;
+    // box-shadow: inset 2px 5px 5px -4px hsla(0, 0, 5%, 1);
+    background-color: $color_main;
+
+    // border: none;
     border-radius: 4px;
 
     // margin-left: 1rem; /* adjust if necessary */
@@ -52,12 +58,13 @@
     max-width: 300px;
 
     border: none;
-    box-shadow: 3px 6px 2px $color_drop_shadow;
+    box-shadow: 0px 6px hsla(0, 0, 20%, 0.5);
     border-radius: 4px;
+    // text-transform: uppercase;
   }
 
   button:hover {
-    box-shadow: 2px 4px 1px $color_drop_shadow;
+    box-shadow: 0px 4px $color_drop_shadow;
     background: linear-gradient(hsl(0, 0, 98%), hsl(0, 0, 89%));
     top: 2px;
   }

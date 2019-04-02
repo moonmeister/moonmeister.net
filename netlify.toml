@@ -8,7 +8,6 @@
 [context."v2"] # 'staging' is a branch name
   command = "gatsby build"
   publish = "./public"
-  base = "v2"
 
 ## Uncomment to use this redirect for Single Page Applications. 
 ## Not needed for static site generators.

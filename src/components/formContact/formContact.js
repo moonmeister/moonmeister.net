@@ -25,18 +25,18 @@ const FormContact = () => (
         <label htmlFor="name">
           <span>Your Name:</span>
 
-          <input type="text" name="name" />
+          <input type="text" name="name" required />
         </label>
       </p>
       <p>
         <label htmlFor="email">
           <span>Your Email:</span>
-          <input type="email" name="email" />
+          <input type="email" name="email" required />
         </label>
       </p>
       <p>
         <label htmlFor="message">
-          <span> Message:</span> <textarea name="message" />
+          <span>Message:</span> <textarea name="message" required />
         </label>
       </p>
       <p>

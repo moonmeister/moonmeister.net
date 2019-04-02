@@ -1,11 +1,5 @@
 # example netlify.toml
 [build]
-  command = "# no build command"
-  publish = "./"
-
-
-
-[context."v2"] # 'staging' is a branch name
   command = "gatsby build"
   publish = "./public"
 

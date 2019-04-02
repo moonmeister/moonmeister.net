@@ -1,0 +1,20 @@
+# example netlify.toml
+[build]
+  command = "# no build command"
+  publish = "./"
+
+
+
+[context."v2"] # 'staging' is a branch name
+  command = "yarn build"
+  publish = "./public"
+  base = "v2"
+
+## Uncomment to use this redirect for Single Page Applications. 
+## Not needed for static site generators.
+#[[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
+
+## more info https://www.netlify.com/docs/netlify-toml-reference/

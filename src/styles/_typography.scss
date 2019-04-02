@@ -1,0 +1,27 @@
+@import "../../node_modules/shevy/core/shevy";
+
+$shevy: (
+  base-font-size: 1rem,
+  base-line-height: 2,
+  base-font-scale: (
+    2.4414,
+    1.9531,
+    1.5625,
+    1.25,
+    1,
+    1
+  ),
+  add-margin-bottom: true,
+  proximity: true,
+  proximity-factor: 1
+);
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: $color_text;
+}
+
+@include headings;
+@include body;
+@include content;

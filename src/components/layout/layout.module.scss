@@ -1,0 +1,22 @@
+@import '~styles/variables';
+
+.container {
+  background-color: #efefef;
+  // min-height: vh;
+  max-width: 100%;
+}
+.children {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 10% 0;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color_purple_background;
+  min-height: 35vh;
+  padding: 20px;
+  box-shadow: inset 0 10px 10px -10px #111111;
+}

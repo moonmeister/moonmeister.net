@@ -16,16 +16,31 @@ const Layout = ({ children }) => (
       <div className={styles.children}>{children}</div>
     </main>
     <footer className={styles.footer}>
-      <div id="form-container" className={styles.half}>
+      <div id={styles.form} className={styles.half}>
         <FormContact />
       </div>
-      <div id={styles.social} className={styles.half}>
-        <ExtLink href="https://github.com/moonmeister">
-          <Icon icon={icons.GITHUB} />
-        </ExtLink>
-        <ExtLink href="https://twitter.com/moon_meister">
-          <Icon icon={icons.TWITTER} />
-        </ExtLink>
+
+      <div className={styles.half}>
+        <div id={styles.social}>
+          <ExtLink
+            className={styles.icon}
+            href="https://github.com/moonmeister"
+          >
+            <Icon icon={icons.GITHUB} />
+          </ExtLink>
+          <ExtLink
+            className={styles.icon}
+            href="https://twitter.com/moon_meister"
+          >
+            <Icon icon={icons.TWITTER} />
+          </ExtLink>
+        </div>
+
+        <p id={styles.copyright}>
+          &copy;{new Date().getFullYear()} Alex Moon. All Rights Reserved. Built
+          with{'  '}
+          <ExtLink href="https://gatsbyjs.org">Gatsby</ExtLink>.
+        </p>
       </div>
     </footer>
   </>

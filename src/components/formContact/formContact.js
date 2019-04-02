@@ -39,10 +39,8 @@ const FormContact = () => (
           <span>Message:</span> <textarea name="message" required />
         </label>
       </p>
-      <p>
-        <button id={styles.submit} type="submit">
-          Send
-        </button>
+      <p id={styles.submit}>
+        <button type="submit">Send</button>
       </p>
     </form>
   </div>

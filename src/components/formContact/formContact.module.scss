@@ -1,3 +1,4 @@
+@import '~styles/variables';
 @import '~styles/responsive';
 
 .container {
@@ -22,8 +23,12 @@
     max-width: 400px;
     display: block;
     resize: none;
-    overflow: scroll;
+    overflow: auto;
     margin: auto;
+    border-top: 2px solid $color_drop_shadow;
+    border-left: 2px solid $color_drop_shadow;
+    border-radius: 4px;
+
     // margin-left: 1rem; /* adjust if necessary */
   }
 
@@ -41,13 +46,30 @@
   button {
     display: block;
     margin: auto;
+    background: linear-gradient(hsl(0, 0, 100%), $color_main);
 
     width: 50%;
     max-width: 300px;
+
+    border: none;
+    box-shadow: 3px 6px 2px $color_drop_shadow;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    box-shadow: 2px 4px 1px $color_drop_shadow;
+    background: linear-gradient(hsl(0, 0, 98%), hsl(0, 0, 89%));
+    top: 2px;
+  }
+
+  button:active {
+    box-shadow: 0 0 $color_drop_shadow;
+    background: linear-gradient(hsl(0, 0, 94%), hsl(0, 0, 84%));
+
+    top: 6px;
   }
 }
 
-// #submit {
-//   // margin: auto;
-//   display: block;
-// }
+#submit {
+  margin-bottom: 0;
+}

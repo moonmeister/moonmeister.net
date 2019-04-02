@@ -2,7 +2,7 @@
 @import '~styles/responsive';
 
 .container {
-  background-color: #efefef;
+  background-color: $color_main;
   max-width: 100%;
 }
 .children {
@@ -15,11 +15,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-around;
   background-color: $color_purple_background;
   min-height: 35vh;
   padding: 3%;
-  box-shadow: inset 0 10px 10px -10px #111111;
+  box-shadow: inset 2px 12px 10px -10px $color_drop_shadow;
+  color: $color_text_light;
+  text-shadow: 2px 2px 4px $color_drop_shadow;
+
+  input,
+  textarea,
+  button {
+    color: $color_text;
+    text-shadow: 0;
+  }
+
+  a {
+    // text-decoration: ;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  a:link {
+    color: inherit;
+  }
 
   @include for-tablet-landscape-up {
     flex-direction: row;
@@ -29,6 +49,7 @@
 .half {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   @include for-tablet-landscape-up {
@@ -36,13 +57,28 @@
   }
 }
 
+#form {
+  margin: auto;
+}
+
 #social {
   font-size: 3rem;
-  a:link {
-    color: inherit;
-  }
 
-  a:visited {
-    color: inherit;
+  display: inherit;
+  justify-content: inherit;
+
+  a {
+    line-height: 0;
+    margin: 0.3em;
   }
+}
+
+#copyright {
+  display: inherit;
+  justify-content: inherit;
+}
+
+.icon {
+  // -webkit-filter: drop-shadow(3px 3px 2px $color_drop_shadow);
+  filter: drop-shadow(2px 2px 2px $color_drop_shadow);
 }

@@ -1,0 +1,10 @@
+{
+  "font-awesome": {
+    "name": "Font Awesome",
+    "version": "5",
+    "authors": "Fonticons, Inc.",
+    "url": "https://fontawesome.com/",
+    "license": "Comercial",
+    "licenseText": "https://fontawesome.com/license/free"
+  }
+}

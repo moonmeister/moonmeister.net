@@ -3,7 +3,7 @@ module.exports = {
     title: `Alex Moon Personal`,
     description: `Personal Website`,
     author: `@moon_meister`,
-    siteUrl: 'moonmeister.net',
+    siteUrl: 'https://moonmeister.net',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

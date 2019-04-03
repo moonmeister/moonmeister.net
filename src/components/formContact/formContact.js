@@ -12,6 +12,7 @@ const FormContact = () => (
       data-netlify="true"
       className={styles.contact}
     >
+      <input type="hidden" name="form-name" value="contact" />
       <p hidden>
         <label htmlFor="bot-field">
           <span>

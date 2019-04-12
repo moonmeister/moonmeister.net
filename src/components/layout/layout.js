@@ -37,6 +37,12 @@ const Layout = ({ children }) => (
           >
             <Icon icon={icons.TWITTER} />
           </ExtLink>
+          <ExtLink
+            className={styles.icon}
+            href="https://www.instagram.com/moon_meister/"
+          >
+            <Icon icon={icons.INSTAGRAM} />
+          </ExtLink>
         </div>
 
         <p id={styles.copyright}>

@@ -5,7 +5,10 @@ import styles from './icon.module.scss';
 
 const Icon = ({ icon }) => (
   <svg className={styles.icon} viewBox={icon.viewBox}>
-    <path d={icon.path} />
+    {icon.path.map((path, i) => {
+      // eslint-disable-next-line react/no-array-index-key
+      return <path d={path} key={`path-${i}`} />;
+    })}
   </svg>
 );
 

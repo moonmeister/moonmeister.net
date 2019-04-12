@@ -15,16 +15,15 @@ const IndexPage = () => (
       </figure>
       <section className={styles.content}>
         <p>
-          Hi, I&#8217;m <b>Alex Moon</b> – a multi-disciplinary technology
-          expert. My career has spanned a help desk, systems administration, and
-          software development. These roles have been in open source, a UX
-          research firm, a university, and two agencies.
+          Hi, I&#8217;m <b>Alex Moon</b> – a full stack software developer and
+          operations engineer. My career has spanned a help desk, systems
+          administration, and software development. When I am not working I can
+          usually be found hiking, contributing to Open Source, or exploring
+          Perth, Australia where I am currently living abroad.
         </p>
         <p>
-          These experiences have taught me that, as creators, we need to stop
-          building for ourselves and start build for our users. Regularly
-          evaluating our processes ensures our creations serve the user and
-          guards against the creation becoming Frankenstein&#8217;s monster.
+          I am currently looking for new job opportunity. Checkout my resume
+          below for more info.
         </p>
       </section>
     </section>

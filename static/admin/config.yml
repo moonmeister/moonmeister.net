@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: cms
+  name: github
+  repo: moonmeister/moonmeister.net
 
 publish_mode: editorial_workflow
 

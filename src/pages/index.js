@@ -36,15 +36,20 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        image {
+        image
+      }
+      html
+    }
+  }
+`;
+
+/*
+
+{
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-      }
-      html
-    }
-  }
-`;
+        */

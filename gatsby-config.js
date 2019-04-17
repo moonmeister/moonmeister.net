@@ -8,12 +8,20 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/uploads`,
+        name: 'uploads',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -33,6 +41,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
           {
             resolve: 'gatsby-remark-images',
             options: {

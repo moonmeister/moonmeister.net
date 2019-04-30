@@ -26,22 +26,22 @@ const Layout = ({ children }) => (
             className={styles.icon}
             href="https://github.com/moonmeister"
           >
-            <Icon icon={icons.GITHUB} />
+            <Icon tooltip="GitHub" icon={icons.GITHUB} />
           </ExtLink>
           <ExtLink className={styles.icon} href="/alex-moon-resume.pdf">
-            <Icon icon={icons.DOCUMENT} />
+            <Icon tooltip="Resume/CV" icon={icons.DOCUMENT} />
           </ExtLink>
           <ExtLink
             className={styles.icon}
             href="https://twitter.com/moon_meister"
           >
-            <Icon icon={icons.TWITTER} />
+            <Icon tooltip="Twitter" icon={icons.TWITTER} />
           </ExtLink>
           <ExtLink
             className={styles.icon}
             href="https://www.instagram.com/moon_meister/"
           >
-            <Icon icon={icons.INSTAGRAM} />
+            <Icon tooltip="Instagram" icon={icons.INSTAGRAM} />
           </ExtLink>
         </div>
 

@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Alex Moon Website`,
+        short_name: `Alex Moon`,
         start_url: `/`,
         background_color: `#f0f0f0`,
         theme_color: `#665577`,

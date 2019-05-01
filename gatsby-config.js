@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Alex Moon Personal`,
+    title: `Alex Moon`,
     description: `Personal Website`,
     author: `@moon_meister`,
     siteUrl: 'https://moonmeister.net',
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alex Moon Website`,
-        short_name: `Alex Moon`,
+        name: `Alex Moon`,
+        short_name: `Alex`,
         start_url: `/`,
         background_color: `#f0f0f0`,
         theme_color: `#665577`,

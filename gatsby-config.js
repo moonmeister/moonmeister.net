@@ -66,14 +66,14 @@ module.exports = {
         background_color: `#f0f0f0`,
         theme_color: `#665577`,
         display: `minimal-ui`,
-        icon: `src/images/terminal-solid.svg`, // This path is relative to the root of the site.
+        icon: `src/images/terminal-solid.svg`,
       },
     },
     `gatsby-plugin-sass`,
     'gatsby-plugin-eslint',
-    'gatsby-plugin-sitemap', // https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/
+    'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-robots-txt', // https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         policy: [
           { userAgent: '*', allow: '/' },
@@ -81,19 +81,9 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-purgecss', // https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        develop: false, // Enable while using 'gatsby develop'
-        // tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      },
-    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     'gatsby-plugin-offline',

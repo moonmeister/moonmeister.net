@@ -24,14 +24,14 @@ const FormContact = () => (
       </p>
       <p>
         <label htmlFor="name">
-          <span>Your Name:</span>
+          <span>Name:</span>
 
           <input type="text" name="name" required />
         </label>
       </p>
       <p>
         <label htmlFor="email">
-          <span>Your Email:</span>
+          <span>Email:</span>
           <input type="email" name="email" required />
         </label>
       </p>

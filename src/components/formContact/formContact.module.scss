@@ -27,10 +27,16 @@
     margin: auto;
     line-height: 1.3em;
 
-    border-top: 2px solid $color_drop_shadow;
-    border-left: 2px solid $color_drop_shadow;
-    // box-shadow: inset 2px 5px 5px -4px hsla(0, 0, 5%, 1);
-    background-color: $color_main;
+    border-top: 1px inset hsla(30, 40, 20%, 0.8);
+    border-left: 1px inset hsla(30, 40, 20%, 0.8);
+    border-right: 1px inset;
+    border-bottom: 1px inset;
+
+    // border: none;
+    // box-shadow: inset 5px 5px 5px -4px hsla(0, 0, 5%, 1);
+    // background: linear-gradient(hsla(0, 0, 75%, 0.8) 20%, $color_main);
+
+    // background-color: $color_main;
 
     // border: none;
     border-radius: 4px;
@@ -53,6 +59,7 @@
     display: block;
     margin: auto;
     background: linear-gradient(hsl(0, 0, 100%), $color_main);
+    line-height: 2em;
 
     width: 50%;
     max-width: 300px;

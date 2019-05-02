@@ -25,28 +25,35 @@ const Layout = ({ children }) => (
           <ExtLink
             className={styles.icon}
             href="https://github.com/moonmeister"
+            ariaLabel="GitHub"
           >
             <Icon tooltip="GitHub" icon={icons.GITHUB} />
           </ExtLink>
-          <ExtLink className={styles.icon} href="/alex-moon-resume.pdf">
+          <ExtLink
+            className={styles.icon}
+            href="/alex-moon-resume.pdf"
+            ariaLabel="Resume"
+          >
             <Icon tooltip="Resume/CV" icon={icons.DOCUMENT} />
           </ExtLink>
           <ExtLink
             className={styles.icon}
             href="https://twitter.com/moon_meister"
+            ariaLabel="Twitter"
           >
             <Icon tooltip="Twitter" icon={icons.TWITTER} />
           </ExtLink>
           <ExtLink
             className={styles.icon}
             href="https://www.instagram.com/moon_meister/"
+            ariaLabel="Instagram"
           >
             <Icon tooltip="Instagram" icon={icons.INSTAGRAM} />
           </ExtLink>
         </div>
 
         <p id={styles.copyright}>
-          &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
+          &copy;{new Date().getFullYear()} Alex Moon.&nbsp;
           <ExtLink href="https://gatsbyjs.org">Gatsby</ExtLink>.
         </p>
       </div>

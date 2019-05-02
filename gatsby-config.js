@@ -77,7 +77,7 @@ module.exports = {
       options: {
         policy: [
           { userAgent: '*', allow: '/' },
-          { userAgent: '*', block: '/admin' },
+          { userAgent: '*', disallow: '/admin' },
         ],
       },
     },

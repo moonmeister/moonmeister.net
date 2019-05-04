@@ -53,7 +53,7 @@ const Layout = ({ children }) => (
         </div>
 
         <p id={styles.copyright}>
-          &copy;{new Date().getFullYear()} Alex Moon.&nbsp;
+          &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
           <ExtLink href="https://gatsbyjs.org">Gatsby</ExtLink>.
         </p>
       </div>

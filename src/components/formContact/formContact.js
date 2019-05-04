@@ -19,25 +19,26 @@ const FormContact = () => (
             Don&#8217;t fill this out <br />
             if you&#8217;re human:
           </span>
-          <input name="bot-field" />
+          <input id="bot-field" name="bot-field" />
         </label>
       </p>
       <p>
         <label htmlFor="name">
           <span>Name:</span>
 
-          <input type="text" name="name" required />
+          <input id="name" type="text" name="name" required />
         </label>
       </p>
       <p>
         <label htmlFor="email">
           <span>Email:</span>
-          <input type="email" name="email" required />
+          <input id="email" type="email" name="email" required />
         </label>
       </p>
       <p>
         <label htmlFor="message">
-          <span>Message:</span> <textarea name="message" required />
+          <span>Message:</span>{' '}
+          <textarea id="message" name="message" required />
         </label>
       </p>
       <p id={styles.submit}>

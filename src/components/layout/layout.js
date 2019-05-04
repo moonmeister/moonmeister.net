@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
           <ExtLink
             className={styles.icon}
             href="/alex-moon-resume.pdf"
-            ariaLabel="Resume"
+            ariaLabel="Resume (PDF)"
           >
             <Icon tooltip="Resume/CV" icon={icons.DOCUMENT} />
           </ExtLink>

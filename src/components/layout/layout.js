@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 import ExtLink from 'components/extLink';
 import FormContact from 'components/formContact';
+import PageCurl from 'components/pageCurl';
 
 import icons from 'constants/icons';
 
@@ -12,6 +13,9 @@ import styles from './layout.module.scss';
 
 const Layout = ({ children }) => (
   <>
+    <header>
+      <PageCurl />
+    </header>
     <main className={styles.container} role="main">
       <div className={styles.children}>{children}</div>
     </main>
@@ -54,7 +58,10 @@ const Layout = ({ children }) => (
 
         <p id={styles.copyright}>
           &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
-          <ExtLink href="https://gatsbyjs.org">Gatsby</ExtLink>.
+          <ExtLink href="https://gatsbyjs.org" ariaLabel="Gatsby">
+            Gatsby
+          </ExtLink>
+          .
         </p>
       </div>
     </footer>

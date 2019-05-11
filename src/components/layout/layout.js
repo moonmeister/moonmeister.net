@@ -58,7 +58,7 @@ const Layout = ({ children }) => (
 
         <p id={styles.copyright}>
           &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
-          <ExtLink href="https://gatsbyjs.org" ariaLabel="Gatsby">
+          <ExtLink href="https://gatsbyjs.org" ariaLabel="GatsbyJS Site">
             Gatsby
           </ExtLink>
           .

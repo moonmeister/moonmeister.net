@@ -30,8 +30,8 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.string,
     }),
-    html: PropTypes.string,
   }).isRequired,
 };
 

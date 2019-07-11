@@ -70,7 +70,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    'gatsby-plugin-eslint',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',

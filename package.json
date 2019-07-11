@@ -40,8 +40,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.12.4",
-    "gatsby-plugin-eslint": "^2.0.4",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "webpack": "^4.35.3"
   },
   "keywords": [
     "gatsby"

@@ -80,7 +80,21 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/*': [
+            'Access-Control-Allow-Origin: https://translate.googleusercontent.com',
+            'Access-Control-Allow-Credentials: true',
+            'Content-Security-Policy: frame-ancestors https://translate.google.com',
+            'X-Frame-Options: ALLOW-FROM https://translate.google.com',
+          ],
+        },
+        mergeSecurityHeaders: false,
+      },
+    },
+
     `gatsby-plugin-netlify-cms`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality

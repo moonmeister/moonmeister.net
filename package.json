@@ -40,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.12.4",
+    "netlify-cli": "^2.19.2",
     "prettier": "^1.16.4",
     "webpack": "^4.35.3"
   },
@@ -54,6 +55,7 @@
     "format": "eslint . --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "yarn ntl deploy"
   }
 }

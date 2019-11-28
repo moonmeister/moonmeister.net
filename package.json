@@ -6,7 +6,7 @@
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
     "@reach/tooltip": "^0.6.2",
-    "gatsby": "2.17.17",
+    "gatsby": "^2.18.5",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-netlify": "^2.0.13",

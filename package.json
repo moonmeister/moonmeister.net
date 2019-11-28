@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
-    "@reach/tooltip": "^0.4.0",
-    "gatsby": "^2.11.0",
+    "@reach/tooltip": "^0.6.2",
+    "gatsby": "2.17.17",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-netlify": "^2.0.13",

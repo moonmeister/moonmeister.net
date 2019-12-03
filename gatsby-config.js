@@ -21,19 +21,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/content`,
         name: 'content',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/blog`,
-        name: 'blog',
       },
     },
     `gatsby-plugin-sharp`,

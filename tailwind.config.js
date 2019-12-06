@@ -1,7 +1,4 @@
 /* eslint-disable no-use-before-define */
-
-const twTypography = require('tailwindcss-typography');
-
 const curlSizeWidth = '6vw';
 const curlSizeHeight = '4vw';
 // const phoneRatio = 3;
@@ -20,9 +17,6 @@ const config = {
       shadow: 'hsla(0, 0%, 30%, 0.9)',
       purple: '#665577',
     },
-    fontFamily: {
-      sans: ['Helvetica', 'Arial', '-apple-system', '"Segoe UI"', 'Roboto'],
-    },
     extend: {
       width: {
         curl: curlSizeWidth,
@@ -33,7 +27,7 @@ const config = {
     },
   },
   variants: {},
-  plugins: [twTypography()],
+  plugins: [],
 };
 
 const { screens } = config.theme;

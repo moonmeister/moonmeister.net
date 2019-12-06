@@ -36,7 +36,7 @@ const Footer = styled.footer`
   min-height: 35vh;
   padding: 3%;
   box-shadow: inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);
-  /* text-shadow: 2px 2px 4px ${theme.colors.shadow}; */
+  text-shadow: 2px 2px 4px ${theme.colors.shadow};
 
   input,
   textarea,

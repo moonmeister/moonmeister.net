@@ -23,7 +23,7 @@ const Headshot = styled.figure`
   width: 80%;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 2px 10px 10px 0px hsl(0, 0, 50%);
+  box-shadow: 2px 10px 10px 0px hsl(0, 0%, 50%);
 
   ${tw`md:w-4/12`}
 `;

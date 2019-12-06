@@ -50,7 +50,7 @@ const ContactForm = styled.form`
   button {
     display: block;
     margin: auto;
-    background: linear-gradient(hsl(0, 0, 100%), ${theme.colors.main});
+    background: linear-gradient(hsl(0, 0%, 100%), ${theme.colors.main});
     line-height: 2em;
 
     width: 50%;
@@ -63,13 +63,13 @@ const ContactForm = styled.form`
 
   button:hover {
     box-shadow: 0px 4px ${theme.colors.shadow};
-    background: linear-gradient(hsl(0, 0, 98%), hsl(0, 0, 89%));
+    background: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 89%));
     top: 2px;
   }
 
   button:active {
     box-shadow: 0 0 ${theme.colors.shadow};
-    background: linear-gradient(hsl(0, 0, 94%), hsl(0, 0, 84%));
+    background: linear-gradient(hsl(0, 0%, 94%), hsl(0, 0%, 84%));
     top: 6px;
   }
 `;

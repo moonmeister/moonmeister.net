@@ -1,28 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import tw from 'tailwind.macro';
+
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 
-import styles from 'styles/index.module.scss';
+const Intro = styled.section`
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  ${tw`md:flex-row-reverse`}
+`;
+
+const Headshot = styled.figure`
+  width: 80%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 10px 10px 0px hsl(0, 0, 50%);
+
+  ${tw`md:w-4/12`}
+`;
+
+const Content = styled.section`
+  ${tw`md:w-7/12`}
+`;
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <section className={styles.intro}>
-      <figure className={styles.headshot}>
+    <Intro>
+      <Headshot>
         <Img
           fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}
         />
-      </figure>
-      <section
-        className={styles.content}
+      </Headshot>
+      <Content
         /* eslint-disable-next-line react/no-danger */
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
-    </section>
+    </Intro>
   </Layout>
 );
 

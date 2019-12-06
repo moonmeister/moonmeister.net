@@ -61,7 +61,7 @@ module.exports = {
         icon: `src/images/terminal-solid.svg`,
       },
     },
-    `gatsby-plugin-sass`,
+    `gatsby-plugin-emotion`,
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',

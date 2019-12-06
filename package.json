@@ -5,9 +5,12 @@
   "version": "0.1.0",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
     "@reach/tooltip": "^0.6.2",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.0.34",
+    "gatsby-plugin-emotion": "^4.1.16",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-netlify-cms": "^4.1.0",
@@ -29,7 +32,10 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "shevy": "^2.1.0"
+    "shevyjs": "^1.1.0",
+    "tailwind.macro": "^1.0.0-alpha.10",
+    "tailwindcss": "^1.1.4",
+    "tailwindcss-typography": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "^5.15.3",

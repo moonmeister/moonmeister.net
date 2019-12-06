@@ -1,14 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ExtLink = ({ className, href, children, ariaLabel }) => (
-  <a
-    className={className}
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={ariaLabel}
-  >
+const ExtLink = ({ children, ...attrb }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <a target="_blank" rel="noopener noreferrer" {...attrb}>
     {children}
   </a>
 );
@@ -16,13 +11,10 @@ const ExtLink = ({ className, href, children, ariaLabel }) => (
 ExtLink.propTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  className: PropTypes.string,
-  ariaLabel: PropTypes.string.isRequired,
 };
 
 ExtLink.defaultProps = {
   children: '',
-  className: '',
 };
 
 export default ExtLink;

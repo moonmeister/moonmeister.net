@@ -65,6 +65,7 @@ const ContactForm = styled.form`
     box-shadow: 0px 4px ${theme.colors.shadow};
     background: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 89%));
     top: 2px;
+    cursor: pointer;
   }
 
   button:active {

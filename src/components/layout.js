@@ -103,6 +103,7 @@ const Layout = ({ children }) => (
             css={iconStyles}
             href="https://github.com/moonmeister"
             aria-label="GitHub"
+            title="GitHub"
           >
             <Icon tooltip="GitHub" icon={icons.GITHUB} />
           </ExtLink>
@@ -110,6 +111,7 @@ const Layout = ({ children }) => (
             css={iconStyles}
             href="/alex-moon-resume.pdf"
             aria-label="Resume (PDF)"
+            title="Resume (PDF)"
           >
             <Icon tooltip="Resume/CV" icon={icons.DOCUMENT} />
           </ExtLink>
@@ -117,6 +119,7 @@ const Layout = ({ children }) => (
             css={iconStyles}
             href="https://twitter.com/moon_meister"
             aria-label="Twitter"
+            title="Twitter"
           >
             <Icon tooltip="Twitter" icon={icons.TWITTER} />
           </ExtLink>
@@ -124,6 +127,7 @@ const Layout = ({ children }) => (
             css={iconStyles}
             href="https://www.instagram.com/moon_meister/"
             aria-label="Instagram"
+            title="Instagram"
           >
             <Icon tooltip="Instagram" icon={icons.INSTAGRAM} />
           </ExtLink>

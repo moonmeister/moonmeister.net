@@ -7,7 +7,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
-    "@reach/tooltip": "^0.6.2",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-emotion": "^4.1.16",

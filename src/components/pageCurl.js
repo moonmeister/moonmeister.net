@@ -71,7 +71,7 @@ const CurlPage = styled.div`
 
   ${mq.sm}{
     width: ${curlSizeWidth};
-    height: ${curlSizeWidth}; 
+    height: ${curlSizeWidth};
   }
 
   ${clipPath(curlSizeHeight)}
@@ -153,6 +153,7 @@ const PageCurl = () => {
           <ExtLink
             href="http://github.com/moonmeister/moonmeister.net"
             ariaLabel="Checkout the code repository on GitHub"
+            title="Site Code - GitHub"
           >
             <CurlCode aria-hidden>
               <Img fluid={code.childImageSharp.fluid} alt="html code" />

@@ -2,11 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-
-import Tooltip from '@reach/tooltip';
-
-import '@reach/tooltip/styles.css';
 
 const Svg = styled.svg`
   display: inline-block;
@@ -28,22 +23,13 @@ const Svg = styled.svg`
   -moz-osx-font-smoothing: grayscale;
 `;
 
-const Icon = ({ icon, tooltip }) => (
-  <Tooltip
-    label={tooltip}
-    css={css`
-      border-radius: 4px;
-      margin-top: -130px;
-    `}
-    style={{ position: 'absolute', left: '-10px' }}
-  >
-    <Svg viewBox={icon.viewBox}>
-      {icon.path.map((path, i) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <path d={path} key={`path-${i}`} />;
-      })}
-    </Svg>
-  </Tooltip>
+const Icon = ({ icon }) => (
+  <Svg viewBox={icon.viewBox}>
+    {icon.path.map((path, i) => {
+      // eslint-disable-next-line react/no-array-index-key
+      return <path d={path} key={`path-${i}`} />;
+    })}
+  </Svg>
 );
 
 Icon.propTypes = {
@@ -51,7 +37,6 @@ Icon.propTypes = {
     path: PropTypes.arrayOf(PropTypes.string).isRequired,
     viewBox: PropTypes.string.isRequired,
   }).isRequired,
-  tooltip: PropTypes.string.isRequired,
 };
 
 export default Icon;

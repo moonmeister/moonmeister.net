@@ -5,6 +5,7 @@
   },
   "masterIssue": true,
   "rangeStrategy": "bump",
+  "prHourlyLimit": 0,
   "packageRules": [
     {
       "groupName": "minor updates",

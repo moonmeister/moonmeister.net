@@ -4,5 +4,16 @@
     "masterIssueApproval": true
   },
   "masterIssue": true,
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "groupName": "minor updates",
+      "updateTypes": ["minor"]
+    },
+    {
+      "groupName": "patch updates",
+      "updateTypes": ["patch"]
+    }
+  ]
 }

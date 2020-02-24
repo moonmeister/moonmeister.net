@@ -17,12 +17,5 @@
   },
   "parserOptions": {
     "parser": "babel-eslint"
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack.config.js"
-      }
-    }
   }
 }

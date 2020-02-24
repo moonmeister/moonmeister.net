@@ -7,12 +7,6 @@
 // You can delete this file if you're not using it
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-const CustomWebpack = require('./webpack.config');
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig(CustomWebpack);
-};
-
 exports.onCreateNode = ({ node }) => {
   fmImagesToRelative(node);
 };

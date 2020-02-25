@@ -32,18 +32,20 @@ const Content = styled.section`
   ${tw`md:w-7/12`}
 `;
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({
+  data: {
+    wpPage: { title, content, featuredImage },
+  },
+}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title={title} keywords={[`gatsby`, `application`, `react`]} />
     <Intro>
       <Headshot>
-        <Img
-          fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}
-        />
+        <Img fluid={featuredImage.remoteFile.childImageSharp.fluid} />
       </Headshot>
       <Content
         /* eslint-disable-next-line react/no-danger */
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        dangerouslySetInnerHTML={{ __html: content }}
       />
     </Intro>
   </Layout>
@@ -51,9 +53,10 @@ const IndexPage = ({ data }) => (
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-      html: PropTypes.string,
+    wpPage: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+      featuredImage: PropTypes.object,
     }),
   }).isRequired,
 };
@@ -61,10 +64,12 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        image {
+  {
+    wpPage(databaseId: { eq: 5 }) {
+      content
+      title
+      featuredImage {
+        remoteFile {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
@@ -72,7 +77,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      html
     }
   }
 `;

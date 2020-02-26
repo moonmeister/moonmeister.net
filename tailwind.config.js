@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 const curlSizeWidth = '6vw';
 const curlSizeHeight = '4vw';
-// const phoneRatio = 3;
 
 const config = {
   theme: {

@@ -9,6 +9,7 @@ import Icon from 'components/icon';
 import ExtLink from 'components/extLink';
 import FormContact from 'components/formContact';
 import PageCurl from 'components/pageCurl';
+import Nav from 'components/nav';
 
 import icons from 'constants/icons';
 import { theme } from '../../tailwind.config';
@@ -82,9 +83,8 @@ const iconStyles = css`
 const Layout = ({ children }) => (
   <>
     <Typography />
-    <header>
-      <PageCurl />
-    </header>
+    <PageCurl />
+    <Nav />
     <Content>
       <Container>{children}</Container>
     </Content>
@@ -100,36 +100,36 @@ const Layout = ({ children }) => (
       <Half>
         <Social>
           <ExtLink
+            aria-label="GitHub"
             css={iconStyles}
             href="https://github.com/moonmeister"
-            aria-label="GitHub"
             title="GitHub"
           >
-            <Icon tooltip="GitHub" icon={icons.GITHUB} />
+            <Icon icon={icons.GITHUB} tooltip="GitHub" />
           </ExtLink>
           <ExtLink
+            aria-label="Resume (PDF)"
             css={iconStyles}
             href="/alex-moon-resume.pdf"
-            aria-label="Resume (PDF)"
             title="Resume (PDF)"
           >
-            <Icon tooltip="Resume/CV" icon={icons.DOCUMENT} />
+            <Icon icon={icons.DOCUMENT} tooltip="Resume/CV" />
           </ExtLink>
           <ExtLink
+            aria-label="Twitter"
             css={iconStyles}
             href="https://twitter.com/moon_meister"
-            aria-label="Twitter"
             title="Twitter"
           >
-            <Icon tooltip="Twitter" icon={icons.TWITTER} />
+            <Icon icon={icons.TWITTER} tooltip="Twitter" />
           </ExtLink>
           <ExtLink
+            aria-label="Instagram"
             css={iconStyles}
             href="https://www.instagram.com/moon_meister/"
-            aria-label="Instagram"
             title="Instagram"
           >
-            <Icon tooltip="Instagram" icon={icons.INSTAGRAM} />
+            <Icon icon={icons.INSTAGRAM} tooltip="Instagram" />
           </ExtLink>
         </Social>
 
@@ -140,7 +140,7 @@ const Layout = ({ children }) => (
           `}
         >
           &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
-          <ExtLink href="https://gatsbyjs.org" aria-label="GatsbyJS Site">
+          <ExtLink aria-label="GatsbyJS Site" href="https://gatsbyjs.org">
             Gatsby
           </ExtLink>
           .

@@ -151,18 +151,18 @@ const PageCurl = () => {
       <CurlBG>
         <CurlContent className="CurlPage">
           <ExtLink
-            href="http://github.com/moonmeister/moonmeister.net"
             ariaLabel="Checkout the code repository on GitHub"
+            href="http://github.com/moonmeister/moonmeister.net"
             title="Site Code - GitHub"
           >
             <CurlCode aria-hidden>
-              <Img fluid={code.childImageSharp.fluid} alt="html code" />
+              <Img alt="html code" fluid={code.childImageSharp.fluid} />
             </CurlCode>
           </ExtLink>
         </CurlContent>
       </CurlBG>
 
-      <CurlPage className="CurlPage" aria-hidden />
+      <CurlPage aria-hidden className="CurlPage" />
     </Curl>
   );
 };

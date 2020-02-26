@@ -4,12 +4,6 @@ import { css } from '@emotion/core';
 import tw from 'tailwind.macro';
 import { theme } from '../../tailwind.config';
 
-const Container = styled.div`
-  width: 100%;
-
-  ${tw`md:w-4/5`}
-`;
-
 const ContactForm = styled.form`
   width: 100%;
   text-align: left;
@@ -76,7 +70,13 @@ const ContactForm = styled.form`
 `;
 
 const FormContact = () => (
-  <Container>
+  <div
+    css={css`
+      width: 100%;
+
+      ${tw`md:w-4/5`}
+    `}
+  >
     <ContactForm
       name="contact"
       method="POST"
@@ -120,7 +120,7 @@ const FormContact = () => (
         <button type="submit">Send</button>
       </p>
     </ContactForm>
-  </Container>
+  </div>
 );
 
 export default FormContact;

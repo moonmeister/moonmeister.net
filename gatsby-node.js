@@ -6,4 +6,8 @@
 
 // You can delete this file if you're not using it
 
-// exports.onCreateNode = ({ node }) => {};
+const createBlog = require('./gatsby/createBlog');
+
+exports.createPages = async nodeApi => {
+  await Promise.all([createBlog(nodeApi)]);
+};

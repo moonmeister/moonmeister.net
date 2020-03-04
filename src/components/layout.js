@@ -17,7 +17,7 @@ import { theme } from '../../tailwind.config';
 import '../../node_modules/normalize.css/normalize.css';
 
 const Content = tw.main`
-  bg-grey-100
+  bg-gray-100
   max-w-full
 `;
 
@@ -28,17 +28,17 @@ const Container = tw.div`
 `;
 
 const Footer = styled.footer`
-  ${tw`flex items-center flex-column md:flex-row bg-primary-600 text-grey-100 `}
+  ${tw`flex items-center flex-column md:flex-row bg-primary-600 text-gray-100 `}
 
   min-height: 35vh;
   padding: 3%;
   box-shadow: inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);
-  text-shadow: 2px 2px 4px ${theme.colors.grey['900']};
+  text-shadow: 2px 2px 4px ${theme.colors.gray['900']};
 
   input,
   textarea,
   button {
-    ${tw`text-grey-900`}
+    ${tw`text-gray-900`}
     text-shadow: 0;
   }
 

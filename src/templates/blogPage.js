@@ -2,13 +2,17 @@ import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from 'components/layout';
+import SEO from 'components/seo';
 
 const BlogPage = ({
   data: {
     allWpPost: { nodes: allPosts },
+    wpPage: { title },
   },
 }) => (
   <Layout>
+    <SEO title={title} />
+    <h1>{title}</h1>
     {allPosts.map(({ title, excerpt, uri }) => (
       <Link to={uri}>
         <article>
@@ -28,6 +32,10 @@ export const query = graphql`
         excerpt
         uri
       }
+    }
+
+    wpPage(uri: { eq: "blog/" }) {
+      title
     }
   }
 `;

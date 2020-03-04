@@ -38,7 +38,10 @@ const IndexPage = ({
           ${tw`md:w-4/12`}
         `}
       >
-        <Img fluid={featuredImage.remoteFile.childImageSharp.fluid} />
+        <Img
+          alt={featuredImage.altText}
+          fluid={featuredImage.remoteFile.childImageSharp.fluid}
+        />
       </figure>
       <section
         css={css`
@@ -69,6 +72,7 @@ export const pageQuery = graphql`
       content
       title
       featuredImage {
+        altText
         remoteFile {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 100) {

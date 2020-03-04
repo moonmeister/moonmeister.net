@@ -31,17 +31,23 @@ const Nav = () => {
     >
       <ul
         css={css`
-          ${tw`m-0 flex flex-row`}
+          ${tw`m-0 flex flex-row justify-end pr-2 pl-20`}
         `}
       >
         {menuItems.map(({ label, title, url, menuItemId }) => (
           <li
             key={menuItemId}
             css={css`
-              display: inline-block;
+              ${tw`list-none m-1`}
             `}
           >
-            <Link title={title} to={url}>
+            <Link
+              css={css`
+                ${tw`mx-2 p-1 `}
+              `}
+              title={title}
+              to={url}
+            >
               {label}
             </Link>
           </li>

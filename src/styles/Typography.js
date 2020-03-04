@@ -18,7 +18,7 @@ const Typography = () => (
       body {
         font-family: 'Helvetica', 'Arial', sans-serif;
         text-rendering: optimizeLegibility;
-        color: ${theme.colors.text.default};
+        color: ${theme.colors.primary['900']};
 
         ${shevy.body}
       }

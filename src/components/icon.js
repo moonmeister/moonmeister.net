@@ -27,7 +27,7 @@ const Icon = ({ icon }) => (
   <Svg viewBox={icon.viewBox}>
     {icon.path.map((path, i) => {
       // eslint-disable-next-line react/no-array-index-key
-      return <path d={path} key={`path-${i}`} />;
+      return <path key={`path-${i}`} d={path} />;
     })}
   </Svg>
 );

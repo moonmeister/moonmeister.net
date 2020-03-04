@@ -44,7 +44,7 @@ const ContactForm = styled.form`
   button {
     display: block;
     margin: auto;
-    background: linear-gradient(hsl(0, 0%, 100%), ${theme.colors.main});
+    background: linear-gradient(hsl(0, 0%, 100%), ${theme.colors.gray['500']});
     line-height: 2em;
 
     width: 50%;
@@ -78,12 +78,12 @@ const FormContact = () => (
     `}
   >
     <ContactForm
-      name="contact"
-      method="POST"
-      netlify-honeypot="bot-field"
       data-netlify="true"
+      method="POST"
+      name="contact"
+      netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="form-name" value="contact" />
+      <input name="form-name" type="hidden" value="contact" />
       <p hidden>
         <label htmlFor="bot-field">
           <span>
@@ -97,13 +97,13 @@ const FormContact = () => (
         <label htmlFor="name">
           <span>Name:</span>
 
-          <input id="name" type="text" name="name" required />
+          <input id="name" name="name" required type="text" />
         </label>
       </p>
       <p>
         <label htmlFor="email">
           <span>Email:</span>
-          <input id="email" type="email" name="email" required />
+          <input id="email" name="email" required type="email" />
         </label>
       </p>
       <p>

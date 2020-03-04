@@ -79,7 +79,7 @@ const CurlPage = styled.div`
   background: linear-gradient(
     315deg,
     hsla(0, 0%, 85%, 0.9) 15%,
-    ${theme.colors.main},
+    ${theme.colors.gray['300']},
     hsla(0, 0%, 60%, 0.9) 85%
   );
 `;
@@ -93,7 +93,7 @@ const Curl = styled.div`
     ${CurlBG} {
       transition: inherit;
 
-      box-shadow: 10px 10px ${theme.colors.main};
+      box-shadow: 10px 10px ${theme.colors.gray['500']};
       width: calc(
         ${phoneOpenSize(curlSizeWidth * phoneRatio)}
       ); /* default width of page curl */

@@ -16,33 +16,29 @@ import { theme } from '../../tailwind.config';
 
 import '../../node_modules/normalize.css/normalize.css';
 
-const Content = styled.main`
-  ${tw`bg-main`}
-  max-width: 100%;
+const Content = tw.main`
+  bg-grey-100
+  max-w-full
 `;
 
-const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  padding: 9% 0;
+const Container = tw.div`
+  mx-auto
+  w-4/5
+  p-16
 `;
 
 const Footer = styled.footer`
-  ${tw`md:flex-row bg-purple text-text-lighter text-shadow-footer`}
+  ${tw`flex items-center flex-column md:flex-row bg-primary-600 text-grey-100 `}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: 35vh;
   padding: 3%;
   box-shadow: inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);
-  text-shadow: 2px 2px 4px ${theme.colors.shadow};
+  text-shadow: 2px 2px 4px ${theme.colors.grey['900']};
 
   input,
   textarea,
   button {
-    ${tw`text-text-default`}
+    ${tw`text-grey-900`}
     text-shadow: 0;
   }
 
@@ -55,30 +51,25 @@ const Footer = styled.footer`
   }
 `;
 
-const Half = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const Half = tw.section`
+  w-full
+  flex
+  flex-col
+  justify-center
 
-  ${tw`md:w-1/2`}
+  md:w-1/2
 `;
 
-const Social = styled.div`
-  font-size: 3rem;
-  margin-top: 2.4rem;
-
-  display: inherit;
-  justify-content: inherit;
-
-  a {
-    line-height: 0;
-    margin: 0.3em;
-  }
+const Social = tw.div`
+  text-5xl
+  justify-center
+  flex
 `;
 
 const iconStyles = css`
   filter: drop-shadow(2px 2px 2px ${theme.colors.shadow});
+  line-height: 0;
+  margin: 0;
 `;
 const Layout = ({ children }) => (
   <>

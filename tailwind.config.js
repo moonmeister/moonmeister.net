@@ -11,12 +11,35 @@ const config = {
       xl: '1800px',
     },
     colors: {
-      main: 'hsla(0, 0%, 94%, 1)',
-      text: { default: '#221111', lighter: '#eee' },
-      shadow: 'hsla(0, 0%, 30%, 0.9)',
-      purple: '#665577',
+      inherit: 'inherit',
+      gray: {
+        '100': 'hsla(190, 5%, 90%, 1)',
+        '200': '',
+        '300': 'hsla(190, 5%, 70%, 1)',
+        '400': '',
+        '500': 'hsla(190, 5%, 50%, 1)',
+        '600': '',
+        '700': '',
+        '800': '',
+        '900': '',
+      },
+      primary: {
+        '100': '#cc9cfc',
+        '200': '#ccc3d5',
+        '300': '#b3a5c0',
+        '400': '#9988aa',
+        '500': '#806a95',
+        '600': '#665577',
+        '700': '#4d3f5a',
+        '800': '#332a3c',
+        '900': '#1a151e',
+      },
     },
     extend: {
+      display: {
+        inherit: 'inherit',
+      },
+
       width: {
         curl: curlSizeWidth,
       },

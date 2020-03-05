@@ -1,0 +1,30 @@
+@tailwind base;
+
+/*components*/
+@tailwind components;
+
+html {
+  @apply font-sans text-primary-900 bg-gray-100;
+}
+
+/* WordPress Core Block Styling */
+.wp-block-image {
+  @apply block;
+}
+.aligncenter img {
+  @apply mx-auto;
+}
+
+.alignright {
+  @apply float-right;
+}
+
+.alightleft {
+  @apply float-left;
+}
+
+.is-style-circle-mask figure img {
+  @apply rounded-full;
+}
+
+@tailwind utilities;

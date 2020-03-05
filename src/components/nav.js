@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { css } from '@emotion/core';
 import tw from 'tailwind.macro';
 
 const Nav = () => {
@@ -23,28 +22,13 @@ const Nav = () => {
     }
   `);
   return (
-    <nav
-      css={css`
-        position: sticky;
-        top: 0;
-      `}
-    >
-      <ul
-        css={css`
-          ${tw`m-0 flex flex-row justify-end pr-2 pl-20`}
-        `}
-      >
+    <nav>
+      <ul css={tw`m-0 flex flex-row justify-end px-10 py-4`}>
         {menuItems.map(({ label, title, url, menuItemId }) => (
-          <li
-            key={menuItemId}
-            css={css`
-              ${tw`list-none m-1`}
-            `}
-          >
+          <li key={menuItemId} css={tw`list-none m-1`}>
             <Link
-              css={css`
-                ${tw`mx-2 p-1 `}
-              `}
+              activeStyle={tw`font-bold`}
+              css={tw`mx-2 p-1 text-2xl hover:underline`}
               title={title}
               to={url}
             >

@@ -1,10 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import ExtLink from 'components/extLink';
 
-import styled from '@emotion/styled';
-import tw from 'tailwind.macro';
 import { theme, mq } from '../../tailwind.config';
 
 const curlSizeWidth = theme.extend.width.curl;

@@ -1,9 +1,16 @@
 /* eslint-disable no-use-before-define */
+const twTypography = require('tailwindcss-typography');
+const plugin = require('tailwindcss/plugin');
+
 const curlSizeWidth = '6vw';
 const curlSizeHeight = '4vw';
 
-const config = {
+const tWconfig = {
   theme: {
+    textShadow: theme => ({
+      default: `2px 2px 4px ${theme('colors.gray.900')}`,
+      lg: '0 2px 10px rgba(0, 0, 0, 0.5)',
+    }),
     screens: {
       sm: '600px',
       md: '900px',
@@ -21,7 +28,7 @@ const config = {
         '600': '',
         '700': '',
         '800': '',
-        '900': '',
+        '900': 'hsla(190, 5%, 10%, 1)',
       },
       primary: {
         '100': '#cc9cfc',
@@ -39,7 +46,6 @@ const config = {
       display: {
         inherit: 'inherit',
       },
-
       width: {
         curl: curlSizeWidth,
       },
@@ -49,14 +55,23 @@ const config = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    twTypography({}),
+    plugin(({ addBase, config }) => {
+      addBase({
+        h1: { fontSize: config('theme.fontSize.2xl') },
+        h2: { fontSize: config('theme.fontSize.xl') },
+        h3: { fontSize: config('theme.fontSize.lg') },
+      });
+    }),
+  ],
 };
 
-const { screens } = config.theme;
+const { screens } = tWconfig.theme;
 
-config.mq = {};
+tWconfig.mq = {};
 
-Object.keys(config.theme.screens).forEach(key => {
-  config.mq[key] = `@media (min-width: ${screens[key]})`;
+Object.keys(tWconfig.theme.screens).forEach(key => {
+  tWconfig.mq[key] = `@media (min-width: ${screens[key]})`;
 });
-module.exports = config;
+module.exports = tWconfig;

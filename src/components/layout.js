@@ -1,90 +1,60 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import tw from 'tailwind.macro';
+import { css } from '@emotion/core';
 
-import Typography from 'styles/Typography';
-import Icon from 'components/icon';
+import Icon from 'components/Icon';
 import ExtLink from 'components/extLink';
-import FormContact from 'components/formContact';
-import PageCurl from 'components/pageCurl';
+import FormContact from 'components/FormContact';
+// import PageCurl from 'components/pageCurl';
 import Nav from 'components/nav';
-
 import icons from 'constants/icons';
-import { theme } from '../../tailwind.config';
 
-import '../../node_modules/normalize.css/normalize.css';
+import 'styles/base.css';
 
-const Content = tw.main`
-  bg-gray-100
-  max-w-full
-`;
-
-const Container = tw.div`
-  mx-auto
-  w-4/5
-  p-16
-`;
-
-const Footer = styled.footer`
-  ${tw`flex items-center flex-column md:flex-row bg-primary-600 text-gray-100 `}
-
-  min-height: 35vh;
-  padding: 3%;
-  box-shadow: inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);
-  text-shadow: 2px 2px 4px ${theme.colors.gray['900']};
-
-  input,
-  textarea,
-  button {
-    ${tw`text-gray-900`}
-    text-shadow: 0;
-  }
-
-  a:visited {
-    color: inherit;
-  }
-
-  a:link {
-    color: inherit;
-  }
-`;
-
-const Half = tw.section`
-  w-full
-  flex
-  flex-col
-  justify-center
-
-  md:w-1/2
-`;
-
-const Social = tw.div`
-  text-5xl
-  justify-center
-  flex
-`;
+const Half = tw.section`w-full flex flex-col justify-center md:w-1/2`;
+const Social = tw.div`text-5xl justify-center flex`;
 
 const iconStyles = css`
-  filter: drop-shadow(2px 2px 2px ${theme.colors.shadow});
+  filter: drop-shadow(2px 2px 2px theme('colors.shadow'));
   line-height: 0;
   margin: 0;
 `;
 const Layout = ({ children }) => (
   <>
-    <Typography />
-    <PageCurl />
-    <Nav />
-    <Content>
-      <Container>{children}</Container>
-    </Content>
-    <Footer>
-      <Half
-        css={css`
-          margin: auto;
-        `}
-      >
+    {/* <PageCurl /> */}
+    <header>
+      <Nav />
+    </header>
+    <main css={tw`max-w-full mx-auto p-4 md:p-8 sm:w-4/5 md:w-3/5`}>
+      {children}
+    </main>
+    <footer
+      className="text-shadow"
+      css={css`
+        ${tw`flex items-center flex-column md:flex-row bg-primary-600 text-gray-100 `}
+        min-height: 35vh;
+        padding: 3%;
+        box-shadow: inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);
+        /* text-shadow: 2px 2px 4px black; */
+
+        input,
+        textarea,
+        button {
+          ${tw`text-gray-900`};
+          text-shadow: 0;
+        }
+
+        a:visited {
+          color: inherit;
+        }
+
+        a:link {
+          color: inherit;
+        }
+      `}
+    >
+      <Half css={tw`m-auto`}>
         <FormContact />
       </Half>
 
@@ -126,8 +96,8 @@ const Layout = ({ children }) => (
 
         <p
           css={css`
-            display: inherit;
-            justify-content: inherit;
+            display: 'inherit';
+            justify-content: 'inherit';
           `}
         >
           &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
@@ -137,7 +107,7 @@ const Layout = ({ children }) => (
           .
         </p>
       </Half>
-    </Footer>
+    </footer>
   </>
 );
 

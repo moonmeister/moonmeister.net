@@ -1,7 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
-
 import tw from 'tailwind.macro';
 
 import { graphql } from 'gatsby';
@@ -30,12 +29,8 @@ const IndexPage = ({
     >
       <figure
         css={css`
-          width: 80%;
-          border-radius: 50%;
-          overflow: hidden;
-          box-shadow: 2px 10px 10px 0px hsl(0, 0%, 50%);
-
-          ${tw`md:w-4/12`}
+          /* box-shadow: 2px 10px 10px 0px hsl(0, 0%, 50%); */
+          ${tw`md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg`}
         `}
       >
         <Img
@@ -44,9 +39,7 @@ const IndexPage = ({
         />
       </figure>
       <section
-        css={css`
-          ${tw`md:w-7/12`}
-        `}
+        css={tw`md:w-7/12`}
         /* eslint-disable-next-line react/no-danger */
         dangerouslySetInnerHTML={{ __html: content }}
       />

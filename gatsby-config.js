@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://moonmeister.net',
   },
   plugins: [
+    /* Source Plugins */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,12 +51,17 @@ module.exports = {
         },
       },
     },
+    /* Data transformer Plugins */
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    'gatsby-plugin-react-helmet',
 
+    /* Third Party Integration Plugins */
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-preact`,
+    'gatsby-plugin-react-helmet',
+
+    /* Integrate with hosting provider */
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -70,6 +76,8 @@ module.exports = {
         mergeSecurityHeaders: false,
       },
     },
+
+    /* Misc Utilities to generate misc site related structured content */
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',

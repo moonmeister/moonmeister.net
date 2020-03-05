@@ -10,6 +10,7 @@ const tWconfig = {
     textShadow: theme => ({
       default: `2px 2px 4px ${theme('colors.gray.900')}`,
       lg: '0 2px 10px rgba(0, 0, 0, 0.5)',
+      none: 'none',
     }),
     screens: {
       sm: '600px',
@@ -43,11 +44,11 @@ const tWconfig = {
       },
     },
     extend: {
-      display: {
-        inherit: 'inherit',
-      },
       width: {
         curl: curlSizeWidth,
+      },
+      boxShadow: {
+        footer: 'inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);',
       },
       height: {
         curl: curlSizeHeight,

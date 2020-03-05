@@ -15,7 +15,7 @@ const BlogPage = ({
     <h1>{title}</h1>
     {allPosts.map(({ title, excerpt, uri }) => (
       <Link to={uri}>
-        <article>
+        <article css="">
           <h2>{title}</h2>
           <div dangerouslySetInnerHTML={{ __html: excerpt }} />
         </article>

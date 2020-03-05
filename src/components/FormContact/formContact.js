@@ -1,9 +1,8 @@
 import * as React from 'react';
-import tw from 'tailwind.macro';
 // import './formContact.css';
 
 const FormContact = () => (
-  <div css={tw`md:w-4/5 w-full`}>
+  <div className="md:w-4/5 w-full">
     <form
       data-netlify="true"
       method="POST"
@@ -39,7 +38,7 @@ const FormContact = () => (
           <textarea id="message" name="message" required />
         </label>
       </p>
-      <p css={tw`mb-0`}>
+      <p className="mb-0">
         <button type="submit">Send</button>
       </p>
     </form>

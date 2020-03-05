@@ -1,10 +1,18 @@
 @tailwind base;
 
+.display-inherit {
+  display: inherit;
+}
+
+.justify-inherit {
+  justify-content: inherit;
+}
+
 /*components*/
 @tailwind components;
 
 html {
-  @apply font-sans text-primary-900 bg-gray-100;
+  @apply font-sans text-primary-900;
 }
 
 /* WordPress Core Block Styling */
@@ -28,3 +36,22 @@ html {
 }
 
 @tailwind utilities;
+
+input,
+textarea,
+button {
+  @apply text-gray-900 text-shadow-none;
+}
+
+.half {
+  @apply w-full flex flex-col justify-center;
+}
+
+@screen md {
+  .half {
+    @apply w-1/2;
+  }
+}
+.social {
+  @apply text-5xl justify-center flex;
+}

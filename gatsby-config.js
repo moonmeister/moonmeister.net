@@ -60,6 +60,20 @@ module.exports = {
     `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
 
+    /* Custom Plugins */
+
+    {
+      resolve: `gatsby-plugin-readingtime`,
+      options: {
+        types: {
+          WpPost: source => {
+            const { blocks } = source;
+            return blocks.map(block => block.saveContent).join('');
+          }, // Key: GraphQl Type to add reading times to, Value: RElolver function that returns content to be processed.
+        },
+      },
+    },
+
     /* Integrate with hosting provider */
     {
       resolve: `gatsby-plugin-netlify`,

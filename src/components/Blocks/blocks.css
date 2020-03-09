@@ -1,0 +1,66 @@
+.wp-blocks {
+  /* WordPress Core Block Styling */
+
+  p {
+    @apply mt-4;
+
+    &:first-child {
+      @apply mt-0;
+    }
+  }
+
+  .wp-block-image {
+    @apply block;
+  }
+  .aligncenter img {
+    @apply mx-auto;
+  }
+
+  .alignright {
+    @apply float-right;
+  }
+
+  .alightleft {
+    @apply float-left;
+  }
+
+  .is-style-circle-mask figure img {
+    @apply rounded-full;
+  }
+
+  .has-drop-cap::first-letter {
+    @apply font-serif text-primary-600 float-left leading-8 text-6xl;
+    /* font-size: 75px; */
+    /* line-height: 60px; */
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+
+    @supports (initial-letter: 4) or (-webkit-initial-letter: 4) {
+      initial-letter: 4;
+      -webkit-initial-letter: 4;
+      font-size: unset;
+      @apply float-none leading-normal p-0;
+    }
+  }
+
+  .has-small-font-size {
+    @apply text-sm;
+  }
+
+  .has-normal-font-size {
+    @apply text-base;
+  }
+
+  .has-medium-font-size {
+    @apply text-lg;
+  }
+
+  .has-large-font-size {
+    @apply text-3xl;
+  }
+
+  .has-huge-font-size {
+    @apply text-4xl;
+  }
+}

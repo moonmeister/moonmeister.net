@@ -22,7 +22,7 @@ const Nav = () => {
   `);
   return (
     <nav>
-      <ul className="m-0 flex flex-row justify-end px-10 py-4">
+      <ul className="m-0 flex flex-row justify-center md:justify-end px-10 py-4">
         {menuItems.map(({ label, title, url, menuItemId }) => (
           <li key={menuItemId} className="list-none m-1">
             <Link

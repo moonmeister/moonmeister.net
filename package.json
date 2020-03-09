@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-source-wordpress-experimental": "^0.0.13",
     "gatsby-transformer-sharp": "^2.3.14",
+    "html-react-parser": "^0.10.1",
     "images": "link:./src/images",
     "pages": "link:./src/pages",
     "postcss-nested": "^4.2.1",

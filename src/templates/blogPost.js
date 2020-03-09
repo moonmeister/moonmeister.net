@@ -1,6 +1,9 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+
 import { graphql } from 'gatsby';
 import Layout from 'components/layout';
+import Blocks from 'components/Blocks';
 
 const BlogPost = ({
   data: {
@@ -9,24 +12,26 @@ const BlogPost = ({
 }) => {
   return (
     <Layout>
-      <article className="max-w-64">
-        <header>
-          <h1>{title}</h1>
+      <article className="max-w-64 shadow-lg bg-gray-100 rounded-lg p-6">
+        <header className="border-b flex flex-col items-center">
+          <h1 className="">{title}</h1>
           <p>Published: {dateGmt}</p>
         </header>
-        <div className="clearfix">
-          {blocks.length > 0 &&
-            blocks.map(({ saveContent }) => (
-              <div
-                className="wp-block"
-                dangerouslySetInnerHTML={{ __html: saveContent }}
-              />
-            ))}
-        </div>
+        <Blocks blocks={blocks} />
         <footer>About the author</footer>
       </article>
     </Layout>
   );
+};
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    wpPost: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      blocks: PropTypes.array.isRequired,
+      dateGmt: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export const query = graphql`

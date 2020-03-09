@@ -11,15 +11,15 @@ import icons from 'constants/icons';
 import 'styles/base.css';
 
 const Layout = ({ children }) => (
-  <>
+  <div className="h-screen flex flex-col justify-between">
     {/* <PageCurl /> */}
     <header>
       <Nav />
     </header>
-    <main className="max-w-full mx-auto p-4 md:p-8 sm:w-4/5 md:w-3/5">
+    <main className="max-w-full self-center px-4 md:p-8 md:w-4/5 lg:w-3/5">
       {children}
     </main>
-    <footer className="text-shadow flex items-center flex-column md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">
+    <footer className="text-shadow flex items-center flex-col md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">
       <section className="half m-auto">
         <FormContact />
       </section>
@@ -65,7 +65,7 @@ const Layout = ({ children }) => (
         </p>
       </section>
     </footer>
-  </>
+  </div>
 );
 
 Layout.propTypes = {

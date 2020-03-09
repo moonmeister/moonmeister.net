@@ -7,25 +7,25 @@ import Img from 'gatsby-image';
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 
+import Blocks from 'components/Blocks';
+
 const IndexPage = ({
   data: {
-    wpPage: { title, content, featuredImage },
+    wpPage: { title, blocks, featuredImage },
   },
 }) => (
   <Layout>
     <SEO keywords={[`gatsby`, `application`, `react`]} title={title} />
-    <section className="p-0 flex flex-col md:flex-row-reverse align-center justify-between">
-      <figure className="md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-xl">
+    <section className="p-0 flex flex-col md:flex-row-reverse items-center justify-between">
+      <figure className="sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
         <Img
           alt={featuredImage.altText}
           fluid={featuredImage.remoteFile.childImageSharp.fluid}
         />
       </figure>
-      <section
-        className="md:w-7/12"
-        /* eslint-disable-next-line react/no-danger */
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      <div className="md:w-7/12 m-6">
+        <Blocks blocks={blocks} />
+      </div>
     </section>
   </Layout>
 );
@@ -34,8 +34,8 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     wpPage: PropTypes.shape({
       title: PropTypes.string,
-      content: PropTypes.string,
-      featuredImage: PropTypes.object,
+      blocks: PropTypes.array.isRequired,
+      featuredImage: PropTypes.object.isRequired,
     }),
   }).isRequired,
 };
@@ -45,8 +45,10 @@ export default IndexPage;
 export const pageQuery = graphql`
   {
     wpPage(databaseId: { eq: 5 }) {
-      content
       title
+      blocks {
+        ...BlocksFragment
+      }
       featuredImage {
         altText
         remoteFile {

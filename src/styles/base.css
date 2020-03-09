@@ -12,27 +12,24 @@
 @tailwind components;
 
 html {
-  @apply font-sans text-primary-900;
+  @apply font-sans text-primary-900 bg-gray-200;
 }
 
-/* WordPress Core Block Styling */
-.wp-block-image {
-  @apply block;
-}
-.aligncenter img {
-  @apply mx-auto;
+html,
+body {
+  @apply h-screen;
 }
 
-.alignright {
-  @apply float-right;
+h1 {
+  @apply text-6xl text-primary-800;
 }
 
-.alightleft {
-  @apply float-left;
+h2 {
+  @apply text-2xl text-primary-700;
 }
 
-.is-style-circle-mask figure img {
-  @apply rounded-full;
+h3 {
+  @apply text-xl text-primary-700;
 }
 
 @tailwind utilities;

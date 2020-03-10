@@ -8,64 +8,68 @@ import FormContact from 'components/FormContact';
 import Nav from 'components/nav';
 import icons from 'constants/icons';
 
+import { LocaleProvider } from 'hooks/useLocale';
+
 import 'styles/base.css';
 
 const Layout = ({ children }) => (
-  <div className="h-screen flex flex-col justify-between">
-    {/* <PageCurl /> */}
-    <header>
-      <Nav />
-    </header>
-    <main className="max-w-full self-center px-4 md:p-8 md:w-4/5 lg:w-3/5">
-      {children}
-    </main>
-    <footer className="text-shadow flex items-center flex-col md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">
-      <section className="half m-auto">
-        <FormContact />
-      </section>
+  <LocaleProvider>
+    <div className="h-screen flex flex-col justify-between">
+      {/* <PageCurl /> */}
+      <header>
+        <Nav />
+      </header>
+      <main className="max-w-full self-center px-4 md:p-8 md:w-4/5 lg:w-3/5">
+        {children}
+      </main>
+      <footer className="text-shadow flex items-center flex-col md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">
+        <section className="half m-auto">
+          <FormContact />
+        </section>
 
-      <section className="half">
-        <div className="social">
-          <ExtLink
-            aria-label="GitHub"
-            href="https://github.com/moonmeister"
-            title="GitHub"
-          >
-            <Icon icon={icons.GITHUB} tooltip="GitHub" />
-          </ExtLink>
-          <ExtLink
-            aria-label="Resume (PDF)"
-            href="/alex-moon-resume.pdf"
-            title="Resume (PDF)"
-          >
-            <Icon icon={icons.DOCUMENT} tooltip="Resume/CV" />
-          </ExtLink>
-          <ExtLink
-            aria-label="Twitter"
-            href="https://twitter.com/moon_meister"
-            title="Twitter"
-          >
-            <Icon icon={icons.TWITTER} tooltip="Twitter" />
-          </ExtLink>
-          <ExtLink
-            aria-label="Instagram"
-            href="https://www.instagram.com/moon_meister/"
-            title="Instagram"
-          >
-            <Icon icon={icons.INSTAGRAM} tooltip="Instagram" />
-          </ExtLink>
-        </div>
+        <section className="half">
+          <div className="social">
+            <ExtLink
+              aria-label="GitHub"
+              href="https://github.com/moonmeister"
+              title="GitHub"
+            >
+              <Icon icon={icons.GITHUB} tooltip="GitHub" />
+            </ExtLink>
+            <ExtLink
+              aria-label="Resume (PDF)"
+              href="/alex-moon-resume.pdf"
+              title="Resume (PDF)"
+            >
+              <Icon icon={icons.DOCUMENT} tooltip="Resume/CV" />
+            </ExtLink>
+            <ExtLink
+              aria-label="Twitter"
+              href="https://twitter.com/moon_meister"
+              title="Twitter"
+            >
+              <Icon icon={icons.TWITTER} tooltip="Twitter" />
+            </ExtLink>
+            <ExtLink
+              aria-label="Instagram"
+              href="https://www.instagram.com/moon_meister/"
+              title="Instagram"
+            >
+              <Icon icon={icons.INSTAGRAM} tooltip="Instagram" />
+            </ExtLink>
+          </div>
 
-        <p className="justify-inherit display-inherit">
-          &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
-          <ExtLink aria-label="GatsbyJS Site" href="https://gatsbyjs.org">
-            Gatsby
-          </ExtLink>
-          .
-        </p>
-      </section>
-    </footer>
-  </div>
+          <p className="justify-inherit display-inherit">
+            &copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
+            <ExtLink aria-label="GatsbyJS Site" href="https://gatsbyjs.org">
+              Gatsby
+            </ExtLink>
+            .
+          </p>
+        </section>
+      </footer>
+    </div>
+  </LocaleProvider>
 );
 
 Layout.propTypes = {

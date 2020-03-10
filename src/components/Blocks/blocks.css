@@ -1,14 +1,7 @@
 .wp-blocks {
   /* WordPress Core Block Styling */
 
-  p {
-    @apply mt-4;
-
-    &:first-child {
-      @apply mt-0;
-    }
-  }
-
+  /* Block: Image  ------------------------- */
   .wp-block-image {
     @apply block;
   }
@@ -28,6 +21,15 @@
     @apply rounded-full;
   }
 
+  /* Block: Paragraph  ------------------------- */
+
+  p {
+    @apply mt-4;
+
+    &:first-child {
+      @apply mt-0;
+    }
+  }
   .has-drop-cap::first-letter {
     @apply font-serif text-primary-600 float-left leading-8 text-6xl;
     /* font-size: 75px; */
@@ -62,5 +64,26 @@
 
   .has-huge-font-size {
     @apply text-4xl;
+  }
+
+  /* Block: Separator  ------------------------- */
+
+  hr.wp-block-separator {
+    @apply m-6 border-pink-500;
+
+    &:not(.is-style-wide) {
+      @apply max-w-xs mx-auto;
+    }
+
+    &.is-style-dots {
+      @apply border-0 max-w-none leading-none h-auto text-center;
+
+      &::before {
+        @apply font-serif text-pink-500 text-2xl;
+        content: '\00b7 \00b7 \00b7';
+        letter-spacing: 2em;
+        padding-left: 2em;
+      }
+    }
   }
 }

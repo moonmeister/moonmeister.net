@@ -1,9 +1,38 @@
+/* WordPress Core Block Styling */
 .wp-blocks {
-  /* WordPress Core Block Styling */
-
   * {
-    @apply my-8;
+    @apply mt-8;
   }
+
+  a {
+    @apply text-blue-600;
+  }
+
+  /* Block: Headings  ------------------------- */
+
+  h1 {
+    @apply text-4xl leading-none;
+  }
+
+  h2 {
+    @apply text-3xl leading-snug;
+  }
+
+  h3 {
+    @apply text-2xl leading-normal;
+  }
+
+  h4 {
+    @apply text-xl leading-normal;
+  }
+
+  h5 {
+    @apply text-lg leading-normal;
+  }
+  h6 {
+    @apply font-bold leading-normal;
+  }
+
   /* Block: Image  ------------------------- */
   .wp-block-image {
     @apply block;
@@ -26,13 +55,6 @@
 
   /* Block: Paragraph  ------------------------- */
 
-  /* p {
-    @apply mt-4;
-
-    &:first-child {
-      @apply mt-0;
-    }
-  } */
   .has-drop-cap::first-letter {
     @apply font-serif text-primary-600 float-left leading-8 text-6xl;
     /* font-size: 75px; */
@@ -90,7 +112,34 @@
     }
   }
 
+  /* Block: Quote  ------------------------- */
+
   blockquote {
-    @apply my-12 px-12 border-l-2 border-orange-600 italic;
+    @apply my-8 px-8 border-l-2 border-orange-600;
+
+    p {
+      @apply italic;
+    }
+
+    &.is-style-large {
+      @apply border-none relative;
+      p {
+        @apply text-2xl;
+      }
+
+      p:before {
+        content: '❝';
+        @apply text-teal-600 absolute leading-none;
+        font-size: 6rem;
+        top: -1rem;
+        left: -1rem;
+      }
+    }
+    cite {
+      @apply text-sm text-gray-600 block;
+    }
+    @screen md {
+      @apply my-12 px-12;
+    }
   }
 }

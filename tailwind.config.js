@@ -17,8 +17,12 @@ const tWconfig = {
       md: '900px',
       lg: '1200px',
       xl: '1800px',
+      canhover: { raw: '(hover: hover)' },
     },
     extend: {
+      transitionProperty: {
+        layout: 'margin, padding, height, width',
+      },
       colors: {
         inherit: 'inherit',
         gray: {
@@ -33,15 +37,15 @@ const tWconfig = {
           '900': 'hsla(190, 5%, 10%, 1)',
         },
         primary: {
-          '100': '#cc9cfc',
-          '200': '#ccc3d5',
-          '300': '#b3a5c0',
-          '400': '#9988aa',
-          '500': '#806a95',
-          '600': '#665577',
-          '700': '#4d3f5a',
-          '800': '#332a3c',
-          '900': '#1a151e',
+          '100': 'hsl(270, 18%, 90%)',
+          '200': 'hsl(270, 18%, 80%)',
+          '300': 'hsl(271, 18%, 70%)',
+          '400': 'hsl(270, 17%, 60%)',
+          '500': 'hsl(271, 17%, 50%)',
+          '600': 'hsl(270, 17%, 40%)',
+          '700': 'hsl(271, 18%, 30%)',
+          '800': 'hsl(270, 18%, 20%)',
+          '900': 'hsl(273, 18%, 15%)',
         },
       },
       translate: {
@@ -56,6 +60,9 @@ const tWconfig = {
       },
       height: {
         curl: curlSizeHeight,
+      },
+      maxWidth: {
+        reading: '80ch',
       },
     },
   },

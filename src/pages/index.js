@@ -16,7 +16,7 @@ const IndexPage = ({
 }) => (
   <Layout>
     <SEO keywords={[`gatsby`, `application`, `react`]} title={title} />
-    <section className="p-0 flex flex-col md:flex-row-reverse items-center justify-between">
+    <section className="floating p-1 pt-8 md:p-8 flex flex-col md:flex-row-reverse items-center justify-between">
       <figure className="sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
         <Img
           alt={featuredImage.altText}

@@ -57,6 +57,14 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        tailwind: true, // Enable tailwindcss support
+        purgeOnly: ['src/styles/utilities.css'], // Purge only these files/folders
+      },
+    },
     `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
 

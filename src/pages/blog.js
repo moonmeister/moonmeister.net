@@ -1,16 +1,17 @@
 import * as React from 'react';
-import { useState, useContext, useRef } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
-import scrollTo from 'scroll-to';
+
+import { graphql, Link, navigate } from 'gatsby';
 
 import Layout from 'components/layout';
+import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
 import Pagination from 'rc-pagination';
 import Locale from 'rc-pagination/es/locale/en_US';
 import { LocaleContext } from 'hooks/useLocale';
-import { formatDateString } from 'lib/utils';
+import { formatDateString, getUrlQuery } from 'lib/utils';
 import 'rc-pagination/assets/index.css';
 
 const BlogPage = ({
@@ -21,10 +22,10 @@ const BlogPage = ({
       readingSettings: { postsPerPage },
     },
   },
+  location,
 }) => {
-  const header = useRef();
   const locale = useContext(LocaleContext);
-  const [currentPage, setCurrentPage] = useState(1);
+  const currentPage = getUrlQuery('page', location.search) || 1;
 
   const start = (currentPage - 1) * postsPerPage;
   const end = start + postsPerPage;
@@ -33,43 +34,53 @@ const BlogPage = ({
   return (
     <Layout>
       <SEO title={pageTitle} />
-      <header ref={header} className="visually-hidden">
+      <header className="sr-only">
         <h1>{pageTitle}</h1>
       </header>
-      {currentPagePosts.map(
-        ({ id, title, excerpt, uri, author, dateGmt }, i) => (
-          <article
-            key={id}
-            className="bg-gray-100 mb-6 p-6 rounded-lg shadow-md transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
-          >
-            <Link to={`/${uri}`}>
-              <header className="mb-6">
-                <h2>{title}</h2>
-              </header>
+      <div aria-live="polite" id="blog-list" role="region">
+        {currentPagePosts.map(
+          ({ id, title, excerpt, uri, author, dateGmt, tags }) => (
+            <article
+              key={id}
+              className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
+            >
+              <Link to={`/${uri}`}>
+                <header className="mb-6">
+                  <h1 className="font-bold text-primary-900 text-2xl md:text-4xl">
+                    {title}
+                  </h1>
+                  <div className="text-sm text-gray-600">
+                    {author.name} on{' '}
+                    <time dateTime={dateGmt}>
+                      {formatDateString(dateGmt, locale)}
+                    </time>
+                  </div>
+                </header>
 
-              <div
-                className="text-gray-700"
-                dangerouslySetInnerHTML={{ __html: excerpt }}
-              />
+                <div
+                  className="text-primary-800"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
 
-              <footer className="mt-6 text-sm text-gray-600">
-                {author.name} on{' '}
-                <time dateTime={dateGmt}>
-                  {formatDateString(dateGmt, locale)}
-                </time>
-              </footer>
-            </Link>
-          </article>
-        )
-      )}
+                <footer className="mt-6 text-sm text-gray-600">
+                  <Tags data={tags.nodes} />
+                </footer>
+              </Link>
+            </article>
+          )
+        )}
+      </div>
       <Pagination
-        className="flex items-center justify-center my-6"
-        defaultCurrent={1}
+        ariaControls="blog-list"
+        className="flex items-center justify-center my-6 text-xl"
+        // current={currentPage}
+        defaultCurrent={currentPage}
         defaultPageSize={postsPerPage}
         locale={Locale}
         onChange={current => {
-          setCurrentPage(current);
-          scrollTo(0, 0);
+          // setCurrentPage(current);
+          // scrollTo(0, 0);
+          navigate(`/blog/?page=${current}`);
         }}
         showQuickJumper
         total={totalCount}
@@ -79,6 +90,9 @@ const BlogPage = ({
 };
 
 BlogPage.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
+  }).isRequired,
   data: PropTypes.shape({
     allWpPost: PropTypes.shape({
       totalCount: PropTypes.number.isRequired,
@@ -115,6 +129,11 @@ export const query = graphql`
         dateGmt
         author {
           name
+        }
+        tags {
+          nodes {
+            name
+          }
         }
       }
     }

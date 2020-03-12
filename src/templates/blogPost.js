@@ -5,8 +5,8 @@ import { graphql } from 'gatsby';
 import Layout from 'components/layout';
 import Blocks from 'components/Blocks';
 import { formatDateString } from 'lib/utils';
-import { Edit3, Clock, Tag } from 'react-feather';
-import WpTag from 'components/Tag';
+import { Edit3, Clock } from 'react-feather';
+import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
 const BlogPost = ({
@@ -14,6 +14,7 @@ const BlogPost = ({
     wpPost: {
       title,
       blocks,
+      content,
       dateGmt,
       author,
       readingTime: { text: readingText },
@@ -21,52 +22,56 @@ const BlogPost = ({
     },
   },
 }) => {
+  const { avatar } = author;
   return (
     <Layout>
       <SEO title={title} />
       <article
         aria-label="Test"
-        className="max-w-64 shadow-lg bg-gray-100 rounded-lg px-6"
+        className="max-w-reading m-auto floating max-w-64 px-6"
       >
         <header className="border-b flex flex-col items-center text-center py-3 ">
-          <h1 className="font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold">{title}</h1>
 
-          <div className="grid">
-            <p className="text-left text-gray-600">
-              <Edit3
-                aria-label="Author"
-                className="inline-svg text-gray-700 mr-2"
+          <div className="flex m-4">
+            {avatar.foundAvatar && avatar.rating === 'g' && (
+              <img
+                alt={`${author.name} headshot`}
+                className="rounded-full w-16 col-span-1 row-start-1 row-end-3 bg-gray-200 text-transparent"
+                height={avatar.height}
+                loading="lazy"
+                src={avatar.url}
+                width={avatar.width}
               />
-              {author.name}
-            </p>
-            <p className="text-gray-600">
-              <Clock
-                aria-label="Publish Date"
-                className="inline-svg text-gray-700 mr-2"
-              />
-              {readingText} · {formatDateString(dateGmt)}
-            </p>
-          </div>
-
-          {/* TODO Add name */}
-        </header>
-        <Blocks blocks={blocks} className="p-6" />
-        <footer className="border-t py-6 text-gray-600">
-          <Tag className="inline-svg text-gray-700 text-xl" />
-          <div className="inline-flex items-center box-border">
-            {allTags.length > 0 ? (
-              allTags.map(tag => (
-                <WpTag
-                  key={tag.id}
-                  aria-label="Post Tags"
-                  className="m-0"
-                  data={tag}
-                />
-              ))
-            ) : (
-              <WpTag data={{ name: 'none' }} />
             )}
+            <div className="flex flex-col justify-center">
+              <p className="text-left text-gray-600 row-auto">
+                <Edit3
+                  aria-label="Author"
+                  className="inline-svg text-gray-700 mr-2"
+                />
+                {author.name}
+              </p>
+              <p className="text-gray-600 row-auto">
+                <Clock
+                  aria-label="Publish Date"
+                  className="inline-svg text-gray-700 mr-2"
+                />
+                {readingText} · {formatDateString(dateGmt)}
+              </p>
+            </div>
           </div>
+        </header>
+        {blocks.length > 0 ? (
+          <Blocks blocks={blocks} className="p-6" />
+        ) : (
+          <div
+            className="wp-blocks clearfix"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        )}
+        <footer className="border-t py-6 text-gray-600">
+          <Tags data={allTags} />
         </footer>
       </article>
     </Layout>
@@ -96,10 +101,18 @@ export const query = graphql`
       title
       author {
         name
+        avatar {
+          foundAvatar
+          rating
+          height
+          width
+          url
+        }
       }
       readingTime {
         text
       }
+      content
       blocks {
         saveContent
       }

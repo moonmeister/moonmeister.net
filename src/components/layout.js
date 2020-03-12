@@ -11,6 +11,8 @@ import icons from 'constants/icons';
 import { LocaleProvider } from 'hooks/useLocale';
 
 import 'styles/base.css';
+import 'styles/components.css';
+import 'styles/utilities.css';
 
 const Layout = ({ children }) => (
   <LocaleProvider>
@@ -19,7 +21,7 @@ const Layout = ({ children }) => (
       <header>
         <Nav />
       </header>
-      <main className="max-w-full self-center px-4 md:px-8 md:w-4/5 lg:w-3/5">
+      <main className="max-w-full self-center my-8 md:my-16 md:w-4/5 lg:w-3/5 transition-layout duration-500 ease-in">
         {children}
       </main>
       <footer className="text-shadow flex items-center flex-col md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">

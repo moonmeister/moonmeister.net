@@ -11,3 +11,22 @@ const createBlog = require('./gatsby/createBlog');
 exports.createPages = async nodeApi => {
   await Promise.all([createBlog(nodeApi)]);
 };
+
+// Fix scroll-to package issue on SSR
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  switch (stage) {
+    case 'build-html':
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /scroll-to/,
+              loader: 'null-loader',
+            },
+          ],
+        },
+      });
+      break;
+    default:
+  }
+};

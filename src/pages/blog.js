@@ -1,53 +1,47 @@
 import * as React from 'react';
-import { useState, useMemo, useContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+import scrollTo from 'scroll-to';
 
 import Layout from 'components/layout';
 import SEO from 'components/seo';
-import Pagination from 'rc-pagination';
 
+import Pagination from 'rc-pagination';
 import Locale from 'rc-pagination/es/locale/en_US';
 import { LocaleContext } from 'hooks/useLocale';
-
+import { formatDateString } from 'lib/utils';
 import 'rc-pagination/assets/index.css';
-
-function formatDateString(dateString, locale) {
-  const date = new Date(dateString);
-
-  return date.toLocaleDateString(locale, {
-    month: 'long',
-    year: 'numeric',
-    day: 'numeric',
-  });
-}
 
 const BlogPage = ({
   data: {
-    allWpPost: { nodes: allPosts },
+    allWpPost: { totalCount, nodes: allPosts },
     wpPage: { title: pageTitle },
     wp: {
       readingSettings: { postsPerPage },
     },
   },
 }) => {
+  const header = useRef();
   const locale = useContext(LocaleContext);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const currentPagePosts = useMemo(() => {
-    const start = (currentPage - 1) * postsPerPage;
-    const end = start + postsPerPage;
-    return allPosts.slice(start, end);
-  }, [currentPage, postsPerPage, allPosts]);
+  const start = (currentPage - 1) * postsPerPage;
+  const end = start + postsPerPage;
+  const currentPagePosts = allPosts.slice(start, end);
+
   return (
     <Layout>
       <SEO title={pageTitle} />
-      {/* <h1 className="mx-auto" style={{ width: 'max-content' }}>
-      {pageTitle}
-    </h1> */}
-      {currentPagePosts.map(({ id, title, excerpt, uri, author, dateGmt }) => (
-        <div key={id}>
-          <article className="bg-gray-100 mb-6 p-6 rounded-lg shadow-md hover:shadow-lg hover:translate-y-8">
+      <header ref={header} className="visually-hidden">
+        <h1>{pageTitle}</h1>
+      </header>
+      {currentPagePosts.map(
+        ({ id, title, excerpt, uri, author, dateGmt }, i) => (
+          <article
+            key={id}
+            className="bg-gray-100 mb-6 p-6 rounded-lg shadow-md transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
+          >
             <Link to={`/${uri}`}>
               <header className="mb-6">
                 <h2>{title}</h2>
@@ -66,18 +60,19 @@ const BlogPage = ({
               </footer>
             </Link>
           </article>
-        </div>
-      ))}
+        )
+      )}
       <Pagination
-        className="flex items-center justify-center"
+        className="flex items-center justify-center my-6"
         defaultCurrent={1}
         defaultPageSize={postsPerPage}
-        // hideOnSinglePage
         locale={Locale}
-        onChange={current => setCurrentPage(current)}
-        pageSizeOptions={[2, 10, 25, 50]}
+        onChange={current => {
+          setCurrentPage(current);
+          scrollTo(0, 0);
+        }}
         showQuickJumper
-        total={allPosts.length}
+        total={totalCount}
       />
     </Layout>
   );
@@ -86,6 +81,7 @@ const BlogPage = ({
 BlogPage.propTypes = {
   data: PropTypes.shape({
     allWpPost: PropTypes.shape({
+      totalCount: PropTypes.number.isRequired,
       nodes: PropTypes.arrayOf(
         PropTypes.shape({
           title: PropTypes.string.isRequired,
@@ -108,8 +104,9 @@ BlogPage.propTypes = {
 };
 
 export const query = graphql`
-  query blogQuery($nodeIds: [Int]) {
-    allWpPost(filter: { databaseId: { in: $nodeIds } }) {
+  query blogQuery {
+    allWpPost {
+      totalCount
       nodes {
         id
         title

@@ -27,6 +27,7 @@
     "hooks": "link:./src/hooks",
     "html-react-parser": "^0.10.1",
     "images": "link:./src/images",
+    "lib": "link:./src/lib",
     "pages": "link:./src/pages",
     "postcss-nested": "^4.2.1",
     "preact": "^10.3.2",
@@ -35,7 +36,9 @@
     "rc-select": "^10.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-feather": "^2.0.3",
     "react-helmet": "^5.2.1",
+    "scroll-to": "^0.0.2",
     "styles": "link:./src/styles",
     "tailwindcss": "^1.2.0",
     "tailwindcss-typography": "^3.0.1"

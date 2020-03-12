@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 const LocaleContext = React.createContext();
 
 function getLocale() {
-  return window?.navigator?.language ?? 'en-US';
+  if (typeof window !== `undefined`) {
+    return window?.navigator?.language;
+  }
+
+  return 'en-US';
 }
 
 const LocaleProvider = ({ children }) => {

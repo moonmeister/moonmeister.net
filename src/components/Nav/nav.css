@@ -1,0 +1,16 @@
+nav {
+  a.active-links {
+    &::after {
+      @apply border-b-4 border-blue-500 w-full absolute left-0;
+      content: '';
+    }
+
+    &::after {
+      @apply bottom-0;
+    }
+
+    /* &::before {
+      @apply top-0;
+    } */
+  }
+}

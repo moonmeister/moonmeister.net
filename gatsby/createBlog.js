@@ -6,28 +6,11 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   const {
     data: {
-      wp: {
-        readingSettings: { postsPerPage },
-      },
-    },
-  } = await graphql(`
-    {
-      wp {
-        readingSettings {
-          postsPerPage
-        }
-      }
-    }
-  `);
-
-  const {
-    data: {
-      allWpPost: { totalCount, edges: allPosts },
+      allWpPost: { edges: allPosts },
     },
   } = await graphql(`
     {
       allWpPost {
-        totalCount
         edges {
           next {
             uri
@@ -46,7 +29,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  const blogTemplate = path.resolve(`./src/templates/blogPage.js`);
   const blogPostTemplate = path.resolve(`./src/templates/blogPost.js`);
 
   allPosts.forEach(({ node: post, next, previous }) => {
@@ -64,18 +46,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
     });
   });
   reporter.info(`created ${allPosts.length} blog posts`);
-
-  const nodeIds = allPosts.map(({ node }) => node.databaseId);
-
-  createPage({
-    path: `/blog/`,
-    component: blogTemplate,
-    context: {
-      nodeIds,
-      totalPosts: totalCount,
-      postsPerPage,
-    },
-  });
 
   reporter.info(`created ${1} blog pages`);
 };

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
+import './nav.css';
+
 const Nav = () => {
   const {
     wpMenu: {
@@ -22,12 +24,12 @@ const Nav = () => {
   `);
   return (
     <nav>
-      <ul className="m-0 flex flex-row justify-center md:justify-end px-10 py-4">
+      <ul className="m-0 flex flex-row justify-center items-center md:justify-end px-10 py-4">
         {menuItems.map(({ label, title, url, menuItemId }) => (
-          <li key={menuItemId} className="list-none m-1">
+          <li key={menuItemId} className="group list-none m-1">
             <Link
-              activeClassName="font-bold"
-              className="mx-2 p-1 text-2xl hover:underline"
+              activeClassName="active-links text-pink-600 relative content-box"
+              className="inline-block mx-2 p-1 text-2xl text-blue-600 uppercase transform text-shadow-sm group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:transition-transform group-hover:duration-100 group-hover:ease-in reduceMotion:transform-none"
               title={title}
               to={url}
             >

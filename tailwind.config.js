@@ -9,6 +9,7 @@ const tWconfig = {
     textShadow: theme => ({
       default: `2px 2px 4px ${theme('colors.gray.900')}`,
       lg: '0 2px 10px rgba(0, 0, 0, 0.5)',
+      sm: '0 1px 3px rgba(0, 0, 0, 0.1)',
       none: 'none',
     }),
     screens: {
@@ -43,6 +44,10 @@ const tWconfig = {
           '900': '#1a151e',
         },
       },
+      translate: {
+        sm: '4px',
+        '-sm': '-4px',
+      },
       width: {
         curl: curlSizeWidth,
       },
@@ -54,7 +59,13 @@ const tWconfig = {
       },
     },
   },
-  variants: {},
+  variants: {
+    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionDuration: ['responsive', 'group-hover'],
+    transitionProperty: ['responsive', 'group-hover'],
+    transitionTimingFunction: ['responsive', 'group-hover'],
+  },
   plugins: [twTypography({})],
 };
 

@@ -1,6 +1,9 @@
 .wp-blocks {
   /* WordPress Core Block Styling */
 
+  * {
+    @apply my-8;
+  }
   /* Block: Image  ------------------------- */
   .wp-block-image {
     @apply block;
@@ -23,13 +26,13 @@
 
   /* Block: Paragraph  ------------------------- */
 
-  p {
+  /* p {
     @apply mt-4;
 
     &:first-child {
       @apply mt-0;
     }
-  }
+  } */
   .has-drop-cap::first-letter {
     @apply font-serif text-primary-600 float-left leading-8 text-6xl;
     /* font-size: 75px; */
@@ -85,5 +88,9 @@
         padding-left: 2em;
       }
     }
+  }
+
+  blockquote {
+    @apply my-12 px-12 border-l-2 border-orange-600 italic;
   }
 }

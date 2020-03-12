@@ -5,7 +5,7 @@ import Icon from 'components/Icon';
 import ExtLink from 'components/extLink';
 import FormContact from 'components/FormContact';
 // import PageCurl from 'components/pageCurl';
-import Nav from 'components/nav';
+import Nav from 'components/Nav';
 import icons from 'constants/icons';
 
 import { LocaleProvider } from 'hooks/useLocale';
@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
       <header>
         <Nav />
       </header>
-      <main className="max-w-full self-center px-4 md:p-8 md:w-4/5 lg:w-3/5">
+      <main className="max-w-full self-center px-4 md:px-8 md:w-4/5 lg:w-3/5">
         {children}
       </main>
       <footer className="text-shadow flex items-center flex-col md:flex-row bg-primary-600 text-gray-100 shadow-footer p-2 md:p-8">

@@ -8,6 +8,20 @@
   justify-content: inherit;
 }
 
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  /* Remove duration for all unknown animation when a user requests a reduced animation experience */
+  *:not(.safe-animation),
+  *:not(.safe-animation)::before,
+  *:not(.safe-animation)::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 /*components*/
 @tailwind components;
 
@@ -32,12 +46,10 @@ h3 {
   @apply text-xl text-primary-700;
 }
 
-@tailwind utilities;
-
-input,
-textarea,
-button {
-  @apply text-gray-900 text-shadow-none;
+.inline-svg {
+  @apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased;
+  height: 1em;
+  width: 1em;
 }
 
 .half {
@@ -51,4 +63,22 @@ button {
 }
 .social {
   @apply text-5xl justify-center flex;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+@tailwind utilities;
+
+input,
+textarea,
+button {
+  @apply text-gray-900 text-shadow-none;
 }

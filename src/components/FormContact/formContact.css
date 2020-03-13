@@ -1,64 +1,65 @@
-.contact-form {
-  width: 100%;
-  text-align: left;
+#contact-form {
+  .input-container {
+    @apply w-full px-3 block flex flex-col-reverse;
+
+    flex: 1 1 50%;
+  }
+
+  label,
+  input,
+  textarea {
+    @apply w-full;
+  }
 
   label {
-    margin: auto;
+    @apply relative block uppercase font-medium mb-2 tracking-wide text-xs;
+  }
+
+  input,
+  textarea,
+  button {
+    @apply rounded bg-gray-200 shadow-md p-3 mb-3 leading-tight border border-primary-600;
+    &::placeholder {
+      @apply text-gray-600 text-sm tracking-tight;
+    }
+
+    &:focus {
+      @apply outline-none bg-gray-100 border-blue-500;
+    }
   }
 
   input,
   textarea {
-    width: 75%;
-    max-width: 400px;
-    display: block;
-    resize: none;
-    overflow: auto;
-    margin: auto;
-    line-height: 1.3em;
+    @apply w-full;
 
-    border-top: 1px inset hsla(30, 40%, 20%, 0.8);
-    border-left: 1px inset hsla(30, 40%, 20%, 0.8);
-    border-right: 1px inset;
-    border-bottom: 1px inset;
+    &:valid {
+      @apply border-green-600;
+    }
 
-    border-radius: 4px;
+    &[required] + label:after {
+      content: '*';
+      @apply absolute text-red-500 p-1 -mt-2;
+    }
   }
 
   textarea {
-    margin-bottom: 3rem;
-  }
-
-  span {
-    display: block;
-    width: 75%;
-    max-width: 400px;
-    margin: auto;
+    height: 6em;
   }
 
   button {
-    display: block;
-    margin: auto;
-    background: linear-gradient(hsl(0, 0%, 100%), theme('colors.gray.500'));
-    line-height: 2em;
+    &:hover,
+    &:focus {
+      @apply shadow-xl;
+    }
 
-    width: 50%;
-    max-width: 300px;
-
-    border: none;
-    box-shadow: 0px 6px hsla(0, 0%, 20%, 0.5);
-    border-radius: 4px;
+    &:active {
+      @apply shadow-sm;
+    }
   }
 
-  button:hover {
-    box-shadow: 0px 4px theme('colors.shadow');
-    background: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 89%));
-    top: 2px;
-    cursor: pointer;
-  }
-
-  button:active {
-    box-shadow: 0 0 theme('colors.shadow');
-    background: linear-gradient(hsl(0, 0%, 94%), hsl(0, 0%, 84%));
-    top: 6px;
-  }
+  /* @variants focus {
+    input,
+    textarea {
+    }
+  } */
 }

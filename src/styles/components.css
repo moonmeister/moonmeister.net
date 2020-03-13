@@ -28,16 +28,6 @@ h3 {
   width: 1em;
 }
 
-.half {
-  @apply w-full flex flex-col justify-center;
-}
-
-@screen md {
-  .half {
-    @apply w-1/2;
-  }
-}
-
 .social {
   @apply text-5xl justify-center flex;
 }

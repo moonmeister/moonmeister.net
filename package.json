@@ -34,7 +34,6 @@
     "preact": "^10.3.2",
     "prop-types": "^15.7.2",
     "rc-pagination": "^2.0.1",
-    "rc-select": "^10.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.3",

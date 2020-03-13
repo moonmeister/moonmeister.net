@@ -46,12 +46,15 @@ const BlogPage = ({
             >
               <Link to={`/${uri}`}>
                 <header className="mb-6">
-                  <h1 className="font-bold text-primary-900 text-2xl md:text-4xl">
+                  <h1
+                    aria-label="Blog Title"
+                    className="font-bold text-primary-900 text-2xl md:text-4xl"
+                  >
                     {title}
                   </h1>
                   <div className="text-sm text-gray-600">
-                    {author.name} on{' '}
-                    <time dateTime={dateGmt}>
+                    <span rel="author">{author.name} on </span>
+                    <time dateTime={dateGmt} pubdate>
                       {formatDateString(dateGmt, locale)}
                     </time>
                   </div>

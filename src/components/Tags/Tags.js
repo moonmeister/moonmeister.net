@@ -5,7 +5,7 @@ import WpTag from './Tag';
 const Tags = ({ data: tags }) => {
   return (
     <>
-      <Tag className="inline-block text-xl" />
+      <Tag aria-hidden className="inline-block text-xl" />
       <div className="inline-flex items-center box-border">
         {tags.length > 0 ? (
           tags.map(tag => (

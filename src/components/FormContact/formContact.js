@@ -1,48 +1,61 @@
 import * as React from 'react';
-// import './formContact.css';
+import './formContact.css';
 
 const FormContact = () => (
-  <div className="md:w-4/5 w-full">
-    <form
-      data-netlify="true"
-      method="POST"
-      name="contact"
-      netlify-honeypot="bot-field"
-    >
+  <form
+    className="w-full"
+    data-netlify="true"
+    id="contact-form"
+    method="POST"
+    name="contact"
+    netlify-honeypot="bot-field"
+  >
+    <div className="flex flex-wrap mb-6">
       <input name="form-name" type="hidden" value="contact" />
-      <p hidden>
-        <label htmlFor="bot-field">
-          <span>
-            Don&#8217;t fill this out <br />
-            if you&#8217;re human:
-          </span>
-          <input id="bot-field" name="bot-field" />
+      <div className="hidden">
+        <label className="input-label" htmlFor="bot-field">
+          Don&#8217;t fill this out <br />
+          if you&#8217;re human:
         </label>
-      </p>
-      <p>
-        <label htmlFor="name">
-          <span>Name:</span>
-
-          <input id="name" name="name" required type="text" />
-        </label>
-      </p>
-      <p>
-        <label htmlFor="email">
-          <span>Email:</span>
-          <input id="email" name="email" required type="email" />
-        </label>
-      </p>
-      <p>
-        <label htmlFor="message">
-          <span>Message:</span>{' '}
-          <textarea id="message" name="message" required />
-        </label>
-      </p>
-      <p className="mb-0">
-        <button type="submit">Send</button>
-      </p>
-    </form>
-  </div>
+        <input id="bot-field" name="bot-field" />
+      </div>
+      <div className="input-container">
+        <input
+          id="contact-name"
+          name="name"
+          placeholder="John Lennon"
+          required
+          type="text"
+        />
+        <label htmlFor="contact-name">Name</label>
+      </div>
+      <div className="input-container">
+        <input
+          id="contact-email"
+          name="email"
+          placeholder="john@beatles.music"
+          required
+          type="email"
+        />
+        <label htmlFor="contact-email">Email</label>
+      </div>
+    </div>
+    <div className="input-container mb-6">
+      <textarea
+        className="w-full"
+        id="contact-message"
+        name="message"
+        placeholder="Help! I need somebody&#13;Help! Not just anybody&#13;Help! You know I need someone&#13;Help!"
+        required
+      />
+      <label htmlFor="contact-message">Message</label>
+    </div>
+    <div className="mx-auto px-3 w-1/4 md:mx-0">
+      <button className="w-full" type="submit">
+        Send
+      </button>
+    </div>
+  </form>
 );
 
 export default FormContact;

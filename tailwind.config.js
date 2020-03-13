@@ -62,7 +62,7 @@ const tWconfig = {
         curl: curlSizeHeight,
       },
       maxWidth: {
-        reading: '80ch',
+        reading: '100ch',
       },
     },
   },

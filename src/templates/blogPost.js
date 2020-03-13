@@ -27,11 +27,11 @@ const BlogPost = ({
     <Layout>
       <SEO title={title} />
       <article
-        aria-label="Test"
+        // aria-label="Test"
         className="max-w-reading m-auto floating max-w-64 px-6"
       >
         <header className="border-b flex flex-col items-center text-center py-3 ">
-          <h1 className="text-4xl font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold z-0">{title}</h1>
 
           <div className="flex m-4">
             {avatar.foundAvatar && avatar.rating === 'g' && (
@@ -45,18 +45,13 @@ const BlogPost = ({
               />
             )}
             <div className="flex flex-col justify-center">
-              <p className="text-left text-gray-600 row-auto">
-                <Edit3
-                  aria-label="Author"
-                  className="inline-svg text-gray-700 mr-2"
-                />
-                {author.name}
-              </p>
+              <div className="text-left text-gray-600 row-auto">
+                <Edit3 aria-hidden className="inline-svg text-gray-700 mr-2" />
+
+                <span aria-label="author">{author.name}</span>
+              </div>
               <p className="text-gray-600 row-auto">
-                <Clock
-                  aria-label="Publish Date"
-                  className="inline-svg text-gray-700 mr-2"
-                />
+                <Clock aria-hidden className="inline-svg text-gray-700 mr-2" />
                 {readingText} · {formatDateString(dateGmt)}
               </p>
             </div>

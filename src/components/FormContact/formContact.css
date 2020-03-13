@@ -36,7 +36,7 @@
       @apply border-green-600;
     }
 
-    &[required] + label:after {
+    &[required] + label::after {
       content: '*';
       @apply absolute text-red-500 p-1 -mt-2;
     }

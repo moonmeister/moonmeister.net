@@ -21,3 +21,7 @@
     transform: none !important;
   }
 }
+
+::selection {
+  @apply bg-blue-300;
+}

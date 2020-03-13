@@ -64,6 +64,7 @@
   p {
     @apply mt-6 text-lg leading-relaxed;
   }
+
   .has-text-align-center {
     @apply text-center;
   }
@@ -148,7 +149,7 @@
         @apply text-2xl;
       }
 
-      p:before {
+      p::before {
         content: '❝';
         @apply text-teal-600 absolute leading-none;
         font-size: 6rem;

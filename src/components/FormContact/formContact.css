@@ -24,7 +24,7 @@
     }
 
     &:focus {
-      @apply outline-none bg-gray-100 border-blue-500;
+      @apply outline-none bg-gray-100 border-blue-500 shadow-lg;
     }
   }
 
@@ -47,6 +47,8 @@
   }
 
   button {
+    min-width: min-content;
+    width: 25%;
     &:hover,
     &:focus {
       @apply shadow-xl;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { graphql, Link, navigate } from 'gatsby';
 
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
@@ -50,11 +50,11 @@ const BlogPage = ({
                     aria-label="Blog Title"
                     className="font-bold text-primary-900 text-2xl md:text-4xl"
                   >
-                    {title}
+                    {`${title} page 1`}
                   </h1>
                   <div className="text-sm text-gray-600">
                     <span rel="author">{author.name} on </span>
-                    <time dateTime={dateGmt} pubdate>
+                    <time dateTime={dateGmt}>
                       {formatDateString(dateGmt, locale)}
                     </time>
                   </div>

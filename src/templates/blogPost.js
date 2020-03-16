@@ -1,13 +1,22 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { graphql } from 'gatsby';
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 import Blocks from 'components/Blocks';
 import { formatDateString } from 'lib/utils';
 import { Edit3, Clock } from 'react-feather';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
+
+import highlightShare from 'highlight-share';
+import * as twitterSharer from 'highlight-share/dist/sharers/twitter';
+import * as emailSharer from 'highlight-share/dist/sharers/email';
+import * as copySharer from 'highlight-share/dist/sharers/copy';
+// import * as linkedInSharer from 'highlight-share/dist/sharers/linked-in';
+
+import 'highlight-share/dist/highlight-share.css';
 
 const BlogPost = ({
   data: {
@@ -23,6 +32,17 @@ const BlogPost = ({
   },
 }) => {
   const { avatar } = author;
+
+  useEffect(() => {
+    const selectionShare = highlightShare({
+      selector: '#blog-content',
+      sharers: [twitterSharer, emailSharer, copySharer],
+    });
+
+    selectionShare.init();
+
+    return selectionShare.destroy;
+  });
   return (
     <Layout>
       <SEO title={title} />
@@ -57,14 +77,16 @@ const BlogPost = ({
             </div>
           </div>
         </header>
-        {blocks.length > 0 ? (
-          <Blocks blocks={blocks} className="p-6" />
-        ) : (
-          <div
-            className="wp-blocks clearfix"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        )}
+        <div id="blog-content">
+          {blocks.length > 0 ? (
+            <Blocks blocks={blocks} className="p-6" />
+          ) : (
+            <div
+              className="wp-blocks clearfix"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          )}
+        </div>
         <footer className="border-t py-6 text-gray-600">
           <Tags data={allTags} />
         </footer>
@@ -85,7 +107,7 @@ BlogPost.propTypes = {
       tags: PropTypes.shape({
         name: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
-      }).isRequired,
+      }),
     }).isRequired,
   }).isRequired,
 };

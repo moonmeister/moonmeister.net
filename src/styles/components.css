@@ -28,10 +28,6 @@ h3 {
   width: 1em;
 }
 
-.social {
-  @apply text-5xl justify-center flex;
-}
-
 input,
 textarea,
 button {
@@ -40,4 +36,8 @@ button {
 
 .floating {
   @apply bg-gray-100 rounded-lg shadow-md mx-2;
+
+  @supports (display: grid) {
+    @apply mx-0;
+  }
 }

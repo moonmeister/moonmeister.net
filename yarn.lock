@@ -7625,6 +7625,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight-share@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/highlight-share/-/highlight-share-0.2.0.tgz#53b56dd072593f378b0ab0c8658304d7754305c6"
+  integrity sha512-EQz0GB4xr1ZOix9VAFs9xgBmSwk6RHoAU17ImzImryzhOD0jW77YURQx35R3MX4Sxn2jjurGrYpySVs5GgOcEg==
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"

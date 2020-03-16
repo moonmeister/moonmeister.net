@@ -10,7 +10,7 @@ const FormContact = () => (
     name="contact"
     netlify-honeypot="bot-field"
   >
-    <div className="flex flex-wrap mb-6">
+    <div className="flex flex-col flex-wrap mb-6 sm:flex-row">
       <input name="form-name" type="hidden" value="contact" />
       <div className="hidden">
         <label className="input-label" htmlFor="bot-field">
@@ -50,8 +50,8 @@ const FormContact = () => (
       />
       <label htmlFor="contact-message">Message</label>
     </div>
-    <div className="mx-auto px-3 w-1/4 md:mx-0">
-      <button className="w-full" type="submit">
+    <div className="flex justify-center px-3 md:mx-0">
+      <button className="" type="submit">
         Send
       </button>
     </div>

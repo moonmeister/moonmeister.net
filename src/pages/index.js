@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import SEO from 'components/seo';
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 
 import Blocks from 'components/Blocks';
 

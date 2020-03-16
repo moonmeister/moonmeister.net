@@ -1,0 +1,14 @@
+.social {
+  a {
+    outline-color: theme('colors.gray.100');
+  }
+
+  @screen canhover {
+    li:hover,
+    li:focus {
+      a {
+        @apply shadow-lg transform transition-transform -translate-y-1 duration-100 ease-in;
+      }
+    }
+  }
+}

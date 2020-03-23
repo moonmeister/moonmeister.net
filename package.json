@@ -23,7 +23,7 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-source-wordpress-experimental": "^0.0.13",
+    "gatsby-source-wordpress-experimental": "^0.0.15",
     "gatsby-transformer-sharp": "^2.3.14",
     "highlight-share": "^0.2.0",
     "hooks": "link:./src/hooks",
@@ -72,6 +72,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "dev": "gatsby develop",
     "format": "eslint . --fix",

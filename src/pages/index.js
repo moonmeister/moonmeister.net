@@ -44,7 +44,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   {
-    wpPage(databaseId: { eq: 5 }) {
+    wpPage(isFrontPage: { eq: true }) {
       title
       blocks {
         ...BlocksFragment

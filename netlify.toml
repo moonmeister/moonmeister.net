@@ -3,6 +3,8 @@
 command = "gatsby build"
 publish = "./public"
 
+[build.environment]
+YARN_VERSION = "1.22.4"
 ## Uncomment to use this redirect for Single Page Applications.
 ## Not needed for static site generators.
 #[[redirects]]

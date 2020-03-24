@@ -10,6 +10,7 @@ import SEO from 'components/seo';
 
 import Pagination from 'rc-pagination';
 import Locale from 'rc-pagination/es/locale/en_US';
+
 import { LocaleContext } from 'hooks/useLocale';
 import { formatDateString, getUrlQuery } from 'lib/utils';
 import 'rc-pagination/assets/index.css';
@@ -50,7 +51,7 @@ const BlogPage = ({
                     aria-label="Blog Title"
                     className="font-bold text-primary-900 text-2xl md:text-4xl"
                   >
-                    {`${title} page 1`}
+                    {`${title}`}
                   </h1>
                   <div className="text-sm text-gray-600">
                     <span rel="author">{author.name} on </span>
@@ -76,16 +77,13 @@ const BlogPage = ({
       <Pagination
         ariaControls="blog-list"
         className="flex items-center justify-center my-6 text-xl"
-        // current={currentPage}
         defaultCurrent={currentPage}
         defaultPageSize={postsPerPage}
         locale={Locale}
         onChange={current => {
-          // setCurrentPage(current);
-          // scrollTo(0, 0);
           navigate(`/blog/?page=${current}`);
         }}
-        showQuickJumper
+        showQuickJumper={totalCount / postsPerPage > 3}
         total={totalCount}
       />
     </Layout>

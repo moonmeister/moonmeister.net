@@ -29,7 +29,7 @@ const Nav = () => {
           <li key={menuItemId} className="group list-none m-1">
             <Link
               activeClassName="active-links text-pink-600 relative content-box"
-              className="inline-block mx-2 p-1 text-2xl text-blue-600 uppercase transform text-shadow-sm group-hover:text-pink-600 canhover:group-hover:-translate-y-1 group-hover:transition-transform group-hover:duration-100 group-hover:ease-in"
+              className="inline-block mx-2 p-1 text-2xl text-blue-600 uppercase text-shadow-sm group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:ease-in"
               title={title}
               to={url}
             >

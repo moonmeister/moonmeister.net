@@ -13,4 +13,10 @@ nav {
       @apply top-0;
     } */
   }
+
+  @screen canhover {
+    a {
+      @apply transform transition-transform duration-100 ease-out;
+    }
+  }
 }

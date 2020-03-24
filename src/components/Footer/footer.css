@@ -4,10 +4,14 @@
   }
 
   @screen canhover {
+    li a {
+      @apply transform transition-transform duration-100 ease-out;
+    }
+
     li:hover,
     li:focus {
       a {
-        @apply shadow-lg transform transition-transform -translate-y-1 duration-100 ease-in;
+        @apply shadow-lg -translate-y-1 ease-in;
       }
     }
   }

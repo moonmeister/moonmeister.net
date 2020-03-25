@@ -80,7 +80,7 @@ const BlogPage = ({
         defaultCurrent={currentPage}
         defaultPageSize={postsPerPage}
         locale={Locale}
-        onChange={current => {
+        onChange={(current) => {
           navigate(`/blog/?page=${current}`);
         }}
         showQuickJumper={totalCount / postsPerPage > 3}

@@ -64,7 +64,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "graphql": "^14.6.0",
     "netlify-cli": "^2.35.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "typescript": "^3.8.2",
     "webpack": "^4.41.6"
   },

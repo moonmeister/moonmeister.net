@@ -6,7 +6,7 @@ const curlSizeHeight = '4vw';
 
 const tWconfig = {
   theme: {
-    textShadow: theme => ({
+    textShadow: (theme) => ({
       default: `2px 2px 4px ${theme('colors.gray.900')}`,
       lg: '0 2px 10px rgba(0, 0, 0, 0.5)',
       sm: '0 1px 3px rgba(0, 0, 0, 0.1)',
@@ -80,7 +80,7 @@ const { screens } = tWconfig.theme;
 
 tWconfig.mq = {};
 
-Object.keys(tWconfig.theme.screens).forEach(key => {
+Object.keys(tWconfig.theme.screens).forEach((key) => {
   tWconfig.mq[key] = `@media (min-width: ${screens[key]})`;
 });
 module.exports = tWconfig;

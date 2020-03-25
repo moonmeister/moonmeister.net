@@ -23,7 +23,7 @@ module.exports = {
         extensions: ['.js', 'jsx'],
       },
     ],
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'warn',
     'react/jsx-sort-props': 'warn',
   },
   parserOptions: {

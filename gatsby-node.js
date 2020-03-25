@@ -8,6 +8,6 @@
 
 const createBlog = require('./gatsby/createBlog');
 
-exports.createPages = async nodeApi => {
+exports.createPages = async (nodeApi) => {
   await Promise.all([createBlog(nodeApi)]);
 };

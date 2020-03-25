@@ -51,6 +51,7 @@ module.exports = {
         },
       },
     },
+
     /* Data transformer Plugins */
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -70,7 +71,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
 
     /* Custom Plugins */
-
     {
       resolve: `gatsby-plugin-readingtime`,
       options: {
@@ -78,7 +78,7 @@ module.exports = {
           WpPost: source => {
             const { blocks } = source;
             return blocks.map(block => block.saveContent).join('');
-          }, // Key: GraphQl Type to add reading times to, Value: RElolver function that returns content to be processed.
+          },
         },
       },
     },

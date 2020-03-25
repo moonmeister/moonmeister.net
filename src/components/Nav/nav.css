@@ -8,10 +8,6 @@ nav {
     &::after {
       @apply bottom-0;
     }
-
-    /* &::before {
-      @apply top-0;
-    } */
   }
 
   @screen canhover {

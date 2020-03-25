@@ -58,10 +58,4 @@
       @apply shadow-sm;
     }
   }
-
-  /* @variants focus {
-    input,
-    textarea {
-    }
-  } */
 }

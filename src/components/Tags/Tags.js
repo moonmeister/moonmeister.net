@@ -9,12 +9,9 @@ const Tags = ({ data: tags }) => {
       <div className="inline-flex items-center box-border">
         {tags.length > 0 ? (
           tags.map(tag => (
-            <WpTag
-              key={tag.id}
-              aria-label="Post Tags"
-              className="m-0"
-              data={tag}
-            />
+            <span className="ml-2">
+              <WpTag key={tag.id} aria-label="Post Tags" data={tag} />
+            </span>
           ))
         ) : (
           <WpTag data={{ name: 'none' }} />

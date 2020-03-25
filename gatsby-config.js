@@ -57,6 +57,7 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
@@ -118,7 +119,7 @@ module.exports = {
         background_color: `#f0f0f0`,
         theme_color: `#665577`,
         display: `minimal-ui`,
-        icon: `src/images/terminal-solid.svg`,
+        icon: `src/images/terminal.svg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

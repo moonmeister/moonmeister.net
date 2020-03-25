@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
 // import PageCurl from 'components/pageCurl';
 import Nav from 'components/Nav';
@@ -19,7 +20,15 @@ const Layout = ({ children }) => (
       <header>
         <Nav />
       </header>
-      <main className="">{children}</main>
+      <main
+        className="max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg"
+        css={css`
+          margin: 5% auto;
+          margin: 5vmin auto;
+        `}
+      >
+        {children}
+      </main>
       <footer className="flex items-center flex-col md:flex-row md:justify-evenly bg-primary-600 text-gray-100 shadow-footer px-2 py-8 md:px-8">
         <Footer />
       </footer>

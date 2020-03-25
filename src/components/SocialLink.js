@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import ExtLink from 'components/extLink';
 import { graphql } from 'gatsby';
+import { css } from '@emotion/core';
 import classnames from 'classnames';
 
 const SocialLink = ({
@@ -16,8 +17,11 @@ const SocialLink = ({
   return (
     <ExtLink
       className={classnames('m-2 p-2 rounded', className)}
+      css={css`
+        color: ${textColor};
+        background-color: ${primaryColor};
+      `}
       href={finalUrl}
-      style={{ color: textColor, backgroundColor: primaryColor }}
     >
       {title}
     </ExtLink>

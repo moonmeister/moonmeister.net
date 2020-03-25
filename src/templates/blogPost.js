@@ -87,7 +87,7 @@ const BlogPost = ({
             />
           )}
         </div>
-        <footer className="border-t py-6 text-gray-600">
+        <footer className="border-t py-6 text-sm text-gray-600">
           <Tags data={allTags} />
         </footer>
       </article>

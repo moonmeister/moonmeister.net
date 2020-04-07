@@ -24,6 +24,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
+    "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-source-wordpress-experimental": "^0.0.15",
     "gatsby-transformer-sharp": "^2.3.14",

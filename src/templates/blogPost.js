@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { graphql } from 'gatsby';
@@ -9,14 +8,6 @@ import { formatDateString } from 'lib/utils';
 import { Edit3, Clock } from 'react-feather';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
-
-import highlightShare from 'highlight-share';
-import * as twitterSharer from 'highlight-share/dist/sharers/twitter';
-import * as emailSharer from 'highlight-share/dist/sharers/email';
-import * as copySharer from 'highlight-share/dist/sharers/copy';
-// import * as linkedInSharer from 'highlight-share/dist/sharers/linked-in';
-
-import 'highlight-share/dist/highlight-share.css';
 
 const BlogPost = ({
   data: {
@@ -33,16 +24,6 @@ const BlogPost = ({
 }) => {
   const { avatar } = author;
 
-  useEffect(() => {
-    const selectionShare = highlightShare({
-      selector: '#blog-content',
-      sharers: [twitterSharer, emailSharer, copySharer],
-    });
-
-    selectionShare.init();
-
-    return selectionShare.destroy;
-  });
   return (
     <Layout>
       <SEO title={title} />

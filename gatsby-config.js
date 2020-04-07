@@ -125,6 +125,11 @@ module.exports = {
     // Build tools
     // 'gatsby-plugin-webpack-size',
 
-    'gatsby-plugin-bundle-stats',
+    {
+      resolve: 'gatsby-plugin-bundle-stats',
+      options: {
+        baseline: true,
+      },
+    },
   ],
 };

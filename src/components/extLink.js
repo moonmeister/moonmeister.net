@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
 const ExtLink = ({ children, ...attrb }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
-  <a target="_blank" rel="noopener noreferrer" {...attrb}>
+  <a rel="noopener noreferrer" target="_blank" {...attrb}>
     {children}
   </a>
 );

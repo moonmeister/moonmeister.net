@@ -1,59 +1,41 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import tw from 'tailwind.macro';
 
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import SEO from 'components/seo';
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 
-const Intro = styled.section`
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+import Blocks from 'components/Blocks';
 
-  ${tw`md:flex-row-reverse`}
-`;
-
-const Headshot = styled.figure`
-  width: 80%;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 2px 10px 10px 0px hsl(0, 0%, 50%);
-
-  ${tw`md:w-4/12`}
-`;
-
-const Content = styled.section`
-  ${tw`md:w-7/12`}
-`;
-
-const IndexPage = ({ data }) => (
+const IndexPage = ({
+  data: {
+    wpPage: { title, blocks, featuredImage },
+  },
+}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Intro>
-      <Headshot>
+    <SEO keywords={[`gatsby`, `application`, `react`]} title={title} />
+    <section className="floating p-1 pt-8 md:p-8 flex flex-col md:flex-row-reverse items-center justify-between">
+      <figure className="sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
         <Img
-          fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}
+          alt={featuredImage.altText}
+          fluid={featuredImage.remoteFile.childImageSharp.fluid}
         />
-      </Headshot>
-      <Content
-        /* eslint-disable-next-line react/no-danger */
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
-    </Intro>
+      </figure>
+      <div className="md:w-7/12 m-6">
+        <Blocks blocks={blocks} />
+      </div>
+    </section>
   </Layout>
 );
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-      html: PropTypes.string,
+    wpPage: PropTypes.shape({
+      title: PropTypes.string,
+      blocks: PropTypes.array.isRequired,
+      featuredImage: PropTypes.object.isRequired,
     }),
   }).isRequired,
 };
@@ -61,10 +43,15 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        image {
+  {
+    wpPage(isFrontPage: { eq: true }) {
+      title
+      blocks {
+        ...BlocksFragment
+      }
+      featuredImage {
+        altText
+        remoteFile {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
@@ -72,7 +59,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      html
     }
   }
 `;

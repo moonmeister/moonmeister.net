@@ -1,0 +1,27 @@
+@tailwind base;
+
+.display-inherit {
+  display: inherit;
+}
+
+.justify-inherit {
+  justify-content: inherit;
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  /* Remove duration for all unknown animation when a user requests a reduced animation experience */
+  *:not(.safe-animation),
+  *:not(.safe-animation)::before,
+  *:not(.safe-animation)::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+::selection {
+  @apply bg-blue-300;
+}

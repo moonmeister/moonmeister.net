@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -32,8 +32,6 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -77,6 +75,8 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
     />
   );
 }

@@ -130,7 +130,7 @@ module.exports = {
       options: {
         analyzerMode: 'static',
         production: true,
-        development: false,
+        openAnalyzer: false,
       },
     },
   ],

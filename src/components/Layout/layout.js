@@ -1,11 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from 'linaria';
 
 // import PageCurl from 'components/pageCurl';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
-
+import classnames from 'classnames';
 import { LocaleProvider } from 'hooks/useLocale';
 
 import 'styles/base.css';
@@ -21,11 +21,13 @@ const Layout = ({ children }) => (
         <Nav />
       </header>
       <main
-        className="max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg"
-        css={css`
-          margin: 5% auto;
-          margin: 5vmin auto;
-        `}
+        className={classnames(
+          'max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg',
+          css`
+            margin: 5% auto;
+            margin: 5vmin auto;
+          `
+        )}
       >
         {children}
       </main>

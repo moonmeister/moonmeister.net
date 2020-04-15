@@ -44,9 +44,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
+                50
                 : // and we don't actually need more than 1000 in production
-                  1000,
+                1000,
           },
         },
       },
@@ -58,7 +58,7 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
@@ -130,6 +130,7 @@ module.exports = {
       options: {
         analyzerMode: 'static',
         production: true,
+        development: false,
       },
     },
   ],

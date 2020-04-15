@@ -125,6 +125,8 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     'gatsby-plugin-offline',
+
+    // Bundle stats reporting plugins
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
@@ -133,5 +135,6 @@ module.exports = {
         openAnalyzer: false,
       },
     },
+    'gatsby-plugin-webpack-size',
   ],
 };

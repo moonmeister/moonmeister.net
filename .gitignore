@@ -72,3 +72,7 @@ yarn-error.log
 .netlify
 
 wordpress
+
+report.html
+
+.linaria-cache

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from 'linaria';
+import classnames from 'classnames';
 
 import { graphql } from 'gatsby';
 
@@ -14,24 +15,27 @@ const Tag = ({ data: { name }, ...props }) => {
         {name}
       </p>
       <div
-        className="inset-0 absolute"
-        css={css`
-          content: '';
-          z-index: -1;
-          margin: -1px;
-          border-radius: inherit; /* !importanté */
-          filter: brightness(0.9);
+        className={classnames(
+          'inset-0 absolute',
+          css`
+            content: '';
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit; /* !importanté */
+            filter: brightness(0.9);
 
-          background: linear-gradient(
-            ${getRandomInt(360, 20)}deg,
-            orange,
-            yellow,
-            green,
-            cyan,
-            indigo,
-            violet
-          );
-        `}
+            background: linear-gradient(
+              var(--gradient-orientation),
+              orange,
+              yellow,
+              green,
+              cyan,
+              indigo,
+              violet
+            );
+          `
+        )}
+        style={{ '--gradient-orientation': `${getRandomInt(360, 20)}deg` }}
       />
     </div>
   );

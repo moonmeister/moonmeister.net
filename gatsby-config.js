@@ -58,7 +58,7 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {

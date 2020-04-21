@@ -45,7 +45,7 @@ const FormContact = () => (
         className="w-full"
         id="contact-message"
         name="message"
-        placeholder="Help! I need somebody&#13;Help! Not just anybody&#13;Help! You know I need someone&#13;Help!"
+        placeholder="Help! I need somebody&#10;Help! Not just anybody&#10;Help! You know I need someone&#10;Help!"
         required
       />
       <label htmlFor="contact-message">Message</label>

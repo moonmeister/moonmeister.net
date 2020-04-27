@@ -120,7 +120,7 @@ BlogPage.propTypes = {
 
 export const query = graphql`
   query blogQuery {
-    allWpPost {
+    allWpPost(sort: { fields: dateGmt, order: DESC }) {
       totalCount
       nodes {
         id

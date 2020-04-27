@@ -4360,6 +4360,7 @@ component-inherit@0.0.3:
 
 "components@link:./src/components":
   version "0.0.0"
+  uid ""
 
 compress-commons@^2.1.1:
   version "2.1.1"
@@ -4499,6 +4500,7 @@ constants-browserify@^1.0.0:
 
 "constants@link:./src/constants":
   version "0.0.0"
+  uid ""
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -4747,6 +4749,13 @@ create-react-context@0.3.0:
     gud "^1.0.0"
     warning "^4.0.3"
 
+cross-env@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.2.tgz#bd5ed31339a93a3418ac4f3ca9ca3403082ae5f9"
+  integrity sha512-KZP/bMEOJEDCkDQAyRhu3RL2ZO/SUVrxQVI0G3YEQ+OLbRA3c6zgixe8Mq8a/z7+HKlNEjo8oiLUs8iRijY2Rw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
 cross-fetch@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.2.tgz#a47ff4f7fc712daba8f6a695a11c948440d45723"
@@ -4775,7 +4784,7 @@ cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.0:
+cross-spawn@^7.0.0, cross-spawn@^7.0.1:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.2.tgz#d0d7dcfa74e89115c7619f4f721a94e1fdb716d6"
   integrity sha512-PD6G8QG3S4FK/XCGFbEQrDqO2AnMMsy0meR7lerlIOHAAbkuavGU/pOqprrlvfTNjvowivTeBsjebAL0NSoMxw==
@@ -8470,6 +8479,7 @@ homedir-polyfill@^1.0.1:
 
 "hooks@link:./src/hooks":
   version "0.0.0"
+  uid ""
 
 hoopy@^0.1.4:
   version "0.1.4"
@@ -8779,6 +8789,7 @@ imagemin@^6.1.0:
 
 "images@link:./src/images":
   version "0.0.0"
+  uid ""
 
 immer@1.10.0:
   version "1.10.0"
@@ -10092,6 +10103,7 @@ levn@^0.3.0, levn@~0.3.0:
 
 "lib@link:./src/lib":
   version "0.0.0"
+  uid ""
 
 linaria@^1.3.3:
   version "1.3.3"
@@ -12114,6 +12126,7 @@ package-json@^6.3.0:
 
 "pages@link:./src/pages":
   version "0.0.0"
+  uid ""
 
 pako@^1.0.5, pako@~1.0.5:
   version "1.0.11"
@@ -15239,6 +15252,7 @@ stylehacks@^4.0.0:
 
 "styles@link:./src/styles":
   version "0.0.0"
+  uid ""
 
 stylis@^3.5.4:
   version "3.5.4"

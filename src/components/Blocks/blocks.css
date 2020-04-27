@@ -374,4 +374,15 @@
       flex: 1 0 10%;
     }
   }
+
+  /* Abreviations  ------------------------- */
+
+  @media (hover: none) {
+    abbr {
+      text-decoration: none;
+    }
+    abbr::after {
+      content: '(' attr(title) ')';
+    }
+  }
 }

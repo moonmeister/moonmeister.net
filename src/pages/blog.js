@@ -139,7 +139,7 @@ export const query = graphql`
       }
     }
 
-    wpPage(uri: { eq: "blog/" }) {
+    wpPage(uri: { eq: "/blog/" }) {
       title
     }
 

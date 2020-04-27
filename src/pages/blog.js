@@ -120,7 +120,7 @@ BlogPage.propTypes = {
 
 export const query = graphql`
   query blogQuery {
-    allWpPost {
+    allWpPost(sort: { fields: dateGmt, order: DESC }) {
       totalCount
       nodes {
         id
@@ -139,7 +139,7 @@ export const query = graphql`
       }
     }
 
-    wpPage(uri: { eq: "blog/" }) {
+    wpPage(uri: { eq: "/blog/" }) {
       title
     }
 

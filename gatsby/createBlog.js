@@ -36,7 +36,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     reporter.verbose(`create post: ${uri}`);
 
     createPage({
-      path: `/${uri}`,
+      path: `${uri}`,
       component: blogPostTemplate,
       context: {
         ...post,

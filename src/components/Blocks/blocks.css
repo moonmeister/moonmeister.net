@@ -62,7 +62,7 @@
   /* Block: Paragraph  ------------------------- */
 
   p {
-    @apply mt-6 text-lg leading-relaxed;
+    @apply mt-6 text-lg leading-loose;
   }
 
   .has-text-align-center {
@@ -129,10 +129,10 @@
   /* Block: Quote  ------------------------- */
 
   blockquote {
-    @apply my-8 px-8 border-l-2 border-orange-600;
+    @apply my-8 px-8 border-l-2 border-orange-600 flex flex-col justify-center;
 
     p {
-      @apply italic;
+      @apply italic m-auto;
     }
     cite {
       @apply text-sm text-gray-700 block;
@@ -374,4 +374,23 @@
       flex: 1 0 10%;
     }
   }
+
+  /* Abreviations  ------------------------- */
+
+  @media (hover: none) {
+    abbr {
+      text-decoration: none;
+    }
+    abbr::after {
+      content: '(' attr(title) ')';
+    }
+  }
+}
+
+/* Emoji  ------------------------- */
+
+.eedee-emoji {
+  display: inline;
+  height: 1em;
+  width: 1em;
 }

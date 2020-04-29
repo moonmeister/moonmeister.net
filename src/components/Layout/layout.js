@@ -7,6 +7,7 @@ import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import classnames from 'classnames';
 import { LocaleProvider } from 'hooks/useLocale';
+import RssLink from 'components/Rss';
 
 import 'styles/base.css';
 import 'styles/components.css';
@@ -15,6 +16,7 @@ import './layout.css';
 
 const Layout = ({ children }) => (
   <LocaleProvider>
+    <RssLink />
     <div className="h-screen" id="page-layout">
       {/* <PageCurl /> */}
       <header>

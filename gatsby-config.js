@@ -149,7 +149,6 @@ module.exports = {
                     date: dateGmt,
                     categories: tags.nodes,
                     url: `${site.siteMetadata.siteUrl}${uri}`,
-                    custom_elements: [{ 'content:encoded': content }],
                   };
                 }
               );

@@ -141,13 +141,13 @@ module.exports = {
               },
             }) => {
               return allPosts.map(
-                ({ title, excerpt, uri, dateGmt, content, author, tags }) => {
+                ({ title, excerpt, uri, dateGmt, author, tags }) => {
                   return {
                     title,
                     description: excerpt,
                     author: author.name,
                     date: dateGmt,
-                    categories: tags.nodes,
+                    categories: tags.nodes.map((node) => node.name),
                     url: `${site.siteMetadata.siteUrl}${uri}`,
                   };
                 }
@@ -164,7 +164,6 @@ module.exports = {
                     dateGmt
                     uri
                     excerpt
-                    content
                     tags {
                       nodes{
                         name

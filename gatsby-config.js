@@ -1,9 +1,19 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://moonmeister.net',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+
+const siteUrl =
+  NETLIFY_ENV === 'production' ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Alex Moon`,
     description: `Personal Website`,
     author: `@moon_meister`,
-    siteUrl: 'https://moonmeister.net',
+    siteUrl,
   },
   plugins: [
     /* Source Plugins */
@@ -107,6 +117,69 @@ module.exports = {
         policy: [
           { userAgent: '*', disallow: '/report.html' },
           { userAgent: '*', allow: '/' },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({
+              query: {
+                site,
+                allWpPost: { nodes: allPosts },
+              },
+            }) => {
+              return allPosts.map(
+                ({ title, excerpt, uri, dateGmt, author, tags }) => {
+                  return {
+                    title,
+                    description: excerpt,
+                    author: author.name,
+                    date: dateGmt,
+                    categories: tags.nodes.map((node) => node.name),
+                    url: `${site.siteMetadata.siteUrl}${uri}`,
+                  };
+                }
+              );
+            },
+            query: `
+              {
+                allWpPost(
+                  filter: {uri: {glob: "/blog/*"}}
+                  sort: {fields: [dateGmt], order: DESC}
+                ) {
+                  nodes {
+                    title
+                    dateGmt
+                    uri
+                    excerpt
+                    tags {
+                      nodes{
+                        name
+                      }
+                    }
+                    author{
+                      name
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "Alex Moon's blog RSS Feed",
+            match: '^/blog/',
+          },
         ],
       },
     },

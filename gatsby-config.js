@@ -5,8 +5,8 @@ const {
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
 
-const siteUrl =
-  NETLIFY_ENV === 'production' ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const isProduction = NETLIFY_ENV === 'production';
+const siteUrl = isProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 module.exports = {
   siteMetadata: {
@@ -93,7 +93,7 @@ module.exports = {
       },
     },
 
-    /* Integrate with hosting provider */
+    /* Integrate with 3rd parties */
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -106,6 +106,13 @@ module.exports = {
           ],
         },
         mergeSecurityHeaders: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-goatcounter`,
+      options: {
+        code: isProduction ? 'mm-prod' : 'mm-dev',
+        allowLocal: !isProduction,
       },
     },
 

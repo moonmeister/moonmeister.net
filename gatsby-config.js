@@ -156,11 +156,11 @@ module.exports = {
               {
                 allWpPost(
                   filter: {uri: {glob: "/blog/*"}}
-                  sort: {fields: [date], order: DESC}
+                  sort: {fields: [dateGmt], order: DESC}
                 ) {
                   nodes {
                     title
-                    dateGmt: date
+                    dateGmt
                     uri
                     excerpt
                     tags {

@@ -45,7 +45,7 @@ const BlogPage = ({
               key={id}
               className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
             >
-              <Link to={`/${uri}`}>
+              <Link to={`${uri}`}>
                 <header className="mb-6">
                   <h1
                     aria-label="Blog Title"
@@ -120,14 +120,14 @@ BlogPage.propTypes = {
 
 export const query = graphql`
   query blogQuery {
-    allWpPost(sort: { fields: dateGmt, order: DESC }) {
+    allWpPost(sort: { fields: date, order: DESC }) {
       totalCount
       nodes {
         id
         title
         excerpt
         uri
-        dateGmt
+        dateGmt: date
         author {
           name
         }

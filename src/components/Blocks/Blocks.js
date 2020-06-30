@@ -3,7 +3,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import parse from 'html-react-parser';
 import classNames from 'classnames';
 
 import './blocks.css';
@@ -11,9 +10,11 @@ import './blocks.css';
 const Blocks = ({ blocks, className }) => (
   <div className={classNames('wp-blocks clearfix', className)}>
     {blocks.length > 0 &&
-      blocks.map(({ saveContent }, i) => (
-        <React.Fragment key={i}>{parse(saveContent)}</React.Fragment>
-      ))}
+      blocks.map(({ saveContent }, i) => {
+        return (
+          <div key={i} dangerouslySetInnerHTML={{ __html: saveContent }} />
+        );
+      })}
   </div>
 );
 

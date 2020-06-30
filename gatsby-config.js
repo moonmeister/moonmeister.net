@@ -31,7 +31,7 @@ module.exports = {
         verbose: true,
         // for wp-graphql-gutenberg, attributes currently breaks due
         // to the origin schema. It works if we exclude attributes
-        excludeFields: [`attributes`],
+        excludeFieldNames: [`attributes`],
         schema: {
           queryDepth: 5,
           typePrefix: `Wp`,
@@ -54,9 +54,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                50
+                  50
                 : // and we don't actually need more than 1000 in production
-                1000,
+                  1000,
           },
         },
       },
@@ -69,14 +69,6 @@ module.exports = {
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
     `gatsby-plugin-linaria`,
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        tailwind: true, // Enable tailwindcss support
-        purgeOnly: ['src/styles/utilities.css'], // Purge only these files/folders
-      },
-    },
     `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
 
@@ -164,11 +156,11 @@ module.exports = {
               {
                 allWpPost(
                   filter: {uri: {glob: "/blog/*"}}
-                  sort: {fields: [dateGmt], order: DESC}
+                  sort: {fields: [date], order: DESC}
                 ) {
                   nodes {
                     title
-                    dateGmt
+                    dateGmt: date
                     uri
                     excerpt
                     tags {

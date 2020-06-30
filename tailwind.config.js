@@ -5,6 +5,9 @@ const curlSizeWidth = '6vw';
 const curlSizeHeight = '4vw';
 
 const tWconfig = {
+  purge: [
+    './src/**/*.js',
+  ],
   theme: {
     textShadow: (theme) => ({
       default: `2px 2px 4px ${theme('colors.gray.900')}`,

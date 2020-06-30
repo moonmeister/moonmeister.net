@@ -114,7 +114,7 @@ export const query = graphql`
       blocks {
         saveContent
       }
-      dateGmt: date
+      dateGmt
       tags {
         nodes {
           ...WpTag

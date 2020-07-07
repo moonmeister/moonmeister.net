@@ -16,7 +16,7 @@ const BlogPost = ({
       blocks,
       content,
       dateGmt,
-      author,
+      author: { node: author },
       readingTime: { text: readingText },
       tags: { nodes: allTags },
     },
@@ -83,7 +83,9 @@ BlogPost.propTypes = {
       blocks: PropTypes.array.isRequired,
       dateGmt: PropTypes.string.isRequired,
       author: PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        node: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+        }),
       }).isRequired,
       tags: PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -98,13 +100,15 @@ export const query = graphql`
     wpPost(databaseId: { eq: $databaseId }) {
       title
       author {
-        name
-        avatar {
-          foundAvatar
-          rating
-          height
-          width
-          url
+        node {
+          name
+          avatar {
+            foundAvatar
+            rating
+            height
+            width
+            url
+          }
         }
       }
       readingTime {

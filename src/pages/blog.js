@@ -40,7 +40,15 @@ const BlogPage = ({
       </header>
       <div aria-live="polite" id="blog-list" role="region">
         {currentPagePosts.map(
-          ({ id, title, excerpt, uri, author, dateGmt, tags }) => (
+          ({
+            id,
+            title,
+            excerpt,
+            uri,
+            author: { node: author },
+            dateGmt,
+            tags,
+          }) => (
             <article
               key={id}
               className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
@@ -104,7 +112,9 @@ BlogPage.propTypes = {
           uri: PropTypes.string.isRequired,
           dateGmt: PropTypes.string.isRequired,
           author: PropTypes.shape({
-            name: PropTypes.string.isRequired,
+            node: PropTypes.shape({
+              name: PropTypes.string.isRequired,
+            }).isRequired,
           }).isRequired,
         }).isRequired
       ).isRequired,
@@ -129,7 +139,9 @@ export const query = graphql`
         uri
         dateGmt
         author {
-          name
+          node {
+            name
+          }
         }
         tags {
           nodes {

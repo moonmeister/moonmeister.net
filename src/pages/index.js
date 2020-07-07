@@ -11,7 +11,7 @@ import Blocks from 'components/Blocks';
 
 const IndexPage = ({
   data: {
-    wpPage: { title, blocks, featuredImage },
+    wpPage: { title, blocks, featuredImage: { node: featuredImage } },
   },
 }) => (
   <Layout>
@@ -50,11 +50,13 @@ export const pageQuery = graphql`
         ...BlocksFragment
       }
       featuredImage {
-        altText
-        remoteFile {
-          childImageSharp {
-            fluid(maxWidth: 1024, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+        node {
+          altText
+          remoteFile {
+            childImageSharp {
+              fluid(maxWidth: 1024, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }

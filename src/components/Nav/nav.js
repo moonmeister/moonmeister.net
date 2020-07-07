@@ -10,7 +10,7 @@ const Nav = () => {
     },
   } = useStaticQuery(graphql`
     {
-      wpMenu(locations: {eq: MAIN_MENU}) {
+      wpMenu(locations: { eq: MAIN_MENU }) {
         menuItems {
           nodes {
             databaseId

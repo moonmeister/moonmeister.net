@@ -140,7 +140,14 @@ module.exports = {
               },
             }) => {
               return allPosts.map(
-                ({ title, excerpt, uri, dateGmt, author, tags }) => {
+                ({
+                  title,
+                  excerpt,
+                  uri,
+                  dateGmt,
+                  author: { node: author },
+                  tags,
+                }) => {
                   return {
                     title,
                     description: excerpt,
@@ -169,7 +176,9 @@ module.exports = {
                       }
                     }
                     author{
-                      name
+                      node {
+                        name
+                      }
                     }
                   }
                 }

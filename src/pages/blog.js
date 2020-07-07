@@ -40,7 +40,15 @@ const BlogPage = ({
       </header>
       <div aria-live="polite" id="blog-list" role="region">
         {currentPagePosts.map(
-          ({ id, title, excerpt, uri, author: { node: author }, dateGmt, tags }) => (
+          ({
+            id,
+            title,
+            excerpt,
+            uri,
+            author: { node: author },
+            dateGmt,
+            tags,
+          }) => (
             <article
               key={id}
               className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"

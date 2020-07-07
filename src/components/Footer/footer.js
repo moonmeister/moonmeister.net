@@ -14,7 +14,7 @@ const Footer = () => {
     },
   } = useStaticQuery(graphql`
     {
-      wpMenu(locations: {eq: SOCIAL_MENU}) {
+      wpMenu(locations: { eq: SOCIAL_MENU }) {
         menuItems {
           nodes {
             title

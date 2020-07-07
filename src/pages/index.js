@@ -11,7 +11,11 @@ import Blocks from 'components/Blocks';
 
 const IndexPage = ({
   data: {
-    wpPage: { title, blocks, featuredImage: { node: featuredImage } },
+    wpPage: {
+      title,
+      blocks,
+      featuredImage: { node: featuredImage },
+    },
   },
 }) => (
   <Layout>

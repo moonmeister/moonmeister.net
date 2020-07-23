@@ -18,18 +18,20 @@ const Footer = () => {
         menuItems {
           nodes {
             title
-            connectedObject {
+            connectedNode {
               __typename
-              ... on WpSocial {
-                id
-                title
-                socialMeta {
-                  socialLinkType
-                  primaryColor
-                  textColor
-                  url
-                  document {
-                    mediaItemUrl
+              node {
+                ... on WpSocial {
+                  id
+                  title
+                  socialMeta {
+                    socialLinkType
+                    primaryColor
+                    textColor
+                    url
+                    document {
+                      mediaItemUrl
+                    }
                   }
                 }
               }
@@ -48,7 +50,7 @@ const Footer = () => {
 
       <section className="flex flex-col items-center my-16" id="footer-right">
         <ul className="social justify-center flex flex-wrap">
-          {socials.map(({ connectedObject: social }) => (
+          {socials.map(({ connectedNode: { node: social } }) => (
             <li key={social.id} className="">
               <SocialLink
                 className="inline-block mb-2 shadow-lg"

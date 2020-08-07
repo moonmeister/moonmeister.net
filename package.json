@@ -2,7 +2,6 @@
   "name": "moonmeister-site-gatsby",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
     "autoprefixer": "^9.8.6",
@@ -37,7 +36,7 @@
     "preact": "^10.4.6",
     "preact-render-to-string": "^5.1.10",
     "prop-types": "^15.7.2",
-    "rc-pagination": "^2.4.4",
+    "rc-pagination": "^3.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",

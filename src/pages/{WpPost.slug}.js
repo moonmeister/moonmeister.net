@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { graphql } from 'gatsby';
+import { graphql, unstable_collectionGraphql } from 'gatsby';
 import Layout from 'components/Layout';
 import Blocks from 'components/Blocks';
 import { formatDateString } from 'lib/utils';
@@ -9,7 +9,7 @@ import { Edit3, Clock } from 'react-feather';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
-const BlogPost = ({
+export default function BlogPost({
   data: {
     wpPost: {
       title,
@@ -21,7 +21,7 @@ const BlogPost = ({
       tags: { nodes: allTags },
     },
   },
-}) => {
+}) {
   const { avatar } = author;
 
   return (
@@ -74,7 +74,7 @@ const BlogPost = ({
       </article>
     </Layout>
   );
-};
+}
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
@@ -87,6 +87,9 @@ BlogPost.propTypes = {
           name: PropTypes.string.isRequired,
         }),
       }).isRequired,
+      readingTime: PropTypes.shape({
+        readingText: PropTypes.string.isRequired,
+      }),
       tags: PropTypes.shape({
         name: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
@@ -96,8 +99,8 @@ BlogPost.propTypes = {
 };
 
 export const query = graphql`
-  query blogPostQuery($databaseId: Int!) {
-    wpPost(databaseId: { eq: $databaseId }) {
+  query blogPostQuery($slug: String) {
+    wpPost(slug: { eq: $slug }) {
       title
       author {
         node {
@@ -128,4 +131,13 @@ export const query = graphql`
   }
 `;
 
-export default BlogPost;
+// eslint-disable-next-line camelcase
+// export const collectionQuery = unstable_collectionGraphql`
+//   {
+//     allWpPost {
+//       nodes {
+//         ...CollectionPagesQueryFragment
+//       }
+//     }
+//   }
+// `;

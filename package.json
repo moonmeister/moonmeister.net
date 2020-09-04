@@ -78,6 +78,7 @@
     "clean": "gatsby clean",
     "develop": "yarn dev",
     "dev": "cross-env GATSBY_EXPERIMENTAL_ROUTING_APIS=1 gatsby develop",
+    "repl": "cross-env GATSBY_EXPERIMENTAL_ROUTING_APIS=1 gatsby repl",
     "format": "eslint . --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { css } from 'linaria';
 import classnames from 'classnames';
 
@@ -39,10 +38,6 @@ const Tag = ({ data: { name }, ...props }) => {
       />
     </div>
   );
-};
-
-Tag.propTypes = {
-  data: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired,
 };
 
 export const fragments = graphql`

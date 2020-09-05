@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { css } from 'linaria';
 
 // import PageCurl from 'components/pageCurl';
@@ -39,9 +38,5 @@ const Layout = ({ children }) => (
     </div>
   </LocaleProvider>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout;

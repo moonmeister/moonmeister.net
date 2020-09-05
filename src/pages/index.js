@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -33,16 +32,6 @@ const IndexPage = ({
     </section>
   </Layout>
 );
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    wpPage: PropTypes.shape({
-      title: PropTypes.string,
-      blocks: PropTypes.array.isRequired,
-      featuredImage: PropTypes.object.isRequired,
-    }),
-  }).isRequired,
-};
 
 export default IndexPage;
 

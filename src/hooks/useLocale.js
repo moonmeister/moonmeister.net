@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
 const LocaleContext = React.createContext();
 
@@ -17,10 +16,6 @@ const LocaleProvider = ({ children }) => {
       {children}
     </LocaleContext.Provider>
   );
-};
-
-LocaleProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export { LocaleContext, LocaleProvider };

@@ -35,7 +35,6 @@
     "postcss-nested": "^4.2.3",
     "preact": "^10.4.8",
     "preact-render-to-string": "^5.1.10",
-    "prop-types": "^15.7.2",
     "rc-pagination": "^3.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -83,5 +82,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "yarn ntl deploy"
+  },
+  "volta": {
+    "node": "14.9.0"
   }
 }

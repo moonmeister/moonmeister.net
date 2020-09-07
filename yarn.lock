@@ -66,7 +66,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.10.3", "@babel/core@^7.11.4", "@babel/core@^7.3.3", "@babel/core@^7.9.6":
+"@babel/core@^7.10.3", "@babel/core@^7.11.6", "@babel/core@^7.3.3", "@babel/core@^7.9.6":
   version "7.11.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.11.6.tgz#3a9455dc7387ff1bac45770650bc13ba04a15651"
   integrity sha512-Wpcv03AGnmkgm6uS6k8iwhIwTrcP0m17TL1n1sy7qD0qelDu4XNeW0dN0mHfa+Gei211yDaLoEe/VlbXQzM4Bg==
@@ -2569,7 +2569,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.48":
+"@types/react@*", "@types/react@^16.9.49":
   version "16.9.49"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.49.tgz#09db021cf8089aba0cdb12a49f8021a69cce4872"
   integrity sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
@@ -11714,10 +11714,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^2.59.3:
-  version "2.61.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.61.0.tgz#12619ddbb55746d0e78f6f16557d97f2a5ae5964"
-  integrity sha512-IGB8m/Cb0LB84K9wXSv3KbGJ29RzPTRt8CfHdH6mBMW5hWk3TfCGIIXl1xjqVR7am4ZxbGlKUcDDiMGGwF+/JQ==
+netlify-cli@^2.61.1:
+  version "2.61.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.61.1.tgz#07afe53f41672b05f3d4bf475ae6363b0d9213a4"
+  integrity sha512-EGmrAxeJXDSlGbXz4BYwztHZC1AVslm2JqSGqiGSslLFbf3NLy0Upa2dXrqUKgMX5XOsxy/FCp68bQeevn88bg==
   dependencies:
     "@netlify/build" "^3.1.10"
     "@netlify/config" "^2.0.9"
@@ -13867,7 +13867,7 @@ raw-loader@^0.5.1:
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
   integrity sha1-DD0L6u2KAclm2Xh793goElKpeao=
 
-rc-pagination@^3.0.3:
+rc-pagination@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/rc-pagination/-/rc-pagination-3.0.4.tgz#32509fcdf77387ca124c025c3575e7bab0c7debd"
   integrity sha512-9v9mmB7FTWS4kWRLFfWafm6LtvB+xdNi+pTIwUODSevzImrlrmMOIhDrOB3u2tEXiy8LyqvCnoyPYt5jQBapxA==
@@ -15937,10 +15937,10 @@ tailwindcss-typography@^3.1.0:
   dependencies:
     lodash "^4.17.15"
 
-tailwindcss@^1.7.6:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.8.2.tgz#72374608676e7a05e3db5ead74f3ac51df54c73e"
-  integrity sha512-Acz4b2caMlrnv9zCmmwENjcktV7rblaMYGwGUT6woqmwnttLZ9ePj7yynSCln/Aky/4SGyduf7y3yk/QZNw+vw==
+tailwindcss@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.8.4.tgz#867a831640b0edf26517a691f6b6f5bd09aa3adf"
+  integrity sha512-UW1giHUBuMVUwzff0vVbvGOdx1r8+4onN8LCblzncstdFVyuiZ2wCnkv2RQiSAlMTHaNu8vAAhm/fw3flmCi0Q==
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.1.2"
     autoprefixer "^9.4.5"

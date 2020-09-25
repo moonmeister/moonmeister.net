@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import PropTypes from 'prop-types';
 
 import { graphql, Link, navigate } from 'gatsby';
 
@@ -96,36 +95,6 @@ const BlogPage = ({
       />
     </Layout>
   );
-};
-
-BlogPage.propTypes = {
-  location: PropTypes.shape({
-    search: PropTypes.string.isRequired,
-  }).isRequired,
-  data: PropTypes.shape({
-    allWpPost: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      nodes: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          excerpt: PropTypes.string.isRequired,
-          uri: PropTypes.string.isRequired,
-          dateGmt: PropTypes.string.isRequired,
-          author: PropTypes.shape({
-            node: PropTypes.shape({
-              name: PropTypes.string.isRequired,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-    wpPage: PropTypes.shape({ title: PropTypes.string.isRequired }).isRequired,
-    wp: PropTypes.shape({
-      readingSettings: PropTypes.shape({
-        postsPerPage: PropTypes.number.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
 };
 
 export const query = graphql`

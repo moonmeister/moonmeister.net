@@ -1,10 +1,11 @@
 import * as React from 'react';
-
 import { graphql, unstable_collectionGraphql } from 'gatsby';
+
+import { Edit3, Clock } from 'react-feather';
+
+import { formatDateString } from 'lib/utils';
 import Layout from 'components/Layout';
 import Blocks from 'components/Blocks';
-import { formatDateString } from 'lib/utils';
-import { Edit3, Clock } from 'react-feather';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
@@ -26,10 +27,7 @@ export default function BlogPost({
   return (
     <Layout>
       <SEO title={title} />
-      <article
-        // aria-label="Test"
-        className="max-w-reading m-auto floating max-w-64 px-6"
-      >
+      <article className="max-w-reading m-auto floating max-w-64 px-6">
         <header className="border-b flex flex-col items-center text-center py-3 ">
           <h1 className="text-4xl font-bold z-0">{title}</h1>
 
@@ -61,11 +59,11 @@ export default function BlogPost({
           {blocks.length > 0 ? (
             <Blocks blocks={blocks} className="p-6" />
           ) : (
-              <div
-                className="wp-blocks clearfix"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
-            )}
+            <div
+              className="wp-blocks clearfix"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          )}
         </div>
         <footer className="border-t py-6 text-sm text-gray-600">
           <Tags data={allTags} />

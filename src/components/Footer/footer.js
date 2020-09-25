@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import ExtLink from 'components/extLink';
 import FormContact from 'components/FormContact';
@@ -71,7 +70,5 @@ const Footer = () => {
     </>
   );
 };
-
-Footer.propTypes = {};
 
 export default Footer;

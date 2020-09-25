@@ -25,8 +25,8 @@ module.exports = {
     ],
     'prettier/prettier': 'warn',
     'react/jsx-sort-props': 'warn',
+    'react/prop-types': 'off',
     'react/no-danger': 'off',
-    'react/prop-types': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint',

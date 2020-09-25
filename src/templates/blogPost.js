@@ -59,11 +59,11 @@ const BlogPost = ({
           {blocks.length > 0 ? (
             <Blocks blocks={blocks} className="p-6" />
           ) : (
-              <div
-                className="wp-blocks clearfix"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
-            )}
+            <div
+              className="wp-blocks clearfix"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          )}
         </div>
         <footer className="border-t py-6 text-sm text-gray-600">
           <Tags data={allTags} />

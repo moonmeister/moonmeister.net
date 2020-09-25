@@ -1,11 +1,13 @@
 /* eslint-disable no-use-before-define */
 const twTypography = require('tailwindcss-typography');
 
-const curlSizeWidth = '6vw';
-const curlSizeHeight = '4vw';
-
 const tWconfig = {
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
   purge: ['./src/**/*.js'],
+  mq: {},
   theme: {
     textShadow: (theme) => ({
       default: `2px 2px 4px ${theme('colors.gray.900')}`,
@@ -53,14 +55,9 @@ const tWconfig = {
         sm: '4px',
         '-sm': '-4px',
       },
-      width: {
-        curl: curlSizeWidth,
-      },
+
       boxShadow: {
         footer: 'inset 0px 10px 10px -10px hsla(0, 0%, 5%, 1);',
-      },
-      height: {
-        curl: curlSizeHeight,
       },
       maxWidth: {
         reading: '100ch',
@@ -78,8 +75,6 @@ const tWconfig = {
 };
 
 const { screens } = tWconfig.theme;
-
-tWconfig.mq = {};
 
 Object.keys(tWconfig.theme.screens).forEach((key) => {
   tWconfig.mq[key] = `@media (min-width: ${screens[key]})`;

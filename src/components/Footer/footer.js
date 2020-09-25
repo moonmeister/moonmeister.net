@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { css } from 'linaria';
 import ExtLink from 'components/extLink';
 import FormContact from 'components/FormContact';
 import SocialLink from 'components/SocialLink';
@@ -48,7 +49,27 @@ const Footer = () => {
       </section>
 
       <section className="flex flex-col items-center my-16" id="footer-right">
-        <ul className="social justify-center flex flex-wrap">
+        <ul
+          className="social justify-center flex flex-wrap"
+          css={css`
+            a {
+              outline-color: theme('colors.gray.100');
+            }
+
+            @screen canhover {
+              li a {
+                @apply transform transition-transform duration-100 ease-out;
+              }
+
+              li:hover,
+              li:focus {
+                a {
+                  @apply shadow-lg -translate-y-1 ease-in;
+                }
+              }
+            }
+          `}
+        >
           {socials.map(({ connectedNode: { node: social } }) => (
             <li key={social.id} className="">
               <SocialLink

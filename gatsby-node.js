@@ -11,3 +11,22 @@ const createBlog = require('./gatsby/createBlog');
 exports.createPages = async (nodeApi) => {
   await Promise.all([createBlog(nodeApi)]);
 };
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  getConfig,
+  rules,
+  loaders,
+  actions: { setWebpackConfig },
+}) => {
+  console.log(JSON.stringify(rules, null, 2));
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: 'my-css',
+  //         use: [loaders.style(), loaders.css()],
+  //       },
+  //     ],
+  //   },
+  // });
+};

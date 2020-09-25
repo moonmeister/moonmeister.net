@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from 'linaria';
 
-// import PageCurl from 'components/pageCurl';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import classnames from 'classnames';
@@ -11,13 +10,46 @@ import RssLink from 'components/Rss';
 import 'styles/base.css';
 import 'styles/components.css';
 import 'styles/utilities.css';
-import './layout.css';
 
 const Layout = ({ children }) => (
   <LocaleProvider>
     <RssLink />
-    <div className="h-screen" id="page-layout">
-      {/* <PageCurl /> */}
+    <div
+      className="h-screen"
+      css={css`
+        @supports (display: grid) {
+          display: grid;
+          grid-template-columns: 0.03fr 1fr 0.03fr;
+          grid-template-rows: max-content auto max-content;
+          grid-row-gap: 1rem;
+
+          @screen sm {
+            grid-row-gap: 5%;
+            grid-row-gap: 5vmin;
+          }
+
+          @screen md {
+            grid-template-columns: 10vmin auto 10vmin;
+          }
+
+          justify-items: stretch;
+
+          header {
+            grid-area: 1 / 1 / 2 / 4;
+          }
+
+          main {
+            grid-area: 2 / 2 / 3 / 3;
+            @apply p-0 m-0 w-auto max-w-screen-md;
+            justify-self: center;
+          }
+          footer {
+            grid-area: 3 / 1 / 4 / 4;
+          }
+        }
+      `}
+      id="page-layout"
+    >
       <header>
         <Nav />
       </header>

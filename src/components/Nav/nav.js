@@ -1,7 +1,6 @@
 import * as React from 'react';
+import { css } from 'linaria';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-
-import './nav.css';
 
 const Nav = () => {
   const {
@@ -23,7 +22,26 @@ const Nav = () => {
     }
   `);
   return (
-    <nav>
+    <nav
+      css={css`
+        a.active-links {
+          &::after {
+            @apply border-b-4 border-blue-500 w-full absolute left-0;
+            content: '';
+          }
+
+          &::after {
+            @apply bottom-0;
+          }
+        }
+
+        @screen canhover {
+          a {
+            @apply transform transition-transform duration-100 ease-out;
+          }
+        }
+      `}
+    >
       <ul className="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4">
         {menuItems.map(({ label, title, url, databaseId }) => (
           <li key={databaseId} className="group list-none m-1">

@@ -54,9 +54,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
+                50
                 : // and we don't actually need more than 1000 in production
-                  1000,
+                1000,
           },
         },
       },
@@ -109,7 +109,57 @@ module.exports = {
     },
 
     /* Misc Utilities to generate misc site related structured content */
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allWpContentNode(
+            filter: { nodeType: { in: ["Post", "Page"] }}
+            sort: { fields: [uri], order: DESC }
+            ) {
+            nodes {
+              ... on WpPost {
+                uri
+                modifiedGmt
+              }
+              ... on WpPage {
+                uri
+                modifiedGmt
+              }
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allWpContentNode: { nodes: allWpNodes },
+        }) => {
+          const wpNodeMap = allWpNodes.reduce((acc, node) => {
+            const { uri } = node;
+            acc[uri] = node;
+
+            return acc;
+          }, {});
+
+          return allPages.map((page) => {
+            return { ...page, ...wpNodeMap[page.path] };
+          });
+        },
+        serialize: ({ path, modifiedGmt }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+          };
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -162,8 +212,8 @@ module.exports = {
             query: `
               {
                 allWpPost(
-                  filter: {uri: {glob: "/blog/*"}}
-                  sort: {fields: [dateGmt], order: DESC}
+                  filter: { uri: { glob: "/blog/*" }}
+                  sort: { fields: [dateGmt], order: DESC }
                 ) {
                   nodes {
                     title

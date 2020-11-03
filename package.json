@@ -32,7 +32,7 @@
     "lib": "link:./src/lib",
     "linaria": "^1.4.0",
     "pages": "link:./src/pages",
-    "postcss-nested": "^4.2.3",
+    "postcss-nested": "^5.0.1",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
     "rc-pagination": "^3.1.1",

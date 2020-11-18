@@ -12,7 +12,7 @@
     "gatsby-plugin-feed": "^2.7.0",
     "gatsby-plugin-goatcounter": "^0.4.0",
     "gatsby-plugin-linaria": "^2.2.0",
-    "gatsby-plugin-manifest": "^2.6.0",
+    "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-netlify": "^2.5.0",
     "gatsby-plugin-offline": "^3.4.0",
     "gatsby-plugin-postcss": "^3.1.0",
@@ -25,7 +25,7 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.5.0",
-    "gatsby-source-wordpress-experimental": "^2.3.1",
+    "gatsby-source-wordpress-experimental": "^3.0.1",
     "gatsby-transformer-sharp": "^2.6.0",
     "hooks": "link:./src/hooks",
     "images": "link:./src/images",
@@ -61,7 +61,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "graphql": "^15.4.0",
     "netlify-cli": "^2.68.5",
     "prettier": "^2.1.2",
     "webpack": "^4.44.2"
@@ -71,14 +70,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "clean": "gatsby clean",
+    "build": "gatsby build",
     "develop": "yarn dev",
     "dev": "gatsby develop",
+    "repl": "gatsby repl",
     "format": "eslint . --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "yarn ntl deploy"
   },
   "volta": {

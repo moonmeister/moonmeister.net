@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphql, unstable_collectionGraphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import { Edit3, Clock } from 'react-feather';
 
@@ -101,17 +101,6 @@ export const query = graphql`
         nodes {
           ...WpTag
         }
-      }
-    }
-  }
-`;
-
-// eslint-disable-next-line camelcase
-export const collectionQuery = unstable_collectionGraphql`
-  {
-    allWpPost(sort: {fields: dateGmt, order: DESC}) {
-      nodes {
-        ...CollectionPagesQueryFragment
       }
     }
   }

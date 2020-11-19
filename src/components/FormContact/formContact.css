@@ -20,7 +20,7 @@
   button {
     @apply rounded bg-gray-200 shadow-md p-3 mb-3 leading-tight border border-primary-600;
     &::placeholder {
-      @apply text-gray-600 text-sm tracking-tight;
+      @apply text-gray-600 text-sm tracking-tight leading-tight;
     }
 
     &:focus {

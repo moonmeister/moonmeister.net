@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from 'linaria';
 
-// import PageCurl from 'components/pageCurl';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import classnames from 'classnames';
@@ -15,7 +14,6 @@ const Layout = ({ children }) => (
   <LocaleProvider>
     <RssLink />
     <div className="h-screen" id="page-layout">
-      {/* <PageCurl /> */}
       <header>
         <Nav />
       </header>

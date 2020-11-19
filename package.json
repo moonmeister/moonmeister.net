@@ -25,7 +25,7 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.5.0",
-    "gatsby-source-wordpress-experimental": "^3.0.1",
+    "gatsby-source-wordpress-experimental": "^3.1.2",
     "gatsby-transformer-sharp": "^2.6.0",
     "hooks": "link:./src/hooks",
     "images": "link:./src/images",
@@ -43,7 +43,8 @@
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
     "tailwindcss": "^2.0.1",
-    "tailwindcss-typography": "^3.1.0"
+    "tailwindcss-typography": "^3.1.0",
+    "twin.macro": "^1.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

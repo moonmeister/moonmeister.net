@@ -1,7 +1,15 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import * as React from 'react';
+import { styled } from 'linaria/react';
+import tw from "twin.macro"
+
 import './formContact.css';
+
+const InputContainer = styled.div`
+  ${tw`w-full px-3 block flex flex-col-reverse`}
+  flex: 1 1 50%;
+`
+
+const Input = styled.input`${tw`relative block uppercase font-medium mb-2 tracking-wide text-xs`}`
 
 const FormContact = () => (
   <form
@@ -21,8 +29,8 @@ const FormContact = () => (
         </label>
         <input id="bot-field" name="bot-field" />
       </div>
-      <div className="input-container">
-        <input
+      <InputContainer>
+        <Input
           id="contact-name"
           name="name"
           placeholder="John Lennon"
@@ -30,9 +38,9 @@ const FormContact = () => (
           type="text"
         />
         <label htmlFor="contact-name">Name</label>
-      </div>
-      <div className="input-container">
-        <input
+      </InputContainer>
+      <InputContainer>
+        <Input
           id="contact-email"
           name="email"
           placeholder="john@beatles.music"
@@ -40,9 +48,9 @@ const FormContact = () => (
           type="email"
         />
         <label htmlFor="contact-email">Email</label>
-      </div>
+      </InputContainer>
     </div>
-    <div className="input-container mb-6">
+    <InputContainer className="mb-6 ">
       <textarea
         className="w-full"
         id="contact-message"
@@ -51,7 +59,7 @@ const FormContact = () => (
         required
       />
       <label htmlFor="contact-message">Message</label>
-    </div>
+    </InputContainer>
     <div className="flex justify-center px-3 md:mx-0">
       <button className="" type="submit">
         Send

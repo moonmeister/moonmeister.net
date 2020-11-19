@@ -129,7 +129,7 @@
   /* Block: Quote  ------------------------- */
 
   blockquote {
-    @apply my-8 px-8 border-l-2 border-orange-600 flex flex-col justify-center;
+    @apply my-8 px-8 border-l-2 border-yellow-600 flex flex-col justify-center;
 
     p {
       @apply italic m-auto;
@@ -281,7 +281,7 @@
   /* Block: Columns  ------------------------- */
 
   .wp-block-columns {
-    @apply flex p-4 flex-row flex-no-wrap;
+    @apply flex p-4 flex-row flex-nowrap;
 
     &.are-vertically-aligned-top {
       @apply justify-start;
@@ -296,7 +296,7 @@
     }
 
     .wp-block-column {
-      @apply flex flex-col flex-no-wrap;
+      @apply flex flex-col flex-nowrap;
       flex: 1;
 
       &.is-vertically-aligned-top {

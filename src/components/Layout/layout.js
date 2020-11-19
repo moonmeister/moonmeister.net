@@ -8,9 +8,7 @@ import classnames from 'classnames';
 import { LocaleProvider } from 'hooks/useLocale';
 import RssLink from 'components/Rss';
 
-import 'styles/base.css';
-import 'styles/components.css';
-import 'styles/utilities.css';
+import 'styles/tailwind.css';
 import './layout.css';
 
 const Layout = ({ children }) => (

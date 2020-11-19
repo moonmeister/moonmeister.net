@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import './blocks.css';
 
 const Blocks = ({ blocks, className }) => (
-  <div className={classNames('wp-blocks clearfix', className)}>
+  <div className={classNames('wp-blocks flow-root', className)}>
     {blocks.length > 0 &&
       blocks.map(({ saveContent }, i) => {
         return (

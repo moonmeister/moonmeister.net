@@ -25,7 +25,7 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.6.1",
-    "gatsby-source-wordpress-experimental": "^3.3.1",
+    "gatsby-source-wordpress-experimental": "*",
     "gatsby-transformer-sharp": "^2.7.0",
     "hooks": "link:./src/hooks",
     "images": "link:./src/images",

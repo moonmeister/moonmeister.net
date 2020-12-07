@@ -23,6 +23,13 @@ module.exports = {
         extensions: ['.js', 'jsx'],
       },
     ],
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        controlComponents: ['Input'],
+        depth: 3,
+      },
+    ],
     'prettier/prettier': 'warn',
     'react/jsx-sort-props': 'warn',
     'react/prop-types': 'off',

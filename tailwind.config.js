@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 const twTypography = require('tailwindcss-typography');
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 const tWconfig = {
   purge: ['./src/**/*.js'],
@@ -77,6 +77,5 @@ tWconfig.mq = {};
 Object.keys(tWconfig.theme.screens).forEach((key) => {
   tWconfig.mq[key] = `@media (min-width: ${screens[key]})`;
 });
-
 
 module.exports = tWconfig;

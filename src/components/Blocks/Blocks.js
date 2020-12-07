@@ -9,11 +9,9 @@ import './blocks.css';
 const Blocks = ({ blocks, className }) => (
   <div className={classNames('wp-blocks flow-root', className)}>
     {blocks.length > 0 &&
-      blocks.map(({ saveContent }, i) => {
-        return (
-          <div key={i} dangerouslySetInnerHTML={{ __html: saveContent }} />
-        );
-      })}
+      blocks.map(({ saveContent }, i) => (
+        <div key={i} dangerouslySetInnerHTML={{ __html: saveContent }} />
+      ))}
   </div>
 );
 

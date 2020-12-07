@@ -48,37 +48,37 @@ const BlogPage = ({
             dateGmt,
             tags,
           }) => (
-              <article
-                key={id}
-                className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
-              >
-                <Link to={`${uri}`}>
-                  <header className="mb-6">
-                    <h1
-                      aria-label="Blog Title"
-                      className="font-bold text-primary-900 text-2xl md:text-4xl leading-relaxed"
-                    >
-                      {`${title}`}
-                    </h1>
-                    <div className="text-sm text-gray-600">
-                      <span rel="author">{author.name} on </span>
-                      <time dateTime={dateGmt}>
-                        {formatDateString(dateGmt, locale)}
-                      </time>
-                    </div>
-                  </header>
+            <article
+              key={id}
+              className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
+            >
+              <Link to={`${uri}`}>
+                <header className="mb-6">
+                  <h1
+                    aria-label="Blog Title"
+                    className="font-bold text-primary-900 text-2xl md:text-4xl leading-relaxed"
+                  >
+                    {`${title}`}
+                  </h1>
+                  <div className="text-sm text-gray-600">
+                    <span rel="author">{author.name} on </span>
+                    <time dateTime={dateGmt}>
+                      {formatDateString(dateGmt, locale)}
+                    </time>
+                  </div>
+                </header>
 
-                  <div
-                    className="text-primary-800 text-medium"
-                    dangerouslySetInnerHTML={{ __html: excerpt }}
-                  />
+                <div
+                  className="text-primary-800 text-medium"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
 
-                  <footer className="mt-6 text-sm text-gray-600">
-                    <Tags data={tags.nodes} />
-                  </footer>
-                </Link>
-              </article>
-            )
+                <footer className="mt-6 text-sm text-gray-600">
+                  <Tags data={tags.nodes} />
+                </footer>
+              </Link>
+            </article>
+          )
         )}
       </div>
       <Pagination

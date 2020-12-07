@@ -138,8 +138,8 @@ module.exports = {
                 site,
                 allWpPost: { nodes: allPosts },
               },
-            }) => {
-              return allPosts.map(
+            }) =>
+              allPosts.map(
                 ({
                   title,
                   excerpt,
@@ -147,18 +147,15 @@ module.exports = {
                   dateGmt,
                   author: { node: author },
                   tags,
-                }) => {
-                  return {
-                    title,
-                    description: excerpt,
-                    author: author.name,
-                    date: dateGmt,
-                    categories: tags.nodes.map((node) => node.name),
-                    url: `${site.siteMetadata.siteUrl}${uri}`,
-                  };
-                }
-              );
-            },
+                }) => ({
+                  title,
+                  description: excerpt,
+                  author: author.name,
+                  date: dateGmt,
+                  categories: tags.nodes.map((node) => node.name),
+                  url: `${site.siteMetadata.siteUrl}${uri}`,
+                })
+              ),
             query: `
               {
                 allWpPost(

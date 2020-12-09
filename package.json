@@ -44,7 +44,7 @@
     "styles": "link:./src/styles",
     "tailwindcss": "^2.0.1",
     "tailwindcss-typography": "^3.1.0",
-    "twin.macro": "^1.12.1"
+    "twin.macro": "^2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

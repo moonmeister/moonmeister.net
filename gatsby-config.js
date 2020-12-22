@@ -9,6 +9,11 @@ const isProduction = NETLIFY_ENV === 'production';
 const siteUrl = isProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 module.exports = {
+  flags: {
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   siteMetadata: {
     title: `Alex Moon`,
     description: `Personal Website`,
@@ -54,9 +59,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
+                50
                 : // and we don't actually need more than 1000 in production
-                  1000,
+                1000,
           },
         },
       },

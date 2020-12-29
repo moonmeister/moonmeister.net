@@ -5,9 +5,11 @@ import { Edit3, Clock } from 'react-feather';
 
 import { formatDateString } from 'lib/utils';
 import Layout from 'components/Layout';
-import Blocks from 'components/Blocks';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
+
+import '../components/Blocks/blocks.css';
+
 
 export default function BlogPost({
   data: {
@@ -56,14 +58,10 @@ export default function BlogPost({
           </div>
         </header>
         <div id="blog-content">
-          {blocks.length > 0 ? (
-            <Blocks blocks={blocks} className="p-6" />
-          ) : (
-            <div
-              className="wp-blocks flow-root"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-          )}
+          <div
+            className="wp-blocks flow-root p-6"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
         <footer className="border-t py-6 text-sm text-gray-600">
           <Tags data={allTags} />
@@ -93,9 +91,6 @@ export const query = graphql`
         text
       }
       content
-      blocks {
-        saveContent
-      }
       dateGmt
       tags {
         nodes {

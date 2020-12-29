@@ -387,6 +387,15 @@
   }
 }
 
+/* Embeds ------------------------- */
+
+.wp-block-embed {
+  @apply mt-12 mb-8;
+  iframe {
+    margin: auto;
+  }
+} 
+
 /* Emoji  ------------------------- */
 
 .eedee-emoji {

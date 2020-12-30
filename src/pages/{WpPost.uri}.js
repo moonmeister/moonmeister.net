@@ -15,8 +15,8 @@ export default function BlogPost({
   data: {
     wpPost: {
       title,
-      blocks,
       content,
+      excerpt,
       dateGmt,
       author: { node: author },
       readingTime: { text: readingText },
@@ -28,7 +28,7 @@ export default function BlogPost({
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={excerpt} />
       <article className="max-w-reading m-auto floating max-w-64 px-6">
         <header className="border-b flex flex-col items-center text-center py-3 ">
           <h1 className="text-4xl font-bold z-0">{title}</h1>
@@ -91,6 +91,7 @@ export const query = graphql`
         text
       }
       content
+      excerpt
       dateGmt
       tags {
         nodes {

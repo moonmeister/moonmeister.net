@@ -82,10 +82,7 @@ module.exports = {
       resolve: `gatsby-plugin-readingtime`,
       options: {
         types: {
-          WpPost: (source) => {
-            const { blocks } = source;
-            return blocks.map((block) => block.saveContent).join('');
-          },
+          WpPost: (source) => source.content,
         },
       },
     },

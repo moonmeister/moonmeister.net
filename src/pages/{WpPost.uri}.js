@@ -7,9 +7,7 @@ import { formatDateString } from 'lib/utils';
 import Layout from 'components/Layout';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
-
-import '../components/Blocks/blocks.css';
-
+import Blocks from 'components/Blocks'
 
 export default function BlogPost({
   data: {
@@ -58,10 +56,7 @@ export default function BlogPost({
           </div>
         </header>
         <div id="blog-content">
-          <div
-            className="wp-blocks flow-root p-6"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
+          <Blocks content={content} />
         </div>
         <footer className="border-t py-6 text-sm text-gray-600">
           <Tags data={allTags} />

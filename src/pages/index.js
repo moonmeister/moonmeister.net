@@ -12,7 +12,7 @@ const IndexPage = ({
   data: {
     wpPage: {
       title,
-      blocks,
+      content,
       featuredImage: { node: featuredImage },
     },
   },
@@ -27,7 +27,7 @@ const IndexPage = ({
         />
       </figure>
       <div className="md:w-7/12 m-6">
-        <Blocks blocks={blocks} />
+        <Blocks content={content} />
       </div>
     </section>
   </Layout>
@@ -39,9 +39,7 @@ export const pageQuery = graphql`
   {
     wpPage(isFrontPage: { eq: true }) {
       title
-      blocks {
-        ...BlocksFragment
-      }
+      content
       featuredImage {
         node {
           altText

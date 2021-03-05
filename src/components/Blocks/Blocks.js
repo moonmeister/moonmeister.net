@@ -6,8 +6,10 @@ import classNames from 'classnames';
 import './blocks.css';
 
 const Blocks = ({ content, className }) => (
-  <div className={classNames('wp-blocks flow-root', className)} dangerouslySetInnerHTML={{ __html: content }} />
+  <div
+    className={classNames('wp-blocks flow-root', className)}
+    dangerouslySetInnerHTML={{ __html: content }}
+  />
 );
-
 
 export default Blocks;

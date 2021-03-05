@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import SEO from 'components/seo';
 import Layout from 'components/Layout';
@@ -23,7 +23,7 @@ const IndexPage = ({
       <figure className="sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
         <Img
           alt={featuredImage.altText}
-          fluid={featuredImage.localFile.childImageSharp.fluid}
+          image={getImage(featuredImage)}
         />
       </figure>
       <div className="md:w-7/12 m-6">
@@ -45,9 +45,11 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1024, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                width: 400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

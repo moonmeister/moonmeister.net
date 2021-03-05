@@ -10,9 +10,7 @@ const siteUrl = isProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 module.exports = {
   flags: {
-    QUERY_ON_DEMAND: true,
-    LAZY_IMAGES: true,
-    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
   },
   siteMetadata: {
     title: `Alex Moon`,

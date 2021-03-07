@@ -7,7 +7,7 @@ import { formatDateString } from 'lib/utils';
 import Layout from 'components/Layout';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
-import Blocks from 'components/Blocks'
+import Blocks from 'components/Blocks';
 
 export default function BlogPost({
   data: {
@@ -26,7 +26,7 @@ export default function BlogPost({
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt} />
+      <SEO description={excerpt} title={title} />
       <article className="max-w-reading m-auto floating max-w-64 px-6">
         <header className="border-b flex flex-col items-center text-center py-3 ">
           <h1 className="text-4xl font-bold z-0">{title}</h1>

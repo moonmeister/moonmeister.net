@@ -8,13 +8,7 @@ module.exports = {
     __PATH_PREFIX__: true,
     __adroll: true,
   },
-  extends: [
-    'react-app',
-    'airbnb',
-    'airbnb/hooks',
-    'prettier',
-    'prettier/react',
-  ],
+  extends: ['react-app', 'airbnb', 'airbnb/hooks', 'prettier'],
   plugins: ['jsx-a11y', 'prettier'],
   rules: {
     'react/jsx-filename-extension': [

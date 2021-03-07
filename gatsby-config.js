@@ -8,6 +8,11 @@ const {
 const isProduction = NETLIFY_ENV === 'production';
 const siteUrl = isProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
+const TRACKING_IDS = {
+  PROD: "b704044b-3f9e-4d94-94ee-ff2f2123c8ca",
+  DEV: "6375ffb9-0b72-449e-8f5b-64f44d1eb8f4",
+}
+
 module.exports = {
   flags: {
     FAST_DEV: true,
@@ -101,10 +106,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-goatcounter`,
+      resolve: `gatsby-plugin-ackee-tracker`,
       options: {
-        code: isProduction ? 'mm-prod' : 'mm-dev',
-        allowLocal: !isProduction,
+        domainId: isProduction ? TRACKING_IDS.PROD : TRACKING_IDS.DEV,
+        server: 'https://track.moonmeister.net',
+        ignoreOwnVisits: isProduction,
+        ignoreLocalhost: isProduction,
       },
     },
 

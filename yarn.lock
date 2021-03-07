@@ -2887,6 +2887,13 @@ accepts@^1.3.7, accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
     mime-types "~2.1.24"
     negotiator "0.6.2"
 
+ackee-tracker@^5:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/ackee-tracker/-/ackee-tracker-5.0.1.tgz#f32624cf82cb3f26a59e551fecb47e9b18f663ab"
+  integrity sha512-VN5eZK9XjdZ6QGGCfH019LGzLfwb73aXKDg1eDWKudGlijSandJXjzlgqnG9dvkkOKhK6EQLLBanV3tLqKA34w==
+  dependencies:
+    platform "^1.3.6"
+
 acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
@@ -7777,6 +7784,13 @@ gatsby-page-utils@^1.0.0:
     lodash "^4.17.20"
     micromatch "^4.0.2"
 
+gatsby-plugin-ackee-tracker@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-ackee-tracker/-/gatsby-plugin-ackee-tracker-2.2.0.tgz#6d517defed84373b2085916bd8ec7fd86c8277a8"
+  integrity sha512-8M94z0Km6b/V24Nt/ucuNFfZjgDowKIwT5/Dde7Sc7caA3AvzumBUzC4tQyl0LpInZjLVqoS7JmYWqA4zOGFcw==
+  dependencies:
+    ackee-tracker "^5"
+
 gatsby-plugin-catch-links@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-3.0.0.tgz#ed7ea5b1cdc19e994222da8ed30387593c0ae02c"
@@ -7797,13 +7811,6 @@ gatsby-plugin-feed@^3.0.0:
     gatsby-plugin-utils "^1.0.0"
     lodash.merge "^4.6.2"
     rss "^1.2.2"
-
-gatsby-plugin-goatcounter@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-goatcounter/-/gatsby-plugin-goatcounter-0.4.0.tgz#25862e3210edb9c41f87684f9b2b2d148c5782d6"
-  integrity sha512-axcRQYjl6MkcpJZs17ugmGBgXaH8TOs7Aeqx/s+k8vQrq9gnKSaJaWFoXnfuG9W8KWlWQk5kbUQgr6P6bGDpcQ==
-  dependencies:
-    minimatch "3.0.4"
 
 gatsby-plugin-image@^1.0.0:
   version "1.0.0"

@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL || `https://cms.moonmeister.net/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://api.moonmeister.net/graphql`,
         verbose: true,
         // for wp-graphql-gutenberg, attributes currently breaks due
         // to the origin schema. It works if we exclude attributes

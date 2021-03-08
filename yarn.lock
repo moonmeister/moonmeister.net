@@ -2570,7 +2570,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.2":
+"@types/react@*", "@types/react@^17.0.3":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
   integrity sha512-wYOUxIgs2HZZ0ACNiIayItyluADNbONl7kt8lkLjVK8IitMH5QMyAh75Fwhmo37r1m7L2JaFj03sIfxBVDvRAg==
@@ -3402,7 +3402,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^10.2.4:
+autoprefixer@^10.2.4, autoprefixer@^10.2.5:
   version "10.2.5"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.2.5.tgz#096a0337dbc96c0873526d7fef5de4428d05382d"
   integrity sha512-7H4AJZXvSsn62SqZyJCP+1AWwOuoYpUfK6ot9vm0e87XD6mT8lDywc9D9OTJPMULyGcvmIxzTAMeG2Cc+YX+fA==
@@ -4873,7 +4873,6 @@ component-emitter@^1.2.1, component-emitter@~1.3.0:
 
 "components@link:./src/components":
   version "0.0.0"
-  uid ""
 
 compress-commons@^3.0.0:
   version "3.0.0"
@@ -9072,7 +9071,6 @@ hmac-drbg@^1.0.1:
 
 "hooks@link:./src/hooks":
   version "0.0.0"
-  uid ""
 
 hoopy@^0.1.4:
   version "0.1.4"
@@ -9376,7 +9374,6 @@ imagemin@^7.0.1:
 
 "images@link:./src/images":
   version "0.0.0"
-  uid ""
 
 immer@8.0.1:
   version "8.0.1"
@@ -10586,7 +10583,6 @@ levn@~0.3.0:
 
 "lib@link:./src/lib":
   version "0.0.0"
-  uid ""
 
 linaria@^2.1.0:
   version "2.1.0"
@@ -11766,7 +11762,7 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^3.10.3:
+netlify-cli@^3.10.6:
   version "3.10.6"
   resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.10.6.tgz#47385ee59629bd5593b742610708c91b37f3075f"
   integrity sha512-z/TQ+ehXvNhYQkJXNwxOSYq1jFP3rt1yvD2pILnbCrRZavzYc+GoIEKhKj+gPRgezwzXN9LnGiNQES4zyNcJJA==
@@ -12663,7 +12659,6 @@ package-json@^6.3.0:
 
 "pages@link:./src/pages":
   version "0.0.0"
-  uid ""
 
 pako@^1.0.5, pako@~1.0.5:
   version "1.0.11"
@@ -13270,7 +13265,7 @@ postcss-modules-values@^4.0.0:
   dependencies:
     icss-utils "^5.0.0"
 
-postcss-nested@^5.0.1, postcss-nested@^5.0.4:
+postcss-nested@^5.0.1, postcss-nested@^5.0.5:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-5.0.5.tgz#f0a107d33a9fab11d7637205f5321e27223e3603"
   integrity sha512-GSRXYz5bccobpTzLQZXOnSOfKl6TwVr5CyAQJUPub4nuRJSOECK5AqurxVgmtxP48p0Kc/ndY/YyS1yqldX0Ew==
@@ -13471,7 +13466,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.27
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.1.6, postcss@^8.1.8, postcss@^8.2.1, postcss@^8.2.6:
+postcss@^8.1.6, postcss@^8.1.8, postcss@^8.2.1, postcss@^8.2.6, postcss@^8.2.7:
   version "8.2.7"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.7.tgz#48ed8d88b4de10afa0dfd1c3f840aa57b55c4d47"
   integrity sha512-DsVLH3xJzut+VT+rYr0mtvOtpTjSyqDwPf5EZWXcb0uAKfitGpTY9Ec+afi2+TgdN8rWS9Cs88UDYehKo/RvOw==
@@ -13487,7 +13482,7 @@ potrace@^2.1.8:
   dependencies:
     jimp "^0.14.0"
 
-preact-render-to-string@^5.1.12:
+preact-render-to-string@^5.1.13:
   version "5.1.13"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.13.tgz#3314f807e5c69925e0085ca30d29f0ba8b796eb0"
   integrity sha512-DJFcsVXEotFE5gfjZtMTKB8SUj7cFpA4XIgv+VDoGWjkCU2eczrZbq4KUheIgh+U/a+XAE6wN8p6/eVrF/kyDg==
@@ -13916,7 +13911,7 @@ raw-loader@^4.0.2:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-rc-pagination@^3.1.3:
+rc-pagination@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/rc-pagination/-/rc-pagination-3.1.4.tgz#ae92d8c2d3891c95f5ed47b2e0572a6537773889"
   integrity sha512-6nFsNXGfBb6Hh3SNeTHuEaAWiq33PdDA4rdi2Ba2LIri6XUeOCmWLFPUwZyx+NJn+ODGCxsl5BEVcfLbNsxtGg==
@@ -15687,7 +15682,6 @@ stylehacks@^4.0.0:
 
 "styles@link:./src/styles":
   version "0.0.0"
-  uid ""
 
 stylis@^3.5.4:
   version "3.5.4"

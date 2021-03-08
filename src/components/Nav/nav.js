@@ -25,7 +25,7 @@ const Nav = () => {
   return (
     <nav>
       <ul className="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4">
-        {menuItems.map(({ label, title, url, databaseId }) => (
+        {menuItems?.map(({ label, title, url, databaseId }) => (
           <li key={databaseId} className="group list-none m-1">
             <Link
               activeClassName="active-links text-pink-600 relative content-box"

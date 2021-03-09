@@ -22,7 +22,7 @@
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",
-    "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.20",
     "gatsby-plugin-webpack-size": "^2.0.1",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-wordpress": "^5.0.0",
@@ -43,8 +43,7 @@
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
     "tailwindcss": "^2.0.3",
-    "tailwindcss-typography": "^3.1.0",
-    "twin.macro": "^2.3.0"
+    "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",

@@ -213,7 +213,7 @@ module.exports = {
 
     // Bundle stats reporting plugins
     {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'static',
         production: true,

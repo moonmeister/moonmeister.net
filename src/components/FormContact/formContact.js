@@ -1,17 +1,10 @@
 import * as React from 'react';
-import { styled } from 'linaria/react';
-import tw from 'twin.macro';
 
 import './formContact.css';
 
-const InputContainer = styled.div`
-  ${tw`w-full px-3 block flex flex-col-reverse`}
-  flex: 1 1 50%;
-`;
+const InputContainer = ({ children }) => (<div className="w-full px-3 flex flex-col-reverse" style={{ flex: "1 1 50%" }}>{children}</div>)
 
-const Input = styled.input`
-  ${tw`relative block uppercase font-medium mb-2 tracking-wide text-xs`}
-`;
+const Input = ({ children }) => (<input className={"relative block uppercase font-medium mb-2 tracking-wide text-xs"}>{children}</input>)
 
 const FormContact = () => (
   <form

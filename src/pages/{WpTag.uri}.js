@@ -6,26 +6,34 @@ import ArchivePage from '../components/Archive'
 export default function BlogPage(
   {
     data: {
-      allWpPost: { totalCount, nodes: allPosts },
-      wpPage: { title }
-    }, location
+      wpTag: {
+        name: title,
+        count: totalCount,
+        posts: {
+          nodes: allPosts,
+        }
+      }
+
+    },
+    location
   }) {
+
+
   return (
     <ArchivePage count={totalCount} pageTitle={title} posts={allPosts} location={location} />
   );
 };
 
 export const query = graphql`
-  query blogArchiveQuery {
-    allWpPost(sort: { fields: dateGmt, order: DESC }) {
-      totalCount
-      nodes {
-        ...ArchivePost
+  query tagArchiveQuery($uri: String!) {
+    wpTag(uri: {eq: $uri}) {
+      name
+      count
+      posts {
+        nodes {
+          ...ArchivePost
+        }
       }
-    }
-
-    wpPage(uri: { eq: "/blog/" }) {
-      title
     }
   }
 `;

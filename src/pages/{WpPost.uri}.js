@@ -90,7 +90,7 @@ export const query = graphql`
       dateGmt
       tags {
         nodes {
-          ...WpTag
+          ...WpTagLink
         }
       }
     }

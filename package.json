@@ -30,7 +30,6 @@
     "hooks": "link:./src/hooks",
     "images": "link:./src/images",
     "lib": "link:./src/lib",
-    "linaria": "^2.1.0",
     "pages": "link:./src/pages",
     "postcss": "^8.2.8",
     "postcss-nested": "^5.0.5",

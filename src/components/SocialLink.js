@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ExtLink from 'components/extLink';
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import classnames from 'classnames';
 
 const SocialLink = ({
@@ -18,13 +17,9 @@ const SocialLink = ({
       className={classnames(
         'm-2 p-2 rounded',
         className,
-        css`
-          color: var(--text-color);
-          background-color: var(--bg-color);
-        `
       )}
       href={finalUrl}
-      style={{ '--text-color': textColor, '--bg-color': primaryColor }}
+      style={{ 'color': textColor, 'background-color': primaryColor }}
     >
       {title}
     </ExtLink>

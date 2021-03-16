@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { css } from 'linaria';
 
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
@@ -20,11 +19,8 @@ const Layout = ({ children }) => (
       <main
         className={classnames(
           'max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg',
-          css`
-            margin: 5% auto;
-            margin: 5vmin auto;
-          `
         )}
+        style={{ margin: '5% auto', margin: "5vmin auto" }}
       >
         {children}
       </main>

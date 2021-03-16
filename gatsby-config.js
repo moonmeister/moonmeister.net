@@ -76,7 +76,6 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-linaria`,
     `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
 

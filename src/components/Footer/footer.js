@@ -43,9 +43,9 @@ const Footer = () => {
 
   return (
     <>
-      <section className="">
+      {/* <section className="">
         <FormContact />
-      </section>
+      </section> */}
 
       <section className="flex flex-col items-center my-16" id="footer-right">
         <ul className="social justify-center flex flex-wrap">

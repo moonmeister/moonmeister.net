@@ -14,12 +14,9 @@ const SocialLink = ({
 
   return (
     <ExtLink
-      className={classnames(
-        'm-2 p-2 rounded',
-        className,
-      )}
+      className={classnames('m-2 p-2 rounded', className)}
       href={finalUrl}
-      style={{ 'color': textColor, 'background-color': primaryColor }}
+      style={{ color: textColor, 'background-color': primaryColor }}
     >
       {title}
     </ExtLink>

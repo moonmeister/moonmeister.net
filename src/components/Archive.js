@@ -17,26 +17,25 @@ import 'rc-pagination/assets/index.css';
 export default function ArchivePage({
   count,
   posts,
-  title,
+  title: pageTitle,
   location,
 }) {
   const locale = useContext(LocaleContext);
   const currentPage = getUrlQuery('page', location.search) || 1;
 
-
   const {
     wp: {
       readingSettings: { postsPerPage },
-    }
+    },
   } = useStaticQuery(graphql`
-  { 
-    wp {
-      readingSettings {
-        postsPerPage
+    {
+      wp {
+        readingSettings {
+          postsPerPage
+        }
       }
     }
-  }
-  `)
+  `);
 
   const start = (currentPage - 1) * postsPerPage;
   const end = start + postsPerPage;
@@ -44,9 +43,9 @@ export default function ArchivePage({
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={pageTitle} />
       <header className="sr-only">
-        <h1>{title}</h1>
+        <h1>{pageTitle}</h1>
       </header>
       <div aria-live="polite" id="blog-list" role="region">
         {currentPagePosts.map(
@@ -106,10 +105,9 @@ export default function ArchivePage({
       />
     </Layout>
   );
-};
+}
 
 export const fragments = graphql`
-
   fragment ArchivePost on WpPost {
     id
     title
@@ -127,5 +125,4 @@ export const fragments = graphql`
       }
     }
   }
-
-`
+`;

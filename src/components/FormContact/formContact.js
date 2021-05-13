@@ -2,9 +2,18 @@ import * as React from 'react';
 
 import './formContact.css';
 
-const InputContainer = ({ children }) => (<div className="w-full px-3 flex flex-col-reverse" style={{ flex: "1 1 50%" }}>{children}</div>)
+const InputContainer = ({ children }) => (
+  <div
+    className="w-full px-3 flex flex-col-reverse"
+    style={{ flex: '1 1 50%' }}
+  >
+    {children}
+  </div>
+);
 
-const Input = ({ children }) => (<input className={"relative block uppercase font-medium mb-2 tracking-wide text-xs"}>{children}</input>)
+const Input = () => (
+  <input className="relative block uppercase font-medium mb-2 tracking-wide text-xs" />
+);
 
 const FormContact = () => (
   <form

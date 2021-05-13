@@ -12,7 +12,6 @@
     "gatsby-plugin-feed": "^3.4.0",
     "gatsby-plugin-image": "^1.4.1",
     "gatsby-plugin-linaria": "^2.2.0",
-    "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-netlify": "^3.4.0",
     "gatsby-plugin-offline": "^4.4.0",
     "gatsby-plugin-postcss": "^4.4.0",

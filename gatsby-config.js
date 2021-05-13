@@ -62,9 +62,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
+                50
                 : // and we don't actually need more than 1000 in production
-                  1000,
+                1000,
           },
         },
       },
@@ -91,18 +91,8 @@ module.exports = {
 
     /* Integrate with 3rd parties */
     {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {
-          '/*': [
-            'Access-Control-Allow-Origin: https://translate.googleusercontent.com',
-            'Access-Control-Allow-Credentials: true',
-            'Content-Security-Policy: frame-ancestors https://translate.google.com',
-            'X-Frame-Options: ALLOW-FROM https://translate.google.com',
-          ],
-        },
-        mergeSecurityHeaders: false,
-      },
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {},
     },
     {
       resolve: `gatsby-plugin-ackee-tracker`,

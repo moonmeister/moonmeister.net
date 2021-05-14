@@ -9,7 +9,6 @@ import SEO from 'components/seo';
 
 import { LocaleContext } from 'hooks/useLocale';
 import { formatDateString } from 'lib/utils';
-import 'rc-pagination/assets/index.css';
 
 export default function ArchivePage({ posts, title: pageTitle }) {
   const locale = useContext(LocaleContext);

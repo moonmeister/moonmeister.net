@@ -8,17 +8,15 @@ import './footer.css';
 const Footer = () => {
   const {
     wpMenu: {
-      menuItems: { nodes: socials },
+      menuItems: { socials },
     },
   } = useStaticQuery(graphql`
     {
       wpMenu(locations: { eq: SOCIAL_MENU }) {
         menuItems {
-          nodes {
-            title
+          socials: nodes {
             connectedNode {
-              __typename
-              node {
+              social: node {
                 ... on WpSocial {
                   id
                   title
@@ -48,14 +46,21 @@ const Footer = () => {
 
       <section className="flex flex-col items-center my-16" id="footer-right">
         <ul className="social justify-center flex flex-wrap">
-          {socials.map(({ connectedNode: { node: social } }) => (
-            <li key={social.id} className="">
-              <SocialLink
-                className="inline-block mb-2 shadow-lg"
-                data={social}
-              />
-            </li>
-          ))}
+          {socials.map(({ connectedNode }) => {
+            if (!connectedNode?.social) {
+              return null;
+            }
+
+            const { social } = connectedNode;
+            return (
+              <li key={social.id} className="">
+                <SocialLink
+                  className="inline-block mb-2 shadow-lg"
+                  data={social}
+                />
+              </li>
+            );
+          })}
         </ul>
 
         <p className="justify-inherit display-inherit mt-8 tracking-tight">

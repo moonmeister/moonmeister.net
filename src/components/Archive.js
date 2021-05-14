@@ -1,45 +1,18 @@
 import * as React from 'react';
 import { useContext } from 'react';
 
-import { graphql, Link, navigate, useStaticQuery } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from 'components/Layout';
 import Tags from 'components/Tags';
 import SEO from 'components/seo';
 
-import Pagination from 'rc-pagination';
-import Locale from 'rc-pagination/es/locale/en_US';
-
 import { LocaleContext } from 'hooks/useLocale';
-import { formatDateString, getUrlQuery } from 'lib/utils';
+import { formatDateString } from 'lib/utils';
 import 'rc-pagination/assets/index.css';
 
-export default function ArchivePage({
-  count,
-  posts,
-  title: pageTitle,
-  location,
-}) {
+export default function ArchivePage({ posts, title: pageTitle }) {
   const locale = useContext(LocaleContext);
-  const currentPage = getUrlQuery('page', location.search) || 1;
-
-  const {
-    wp: {
-      readingSettings: { postsPerPage },
-    },
-  } = useStaticQuery(graphql`
-    {
-      wp {
-        readingSettings {
-          postsPerPage
-        }
-      }
-    }
-  `);
-
-  const start = (currentPage - 1) * postsPerPage;
-  const end = start + postsPerPage;
-  const currentPagePosts = posts.slice(start, end);
 
   return (
     <Layout>
@@ -48,7 +21,7 @@ export default function ArchivePage({
         <h1>{pageTitle}</h1>
       </header>
       <div aria-live="polite" id="blog-list" role="region">
-        {currentPagePosts.map(
+        {posts.map(
           ({
             id,
             title,
@@ -91,18 +64,6 @@ export default function ArchivePage({
           )
         )}
       </div>
-      <Pagination
-        ariaControls="blog-list"
-        className="flex items-center justify-center my-6 text-xl"
-        defaultCurrent={currentPage}
-        defaultPageSize={postsPerPage}
-        locale={Locale}
-        onChange={(current) => {
-          navigate(`/blog/?page=${current}`);
-        }}
-        showQuickJumper={count / postsPerPage > 3}
-        total={count}
-      />
     </Layout>
   );
 }

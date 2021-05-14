@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { graphql } from 'gatsby';
-import ArchivePage from '../components/Archive';
+import ArchivePage from 'components/Archive';
 
 export default function BlogPage({
   data: {
@@ -14,18 +14,23 @@ export default function BlogPage({
   location,
 }) {
   return (
-    <ArchivePage
-      count={totalCount}
-      location={location}
-      pageTitle={title}
-      posts={allPosts}
-    />
+    <>
+      <header>
+        <h1>{title}</h1>
+      </header>
+      <ArchivePage
+        count={totalCount}
+        location={location}
+        pageTitle={title}
+        posts={allPosts}
+      />
+    </>
   );
 }
 
 export const query = graphql`
-  query tagArchiveQuery($uri: String!) {
-    wpTag(uri: { eq: $uri }) {
+  query tagArchiveQuery($id: String!) {
+    wpTag(id: { eq: $id }) {
       name
       count
       posts {

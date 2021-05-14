@@ -67,8 +67,8 @@ export default function BlogPost({
 }
 
 export const query = graphql`
-  query blogPostQuery($uri: String!) {
-    wpPost(uri: { eq: $uri }) {
+  query blogPostQuery($id: String!) {
+    wpPost(id: { eq: $id }) {
       title
       author {
         node {

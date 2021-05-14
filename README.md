@@ -1,3 +1,3 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+Just my personal tech blog.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bf5db54e-f4ae-4427-b1e7-c4f446ee4f52/deploy-status)](https://app.netlify.com/sites/compassionate-pasteur-65d46d/deploys)
+[![RelativeCI](https://badges.relative-ci.com/badges/QL8ruEradVfANG3dFHob?branch=main)](https://app.relative-ci.com/projects/QL8ruEradVfANG3dFHob)

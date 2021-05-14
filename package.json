@@ -12,7 +12,7 @@
     "gatsby-plugin-feed": "^3.4.0",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
     "gatsby-plugin-image": "^1.4.1",
-    "gatsby-plugin-linaria": "^2.2.0",
+    "gatsby-plugin-manifest": "^3.5.0",
     "gatsby-plugin-netlify": "^3.4.0",
     "gatsby-plugin-offline": "^4.4.0",
     "gatsby-plugin-postcss": "^4.4.0",
@@ -62,7 +62,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "netlify-cli": "^3.29.0",
     "prettier": "^2.3.0"
   },
   "resolutions": {
@@ -81,7 +80,6 @@
     "repl": "gatsby repl",
     "format": "eslint . --fix",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "deploy": "yarn ntl deploy"
+    "serve": "gatsby serve"
   }
 }

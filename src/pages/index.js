@@ -24,6 +24,7 @@ const IndexPage = ({
         <GatsbyImage
           alt={featuredImage.altText}
           image={getImage(featuredImage.localFile)}
+          loading="eager"
         />
       </figure>
       <div className="md:w-7/12 m-6">

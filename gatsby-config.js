@@ -73,6 +73,7 @@ module.exports = {
     /* Data transformer Plugins */
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,

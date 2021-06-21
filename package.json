@@ -7,7 +7,7 @@
     "autoprefixer": "^10.2.6",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
-    "gatsby": "^3.7.1",
+    "gatsby": "^3.7.2",
     "gatsby-plugin-ackee-tracker": "^3.0.0",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-gatsby-cloud": "^2.7.1",
@@ -32,7 +32,7 @@
     "images": "link:./src/images",
     "lib": "link:./src/lib",
     "pages": "link:./src/pages",
-    "postcss": "^8.3.4",
+    "postcss": "^8.3.5",
     "postcss-nested": "^5.0.5",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",
@@ -45,7 +45,7 @@
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.5",
+    "@babel/core": "^7.14.6",
     "@types/react": "^17.0.11",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^1.7.1",
@@ -64,7 +64,7 @@
     "prettier": "^2.3.1"
   },
   "resolutions": {
-    "graphql": "^15.5.0",
+    "graphql": "^15.5.1",
     "size-plugin": "^1.2.0"
   },
   "keywords": [

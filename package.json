@@ -7,7 +7,7 @@
     "autoprefixer": "^10.2.6",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
-    "gatsby": "^3.8.0",
+    "gatsby": "^3.8.1",
     "gatsby-plugin-ackee-tracker": "^3.0.0",
     "gatsby-plugin-feed": "^3.8.0",
     "gatsby-plugin-gatsby-cloud": "^2.8.1",
@@ -20,10 +20,10 @@
     "gatsby-plugin-react-helmet": "^4.8.0",
     "gatsby-plugin-readingtime": "^2.0.0",
     "gatsby-plugin-relative-ci": "^1.0.0",
-    "gatsby-plugin-robots-txt": "^1.6.2",
+    "gatsby-plugin-robots-txt": "^1.6.8",
     "gatsby-plugin-sharp": "^3.8.0",
     "gatsby-plugin-sitemap": "^4.4.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "gatsby-plugin-webpack-size": "^2.0.1",
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-source-wordpress": "^5.8.0",
@@ -41,7 +41,7 @@
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "^2.2.2",
+    "tailwindcss": "^2.2.4",
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
@@ -61,7 +61,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.2"
   },
   "resolutions": {
     "graphql": "^15.5.1",

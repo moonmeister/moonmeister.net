@@ -34,7 +34,7 @@
     "pages": "link:./src/pages",
     "postcss": "^8.3.5",
     "postcss-nested": "^5.0.5",
-    "preact": "^10.5.13",
+    "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@types/react": "^17.0.11",
+    "@types/react": "^17.0.13",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^1.8.0",
     "cross-env": "^7.0.3",

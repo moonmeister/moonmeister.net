@@ -2309,10 +2309,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^17.0.13":
-  version "17.0.13"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.13.tgz#6b7c9a8f2868586ad87d941c02337c6888fb874f"
-  integrity sha512-D/G3PiuqTfE3IMNjLn/DCp6umjVCSvtZTPdtAFy5+Ved6CsdRvivfKeCzw79W4AatShtU4nGqgvOv5Gro534vQ==
+"@types/react@^17.0.14":
+  version "17.0.14"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.14.tgz#f0629761ca02945c4e8fea99b8177f4c5c61fb0f"
+  integrity sha512-0WwKHUbWuQWOce61UexYuWTGuGY/8JvtUe/dtQ6lR4sZ3UiylHotJeWpf3ArP9+DSGUoLY3wbU59VyMrJps5VQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7000,10 +7000,10 @@ gatsby-source-filesystem@^3.9.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-wordpress@^5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-5.9.0.tgz#8270163eda8d55bdb8807775abe181f42df4f08c"
-  integrity sha512-hNQPY4rI6IEirV1YAYroiPRK5r63xr5d494SxPEOPXulQlHx5HN5GTw9qfxudcY5RZWBXZ/fX4Xe0VcGQ+vtSA==
+gatsby-source-wordpress@^5.9.1:
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-5.9.1.tgz#42873c527b7d64ae7b4ad4f1422e6d619ef87479"
+  integrity sha512-h6AmbAIvKAKDnSnISRZR2EQI/GpC9ZXh2a/55ygMpjHCBe8NxwbsH7VRo2OjyBY58SFjdvvoLSRVRSzW8+sFVw==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@rematch/core" "^1.3.0"
@@ -7102,10 +7102,10 @@ gatsby-worker@^0.0.0:
   dependencies:
     "@babel/core" "^7.14.0"
 
-gatsby@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.9.0.tgz#b0966c2c9887fbaababcd11d75a3ae80210c7731"
-  integrity sha512-cBM5Ak4uWMg/eI4du776NIqymGdiQH6qYPvDYdxTItjDrJxZz13Fs3k8fRBgKyGq9xh3+48FLjdSikK2ZUaQXA==
+gatsby@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.9.1.tgz#7fafca3f997d6eee411af47a323b4a5382706944"
+  integrity sha512-lc0bP7jJwDD5z69WS4PwddPfEKR70UQTFMjEV+BBNAmrm0ZptA1sVmBVaIfclFIUXk5UmBvf7V5m9cS0/jNa0Q==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.14.0"

@@ -20,7 +20,7 @@
     "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-readingtime": "^2.0.0",
     "gatsby-plugin-relative-ci": "^1.0.0",
-    "gatsby-plugin-robots-txt": "^1.6.8",
+    "gatsby-plugin-robots-txt": "^1.6.9",
     "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-sitemap": "^4.7.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@types/react": "^17.0.16",
+    "@types/react": "^17.0.19",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^1.11.0",
     "cross-env": "^7.0.3",

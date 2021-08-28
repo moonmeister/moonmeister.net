@@ -4,7 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.3",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
     "gatsby": "^3.11.1",
@@ -41,7 +41,7 @@
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "^2.2.7",
+    "tailwindcss": "^2.2.8",
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
@@ -55,10 +55,10 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-import-resolver-webpack": "^0.13.1",
-    "eslint-plugin-flowtype": "^5.9.0",
-    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-flowtype": "^5.9.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.2"

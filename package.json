@@ -41,7 +41,7 @@
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "^2.2.9",
+    "tailwindcss": "^2.2.15",
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
     "prettier": "^2.3.2"
   },
   "resolutions": {
-    "graphql": "^15.5.2",
+    "graphql": "^15.5.3",
     "size-plugin": "^1.2.0"
   },
   "keywords": [

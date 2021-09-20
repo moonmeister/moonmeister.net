@@ -8,7 +8,7 @@
     "classnames": "^2.3.1",
     "components": "link:./src/components",
     "gatsby": "^3.13.0",
-    "gatsby-plugin-ackee-tracker": "^3.0.0",
+    "gatsby-plugin-ackee-tracker": "^3.0.1",
     "gatsby-plugin-feed": "^3.13.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.13.0",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@types/react": "^17.0.20",
+    "@types/react": "^17.0.22",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^1.13.0",
     "cross-env": "^7.0.3",
@@ -59,9 +59,9 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.25.3",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.0"
+    "prettier": "^2.4.1"
   },
   "resolutions": {
     "graphql": "^15.5.3",

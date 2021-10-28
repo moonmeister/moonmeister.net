@@ -64,7 +64,7 @@
     "prettier": "^2.4.1"
   },
   "resolutions": {
-    "graphql": "^15.6.1",
+    "graphql": "^15.7.1",
     "size-plugin": "^3.0.0"
   },
   "keywords": [

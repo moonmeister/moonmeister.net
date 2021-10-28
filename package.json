@@ -65,7 +65,7 @@
   },
   "resolutions": {
     "graphql": "^15.6.1",
-    "size-plugin": "^1.2.0"
+    "size-plugin": "^3.0.0"
   },
   "keywords": [
     "gatsby"

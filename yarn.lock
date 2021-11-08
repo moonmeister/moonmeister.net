@@ -9,10 +9,10 @@
   dependencies:
     tslib "~2.0.1"
 
-"@babel/cli@^7.15.7":
-  version "7.15.7"
-  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.15.7.tgz#62658abedb786d09c1f70229224b11a65440d7a1"
-  integrity sha512-YW5wOprO2LzMjoWZ5ZG6jfbY9JnkDxuHDwvnrThnuYtByorova/I0HNXJedrUfwuXFQfYOjcqDA4PU3qlZGZjg==
+"@babel/cli@^7.16.0":
+  version "7.16.0"
+  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.16.0.tgz#a729b7a48eb80b49f48a339529fc4129fd7bcef3"
+  integrity sha512-WLrM42vKX/4atIoQB+eb0ovUof53UUvecb4qGjU2PDDWRiZr50ZpiV8NpcLo7iSxeGYrRG0Mqembsa+UrTAV6Q==
   dependencies:
     commander "^4.0.1"
     convert-source-map "^1.1.0"
@@ -85,7 +85,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.15.5", "@babel/core@^7.15.8":
+"@babel/core@^7.15.5":
   version "7.15.8"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.15.8.tgz#195b9f2bffe995d2c6c159e72fe525b4114e8c10"
   integrity sha512-3UG9dsxvYBMYwRv+gS41WKHno4K60/9GPy1CJaH6xy3Elq8CTtvtjT5R5jmNhXfCYLX2mTw+7/aq5ak/gOE0og==
@@ -2317,10 +2317,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.33":
+"@types/react@*":
   version "17.0.33"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.33.tgz#e01ae3de7613dac1094569880bb3792732203ad5"
   integrity sha512-pLWntxXpDPaU+RTAuSGWGSEL2FRTNyRQOjSWDke/rxRg14ncsZvx8AKWMWZqvc1UOaJIAoObdZhAWvRaHFi5rw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.34":
+  version "17.0.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.34.tgz#797b66d359b692e3f19991b6b07e4b0c706c0102"
+  integrity sha512-46FEGrMjc2+8XhHXILr+3+/sTe3OfzSPU9YGKILLrUYbQ1CLQC9Daqo1KzENGXAWwrFwiY0l4ZbF20gRvgpWTg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5969,13 +5978,13 @@ gatsby-page-utils@^2.0.0:
     lodash "^4.17.21"
     micromatch "^4.0.4"
 
-gatsby-plugin-ackee-tracker@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-ackee-tracker/-/gatsby-plugin-ackee-tracker-3.2.0.tgz#cdff4a53dbd38020fade4f9493d008b26a5bf7db"
-  integrity sha512-OZx69wN9VbKXVlw4JcpSAQGMNwLQvLnrEYLcEgysJQrKRlG4dK5HPnFLamFof9REQs2MDn9RmMsiHoCHTF7vHg==
+gatsby-plugin-ackee-tracker@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-ackee-tracker/-/gatsby-plugin-ackee-tracker-3.2.1.tgz#50d6ce4e0cb060adddab5c68a317c4c88caa6de1"
+  integrity sha512-RMBoygTjr5cdJqNvZUUcSCK3j8PHRWNpS8iSebkwPEtdifcQsJ67vLFVi2N0sc9IwHNnb3HqzYEn/WIpum9vMg==
   dependencies:
-    "@babel/cli" "^7.15.7"
-    "@babel/core" "^7.15.8"
+    "@babel/cli" "^7.16.0"
+    "@babel/core" "^7.16.0"
     ackee-tracker "^5"
     babel-preset-gatsby-package "^1.14.0"
     cross-env "^7.0.3"
@@ -6118,10 +6127,10 @@ gatsby-plugin-readingtime@^2.2.0:
   dependencies:
     reading-time "^1.5.0"
 
-gatsby-plugin-relative-ci@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-relative-ci/-/gatsby-plugin-relative-ci-1.3.0.tgz#73c978d6bec5c8400ab9b97b2157991b987d3a46"
-  integrity sha512-qqHhr6hRpMSZLRYskOUrwtReOPsm8Ydm9xuPmSqp1BOGQsKghMTGdAEKEF4CiYB4bUvUBuwqdGpguJL+g+QnUA==
+gatsby-plugin-relative-ci@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-relative-ci/-/gatsby-plugin-relative-ci-1.3.1.tgz#878fedfcba20dadc28da5ee548ba03f3d0c6a62b"
+  integrity sha512-pq4cz6HoFDTsT0qKGxjgA/hrE9rAQ4H1wLwWssZAimZx3aa2V0LoRmDyXvCfzDe6K4+x1kdH4wM8eWvNRSCCHA==
   dependencies:
     "@relative-ci/agent" "^2.1.0"
 

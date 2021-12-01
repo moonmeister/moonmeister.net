@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { graphql } from 'gatsby';
 
 import { Edit3, Clock } from 'react-feather';
@@ -14,11 +13,11 @@ export default function BlogPost({
     wpPost: {
       title,
       content,
-      excerpt,
       dateGmt,
       author: { node: author },
       readingTime: { text: readingText },
       tags: { nodes: allTags },
+      seo,
     },
   },
 }) {
@@ -26,7 +25,7 @@ export default function BlogPost({
 
   return (
     <Layout>
-      <SEO description={excerpt} title={title} />
+      <SEO seo={seo} />
       <article className="max-w-reading m-auto floating max-w-64 px-6">
         <header className="border-b flex flex-col items-center text-center py-3 ">
           <h1 className="text-4xl font-bold z-0">{title}</h1>
@@ -93,6 +92,7 @@ export const query = graphql`
           ...WpTagLink
         }
       }
+      ...SeoPostFragment
     }
   }
 `;

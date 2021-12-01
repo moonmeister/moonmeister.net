@@ -1,4 +1,3 @@
-import * as React from 'react';
 import SEO from 'components/seo';
 import Layout from 'components/Layout';
 

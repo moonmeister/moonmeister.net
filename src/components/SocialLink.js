@@ -1,4 +1,3 @@
-import * as React from 'react';
 import ExtLink from 'components/extLink';
 import { graphql } from 'gatsby';
 import classnames from 'classnames';

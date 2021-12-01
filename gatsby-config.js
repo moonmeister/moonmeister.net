@@ -17,10 +17,9 @@ module.exports = {
   flags: {
     FAST_DEV: true,
   },
+  jsxRuntime: 'automatic',
+
   siteMetadata: {
-    title: `Alex Moon`,
-    description: `Personal Website`,
-    author: `@moon_meister`,
     siteUrl,
   },
   plugins: [

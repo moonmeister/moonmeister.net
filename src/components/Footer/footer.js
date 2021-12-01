@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import ExtLink from 'components/extLink';
 import SocialLink from 'components/SocialLink';

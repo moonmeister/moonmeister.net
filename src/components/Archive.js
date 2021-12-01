@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useContext } from 'react';
 
 import { graphql, Link } from 'gatsby';
@@ -15,7 +14,7 @@ export default function ArchivePage({ posts, title: pageTitle }) {
 
   return (
     <Layout>
-      <SEO title={pageTitle} />
+      {/* <SEO /> */}
       <header className="sr-only">
         <h1>{pageTitle}</h1>
       </header>

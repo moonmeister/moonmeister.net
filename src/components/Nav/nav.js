@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import './nav.css';

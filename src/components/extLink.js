@@ -1,4 +1,3 @@
-import * as React from 'react';
 
 const ExtLink = ({ children, ...attrb }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading

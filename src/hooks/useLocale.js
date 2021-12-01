@@ -1,6 +1,5 @@
-import * as React from 'react';
-
-const LocaleContext = React.createContext();
+import { createContext } from "react";
+const LocaleContext = createContext();
 
 function getLocale() {
   if (typeof window !== `undefined`) {

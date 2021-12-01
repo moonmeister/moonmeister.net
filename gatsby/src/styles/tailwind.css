@@ -1,0 +1,78 @@
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+
+/*components*/
+
+
+
+html {
+  @apply font-sans text-primary-900 bg-gray-200;
+}
+
+html,
+body {
+  @apply h-screen;
+}
+/*
+h1 {
+  @apply text-6xl text-primary-800;
+}
+
+h2 {
+  @apply text-2xl text-primary-700;
+}
+
+h3 {
+  @apply text-xl text-primary-700;
+} */
+
+.inline-svg {
+  @apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased;
+  height: 1em;
+  width: 1em;
+}
+
+input,
+textarea,
+button {
+  @apply text-gray-900 text-shadow-none;
+}
+
+.floating {
+  @apply bg-gray-100 rounded-lg shadow-md mx-2;
+
+  @supports (display: grid) {
+    @apply mx-0;
+  }
+}
+
+/*base*/
+
+
+.display-inherit {
+  display: inherit;
+}
+
+.justify-inherit {
+  justify-content: inherit;
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  /* Remove duration for all unknown animation when a user requests a reduced animation experience */
+  *:not(.safe-animation),
+  *:not(.safe-animation)::before,
+  *:not(.safe-animation)::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+::selection {
+  @apply bg-blue-300;
+}

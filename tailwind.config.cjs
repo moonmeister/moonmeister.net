@@ -3,7 +3,11 @@ const twTypography = require('tailwindcss-typography');
 const colors = require('tailwindcss/colors');
 
 const tWconfig = {
-  purge: ['./src/**/*.js'],
+  mode: 'jit',
+  purge: [
+    './src/**/*.html',
+    './src/**/*.svelte'
+  ],
   theme: {
     textShadow: (theme) => ({
       DEFAULT: `2px 2px 4px ${theme('colors.gray.900')}`,

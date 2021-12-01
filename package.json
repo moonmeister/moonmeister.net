@@ -4,9 +4,11 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
+    "@typescript-eslint/parser": "^5.5.0",
     "autoprefixer": "^10.4.0",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
+    "eslint-plugin-svelte3": "^3.2.1",
     "gatsby": "^4.2.0",
     "gatsby-plugin-ackee-tracker": "^3.2.1",
     "gatsby-plugin-feed": "^4.2.0",
@@ -74,5 +76,6 @@
     "format": "eslint . --fix",
     "start": "npm run develop",
     "serve": "gatsby serve"
-  }
+  },
+  "version": "0.0.0"
 }

@@ -31,11 +31,11 @@
 
   export let indexPage;
 
-  const {
+  $: ({
     title,
     content,
     featuredImage: { node: featuredImage },
-  } = indexPage;
+  } = indexPage);
 </script>
 
 <section

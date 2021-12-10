@@ -3,7 +3,7 @@
   import { gql } from 'graphql-request';
   import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
 
-  
+
   export const PAGE_EXCERPT = gql`
     query blogPostQuery($id: ID!) {
       post(id: $id, idType: SLUG) {
@@ -34,13 +34,10 @@
 
   /** @type {import('@sveltejs/kit').Load} */
   export async function load({
-    page: {
-      params: { blogSlug },
-    },
+    page,
     stuff: { client },
   }) {
-    console.log(blogSlug);
-    const data = await client.request(PAGE_EXCERPT, { id: blogSlug });
+    const data = await client.request(PAGE_EXCERPT, { id: page.params.blogSlug });
     return {
       props: {
         post: data.post,
@@ -61,14 +58,15 @@
   export let post;
   export let readingTime: ReadTimeResults;
 
-  const {
+  $: ({
     title,
     content,
     dateGmt,
     author: { node: author },
     tags: { nodes: allTags },
-  } = post;
-  const { avatar } = author;
+  } = post);
+
+  $: ({ avatar } = author);
 </script>
 
 <article class="max-w-reading m-auto floating max-w-64 px-6">

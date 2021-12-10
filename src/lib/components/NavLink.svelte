@@ -1,7 +1,8 @@
 <script lang="ts">
   import { classNames } from '$lib/utils.js';
   import { page } from '$app/stores';
-  const { class: propClass, href, title } = $$props;
+
+  $: ({ class: propClass, href, title } = $$props);
 
   $: isActive = $page.path == href;
 </script>
@@ -15,19 +16,13 @@
   {title}
   class:active={isActive}
 >
-<slot/>
+  <slot />
 </a>
 
 <style lang="postcss">
-  a {
-    color: black;
-    text-decoration: none;
-    padding: 1rem;
-  }
-
   a.active {
     @apply text-pink-600 relative box-content;
-    
+
     &::after {
       @apply border-b-4 border-blue-500 w-full absolute left-0;
       content: '';

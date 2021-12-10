@@ -31,7 +31,7 @@
 
 </script>
 
-<header class="sr-only">
+<header >
   <slot />
 </header>
 <div aria-live="polite" id="blog-list" role="region">

@@ -21,7 +21,7 @@
 
   export let socialMeta;
 
-  const { socialLinkType, url, document, primaryColor, textColor } = socialMeta;
+  $: ({ socialLinkType, url, document, primaryColor, textColor } = socialMeta);
 
   const finalUrl = socialLinkType === 'url' ? url : document.mediaItemUrl;
 </script>

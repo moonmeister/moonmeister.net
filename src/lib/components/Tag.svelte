@@ -14,7 +14,7 @@
 
   export let tag;
 
-  const { name, uri } = tag;
+  $: ({ name, uri } = tag);
 </script>
 
 <a href={uri}>

@@ -1,17 +1,44 @@
+<script context="module" lang="ts">
+  import { NAV_QUERY } from '$lib/components/Nav.svelte';
+  import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
+  import { GraphQLClient } from 'graphql-request';
+  /** @type {import('@sveltejs/kit').Load} */
+  export async function load({ fetch }) {
+    const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
+      fetch,
+    });
+
+    const [{ data: navData }, { data: footerData }] = await client.batchRequests([
+      { document: NAV_QUERY },
+      { document: FOOTER_QUERY },
+    ]);
+
+    return {
+      props: {
+        navData,
+        footerData,
+      },
+      stuff: {
+        client,
+      },
+    };
+  }
+</script>
+
 <script lang="ts">
   import '../app.css';
+  import Nav from '$lib/components/Nav.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
-  // import Nav from 'components/Nav';
-  // import Footer from 'components/Footer';
-  // import { LocaleProvider } from 'hooks/useLocale';
-  // import RssLink from 'components/Rss';
+  export let navData;
+  export let footerData;
 </script>
 
 <!-- <LocaleProvider> -->
 <!-- <RssLink /> -->
 <div class="h-screen" id="page-layout">
   <header>
-    <!-- <Nav /> -->
+    <Nav menuItems={navData?.navMenu} />
   </header>
   <main class={'max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg'}>
     <slot />
@@ -19,12 +46,11 @@
   <footer
     class="flex items-center flex-col md:flex-row md:justify-evenly bg-primary-600 text-gray-100 shadow-footer px-2 py-8 md:px-8"
   >
-    <!-- <Footer /> -->
+    <Footer socials={footerData?.socialMenu} />
   </footer>
 </div>
-<!-- </LocaleProvider> -->
-);
 
+<!-- </LocaleProvider> -->
 <style lang="postcss">
   #page-layout {
     @supports (display: grid) {

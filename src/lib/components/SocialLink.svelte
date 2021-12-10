@@ -23,7 +23,7 @@
 
   $: ({ socialLinkType, url, document, primaryColor, textColor } = socialMeta);
 
-  const finalUrl = socialLinkType === 'url' ? url : document.mediaItemUrl;
+  $: finalUrl = socialLinkType === 'url' ? url : document.mediaItemUrl;
 </script>
 
 <a
@@ -42,13 +42,13 @@
   }
 
   @screen canhover {
-      a {
-        @apply transform transition-transform duration-100 ease-out;
-      }
-
-      a:hover,
-      a:focus {
-          @apply shadow-lg -translate-y-1 ease-in;
-      }
+    a {
+      @apply transform transition-transform duration-100 ease-out;
     }
+
+    a:hover,
+    a:focus {
+      @apply shadow-lg -translate-y-1 ease-in;
+    }
+  }
 </style>

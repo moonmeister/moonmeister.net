@@ -37,5 +37,5 @@
 </script>
 
 <ArchivePage {posts}>
-  <h1>{pageTitle}</h1>
+  {pageTitle}
 </ArchivePage>

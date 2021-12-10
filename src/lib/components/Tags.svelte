@@ -1,7 +1,7 @@
 <script lang="ts">
   import { TagIcon } from 'svelte-feather-icons';
   import Tag from './Tag.svelte';
-
+  
   export let tags = [];
 </script>
 

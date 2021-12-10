@@ -27,12 +27,15 @@
   import { formatDateString } from '$lib/utils.js';
   import { locale } from '$lib/store.js';
   import Tags from './Tags.svelte';
+ 
   export let posts = [];
 
 </script>
 
-<header >
-  <slot />
+<header class="sr-only">
+  <h1>
+    <slot />
+  </h1>
 </header>
 <div aria-live="polite" id="blog-list" role="region">
   {#each posts as { title, excerpt, uri, author: { node: author }, dateGmt, tags }}

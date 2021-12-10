@@ -40,9 +40,5 @@
 </script>
 
 <ArchivePage posts={tag.posts.nodes}>
-  <div class="pb-8">
-    <TagIcon size="3x" class="inline-block max-width" />
-
-    <h1 class="inline-block align-top text-4xl">{tag.name}</h1>
-  </div>
+  {tag.name}
 </ArchivePage>

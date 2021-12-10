@@ -11,16 +11,17 @@
 
 <script lang="ts">
   import { getRandomInt } from '$lib/utils.js';
-
+  import { page } from '$app/stores';
+  
   export let tag;
+  $: isActive = $page.params?.tagSlug === tag.name.toLowerCase();
 
-  $: ({ name, uri } = tag);
 </script>
 
-<a href={uri}>
+<a href={tag.uri}>
   <div class="gradient-border relative rounded z-10">
-    <p class="tag capitalize px-1 bg-gray-100 rounded-sm" {...$$props}>
-      {name}
+    <p class="tag capitalize px-1 bg-gray-100 rounded-sm" class:active={isActive}>
+      {tag.name}
     </p>
     <div
       class='inset-0 absolute'
@@ -41,3 +42,8 @@
     />
   </div>
 </a>
+<style lang="postcss">
+ .active {
+   font-weight: bold;
+ }
+</style>

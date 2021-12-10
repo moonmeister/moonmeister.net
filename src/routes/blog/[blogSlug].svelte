@@ -1,10 +1,8 @@
 <script lang="ts" context="module">
-  import readingTime from 'reading-time/lib/reading-time';
   import { gql } from 'graphql-request';
   import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
 
-
-  export const PAGE_EXCERPT = gql`
+  const PAGE_EXCERPT = gql`
     query blogPostQuery($id: ID!) {
       post(id: $id, idType: SLUG) {
         title
@@ -33,31 +31,28 @@
   `;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({
-    page,
-    stuff: { client },
-  }) {
+  export async function load({ page, stuff: { client } }) {
     const data = await client.request(PAGE_EXCERPT, { id: page.params.blogSlug });
     return {
       props: {
         post: data.post,
-        readingTime: readingTime(data.post.content),
       },
     };
   }
+
+  export const hydrate = false;
+  export const prerender = true;
 </script>
 
 <script lang="ts">
+  import readingTime from 'reading-time/lib/reading-time.js';
   import { Edit3Icon, ClockIcon } from 'svelte-feather-icons';
-  import type { ReadTimeResults } from 'reading-time';
   import Tags from '$lib/components/Tags.svelte';
   import Blocks from '$lib/components/Blocks.svelte';
 
   import { formatDateString } from '$lib/utils.js';
 
   export let post;
-  export let readingTime: ReadTimeResults;
-
   $: ({
     title,
     content,
@@ -65,8 +60,9 @@
     author: { node: author },
     tags: { nodes: allTags },
   } = post);
-
   $: ({ avatar } = author);
+  
+  $: rtData = readingTime(content);
 </script>
 
 <article class="max-w-reading m-auto floating max-w-64 px-6">
@@ -92,7 +88,7 @@
         </div>
         <p class="text-gray-600 row-auto">
           <ClockIcon aria-hidden class="inline-svg text-gray-700 mr-2" />
-          {readingTime.text} · {formatDateString(dateGmt)}
+          {rtData.text} · {formatDateString(dateGmt)}
         </p>
       </div>
     </div>

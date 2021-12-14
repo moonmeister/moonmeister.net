@@ -61,7 +61,7 @@
     tags: { nodes: allTags },
   } = post);
   $: ({ avatar } = author);
-  
+
   $: rtData = readingTime(content);
 </script>
 

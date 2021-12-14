@@ -62,9 +62,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                50
+                  50
                 : // and we don't actually need more than 1000 in production
-                1000,
+                  1000,
           },
         },
       },
@@ -165,23 +165,14 @@ module.exports = {
                 allWpPost: { nodes: allPosts },
               },
             }) =>
-              allPosts.map(
-                ({
-                  title,
-                  excerpt,
-                  uri,
-                  dateGmt,
-                  author: { node: author },
-                  tags,
-                }) => ({
-                  title,
-                  description: excerpt,
-                  author: author.name,
-                  date: dateGmt,
-                  categories: tags.nodes.map((node) => node.name),
-                  url: `${site.siteMetadata.siteUrl}${uri}`,
-                })
-              ),
+              allPosts.map(({ title, excerpt, uri, dateGmt, author: { node: author }, tags }) => ({
+                title,
+                description: excerpt,
+                author: author.name,
+                date: dateGmt,
+                categories: tags.nodes.map((node) => node.name),
+                url: `${site.siteMetadata.siteUrl}${uri}`,
+              })),
             query: `
               {
                 allWpPost(

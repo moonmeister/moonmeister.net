@@ -54,10 +54,7 @@ async function getPosts({ graphql, reporter }) {
   `);
 
   if (graphqlResult.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      graphqlResult.errors
-    );
+    reporter.panicOnBuild(`There was an error loading your blog posts`, graphqlResult.errors);
     return [];
   }
 
@@ -79,10 +76,7 @@ async function getTags({ graphql, reporter }) {
   `);
 
   if (graphqlResult.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      graphqlResult.errors
-    );
+    reporter.panicOnBuild(`There was an error loading your blog posts`, graphqlResult.errors);
     return [];
   }
 

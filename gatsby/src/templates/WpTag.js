@@ -18,12 +18,7 @@ export default function BlogPage({
       <header>
         <h1>{title}</h1>
       </header>
-      <ArchivePage
-        count={totalCount}
-        location={location}
-        pageTitle={title}
-        posts={allPosts}
-      />
+      <ArchivePage count={totalCount} location={location} pageTitle={title} posts={allPosts} />
     </>
   );
 }

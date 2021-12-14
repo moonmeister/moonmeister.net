@@ -9,4 +9,3 @@ function getLocale() {
 }
 
 export const locale = readable(getLocale());
-

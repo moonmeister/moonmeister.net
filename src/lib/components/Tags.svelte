@@ -1,11 +1,11 @@
 <script lang="ts">
   import { TagIcon } from 'svelte-feather-icons';
   import Tag from './Tag.svelte';
-  
+
   export let tags = [];
 </script>
 
-<TagIcon aria-hidden class="inline-block text-xls" size=24/>
+<TagIcon aria-hidden class="inline-block text-xls" size="24" />
 <div class="inline-flex items-center box-border">
   {#if tags.length}
     {#each tags as tag}

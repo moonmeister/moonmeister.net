@@ -17,10 +17,7 @@
   `;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({
-    page,
-    stuff: { client },
-  }) {
+  export async function load({ page, stuff: { client } }) {
     const data = await client.request(TAG_QUERY, { id: page.params.tagSlug });
 
     return {
@@ -33,7 +30,7 @@
 
 <script lang="ts">
   import ArchivePage from '$lib/components/Archive.svelte';
-  
+
   export let tag;
 </script>
 

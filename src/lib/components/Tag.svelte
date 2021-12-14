@@ -12,10 +12,9 @@
 <script lang="ts">
   import { getRandomInt } from '$lib/utils.js';
   import { page } from '$app/stores';
-  
+
   export let tag;
   $: isActive = $page.params?.tagSlug === tag.name.toLowerCase();
-
 </script>
 
 <a href={tag.uri}>
@@ -24,7 +23,7 @@
       {tag.name}
     </p>
     <div
-      class='inset-0 absolute'
+      class="inset-0 absolute"
       style="content: '';
           z-index: -1;
           margin: -1px;
@@ -42,8 +41,9 @@
     />
   </div>
 </a>
+
 <style lang="postcss">
- .active {
-   font-weight: bold;
- }
+  .active {
+    font-weight: bold;
+  }
 </style>

@@ -11,9 +11,7 @@ function getLocale() {
 }
 
 const LocaleProvider = ({ children }) => (
-  <LocaleContext.Provider value={getLocale()}>
-    {children}
-  </LocaleContext.Provider>
+  <LocaleContext.Provider value={getLocale()}>{children}</LocaleContext.Provider>
 );
 
 export { LocaleContext, LocaleProvider };

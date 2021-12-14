@@ -3,19 +3,19 @@
   import { ARCHIVE_FRAGMENT } from '$lib/components/Archive.svelte';
 
   const BLOG_POST_QUERY = gql`
-      query BlogArchive {
-        posts(where: { orderby: { field: DATE, order: DESC } }) {
-          nodes {
-            ...ArchivePost
-          }
-        }
-        
-        page(id: "/blog/" idType: URI) {
-          title
+    query BlogArchive {
+      posts(where: { orderby: { field: DATE, order: DESC } }) {
+        nodes {
+          ...ArchivePost
         }
       }
-      ${ARCHIVE_FRAGMENT}
-    `;
+
+      page(id: "/blog/", idType: URI) {
+        title
+      }
+    }
+    ${ARCHIVE_FRAGMENT}
+  `;
 
   /** @type {import('@sveltejs/kit').Load} */
   export async function load({ stuff: { client } }) {

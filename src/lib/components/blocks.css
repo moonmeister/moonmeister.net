@@ -415,12 +415,15 @@
 
     table {
       @apply w-full table-auto;
-      
-      tr, th, td {
+
+      tr,
+      th,
+      td {
         @apply border-black;
       }
 
-      td, th {
+      td,
+      th {
         @apply p-2 border border-black;
       }
 
@@ -438,7 +441,8 @@
         @apply odd:bg-gray-300;
       }
 
-      td, th {
+      td,
+      th {
         @apply border-0;
       }
     }

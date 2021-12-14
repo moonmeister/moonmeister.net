@@ -27,9 +27,8 @@
   import { formatDateString } from '$lib/utils.js';
   import { locale } from '$lib/store.js';
   import Tags from './Tags.svelte';
- 
-  export let posts = [];
 
+  export let posts = [];
 </script>
 
 <header class="sr-only">

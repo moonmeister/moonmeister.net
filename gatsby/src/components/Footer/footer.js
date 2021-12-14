@@ -54,10 +54,7 @@ const Footer = () => {
             const { social } = connectedNode;
             return (
               <li key={social.id} className="">
-                <SocialLink
-                  className="inline-block mb-2 shadow-lg"
-                  data={social}
-                />
+                <SocialLink className="inline-block mb-2 shadow-lg" data={social} />
               </li>
             );
           })}

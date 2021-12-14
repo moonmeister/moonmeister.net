@@ -42,7 +42,7 @@ export function getRandomInt(max, incrament = 1) {
 }
 
 function append(acc, arg) {
-  return acc + arg + " " 
+  return acc + arg + ' ';
 }
 
 export function classNames(...args) {

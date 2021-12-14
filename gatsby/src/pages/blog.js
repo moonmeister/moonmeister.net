@@ -10,14 +10,7 @@ export default function BlogPage({
   },
   location,
 }) {
-  return (
-    <ArchivePage
-      count={totalCount}
-      location={location}
-      pageTitle={title}
-      posts={allPosts}
-    />
-  );
+  return <ArchivePage count={totalCount} location={location} pageTitle={title} posts={allPosts} />;
 }
 
 export const query = graphql`

@@ -3,10 +3,7 @@ import * as React from 'react';
 import './formContact.css';
 
 const InputContainer = ({ children }) => (
-  <div
-    className="w-full px-3 flex flex-col-reverse"
-    style={{ flex: '1 1 50%' }}
-  >
+  <div className="w-full px-3 flex flex-col-reverse" style={{ flex: '1 1 50%' }}>
     {children}
   </div>
 );
@@ -34,13 +31,7 @@ const FormContact = () => (
         <input id="bot-field" name="bot-field" />
       </div>
       <InputContainer>
-        <Input
-          id="contact-name"
-          name="name"
-          placeholder="John Lennon"
-          required
-          type="text"
-        />
+        <Input id="contact-name" name="name" placeholder="John Lennon" required type="text" />
         <label htmlFor="contact-name">Name</label>
       </InputContainer>
       <InputContainer>

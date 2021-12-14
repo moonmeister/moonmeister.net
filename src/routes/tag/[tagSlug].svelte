@@ -33,10 +33,8 @@
 
 <script lang="ts">
   import ArchivePage from '$lib/components/Archive.svelte';
-  import { TagIcon } from 'svelte-feather-icons';
+  
   export let tag;
-
-
 </script>
 
 <ArchivePage posts={tag.posts.nodes}>

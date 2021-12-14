@@ -22,10 +22,10 @@
 
 <nav>
   <ul class="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4">
-    {#each menuItems?.nodes as { title, url, label }}
+    {#each menuItems.nodes as menuItem}
       <li class="group list-none m-1">
-        <NavLink {title} href={url}>
-          {label}
+        <NavLink title={menuItem.title} href={menuItem.url}>
+          {menuItem.label}
         </NavLink>
       </li>
     {/each}

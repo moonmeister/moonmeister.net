@@ -69,6 +69,14 @@
     @apply text-center;
   }
 
+  .has-text-align-right {
+    @apply text-right;
+  }
+
+  .has-text-align-left {
+    @apply text-left;
+  }
+
   .has-drop-cap::first-letter {
     @apply font-serif text-primary-600 float-left leading-8 text-6xl;
     /* font-size: 75px; */
@@ -380,33 +388,59 @@
       content: '(' attr(title) ')';
     }
   }
-}
 
-/* Embeds ------------------------- */
+  /* Embeds ------------------------- */
 
-.wp-block-embed {
-  @apply mt-12 mb-8;
-  iframe {
-    margin: auto;
-  }
-}
-
-/* Emoji  ------------------------- */
-
-.eedee-emoji {
-  display: inline;
-  height: 1em;
-  width: 1em;
-}
-
-/* Table  ------------------------- */
-
-.wp-block-table {
-  table {
-    @apply w-full table-auto;
+  .wp-block-embed {
+    @apply mt-12 mb-8;
+    iframe {
+      margin: auto;
+    }
   }
 
-  & .is-style-strips tbody tr {
-    @apply odd:bg-gray-300 even:bg-white;
+  /* Emoji  ------------------------- */
+
+  .eedee-emoji {
+    display: inline;
+    height: 1em;
+    width: 1em;
+  }
+
+  /* Table  ------------------------- */
+
+  .wp-block-table {
+    table.has-fixed-layout {
+      @apply table-fixed;
+    }
+
+    table {
+      @apply w-full table-auto;
+      
+      tr, th, td {
+        @apply border-black;
+      }
+
+      td, th {
+        @apply p-2 border border-black;
+      }
+
+      thead tr {
+        @apply border-b-2;
+      }
+
+      tfoot tr {
+        @apply border-t-2;
+      }
+    }
+
+    &.is-style-stripes {
+      tbody tr {
+        @apply odd:bg-gray-300;
+      }
+
+      td, th {
+        @apply border-0;
+      }
+    }
   }
 }

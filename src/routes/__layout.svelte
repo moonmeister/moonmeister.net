@@ -1,22 +1,28 @@
 <script context="module" lang="ts">
   import { NAV_QUERY } from '$lib/components/Nav.svelte';
   import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
+  import { SEO_QUERY } from '$lib/components/Seo.svelte';
+
   import { GraphQLClient } from 'graphql-request';
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ fetch }) {
+  export async function load({ fetch, page }) {
     const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
       fetch,
     });
 
-    const [{ data: navData }, { data: footerData }] = await client.batchRequests([
-      { document: NAV_QUERY },
-      { document: FOOTER_QUERY },
-    ]);
+    const [{ data: navData }, { data: footerData }, { data: seoData }] = await client.batchRequests(
+      [
+        { document: NAV_QUERY },
+        { document: FOOTER_QUERY },
+        { document: SEO_QUERY, variables: { path: page.path } },
+      ]
+    );
 
     return {
       props: {
         navData,
         footerData,
+        seoData,
       },
       stuff: {
         client,
@@ -29,13 +35,21 @@
   import '../app.css';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   export let navData;
   export let footerData;
+  export let seoData;
+
+  $: fullHead = seoData?.nodeByUri?.seo?.fullHead;
+  $: console.log(fullHead);
 </script>
 
 <!-- <LocaleProvider> -->
 <!-- <RssLink /> -->
+{#if fullHead}
+  <Seo {fullHead} />
+{/if}
 <div class="h-screen" id="page-layout">
   <header>
     <Nav menuItems={navData?.navMenu} />

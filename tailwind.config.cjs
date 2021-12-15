@@ -1,10 +1,8 @@
 /* eslint-disable no-use-before-define */
 const twTypography = require('tailwindcss-typography');
-const colors = require('tailwindcss/colors');
 
 const tWconfig = {
-  mode: 'jit',
-  purge: ['./src/**/*.html', './src/**/*.svelte'],
+  content: ['./src/**/*.html', './src/**/*.svelte'],
   theme: {
     textShadow: (theme) => ({
       DEFAULT: `2px 2px 4px ${theme('colors.gray.900')}`,
@@ -25,7 +23,6 @@ const tWconfig = {
       },
       colors: {
         inherit: 'inherit',
-        teal: colors.teal,
         gray: {
           100: 'hsla(190, 5%, 95%, 1)',
           200: 'hsla(190, 5%, 88%, 1)',
@@ -60,13 +57,6 @@ const tWconfig = {
         reading: '100ch',
       },
     },
-  },
-  variants: {
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    translate: ['responsive', 'hover', 'focus', 'group-hover'],
-    transitionDuration: ['responsive', 'group-hover'],
-    transitionProperty: ['responsive', 'group-hover'],
-    transitionTimingFunction: ['responsive', 'group-hover'],
   },
   plugins: [twTypography({})],
 };

@@ -29,7 +29,7 @@
 <a
   rel="noopener noreferrer"
   target="_blank"
-  class={classNames('m-2 p-2 rounded outline', $$props.class || '')}
+  class={classNames('block m-2 p-2 rounded', $$props.class || '')}
   href={finalUrl}
   style="color: {textColor}; background-color: {primaryColor};"
 >
@@ -37,13 +37,9 @@
 </a>
 
 <style lang="postcss">
-  a {
-    outline-color: theme('colors.gray.100');
-  }
-
   @screen canhover {
     a {
-      @apply transform transition-transform duration-100 ease-out;
+      @apply transition-transform duration-100 ease-out;
     }
 
     a:hover,

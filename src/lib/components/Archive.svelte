@@ -39,7 +39,7 @@
 <div aria-live="polite" id="blog-list" role="region">
   {#each posts as { title, excerpt, uri, author: { node: author }, dateGmt, tags }}
     <article
-      class="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out transform canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
+      class="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
     >
       <a href={uri}>
         <header class="mb-6">

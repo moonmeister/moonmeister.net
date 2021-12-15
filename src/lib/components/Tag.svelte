@@ -17,7 +17,7 @@
   $: isActive = $page.params?.tagSlug === tag.name.toLowerCase();
 </script>
 
-<a href={tag.uri}>
+<a href={tag.uri} class="rounded-sm outline-offset-2 outline-blue-600">
   <div class="gradient-border relative rounded z-10">
     <p class="tag capitalize px-1 bg-gray-100 rounded-sm" class:active={isActive}>
       {tag.name}

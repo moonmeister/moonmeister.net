@@ -6,12 +6,10 @@
 </script>
 
 <TagIcon aria-hidden class="inline-block text-xls" size="24" />
-<div class="inline-flex items-center box-border">
+<div class="inline-flex items-center box-border gap-4">
   {#if tags.length}
     {#each tags as tag}
-      <span class="ml-2">
         <Tag aria-label="Post Tags" {tag} />
-      </span>
     {/each}
   {:else}
     <Tag tag={{ name: 'none' }} />

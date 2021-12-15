@@ -13,18 +13,6 @@ html,
 body {
   @apply h-screen;
 }
-/*
-h1 {
-  @apply text-6xl text-primary-800;
-}
-
-h2 {
-  @apply text-2xl text-primary-700;
-}
-
-h3 {
-  @apply text-xl text-primary-700;
-} */
 
 .inline-svg {
   @apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased;
@@ -72,4 +60,8 @@ button {
 
 ::selection {
   @apply bg-blue-300;
+}
+
+a {
+  @apply focus:outline rounded outline-2 outline-current;
 }

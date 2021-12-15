@@ -42,7 +42,6 @@
   export let seoData;
 
   $: fullHead = seoData?.nodeByUri?.seo?.fullHead;
-  $: console.log(fullHead);
 </script>
 
 <!-- <LocaleProvider> -->

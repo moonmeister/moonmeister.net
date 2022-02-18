@@ -1,6 +1,5 @@
 <script lang="ts" context="module">
   import { gql } from 'graphql-request';
-
   export const SEO_QUERY = gql`
     query SEO_QUERY($path: String!) {
       nodeByUri(uri: $path) {
@@ -25,9 +24,9 @@
 </script>
 
 <script lang="ts">
-  export let fullHead;
+import { page } from "$app/stores";
 </script>
 
 <svelte:head>
-  {@html fullHead}
+  <link rel="canonical" href={`https://moonmeister.net${$page.url.pathname}`}>
 </svelte:head>

@@ -31,8 +31,8 @@
   `;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page, stuff: { client } }) {
-    const data = await client.request(PAGE_EXCERPT, { id: page.params.blogSlug });
+  export async function load({ params, stuff: { client } }) {
+    const data = await client.request(PAGE_EXCERPT, { id: params.blogSlug });
     return {
       props: {
         post: data.post,

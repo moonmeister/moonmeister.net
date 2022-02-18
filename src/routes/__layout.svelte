@@ -1,20 +1,18 @@
 <script context="module" lang="ts">
   import { NAV_QUERY } from '$lib/components/Nav.svelte';
   import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
-  import { SEO_QUERY } from '$lib/components/Seo.svelte';
 
   import { GraphQLClient } from 'graphql-request';
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ fetch, page }) {
+  export async function load({ fetch }) {
     const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
       fetch,
     });
 
-    const [{ data: navData }, { data: footerData }, { data: seoData }] = await client.batchRequests(
+    const [{ data: navData }, { data: footerData }] = await client.batchRequests(
       [
         { document: NAV_QUERY },
         { document: FOOTER_QUERY },
-        { document: SEO_QUERY, variables: { path: page.path } },
       ]
     );
 
@@ -22,7 +20,6 @@
       props: {
         navData,
         footerData,
-        seoData,
       },
       stuff: {
         client,
@@ -39,16 +36,10 @@
 
   export let navData;
   export let footerData;
-  export let seoData;
-
-  $: fullHead = seoData?.nodeByUri?.seo?.fullHead;
 </script>
 
 <!-- <LocaleProvider> -->
-<!-- <RssLink /> -->
-{#if fullHead}
-  <Seo {fullHead} />
-{/if}
+<Seo />
 <div class="h-screen" id="page-layout">
   <header>
     <Nav menuItems={navData?.navMenu} />

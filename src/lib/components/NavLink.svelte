@@ -4,7 +4,7 @@
 
   $: ({ class: propClass, href, title } = $$props);
 
-  $: isActive = $page.path == href;
+  $: isActive = $page.url.pathname == href;
 </script>
 
 <a

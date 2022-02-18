@@ -1,5 +1,8 @@
 <script lang="ts" context="module">
   import { gql } from 'graphql-request';
+
+  export const prerender = true;
+
   const IndexPage_Query = gql`
     query IndexPage {
       page(id: "/", idType: URI) {
@@ -32,7 +35,6 @@
   export let indexPage;
 
   $: ({
-    title,
     content,
     featuredImage: { node: featuredImage },
   } = indexPage);

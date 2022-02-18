@@ -1,6 +1,9 @@
 <script lang="ts" context="module">
   import { gql } from 'graphql-request';
   import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
+  import { browser } from '$app/env';
+
+  export const prerender = true;
 
   const PAGE_EXCERPT = gql`
     query blogPostQuery($id: ID!) {
@@ -40,8 +43,7 @@
     };
   }
 
-  export const hydrate = false;
-  export const prerender = true;
+
 </script>
 
 <script lang="ts">
@@ -49,6 +51,7 @@
   import { Edit3Icon, ClockIcon } from 'svelte-feather-icons';
   import Tags from '$lib/components/Tags.svelte';
   import Blocks from '$lib/components/Blocks.svelte';
+  import { locale } from '$lib/store';
 
   import { formatDateString } from '$lib/utils.js';
 

@@ -38,7 +38,6 @@
   export let footerData;
 </script>
 
-<!-- <LocaleProvider> -->
 <Seo />
 <div class="h-screen" id="page-layout">
   <header>
@@ -54,7 +53,6 @@
   </footer>
 </div>
 
-<!-- </LocaleProvider> -->
 <style lang="postcss">
   #page-layout {
     @supports (display: grid) {

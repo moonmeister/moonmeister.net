@@ -8,6 +8,7 @@
 </script>
 
 <a
+  sveltekit:prefetch
   {href}
   class={classNames(
     propClass,

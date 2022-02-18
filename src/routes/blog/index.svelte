@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
   import { gql } from 'graphql-request';
   import { ARCHIVE_FRAGMENT } from '$lib/components/Archive.svelte';
+  
+  export const prerender = true;
 
   const BLOG_POST_QUERY = gql`
     query BlogArchive {

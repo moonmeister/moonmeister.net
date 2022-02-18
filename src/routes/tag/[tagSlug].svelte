@@ -2,6 +2,8 @@
   import { gql } from 'graphql-request';
   import { ARCHIVE_FRAGMENT } from '$lib/components/Archive.svelte';
 
+  export const prerender = true;
+
   const TAG_QUERY = gql`
     query tagArchiveQuery($id: ID!) {
       tag(id: $id, idType: SLUG) {

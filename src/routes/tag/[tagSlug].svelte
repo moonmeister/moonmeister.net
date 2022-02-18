@@ -19,8 +19,8 @@
   `;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page, stuff: { client } }) {
-    const data = await client.request(TAG_QUERY, { id: page.params.tagSlug });
+  export async function load({ params, stuff: { client } }) {
+    const data = await client.request(TAG_QUERY, { id: params.tagSlug });
 
     return {
       props: {

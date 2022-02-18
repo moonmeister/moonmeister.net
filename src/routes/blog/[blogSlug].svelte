@@ -1,7 +1,6 @@
 <script lang="ts" context="module">
   import { gql } from 'graphql-request';
   import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
-  import { browser } from '$app/env';
 
   export const prerender = true;
 

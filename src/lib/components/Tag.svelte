@@ -14,7 +14,7 @@
   import { page } from '$app/stores';
 
   export let tag;
-  $: isActive = $page.params?.tagSlug === tag.name.toLowerCase();
+  $: isActive = $page?.params?.tagSlug === tag.name.toLowerCase();
 </script>
 
 <a sveltekit:prefetch href={tag.uri} class="rounded-sm outline-offset-2 outline-blue-600">

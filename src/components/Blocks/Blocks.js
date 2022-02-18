@@ -7,7 +7,7 @@ import './blocks.css';
 
 const Blocks = ({ content, className }) => (
   <div
-    className={classNames('wp-blocks flow-root', className)}
+    className={classNames('prose wp-blocks flow-root', className)}
     dangerouslySetInnerHTML={{ __html: content }}
   />
 );

@@ -4,7 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
     "gatsby": "^4.2.0",
@@ -13,7 +13,6 @@
     "gatsby-plugin-gatsby-cloud": "^4.2.0",
     "gatsby-plugin-image": "^2.2.0",
     "gatsby-plugin-manifest": "^4.2.0",
-    "gatsby-plugin-netlify": "^3.14.0",
     "gatsby-plugin-offline": "^5.2.0",
     "gatsby-plugin-postcss": "^5.2.0",
     "gatsby-plugin-preact": "^6.2.0",
@@ -30,8 +29,7 @@
     "images": "link:./src/images",
     "lib": "link:./src/lib",
     "pages": "link:./src/pages",
-    "postcss": "^8.4.4",
-    "postcss-nested": "^5.0.6",
+    "postcss": "^8.4.6",
     "preact": "^10.6.1",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.2",
@@ -39,8 +37,7 @@
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "^2.2.19",
-    "tailwindcss-typography": "^3.1.0"
+    "tailwindcss": "^3.0.23"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

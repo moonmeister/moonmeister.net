@@ -37,7 +37,7 @@ h3 {
 input,
 textarea,
 button {
-  @apply text-gray-900 text-shadow-none;
+  @apply text-gray-900 drop-shadow-none;
 }
 
 .floating {

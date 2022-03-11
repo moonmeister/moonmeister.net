@@ -43,7 +43,7 @@ export default function ArchivePage({ posts, title: pageTitle }) {
                     {`${title}`}
                   </h1>
                   <div className="text-sm text-gray-600">
-                    <span >{author.name} on </span>
+                    <span>{author.name} on </span>
                     <time dateTime={dateGmt}>
                       {formatDateString(dateGmt, locale)}
                     </time>

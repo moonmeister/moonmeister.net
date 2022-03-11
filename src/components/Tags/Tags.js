@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Tag } from 'react-feather';
 import WpTag from './Tag';
 
-function Tags({ data: tags }) {
+export function Tags({ data: tags }) {
   return (
     <>
       <Tag aria-hidden className="inline-block text-xl" />
@@ -20,5 +20,3 @@ function Tags({ data: tags }) {
     </>
   );
 }
-
-export default Tags;

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import './blocks.css';
 
-function Blocks({ content, className }) {
+export function Blocks({ content, className }) {
   return (
     <div
       className={classNames('prose wp-blocks flow-root', className)}
@@ -13,5 +13,3 @@ function Blocks({ content, className }) {
     />
   );
 }
-
-export default Blocks;

@@ -1,1 +1,3 @@
-export { default } from './Tags';
+import { Tags } from './Tags';
+
+export default Tags;

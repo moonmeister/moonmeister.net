@@ -9,7 +9,7 @@ import RssLink from 'components/Rss';
 import 'styles/tailwind.css';
 import './layout.css';
 
-function Layout({ children }) {
+export function Layout({ children }) {
   return (
     <LocaleProvider>
       <RssLink />
@@ -33,5 +33,3 @@ function Layout({ children }) {
     </LocaleProvider>
   );
 }
-
-export default Layout;

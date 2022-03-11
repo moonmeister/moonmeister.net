@@ -27,6 +27,7 @@ module.exports = {
     'react/jsx-sort-props': 'warn',
     'react/prop-types': 'off',
     'react/no-danger': 'off',
+    'import/prefer-default-export': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint',

@@ -105,7 +105,6 @@ module.exports = {
         detailed: true,
       },
     },
-
     /* Misc Utilities to generate misc site related structured content */
     {
       resolve: 'gatsby-plugin-sitemap',

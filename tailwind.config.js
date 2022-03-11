@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const tWconfig = {
   content: ['./src/**/*.js'],
   theme: {
@@ -46,6 +47,10 @@ const tWconfig = {
       },
     },
   },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+
 };
 
 const { screens } = tWconfig.theme;

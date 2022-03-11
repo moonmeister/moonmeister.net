@@ -3,7 +3,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import './blocks.css';
+import '@wordpress/block-library/build-style/style.css';
 
 export function Blocks({ content, className }) {
   return (

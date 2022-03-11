@@ -7,7 +7,6 @@ const tWconfig = {
       lg: '1200px',
       xl: '1800px',
       canhover: { raw: '(hover: hover)' },
-      
     },
     extend: {
       transitionProperty: {

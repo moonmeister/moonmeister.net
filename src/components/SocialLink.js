@@ -3,13 +3,13 @@ import ExtLink from 'components/extLink';
 import { graphql } from 'gatsby';
 import classnames from 'classnames';
 
-const SocialLink = ({
+function SocialLink({
   className,
   data: {
     title,
     socialMeta: { socialLinkType, url, document, primaryColor, textColor },
   },
-}) => {
+}) {
   const finalUrl = socialLinkType === 'url' ? url : document.mediaItemUrl;
 
   return (
@@ -21,7 +21,7 @@ const SocialLink = ({
       {title}
     </ExtLink>
   );
-};
+}
 
 export const fragments = graphql`
   fragment SocialLinkData on WpSocial {

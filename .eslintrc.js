@@ -9,7 +9,7 @@ module.exports = {
     __adroll: true,
   },
   extends: ['react-app', 'airbnb', 'airbnb/hooks', 'prettier'],
-  plugins: ['jsx-a11y', 'prettier'],
+  plugins: ['jsx-a11y'],
   rules: {
     'react/jsx-filename-extension': [
       1,
@@ -24,7 +24,6 @@ module.exports = {
         depth: 3,
       },
     ],
-    'prettier/prettier': 'warn',
     'react/jsx-sort-props': 'warn',
     'react/prop-types': 'off',
     'react/no-danger': 'off',

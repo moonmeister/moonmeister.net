@@ -5,11 +5,13 @@ import classNames from 'classnames';
 
 import './blocks.css';
 
-const Blocks = ({ content, className }) => (
-  <div
-    className={classNames('prose wp-blocks flow-root', className)}
-    dangerouslySetInnerHTML={{ __html: content }}
-  />
-);
+function Blocks({ content, className }) {
+  return (
+    <div
+      className={classNames('prose wp-blocks flow-root', className)}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
+}
 
 export default Blocks;

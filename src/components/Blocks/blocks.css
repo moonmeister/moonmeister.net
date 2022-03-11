@@ -337,7 +337,12 @@
       figcaption {
         @apply absolute bottom-0 w-full max-h-full text-white text-sm text-center;
         padding: 40px 10px 9px;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 70%, transparent);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.3) 70%,
+          transparent
+        );
       }
     }
 

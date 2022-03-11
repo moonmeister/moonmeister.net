@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const RssLink = () => {
+function RssLink() {
   const {
     site: {
       siteMetadata: { siteUrl },
@@ -27,6 +27,6 @@ const RssLink = () => {
       />
     </Helmet>
   );
-};
+}
 
 export default RssLink;

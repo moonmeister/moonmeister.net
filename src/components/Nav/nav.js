@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import './nav.css';
 
-const Nav = () => {
+export function Nav() {
   const {
     wpMenu: {
       menuItems: { nodes: menuItems },
@@ -40,6 +40,4 @@ const Nav = () => {
       </ul>
     </nav>
   );
-};
-
-export default Nav;
+}

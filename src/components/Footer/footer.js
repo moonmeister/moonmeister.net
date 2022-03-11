@@ -5,7 +5,7 @@ import SocialLink from 'components/SocialLink';
 
 import './footer.css';
 
-const Footer = () => {
+export function Footer() {
   const {
     wpMenu: {
       menuItems: { socials },
@@ -73,6 +73,4 @@ const Footer = () => {
       </section>
     </>
   );
-};
-
-export default Footer;
+}

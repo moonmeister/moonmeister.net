@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const tWconfig = {
   content: ['./src/**/*.js'],
   theme: {
@@ -7,7 +8,6 @@ const tWconfig = {
       lg: '1200px',
       xl: '1800px',
       canhover: { raw: '(hover: hover)' },
-      
     },
     extend: {
       transitionProperty: {
@@ -47,6 +47,10 @@ const tWconfig = {
       },
     },
   },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+
 };
 
 const { screens } = tWconfig.theme;

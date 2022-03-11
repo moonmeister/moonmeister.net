@@ -27,8 +27,8 @@ export default function BlogPost({
   return (
     <Layout>
       <SEO description={excerpt} title={title} />
-      <article className="max-w-reading m-auto floating max-w-64 px-6">
-        <header className="border-b flex flex-col items-center text-center py-3 ">
+      <article className="m-auto floating max-w-64 px-6">
+        <header className="max-w-prose border-b flex flex-col items-center text-center py-3 ">
           <h1 className="text-4xl font-bold z-0">{title}</h1>
 
           <div className="flex m-4">

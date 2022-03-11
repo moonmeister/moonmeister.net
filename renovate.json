@@ -13,24 +13,11 @@
   "packageRules": [
     {
       "groupName": "minor updates",
-      "updateTypes": [
-        "minor"
-      ]
+      "updateTypes": ["minor"]
     },
     {
       "groupName": "patch updates",
-      "updateTypes": [
-        "patch"
-      ]
-    },
-    {
-      "matchPackageNames": [
-        "gatsby-source-wordpress-experimental"
-      ],
-      "updateTypes": [
-        "major"
-      ],
-      "masterIssueApproval": false
+      "updateTypes": ["patch"]
     }
   ]
 }

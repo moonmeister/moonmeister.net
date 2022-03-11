@@ -32,10 +32,10 @@ export default function ArchivePage({ posts, title: pageTitle }) {
           }) => (
             <article
               key={id}
-              className="max-w-reading m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
+              className="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0"
             >
-              <Link to={`${uri}`}>
-                <header className="mb-6">
+              <Link rel="author" to={`${uri}`}>
+                <header className="max-w-prose mb-6">
                   <h1
                     aria-label="Blog Title"
                     className="font-bold text-primary-900 text-2xl md:text-4xl leading-relaxed"
@@ -43,7 +43,7 @@ export default function ArchivePage({ posts, title: pageTitle }) {
                     {`${title}`}
                   </h1>
                   <div className="text-sm text-gray-600">
-                    <span rel="author">{author.name} on </span>
+                    <span>{author.name} on </span>
                     <time dateTime={dateGmt}>
                       {formatDateString(dateGmt, locale)}
                     </time>
@@ -51,7 +51,7 @@ export default function ArchivePage({ posts, title: pageTitle }) {
                 </header>
 
                 <div
-                  className="text-primary-800 text-medium"
+                  className="prose text-primary-800"
                   dangerouslySetInnerHTML={{ __html: excerpt }}
                 />
               </Link>

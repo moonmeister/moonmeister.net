@@ -4,7 +4,8 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
-    "autoprefixer": "^10.4.2",
+    "@tailwindcss/typography": "^0.5.2",
+    "@wordpress/block-library": "^7.1.1",
     "classnames": "^2.3.1",
     "components": "link:./src/components",
     "gatsby": "^4.5.4",
@@ -13,7 +14,6 @@
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
-    "gatsby-plugin-netlify": "^3.14.0",
     "gatsby-plugin-offline": "^5.5.2",
     "gatsby-plugin-postcss": "^5.5.0",
     "gatsby-plugin-preact": "^6.5.0",
@@ -30,8 +30,6 @@
     "images": "link:./src/images",
     "lib": "link:./src/lib",
     "pages": "link:./src/pages",
-    "postcss": "^8.4.5",
-    "postcss-nested": "^5.0.6",
     "preact": "^10.6.4",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.2",
@@ -44,21 +42,23 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@types/react": "^17.0.38",
+    "autoprefixer": "^10.4.2",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^2.5.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.7.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-react-app": "^7.0.0",
     "eslint-import-resolver-webpack": "^0.13.2",
-    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1"
+    "postcss": "^8.4.5",
+    "postcss-nested": "^5.0.6",
+    "prettier": "^2.5.1",
+    "webpack": "^5.70.0"
   },
   "keywords": [
     "gatsby"
@@ -70,7 +70,8 @@
     "develop": "yarn dev",
     "dev": "gatsby develop",
     "repl": "gatsby repl",
-    "format": "eslint . --fix",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix",
     "start": "npm run develop",
     "serve": "gatsby serve"
   }

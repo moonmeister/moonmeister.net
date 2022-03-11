@@ -3,13 +3,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import './blocks.css';
+import '@wordpress/block-library/build-style/style.css';
 
-const Blocks = ({ content, className }) => (
-  <div
-    className={classNames('prose wp-blocks flow-root', className)}
-    dangerouslySetInnerHTML={{ __html: content }}
-  />
-);
-
-export default Blocks;
+export function Blocks({ content, className }) {
+  return (
+    <div
+      className={classNames('prose wp-blocks flow-root', className)}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
+}

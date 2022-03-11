@@ -10,10 +10,12 @@ function getLocale() {
   return 'en-US';
 }
 
-const LocaleProvider = ({ children }) => (
-  <LocaleContext.Provider value={getLocale()}>
-    {children}
-  </LocaleContext.Provider>
-);
+function LocaleProvider({ children }) {
+  return (
+    <LocaleContext.Provider value={getLocale()}>
+      {children}
+    </LocaleContext.Provider>
+  );
+}
 
 export { LocaleContext, LocaleProvider };

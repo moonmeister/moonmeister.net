@@ -1,1 +1,3 @@
-export { default } from './Blocks';
+import { Blocks } from './Blocks';
+
+export default Blocks;

@@ -58,6 +58,9 @@ module.exports = {
           },
         },
         type: {
+          MediaItem: {
+            createFileNodes: false,
+          },
           Post: {
             limit:
               process.env.NODE_ENV === `development`

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import SEO from 'components/seo';
 import Layout from 'components/Layout';
@@ -24,7 +24,7 @@ function IndexPage({
         <figure className="flex sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
           <GatsbyImage
             alt={featuredImage.altText}
-            image={getImage(featuredImage.localFile)}
+            image={featuredImage.gatsbyImage}
             loading="eager"
           />
         </figure>
@@ -46,15 +46,11 @@ export const pageQuery = graphql`
       featuredImage {
         node {
           altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
+          gatsbyImage(
+            width: 400
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }

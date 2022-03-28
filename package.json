@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@types/react": "^17.0.42",
+    "@types/react": "^17.0.43",
     "autoprefixer": "^10.4.4",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^2.10.1",
@@ -57,7 +57,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.12",
     "postcss-nested": "^5.0.6",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.1",
     "webpack": "^5.70.0"
   },
   "keywords": [

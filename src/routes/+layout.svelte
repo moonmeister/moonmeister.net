@@ -1,34 +1,38 @@
 <script context="module" lang="ts">
-  import { NAV_QUERY } from '$lib/components/Nav.svelte';
-  import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
+  throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
 
-  import { GraphQLClient } from 'graphql-request';
-  /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ fetch }) {
-    const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
-      fetch,
-    });
+  // import { NAV_QUERY } from '$lib/components/Nav.svelte';
+  // import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
 
-    const [{ data: navData }, { data: footerData }] = await client.batchRequests(
-      [
-        { document: NAV_QUERY },
-        { document: FOOTER_QUERY },
-      ]
-    );
+  // import { GraphQLClient } from 'graphql-request';
+  // /** @type {import('@sveltejs/kit').Load} */
+  // export async function load({ fetch }) {
+  //   const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
+  //     fetch,
+  //   });
 
-    return {
-      props: {
-        navData,
-        footerData,
-      },
-      stuff: {
-        client,
-      },
-    };
-  }
+  //   const [{ data: navData }, { data: footerData }] = await client.batchRequests(
+  //     [
+  //       { document: NAV_QUERY },
+  //       { document: FOOTER_QUERY },
+  //     ]
+  //   );
+
+  //   return {
+  //     props: {
+  //       navData,
+  //       footerData,
+  //     },
+  //     stuff: {
+  //       client,
+  //     },
+  //   };
+  // }
 </script>
 
 <script lang="ts">
+  throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
   import '../app.css';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';

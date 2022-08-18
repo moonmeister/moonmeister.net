@@ -1,55 +1,4 @@
-<script lang="ts" context="module">
-  throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-  // import { gql } from 'graphql-request';
-  // import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
-
-  // export const prerender = true;
-
-  // const PAGE_EXCERPT = gql`
-  //   query blogPostQuery($id: ID!) {
-  //     post(id: $id, idType: SLUG) {
-  //       title
-  //       author {
-  //         node {
-  //           name
-  //           avatar {
-  //             foundAvatar
-  //             rating
-  //             height
-  //             width
-  //             url
-  //           }
-  //         }
-  //       }
-  //       content
-  //       dateGmt
-  //       tags {
-  //         nodes {
-  //           ...WpTagLink
-  //         }
-  //       }
-  //     }
-  //   }
-  //   ${TAG_EXCERPT}
-  // `;
-
-  // /** @type {import('@sveltejs/kit').Load} */
-  // export async function load({ params, stuff: { client } }) {
-  //   const data = await client.request(PAGE_EXCERPT, { id: params.blogSlug });
-  //   return {
-  //     props: {
-  //       post: data.post,
-  //     },
-  //   };
-  // }
-
-
-</script>
-
 <script lang="ts">
-  throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
   import readingTime from 'reading-time/lib/reading-time.js';
   import { Edit3Icon, ClockIcon } from 'svelte-feather-icons';
   import Tags from '$lib/components/Tags.svelte';
@@ -58,14 +7,15 @@
 
   import { formatDateString } from '$lib/utils.js';
 
-  export let post;
+  /** @type {import('./$types').PageData} */
+  export let data;
   $: ({
     title,
     content,
     dateGmt,
     author: { node: author },
     tags: { nodes: allTags },
-  } = post);
+  } = data);
   $: ({ avatar } = author);
 
   $: rtData = readingTime(content);

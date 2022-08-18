@@ -10,16 +10,13 @@ const config = {
       postcss: true,
     }),
   ],
+ 
   kit: {
     trailingSlash: 'always',
     adapter: adapter(),
-    vite: {
-      server: {
-        fs: {
-          // Allow serving files from one level up to the project root
-          allow: ['..'],
-        },
-      },
+    browser: {
+      hydrate: false,
+      router: false,
     },
   },
 };

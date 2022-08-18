@@ -1,51 +1,17 @@
-<script context="module" lang="ts">
-  throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-  // import { NAV_QUERY } from '$lib/components/Nav.svelte';
-  // import { FOOTER_QUERY } from '$lib/components/Footer.svelte';
-
-  // import { GraphQLClient } from 'graphql-request';
-  // /** @type {import('@sveltejs/kit').Load} */
-  // export async function load({ fetch }) {
-  //   const client = new GraphQLClient('https://api.moonmeister.net/graphql', {
-  //     fetch,
-  //   });
-
-  //   const [{ data: navData }, { data: footerData }] = await client.batchRequests(
-  //     [
-  //       { document: NAV_QUERY },
-  //       { document: FOOTER_QUERY },
-  //     ]
-  //   );
-
-  //   return {
-  //     props: {
-  //       navData,
-  //       footerData,
-  //     },
-  //     stuff: {
-  //       client,
-  //     },
-  //   };
-  // }
-</script>
-
 <script lang="ts">
-  throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
   import '../app.css';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Seo from '$lib/components/Seo.svelte';
 
-  export let navData;
-  export let footerData;
+  /** @type {import('./$types').PageData} */
+  export let data;
 </script>
 
 <Seo />
 <div class="h-screen" id="page-layout">
   <header>
-    <Nav menuItems={navData?.navMenu} />
+    <Nav menuItems={data.navData?.navMenu} />
   </header>
   <main class={'max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg'}>
     <slot />
@@ -53,7 +19,7 @@
   <footer
     class="flex items-center flex-col md:flex-row md:justify-evenly bg-primary-600 text-gray-100 shadow-footer px-2 py-8 md:px-8"
   >
-    <Footer socials={footerData?.socialMenu} />
+    <Footer socials={data.footerData?.socialMenu} />
   </footer>
 </div>
 

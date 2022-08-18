@@ -9,7 +9,7 @@
 <div class="inline-flex items-center box-border gap-4">
   {#if tags.length}
     {#each tags as tag}
-        <Tag aria-label="Post Tags" {tag} />
+      <Tag aria-label="Post Tags" {tag} />
     {/each}
   {:else}
     <Tag tag={{ name: 'none' }} />

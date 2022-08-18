@@ -24,9 +24,9 @@
 </script>
 
 <script lang="ts">
-import { page } from "$app/stores";
+  import { page } from '$app/stores';
 </script>
 
 <svelte:head>
-  <link rel="canonical" href={`https://moonmeister.net${$page.url.pathname}`}>
+  <link rel="canonical" href={`https://moonmeister.net${$page.url.pathname}`} />
 </svelte:head>

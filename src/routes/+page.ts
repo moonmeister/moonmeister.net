@@ -1,27 +1,27 @@
 import { gql } from 'graphql-request';
+import { SvelteGqlClient } from '$lib/client';
 
 export const prerender = true;
 
 const IndexPage_Query = gql`
-    query IndexPage {
-      page(id: "/", idType: URI) {
-        title
-        content
-        featuredImage {
-          node {
-            altText
-            sourceUrl
-          }
+  query IndexPage {
+    page(id: "/", idType: URI) {
+      title
+      content
+      featuredImage {
+        node {
+          altText
+          sourceUrl
         }
       }
     }
-  `;
+  }
+`;
 
-throw new Error("@migration task: Check if you need to migrate the load function input (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292693)");
-export async function load({ stuff: { client } }) {
+export async function load() {
+  const client = SvelteGqlClient();
+
   const data = await client.request(IndexPage_Query);
 
-  return {
-  indexPage: data.page,
-};
+  return data.page;
 }

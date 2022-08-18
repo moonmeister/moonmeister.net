@@ -9,5 +9,5 @@ tasks:
 ports:
   - name: SvelteKit Dev
     description: The Sveltekit dev server
-    port: 3000
+    port: 5173
     onOpen: open-browser

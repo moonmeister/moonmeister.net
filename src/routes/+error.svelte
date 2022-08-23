@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
 
-  import * as Sentry from '@sentry/browser';
+  import * as Sentry from '@sentry/svelte';
   // import { BrowserTracing } from '@sentry/tracing';
 
   Sentry.init({

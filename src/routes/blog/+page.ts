@@ -20,8 +20,8 @@ const BLOG_POST_QUERY = gql`
 `;
 
 /** @type {import('@sveltejs/kit').PageLoad} */
-export async function load() {
-  const client = SvelteGqlClient();
+export async function load({ fetch }) {
+  const client = SvelteGqlClient(fetch);
   const data = await client.request(BLOG_POST_QUERY);
 
   return {

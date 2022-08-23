@@ -18,6 +18,7 @@ const IndexPage_Query = gql`
   }
 `;
 
+/** @type {import('@sveltejs/kit').PageLoad} */
 export async function load() {
   const client = SvelteGqlClient();
 

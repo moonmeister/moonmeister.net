@@ -18,10 +18,9 @@ export function handleError({ error, event }) {
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
 
-    // @ts-ignore
-    Sentry.captureEvent(event);
-
+    
     const response = await resolve(event);
+    Sentry.captureMessage(`${event.url}:${response.status}`);
 
     return response;
 }

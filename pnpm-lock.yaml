@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@sentry/browser': ^7.11.1
+  '@sentry/tracing': ^7.11.1
   '@sveltejs/adapter-auto': 1.0.0-next.64
   '@sveltejs/kit': 1.0.0-next.419
   '@typescript-eslint/eslint-plugin': ^5.33.1
@@ -28,6 +30,8 @@ specifiers:
   vite: ^3.0.8
 
 dependencies:
+  '@sentry/browser': 7.11.1
+  '@sentry/tracing': 7.11.1
   '@sveltejs/adapter-auto': 1.0.0-next.64
   '@sveltejs/kit': 1.0.0-next.419_svelte@3.49.0+vite@3.0.9
   graphql: 16.6.0
@@ -176,6 +180,58 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /@sentry/browser/7.11.1:
+    resolution: {integrity: sha512-k2XHuzPfnm8VJPK5eWd1+Y5VCgN42sLveb8Qxc3prb5PSL416NWMLZaoB7RMIhy430fKrSFiosnm6QDk2M6pbA==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/core': 7.11.1
+      '@sentry/types': 7.11.1
+      '@sentry/utils': 7.11.1
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/core/7.11.1:
+    resolution: {integrity: sha512-kaDSZ6VNuO4ZZdqUOOX6XM6x+kjo2bMnDQ3IJG51FPvVjr8lXYhXj1Ccxcot3pBYAIWPPby2+vNDOXllmXqoBA==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/hub': 7.11.1
+      '@sentry/types': 7.11.1
+      '@sentry/utils': 7.11.1
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/hub/7.11.1:
+    resolution: {integrity: sha512-M6ClgdXdptS0lUBKB5KpXXe2qMQhsoiEN2pEGRI6+auqhfHCUQB1ZXsfjiOYexKC9fwx7TyFyZ9Jcaf2DTxEhw==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.11.1
+      '@sentry/utils': 7.11.1
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/tracing/7.11.1:
+    resolution: {integrity: sha512-ilgnHfpdYUWKG/5yAXIfIbPVsCfrC4ONFBR/wN25/hdAyVfXMa3AJx7NCCXxZBOPDWH3hMW8rl4La5yuDbXofg==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/hub': 7.11.1
+      '@sentry/types': 7.11.1
+      '@sentry/utils': 7.11.1
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/types/7.11.1:
+    resolution: {integrity: sha512-gIEhOPxC2cjrxQ0+K2SFJ1P6e/an5osSxVc9OOtekN28eHtVsXFCLB8XVWeNQnS7N2VkrVrkqORMBz1kvIcvVQ==}
+    engines: {node: '>=8'}
+    dev: false
+
+  /@sentry/utils/7.11.1:
+    resolution: {integrity: sha512-tRVXNT5O9ilkV31pyHeTqA1PcPQfMV/2OR6yUYM4ah+QVISovC0f0ybhByuH5nYg6x/Gsnx1o7pc8L1GE3+O7A==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.11.1
+      tslib: 1.14.1
     dev: false
 
   /@sveltejs/adapter-auto/1.0.0-next.64:
@@ -2267,7 +2323,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}

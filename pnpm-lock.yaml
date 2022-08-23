@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@sentry/browser': ^7.11.1
   '@sentry/svelte': ^7.11.1
   '@sentry/tracing': ^7.11.1
   '@sveltejs/adapter-auto': 1.0.0-next.64
@@ -31,7 +30,6 @@ specifiers:
   vite: ^3.0.8
 
 dependencies:
-  '@sentry/browser': 7.11.1
   '@sentry/svelte': 7.11.1_svelte@3.49.0
   '@sentry/tracing': 7.11.1
   '@sveltejs/adapter-auto': 1.0.0-next.64

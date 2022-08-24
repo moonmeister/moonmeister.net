@@ -2,8 +2,6 @@ import { gql } from 'graphql-request';
 import { TAG_EXCERPT } from '$lib/components/Tag.svelte';
 import { SvelteGqlClient } from '$lib/client';
 
-export const prerender = true;
-
 const PAGE_EXCERPT = gql`
   query blogPostQuery($id: ID!) {
     post(id: $id, idType: SLUG) {
@@ -37,5 +35,6 @@ export async function load({ params }) {
   const client = SvelteGqlClient();
   const data = await client.request(PAGE_EXCERPT, { id: params.blogSlug });
 
+  console.log('load ran for blog page');
   return data.post;
 }

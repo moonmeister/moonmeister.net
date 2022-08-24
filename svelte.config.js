@@ -10,7 +10,7 @@ const config = {
       postcss: true,
     }),
   ],
- 
+
   kit: {
     trailingSlash: 'always',
     adapter: adapter(),

@@ -18,9 +18,13 @@ const BLOG_POST_QUERY = gql`
 `;
 
 /** @type {import('@sveltejs/kit').PageLoad} */
-export async function load() {
+export async function load({ setHeaders }) {
   const client = SvelteGqlClient();
   const data = await client.request(BLOG_POST_QUERY);
+
+  setHeaders({
+    'cache-control': "max-age=60, stale-while-revalidate=600"
+  })
 
   return {
     posts: data.posts.nodes,

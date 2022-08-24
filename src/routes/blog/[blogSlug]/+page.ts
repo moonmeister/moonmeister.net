@@ -31,10 +31,13 @@ const PAGE_EXCERPT = gql`
 `;
 
 /** @type {import('@sveltejs/kit').PageLoad} */
-export async function load({ params }) {
+export async function load({ params, setHeaders }) {
   const client = SvelteGqlClient();
   const data = await client.request(PAGE_EXCERPT, { id: params.blogSlug });
 
-  console.log('load ran for blog page');
+  setHeaders({
+    'cache-control': "max-age=600, stale-while-revalidate=3600"
+  })
+
   return data.post;
 }

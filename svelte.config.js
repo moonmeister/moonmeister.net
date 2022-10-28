@@ -14,10 +14,6 @@ const config = {
   kit: {
     trailingSlash: 'always',
     adapter: adapter(),
-    browser: {
-      hydrate: false,
-      router: false,
-    },
   },
 };
 

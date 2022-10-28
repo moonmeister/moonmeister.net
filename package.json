@@ -1,6 +1,7 @@
 {
   "name": "moonmeister.net",
   "version": "0.0.1",
+  "packageManager": "pnpm@7.14.0",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

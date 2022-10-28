@@ -28,6 +28,6 @@ export async function load({ setHeaders }) {
 
   return {
     posts: data.posts.nodes,
-    pageTitle: data.page.title,
+    pageTitle: data.page?.title,
   };
 }

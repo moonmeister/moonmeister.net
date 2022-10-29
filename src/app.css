@@ -1,21 +1,19 @@
-@tailwind base;
-
-@tailwind components;
-@tailwind utilities;
+@import "open-props/postcss/normalize";
 
 /*components*/
 
 html {
-  @apply font-sans text-primary-900 bg-gray-200;
+  /* @apply font-sans text-primary-900 bg-gray-200; */
+
 }
 
 html,
 body {
-  @apply h-screen;
+  /* @apply h-screen; */
 }
 
 .inline-svg {
-  @apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased;
+  /* @apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased; */
   height: 1em;
   width: 1em;
 }
@@ -23,14 +21,14 @@ body {
 input,
 textarea,
 button {
-  @apply text-gray-900 text-shadow-none;
+  /* @apply text-gray-900 text-shadow-none; */
 }
 
 .floating {
-  @apply bg-gray-100 rounded-lg shadow-md mx-2;
+  /* @apply bg-gray-100 rounded-lg shadow-md mx-2; */
 
   @supports (display: grid) {
-    @apply mx-0;
+    /* @apply mx-0; */
   }
 }
 
@@ -59,9 +57,9 @@ button {
 }
 
 ::selection {
-  @apply bg-blue-300;
+  /* @apply bg-blue-300; */
 }
 
 a {
-  @apply focus:outline rounded outline-2 outline-current;
+  /* @apply focus:outline rounded outline-2 outline-current; */
 }

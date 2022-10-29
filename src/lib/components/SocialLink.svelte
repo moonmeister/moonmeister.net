@@ -37,14 +37,4 @@
 </a>
 
 <style lang="postcss">
-  @screen canhover {
-    a {
-      @apply transition-transform duration-100 ease-out;
-    }
-
-    a:hover,
-    a:focus {
-      @apply shadow-lg -translate-y-1 ease-in;
-    }
-  }
 </style>

@@ -1,4 +1,4 @@
-/* WordPress Core Block Styling */
+// WordPress Core Block Styling
 .wp-blocks {
   @apply overflow-x-hidden;
   a {

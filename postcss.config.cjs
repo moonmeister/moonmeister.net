@@ -1,4 +1,7 @@
+const postcssJitProps = require('postcss-jit-props');
+const OpenProps = require('open-props');
+
 /* eslint-disable global-require */
 module.exports = () => ({
-  plugins: [require('tailwindcss/nesting'), require('tailwindcss'), require('autoprefixer')],
+  plugins: [postcssJitProps(OpenProps), require('autoprefixer')],
 });

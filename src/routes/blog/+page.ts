@@ -11,10 +11,6 @@ const BLOG_POST_QUERY = gql`
         ...ArchivePost
       }
     }
-
-    page(id: "/blog/", idType: URI) {
-      title
-    }
   }
   ${ARCHIVE_FRAGMENT}
 `;
@@ -26,6 +22,6 @@ export async function load() {
 
   return {
     posts: data.posts.nodes,
-    pageTitle: data.page?.title,
+    pageTitle: "Blog",
   };
 }

@@ -7,5 +7,5 @@
 </script>
 
 <ArchivePage {posts}>
-  {pageTitle}
+  {pageTitle ?? "Blog"}
 </ArchivePage>

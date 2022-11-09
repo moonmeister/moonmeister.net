@@ -26,13 +26,15 @@
 <script lang="ts">
   import { formatDateString } from '$lib/utils.js';
   import { locale } from '$lib/store.js';
+  import { classNames } from '$lib/utils.js';
   import Tags from './Tags.svelte';
 
+  export let showTitle = false;
   export let posts = [];
 </script>
 
-<header class="sr-only">
-  <h1>
+<header class={classNames({ 'sr-only': !showTitle}, {'my-4 flex justify-center': showTitle})}>
+  <h1 class="text-4xl font-bold">
     <slot />
   </h1>
 </header>

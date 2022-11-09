@@ -5,6 +5,6 @@
   export let data;
 </script>
 
-<ArchivePage posts={data.tag.posts.nodes}>
+<ArchivePage posts={data.tag.posts.nodes} showTitle={true}>
   {data.tag.name}
 </ArchivePage>

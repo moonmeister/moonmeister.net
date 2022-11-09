@@ -33,7 +33,7 @@
   export let posts = [];
 </script>
 
-<header class={classNames({ 'sr-only': !showTitle}, {'my-4 flex justify-center': showTitle})}>
+<header class={classNames({ 'sr-only': !showTitle }, { 'my-4 flex justify-center': showTitle })}>
   <h1 class="text-4xl font-bold">
     <slot />
   </h1>

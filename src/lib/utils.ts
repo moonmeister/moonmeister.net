@@ -1,23 +1,21 @@
-/* eslint-disable import/prefer-default-export */
-
 export function formatDateString(dateString, locale) {
   const date = new Date(dateString);
 
   return date.toLocaleDateString(locale, {
-    month: "long",
-    year: "numeric",
-    day: "numeric",
+    month: 'long',
+    year: 'numeric',
+    day: 'numeric',
   });
 }
 
 const rainbowColors = [
-  "hsl(282.1, 100%, 41.4%)",
-  "hsl(274.6, 100%, 25.5%)",
-  "hsl(240, 100%, 50%)",
-  "hsl(120, 100%, 50%)",
-  "hsl(60, 100%, 50%)",
-  "hsl(29.9, 100%, 50%)",
-  "hsl(0, 100%, 50%)",
+  'hsl(282.1, 100%, 41.4%)',
+  'hsl(274.6, 100%, 25.5%)',
+  'hsl(240, 100%, 50%)',
+  'hsl(120, 100%, 50%)',
+  'hsl(60, 100%, 50%)',
+  'hsl(29.9, 100%, 50%)',
+  'hsl(0, 100%, 50%)',
 ];
 
 export function rainbowColor(position, totalCount) {
@@ -25,7 +23,7 @@ export function rainbowColor(position, totalCount) {
     return rainbowColors[position];
   }
 
-  return "#fff";
+  return '#fff';
 }
 
 export function getUrlQuery(name, query) {
@@ -42,27 +40,23 @@ export function getRandomInt(max, incrament = 1) {
 }
 
 function append(acc, arg) {
-  return acc + arg + " ";
+  return acc + arg + ' ';
 }
 
-type ClsInputs =
-  | string
-  | number
-  | { [k: string | number]: boolean }
-  | ClsInputs[];
+type ClsInputs = string | number | { [k: string | number]: boolean } | ClsInputs[];
 
 export function classNames(...args: ClsInputs[]): string {
-  let classes: string = "";
+  let classes = '';
 
   for (const arg of args) {
     if (!arg) continue;
     const argType = typeof arg;
-    if (argType === "string" || argType === "number") {
+    if (argType === 'string' || argType === 'number') {
       classes = append(classes, arg);
     } else if (Array.isArray(arg) && arg.length) {
       const inner = classNames(...arg);
       if (inner) classes = append(classes, inner);
-    } else if (argType === "object") {
+    } else if (argType === 'object') {
       for (const [key, value] of Object.entries(arg)) {
         if (value) classes = append(classes, key);
       }

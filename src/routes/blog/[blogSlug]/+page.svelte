@@ -3,7 +3,6 @@
   import { Edit3Icon, ClockIcon } from 'svelte-feather-icons';
   import Tags from '$lib/components/Tags.svelte';
   import Blocks from '$lib/components/Blocks.svelte';
-  import { locale } from '$lib/store';
 
   import { formatDateString } from '$lib/utils.js';
 

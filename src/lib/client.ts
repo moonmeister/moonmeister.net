@@ -4,7 +4,7 @@ let customFetch;
 
 let client;
 
-export function SvelteGqlClient(someFetch) {
+export function SvelteGqlClient(someFetch?: typeof fetch) {
   if (!customFetch && !someFetch && !window) {
     throw new Error('Fetch not set');
   }

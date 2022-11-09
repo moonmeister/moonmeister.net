@@ -1,0 +1,9 @@
+{
+  "schema": "https://api.moonmeister.net/graphql",
+  "documents": ["src/**/*.{ts,svelte}"],
+  "generates": {
+    "./src/lib/sdk.ts": {
+      "plugins": ["typescript", "typescript-operations", "typescript-graphql-request"]
+    }
+  }
+}

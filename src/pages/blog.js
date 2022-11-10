@@ -6,7 +6,6 @@ import ArchivePage from '../components/Archive';
 export default function BlogPage({
   data: {
     allWpPost: { totalCount, nodes: allPosts },
-    wpPage: { title },
   },
   location,
 }) {
@@ -14,7 +13,7 @@ export default function BlogPage({
     <ArchivePage
       count={totalCount}
       location={location}
-      pageTitle={title}
+      pageTitle={"Blog"}
       posts={allPosts}
     />
   );
@@ -27,10 +26,6 @@ export const query = graphql`
       nodes {
         ...ArchivePost
       }
-    }
-
-    wpPage(uri: { eq: "/blog/" }) {
-      title
     }
   }
 `;

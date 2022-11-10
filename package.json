@@ -57,8 +57,7 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "postcss": "^8.4.12",
     "postcss-nested": "^5.0.6",
-    "prettier": "^2.6.2",
-    "webpack": "^5.71.0"
+    "prettier": "^2.6.2"
   },
   "keywords": [
     "gatsby"

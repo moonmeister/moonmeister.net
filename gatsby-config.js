@@ -36,26 +36,10 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: process.env.WPGRAPHQL_URL || `https://api.moonmeister.net/graphql`,
-        verbose: true,
-        // for wp-graphql-gutenberg, attributes currently breaks due
-        // to the origin schema. It works if we exclude attributes
         excludeFieldNames: [`attributes`],
         schema: {
           queryDepth: 5,
           typePrefix: `Wp`,
-        },
-        develop: {
-          nodeUpdateInterval: 3000,
-        },
-        debug: {
-          graphql: {
-            showQueryOnError: false,
-            showQueryVarsOnError: false,
-            copyQueryOnError: false,
-            panicOnError: false,
-            // a critical error is a WPGraphQL query that returns an error and response data. Currently WPGQL will error if we try to access private posts so if this is false it returns a lot of irrelevant errors.
-            onlyReportCriticalErrors: true,
-          },
         },
         type: {
           MediaItem: {
@@ -65,9 +49,9 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
+                50
                 : // and we don't actually need more than 1000 in production
-                  1000,
+                1000,
           },
         },
       },
@@ -115,7 +99,7 @@ module.exports = {
         excludes: ['/blog'],
         query: `
         {
-          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
+          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}, slug: {ne: "blog"}}) {
             nodes {
               ... on WpPost {
                 path: uri
@@ -128,6 +112,7 @@ module.exports = {
             }
           }
         }
+
       `,
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({ allWpContentNode: { nodes } }) => nodes,

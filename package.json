@@ -37,7 +37,7 @@
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "^3.2.3"
+    "tailwindcss": "3.0.23"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

@@ -5,7 +5,7 @@
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
-    "@wordpress/block-library": "^7.18.0",
+    "@wordpress/block-library": "^7.19.0",
     "classnames": "^2.3.2",
     "components": "link:./src/components",
     "gatsby": "^4.24.8",
@@ -20,7 +20,7 @@
     "gatsby-plugin-react-helmet": "^5.24.0",
     "gatsby-plugin-readingtime": "^2.2.1",
     "gatsby-plugin-relative-ci": "^1.4.4",
-    "gatsby-plugin-robots-txt": "^1.7.1",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^4.24.0",
     "gatsby-plugin-sitemap": "^5.24.0",
     "gatsby-source-filesystem": "^4.24.0",
@@ -37,7 +37,7 @@
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "3.0.23"
+    "tailwindcss": "3.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
@@ -46,7 +46,7 @@
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^2.24.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.27.0",
+    "eslint": "^8.29.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
@@ -57,7 +57,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.19",
     "postcss-nested": "^5.0.6",
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.0"
   },
   "keywords": [
     "gatsby"

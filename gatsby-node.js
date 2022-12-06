@@ -34,9 +34,9 @@ async function createIndividualTagPages({ tags, gatsbyUtilities }) {
 }
 
 async function getPosts({ graphql, reporter }) {
-  const graphqlResult = await graphql(/* GraphQL */ `
+  const graphqlResult = await graphql(`
     query WpPosts {
-      allWpPost(sort: { fields: [date], order: DESC }) {
+      allWpPost(sort: { date: DESC }) {
         edges {
           previous {
             id

@@ -47,10 +47,7 @@ const tWconfig = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-
+  plugins: [require('@tailwindcss/typography')],
 };
 
 const { screens } = tWconfig.theme;

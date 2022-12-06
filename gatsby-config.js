@@ -64,7 +64,6 @@ module.exports = {
 
     /* Third Party Integration Plugins */
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
 
     /* Custom Plugins */
@@ -99,7 +98,7 @@ module.exports = {
         excludes: ['/blog'],
         query: `
         {
-          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}, slug: {ne: "blog"}}) {
+          allWpContentNode(filter: { contentTypeName: { in:["post", "page"]}, slug: { ne: "blog" } }) {
             nodes {
               ... on WpPost {
                 path: uri
@@ -112,7 +111,6 @@ module.exports = {
             }
           }
         }
-
       `,
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({ allWpContentNode: { nodes } }) => nodes,
@@ -169,31 +167,26 @@ module.exports = {
                   url: `${site.siteMetadata.siteUrl}${uri}`,
                 })
               ),
-            query: `
-              {
-                allWpPost(
-                  filter: {uri: {glob: "/blog/*"}}
-                  sort: {fields: [dateGmt], order: DESC}
-                ) {
-                  nodes {
-                    title
-                    dateGmt
-                    uri
-                    excerpt
-                    tags {
-                      nodes{
-                        name
-                      }
+            query: `{
+              allWpPost(filter: {uri: {glob: "/blog/*"}}, sort: {dateGmt: DESC}) {
+                nodes {
+                  title
+                  dateGmt
+                  uri
+                  excerpt
+                  tags {
+                    nodes {
+                      name
                     }
-                    author{
-                      node {
-                        name
-                      }
+                  }
+                  author {
+                    node {
+                      name
                     }
                   }
                 }
               }
-            `,
+            }`,
             output: '/rss.xml',
             title: "Alex Moon's blog RSS Feed",
             match: '^/blog/',

@@ -13,7 +13,7 @@ export default function BlogPage({
     <ArchivePage
       count={totalCount}
       location={location}
-      pageTitle={"Blog"}
+      pageTitle={'Blog'}
       posts={allPosts}
     />
   );
@@ -21,7 +21,7 @@ export default function BlogPage({
 
 export const query = graphql`
   query blogArchiveQuery {
-    allWpPost(sort: { fields: dateGmt, order: DESC }) {
+    allWpPost(sort: { dateGmt: DESC }) {
       totalCount
       nodes {
         ...ArchivePost

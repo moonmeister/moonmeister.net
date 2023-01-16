@@ -4,7 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "author": "Alex Moon <alex.jared.moon@gmail.com>",
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.9",
     "@wordpress/block-library": "^7.19.0",
     "classnames": "^2.3.2",
     "components": "link:./src/components",
@@ -54,7 +54,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.21",
     "postcss-nested": "^6.0.0",
-    "prettier": "^2.8.2"
+    "prettier": "^2.8.3"
   },
   "keywords": [
     "gatsby"

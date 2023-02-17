@@ -8,7 +8,7 @@
     "@wordpress/block-library": "^7.19.0",
     "classnames": "^2.3.2",
     "components": "link:./src/components",
-    "gatsby": "^5.6.0",
+    "gatsby": "^5.6.1",
     "gatsby-plugin-ackee-tracker": "^4.0.3",
     "gatsby-plugin-feed": "^5.6.0",
     "gatsby-plugin-gatsby-cloud": "^5.6.0",
@@ -34,11 +34,11 @@
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
     "styles": "link:./src/styles",
-    "tailwindcss": "3.2.4"
+    "tailwindcss": "3.2.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^3.6.0",

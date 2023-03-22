@@ -81,16 +81,6 @@ module.exports = {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {},
     },
-    {
-      resolve: `gatsby-plugin-ackee-tracker`,
-      options: {
-        domainId: isProduction ? TRACKING_IDS.PROD : TRACKING_IDS.DEV,
-        server: 'https://track.moonmeister.net',
-        ignoreOwnVisits: isProduction,
-        ignoreLocalhost: isProduction,
-        detailed: true,
-      },
-    },
     /* Misc Utilities to generate misc site related structured content */
     {
       resolve: 'gatsby-plugin-sitemap',

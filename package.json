@@ -9,7 +9,6 @@
     "classnames": "^2.3.2",
     "components": "link:./src/components",
     "gatsby": "^5.7.0",
-    "gatsby-plugin-ackee-tracker": "^4.0.4",
     "gatsby-plugin-feed": "^5.7.0",
     "gatsby-plugin-gatsby-cloud": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",

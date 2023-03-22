@@ -1,7 +1,7 @@
 {
   "extends": [
     "config:base",
-    "schedule:earlyMondays",
+    "schedule:monthly",
     ":disablePeerDependencies"
   ],
   "major": {

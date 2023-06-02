@@ -1,13 +1,54 @@
 ---
-const today = new Date();
+import { getFooterMenu } from '../api';
+import SocialLink from './SocialLink.astro';
+const {
+	menu: {
+		menuItems: { socials },
+	},
+} = await getFooterMenu();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
-</footer>
+<section class="flex flex-col items-center my-16" id="footer-right">
+	<ul class="social justify-center flex flex-wrap">
+		{
+			socials.map(({ connectedNode }) => {
+				if (!connectedNode?.social) {
+					return null;
+				}
+
+				const { social } = connectedNode;
+				return (
+					<li>
+						<SocialLink class="inline-block mb-2 shadow-lg" data={social} />
+					</li>
+				);
+			})
+		}
+	</ul>
+
+	<p class="justify-inherit display-inherit mt-8 tracking-tight">
+		&copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
+		<a aria-label="Astro Site" rel="noopener" target="_blank" href="https://astro.build"> Astro</a>
+		.
+	</p>
+</section>
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
+	.social {
+		a {
+			outline-color: theme('colors.gray.100');
+		}
+
+		@screen canhover {
+			li a {
+				@apply transform transition-transform duration-100 ease-out;
+			}
+
+			li:hover,
+			li:focus {
+				a {
+					@apply shadow-lg -translate-y-1 ease-in;
+				}
+			}
+		}
 	}
 </style>

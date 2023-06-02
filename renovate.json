@@ -5,15 +5,5 @@
 	},
 	"masterIssue": true,
 	"rangeStrategy": "bump",
-	"prHourlyLimit": 0,
-	"packageRules": [
-		{
-			"groupName": "minor updates",
-			"updateTypes": ["minor"]
-		},
-		{
-			"groupName": "patch updates",
-			"updateTypes": ["patch"]
-		}
-	]
+	"prHourlyLimit": 0
 }

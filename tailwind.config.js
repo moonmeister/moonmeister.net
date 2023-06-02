@@ -1,6 +1,8 @@
+import typography from '@tailwindcss/typography';
+
 /* eslint-disable global-require */
 const tWconfig = {
-	content: ['./src/**/*.js'],
+	content: ['./src/**/*.{astro,html,svelte,tsx}'],
 	theme: {
 		screens: {
 			sm: '600px',
@@ -47,7 +49,7 @@ const tWconfig = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [typography],
 };
 
 const { screens } = tWconfig.theme;
@@ -58,4 +60,4 @@ Object.keys(tWconfig.theme.screens).forEach((key) => {
 	tWconfig.mq[key] = `@media (min-width: ${screens[key]})`;
 });
 
-module.exports = tWconfig;
+export default tWconfig;

@@ -1,67 +1,70 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+/*components*/
+
+html {
+	@apply font-sans text-primary-900 bg-gray-200;
+}
+
+html,
 body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+	@apply h-screen;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
+/*
+h1 {
+  @apply text-6xl text-primary-800;
 }
-a {
-	color: #3273dc;
+
+h2 {
+  @apply text-2xl text-primary-700;
 }
-nav a {
-	margin-right: 10px;
+
+h3 {
+  @apply text-xl text-primary-700;
+} */
+
+.inline-svg {
+	@apply inline-block mx-1 text-center normal-case leading-none not-italic font-normal antialiased;
+	height: 1em;
+	width: 1em;
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
+
+input,
+textarea,
+button {
+	@apply text-gray-900 drop-shadow-none;
 }
-input {
-	font-size: 16px;
+
+.floating {
+	@apply bg-gray-100 rounded-lg shadow-md mx-2;
+
+	@supports (display: grid) {
+		@apply mx-0;
+	}
 }
-content {
-	line-height: 1.6;
+
+/*base*/
+
+.display-inherit {
+	display: inherit;
 }
-table {
-	width: 100%;
+
+.justify-inherit {
+	justify-content: inherit;
 }
-img {
-	max-width: 100%;
-	height: auto;
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+	/* Remove duration for all unknown animation when a user requests a reduced animation experience */
+	*:not(.safe-animation),
+	*:not(.safe-animation)::before,
+	*:not(.safe-animation)::after {
+		animation-duration: 0.01s !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0s !important;
+		scroll-behavior: auto !important;
+		transition: none !important;
+		transform: none !important;
+	}
 }
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
-pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+
+::selection {
+	@apply bg-blue-300;
 }

@@ -1,0 +1,46 @@
+---
+import { getHeaderMenu } from '../api';
+const {
+    menu: {
+      menuItems: { nodes: menuItems },
+    },
+  } = await getHeaderMenu();
+---
+
+<nav>
+	<ul class="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4">
+		{menuItems?.map(({ label, title, url }) => (
+			<li class="group list-none m-1">
+				<a
+					// activeClassName="active-links text-pink-600 relative content-box"
+					class="inline-block mx-2 p-1 text-2xl text-blue-600 uppercase drop-shadow-xl group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:ease-in"
+					title={title}
+					href={url}
+				>
+					{label}
+				</a>
+			</li>
+		))}
+	</ul>
+</nav>
+
+<style>
+	nav {
+		a.active-links {
+			&::after {
+				@apply border-b-4 border-blue-500 w-full absolute left-0;
+				content: '';
+			}
+
+			&::after {
+				@apply bottom-0;
+			}
+		}
+
+		@screen canhover {
+			a {
+				@apply transform transition-transform duration-100 ease-out;
+			}
+		}
+	}
+</style>

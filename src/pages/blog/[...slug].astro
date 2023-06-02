@@ -1,21 +1,75 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { Edit3Icon, ClockIcon } from 'astro-feather';
+import readingTime from 'reading-time';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Blocks from '../../components/Blocks.astro';
+import Tags from '../../components/Tags.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
 
-export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
-}
-type Props = CollectionEntry<'blog'>;
+import { getBlogPost } from '../../api';
 
-const post = Astro.props;
-const { Content } = await post.render();
+const {
+	post: {
+		title,
+		content,
+		excerpt,
+		dateGmt,
+		author: { node: author },
+		tags: { nodes: allTags },
+	},
+} = await getBlogPost(Astro.params.slug);
+
+const { avatar } = author;
+
+const { text: readingText } = readingTime(excerpt);
 ---
 
-<BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
-	<Content />
-</BlogPost>
+<BaseLayout>
+	<BaseHead slot="head" {title} description={excerpt} />
+	<article class="m-auto floating max-w-64 px-6">
+		<header
+			class="max-w-prose border-b flex flex-col items-center text-center py-3"
+		>
+			<h1 class="text-4xl font-bold z-0">{title}</h1>
+
+			<div class="flex m-4">
+				{
+					avatar.foundAvatar && avatar.rating === 'g' && (
+						<img
+							alt={`${author.name} headshot`}
+							class="rounded-full w-16 col-span-1 row-start-1 row-end-3 bg-gray-200 text-transparent"
+							height={avatar.height}
+							loading="lazy"
+							src={avatar.url}
+							width={avatar.width}
+						/>
+					)
+				}
+				<div class="flex flex-col justify-center">
+					<div class="text-left text-gray-600 row-auto">
+						<Edit3Icon
+							aria-hidden
+							customClasses="inline-svg text-gray-700 mr-2"
+						/>
+
+						<span aria-label="author">{author.name}</span>
+					</div>
+					<p class="text-gray-600 row-auto">
+						<ClockIcon
+							aria-hidden
+							customClasses="inline-svg text-gray-700 mr-2"
+						/>
+						{readingText} · <FormattedDate date={new Date(dateGmt)} />
+					</p>
+				</div>
+			</div>
+			<div id="blog-content">
+				<Blocks {content} />
+			</div>
+			<footer class="border-t py-6 text-sm text-gray-600">
+				<Tags data={allTags} />
+			</footer>
+		</header>
+	</article>
+</BaseLayout>

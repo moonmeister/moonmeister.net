@@ -1,0 +1,13 @@
+---
+import ArchivePage from '../../components/ArchivePage.astro';
+import { getTagArchive } from '../../api';
+
+const {
+	tag: {
+		name: title,
+		posts: { nodes: allPosts },
+	},
+} = await getTagArchive(Astro.params.tag);
+---
+
+<ArchivePage pageTitle={title} posts={allPosts} />

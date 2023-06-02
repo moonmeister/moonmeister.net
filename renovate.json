@@ -1,23 +1,19 @@
 {
-  "extends": [
-    "config:base",
-    "schedule:monthly",
-    ":disablePeerDependencies"
-  ],
-  "major": {
-    "masterIssueApproval": true
-  },
-  "masterIssue": true,
-  "rangeStrategy": "bump",
-  "prHourlyLimit": 0,
-  "packageRules": [
-    {
-      "groupName": "minor updates",
-      "updateTypes": ["minor"]
-    },
-    {
-      "groupName": "patch updates",
-      "updateTypes": ["patch"]
-    }
-  ]
+	"extends": ["config:base", "schedule:monthly", ":disablePeerDependencies"],
+	"major": {
+		"masterIssueApproval": true
+	},
+	"masterIssue": true,
+	"rangeStrategy": "bump",
+	"prHourlyLimit": 0,
+	"packageRules": [
+		{
+			"groupName": "minor updates",
+			"updateTypes": ["minor"]
+		},
+		{
+			"groupName": "patch updates",
+			"updateTypes": ["patch"]
+		}
+	]
 }

@@ -1,6 +1,5 @@
 node_modules/
-.cache/
+.astro/
+gatsby/
 public/
-.netlify/
-wordpress
-.yarn
+pnpm-lock.yaml

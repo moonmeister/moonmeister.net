@@ -9,5 +9,7 @@ export default defineConfig({
 	output: 'server',
 	site: 'https://moonmeister.net',
 	integrations: [sitemap(), tailwind()],
-	adapter: netlify(),
+	adapter: netlify({
+    builders: true,
+  }),
 });

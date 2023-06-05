@@ -3,7 +3,8 @@
 		"astro-build.astro-vscode",
 		"csstools.postcss",
 		"graphql.vscode-graphql",
-		"graphql.vscode-graphql-syntax"
+		"graphql.vscode-graphql-syntax",
+		"bungcip.better-toml"
 	],
 	"unwantedRecommendations": []
 }

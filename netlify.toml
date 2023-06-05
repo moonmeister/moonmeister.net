@@ -1,0 +1,14 @@
+[[headers]]
+	for = "/*"
+	[headers.values]
+		cache-control = '''
+		public,
+		max-age=60,
+		stale-while-revalidate=60'''
+[[headers]]
+	for = "/_astro/*"
+	[headers.values]
+		cache-control = '''
+		public,
+		immutable,
+		max-age=31536000'''

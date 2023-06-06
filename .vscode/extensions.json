@@ -4,7 +4,7 @@
 		"csstools.postcss",
 		"graphql.vscode-graphql",
 		"graphql.vscode-graphql-syntax",
-		"bungcip.better-toml"
+		"tamasfe.even-better-toml"
 	],
 	"unwantedRecommendations": []
 }

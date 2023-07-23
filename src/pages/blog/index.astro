@@ -1,0 +1,10 @@
+---
+import ArchivePage from '../../components/ArchivePage.astro';
+import { getBlogArchive } from '../../api';
+
+const {
+	posts: { allPosts },
+} = await getBlogArchive();
+---
+
+<ArchivePage pageTitle={'Blog'} posts={allPosts} />

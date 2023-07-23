@@ -1,0 +1,20 @@
+---
+import { gql } from 'graphql-request';
+
+const {
+	data: {
+		title,
+		socialMeta: { socialLinkType, url, document, primaryColor, textColor },
+	},
+} = Astro.props;
+
+const finalUrl = socialLinkType === 'url' ? url : document.mediaItemUrl;
+---
+
+<a
+	href={finalUrl}
+	class="m-2 p-2 rounded inline-block mb-2 shadow-lg"
+	style={{ color: textColor, 'background-color': primaryColor }}
+>
+	{title}
+</a>

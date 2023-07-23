@@ -1,0 +1,36 @@
+---
+import { getRandomInt } from '../utils';
+
+const {
+	data: { name, uri },
+	...props
+} = Astro.props;
+---
+
+<a href={uri}>
+	<div class="gradient-border relative rounded z-10">
+		{/* eslint-disable-next-line react/jsx-props-no-spreading */}
+		<p class="tag capitalize px-1 bg-gray-100 rounded-sm" {...props}>
+			{name}
+		</p>
+		<div
+			class="inset-0 absolute"
+			style={{
+				content: '',
+				zIndex: '-1',
+				margin: '-1px',
+				borderRadius: 'inherit',
+				filter: 'brightness(0.9)',
+				background: `linear-gradient(
+				${getRandomInt(360, 20)}deg,
+				orange,
+				yellow,
+				green,
+				cyan,
+				indigo,
+				violet`,
+			}}
+		>
+		</div>
+	</div>
+</a>

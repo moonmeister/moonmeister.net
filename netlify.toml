@@ -1,0 +1,10 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+[[headers]]
+for = "/_astro/*"
+[headers.values]
+cache-control = '''
+	public,
+	immutable,
+	max-age=31536000'''

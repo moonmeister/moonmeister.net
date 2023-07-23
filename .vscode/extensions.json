@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"csstools.postcss",
+		"graphql.vscode-graphql",
+		"graphql.vscode-graphql-syntax",
+		"tamasfe.even-better-toml"
+	],
+	"unwantedRecommendations": []
+}

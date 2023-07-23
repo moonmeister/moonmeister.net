@@ -9,6 +9,12 @@ import FormattedDate from '../../components/FormattedDate.astro';
 
 import { getBlogPost } from '../../api';
 
+const data = await getBlogPost(Astro.params.slug);
+
+if (!data?.post) {
+	return Astro.redirect("/404")
+}
+
 const {
 	post: {
 		title,
@@ -18,7 +24,7 @@ const {
 		author: { node: author },
 		tags: { nodes: allTags },
 	},
-} = await getBlogPost(Astro.params.slug);
+} = data;
 
 const { avatar } = author;
 

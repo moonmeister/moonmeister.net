@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -8,12 +8,6 @@ dependencies:
   '@astrojs/netlify':
     specifier: ^2.2.3
     version: 2.2.3(astro@2.5.6)
-  '@astrojs/rss':
-    specifier: ^2.4.3
-    version: 2.4.3
-  '@astrojs/sitemap':
-    specifier: ^1.3.2
-    version: 1.3.2
   '@astrojs/tailwind':
     specifier: ^3.1.3
     version: 3.1.3(astro@2.5.6)(tailwindcss@3.3.2)
@@ -129,20 +123,6 @@ packages:
     engines: {node: '>=16.12.0'}
     dependencies:
       prismjs: 1.29.0
-    dev: false
-
-  /@astrojs/rss@2.4.3:
-    resolution: {integrity: sha512-Dc8lxsXiDlnxONVIUuc3ohO1+vV1Hp9fRFdUianOola0S9/xv/6FzIHhkQ62MkaFSlcZm5uIOllRWNKVvuFuoA==}
-    dependencies:
-      fast-xml-parser: 4.2.2
-      kleur: 4.1.5
-    dev: false
-
-  /@astrojs/sitemap@1.3.2:
-    resolution: {integrity: sha512-zZXU3Pr3OeSYtOfmph/k0SrQXqS3zjiH9yqyukRXMMKybhAKcMkMVI2f7N4Oo2ywqbSoaNRE9sGNQyTvBwSBZw==}
-    dependencies:
-      sitemap: 7.1.1
-      zod: 3.21.4
     dev: false
 
   /@astrojs/tailwind@3.1.3(astro@2.5.6)(tailwindcss@3.3.2):
@@ -1885,12 +1865,6 @@ packages:
 
   /@types/retry@0.12.1:
     resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
-    dev: false
-
-  /@types/sax@1.2.4:
-    resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
-    dependencies:
-      '@types/node': 17.0.45
     dev: false
 
   /@types/triple-beam@1.3.2:
@@ -4351,13 +4325,6 @@ packages:
 
   /fast-uri@2.2.0:
     resolution: {integrity: sha512-cIusKBIt/R/oI6z/1nyfe2FvGKVTohVRfvkOhvx0nCEW+xf5NoCXjAHcWp93uOUBchzYcsvPlrapAdX1uW+YGg==}
-    dev: false
-
-  /fast-xml-parser@4.2.2:
-    resolution: {integrity: sha512-DLzIPtQqmvmdq3VUKR7T6omPK/VCRNqgFlGtbESfyhcH2R4I8EzK1/K6E8PkRCK2EabWrUHK32NjYRbEFnnz0Q==}
-    hasBin: true
-    dependencies:
-      strnum: 1.0.5
     dev: false
 
   /fastify-plugin@4.5.0:
@@ -8429,10 +8396,6 @@ packages:
     dependencies:
       suf-log: 2.5.3
 
-  /sax@1.2.4:
-    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
-    dev: false
-
   /section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
@@ -8577,17 +8540,6 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
-    dev: false
-
-  /sitemap@7.1.1:
-    resolution: {integrity: sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==}
-    engines: {node: '>=12.0.0', npm: '>=5.6.0'}
-    hasBin: true
-    dependencies:
-      '@types/node': 17.0.45
-      '@types/sax': 1.2.4
-      arg: 5.0.2
-      sax: 1.2.4
     dev: false
 
   /slash@3.0.0:
@@ -8932,10 +8884,6 @@ packages:
   /strip-outer@2.0.0:
     resolution: {integrity: sha512-A21Xsm1XzUkK0qK1ZrytDUvqsQWict2Cykhvi0fBQntGG5JSprESasEyV1EZ/4CiR5WB5KjzLTrP/bO37B0wPg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dev: false
-
-  /strnum@1.0.5:
-    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
     dev: false
 
   /sucrase@3.32.0:

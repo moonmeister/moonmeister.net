@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 import netlify from '@astrojs/netlify/functions';
@@ -8,7 +7,7 @@ import netlify from '@astrojs/netlify/functions';
 export default defineConfig({
 	output: 'server',
 	site: 'https://moonmeister.net',
-	integrations: [sitemap(), tailwind()],
+	integrations: [tailwind()],
 	adapter: netlify({
 		builders: true,
 	}),

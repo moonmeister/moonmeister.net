@@ -3,10 +3,10 @@ import type { APIRoute } from 'astro';
 export const get: APIRoute = async function get({ params, request, redirect }) {
 	const { type } = params;
 
-	const url = new URL(request.url)
+	const url = new URL(request.url);
 
 	const resp = await fetch(import.meta.env.WORDPRESS_URL + url.pathname, {
-		headers: { ["x-forwarded-host"]: 'https://moonmeister.net/' },
+		headers: { ['x-forwarded-host']: 'https://moonmeister.net/' },
 	});
 
 	if (!resp.ok) {
@@ -14,9 +14,9 @@ export const get: APIRoute = async function get({ params, request, redirect }) {
 			status: 404,
 			headers: {
 				'content-type': 'text/plain',
-			}
-		})
-	};
+			},
+		});
+	}
 
 	let text = await resp.text();
 
@@ -26,8 +26,9 @@ export const get: APIRoute = async function get({ params, request, redirect }) {
 		status: 200,
 		headers: {
 			'content-type': resp.headers.get('content-type') || 'application/rss+xml',
-			'content-disposition': `inline; filename="${type ? `feed.${type}` : 'rss.xml'}"`,
-
-		}
+			'content-disposition': `inline; filename="${
+				type ? `feed.${type}` : 'rss.xml'
+			}"`,
+		},
 	});
 };

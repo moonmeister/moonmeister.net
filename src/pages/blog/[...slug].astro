@@ -12,7 +12,7 @@ import { getBlogPost } from '../../api';
 const data = await getBlogPost(Astro.params.slug);
 
 if (!data?.post) {
-	return Astro.redirect("/404")
+	return Astro.redirect('/404');
 }
 
 const {

@@ -11,7 +11,7 @@ export const get: APIRoute = async function get({ params, request, redirect }) {
 
 	if (/^(?:.*sitemap.*).(xml|xsl)$/.test(filename)) {
 		const resp = await fetch(import.meta.env.WORDPRESS_URL + filename, {
-			headers: { ["x-forwarded-host"]: 'https://moonmeister.net/' },
+			headers: { ['x-forwarded-host']: 'https://moonmeister.net/' },
 		});
 
 		if (!resp.ok) {
@@ -19,9 +19,9 @@ export const get: APIRoute = async function get({ params, request, redirect }) {
 				status: 404,
 				headers: {
 					'content-type': 'text/plain',
-				}
-			})
-		};
+				},
+			});
+		}
 
 		let text = await resp.text();
 
@@ -31,7 +31,7 @@ export const get: APIRoute = async function get({ params, request, redirect }) {
 			status: resp.status,
 			headers: {
 				'content-type': 'application/xml',
-			}
+			},
 		});
 	}
 

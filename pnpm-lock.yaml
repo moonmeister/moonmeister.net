@@ -15,8 +15,8 @@ dependencies:
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
   '@unpic/astro':
-    specifier: ^0.0.18
-    version: 0.0.18(astro@2.10.15)
+    specifier: ^0.0.35
+    version: 0.0.35(astro@2.10.15)
   astro:
     specifier: ^2.10.15
     version: 2.10.15(@types/node@20.4.4)
@@ -2552,19 +2552,19 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: false
 
-  /@unpic/astro@0.0.18(astro@2.10.15):
-    resolution: {integrity: sha512-XuZKZqYnA0R8pTSIiqhu2y3U3e5jMPnI68Dc+7ueHUlk0mlk2okWyu3QX3hT+ozntgZrlbgHxzKrw5TiKsnPmw==}
+  /@unpic/astro@0.0.35(astro@2.10.15):
+    resolution: {integrity: sha512-Q6fyjL4qyFeDC8ZBY4c9B3QADVTvOU9myOoNicw14H1aC1KEz5oUGt9QfFT0/NSrY+tmVZfYlJUYnAURADSqNw==}
     peerDependencies:
-      astro: ^2.0.0
+      astro: ^2.0.0 || ^3.0.0
     dependencies:
-      '@unpic/core': 0.0.24
+      '@unpic/core': 0.0.40
       astro: 2.10.15(@types/node@20.4.4)
     dev: false
 
-  /@unpic/core@0.0.24:
-    resolution: {integrity: sha512-HFa7ry3iNYfIOkaWGb0N/w1sxt6MAyUfoXXOvjyz50vtomDUbxK4krcRcQWIca64bORQKncxeJbGETRQLF20WQ==}
+  /@unpic/core@0.0.40:
+    resolution: {integrity: sha512-CESfRLJ09PawmBbpor9WLTwFZri9BtDfk/eEOBfYAYYGvOWo0UTuU8kDaoluOZZLBhgf6dKaBMQMdMldJQs1Ww==}
     dependencies:
-      unpic: 3.6.1
+      unpic: 3.14.1
     dev: false
 
   /@vercel/nft@0.22.6(supports-color@9.4.0):
@@ -10236,8 +10236,8 @@ packages:
       normalize-path: 2.1.1
     dev: false
 
-  /unpic@3.6.1:
-    resolution: {integrity: sha512-4/ZAW3vXkvU2tpyuuAaIrlg58rh55EfzCFDJCxaaua/Ru8Q5f3bABjh5KQtQqRULzV6OaT05PF2pB6h1by98sg==}
+  /unpic@3.14.1:
+    resolution: {integrity: sha512-MTr2ktf65nAjxSoX6YGnbZv+YfHcz41H5UJ6v+Bz/cMjNmOxPfcTRfkOOR8RaxI4p4SR126JAiaRizlZvcMHAw==}
     dev: false
 
   /unpipe@1.0.0:

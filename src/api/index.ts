@@ -29,7 +29,10 @@ export function getFooterMenu() {
 		}
 	`;
 
-	return request(import.meta.env.WORDPRESS_API_URL, query);
+	return request({
+		url: import.meta.env.WORDPRESS_API_URL,
+		document: query,
+	});
 }
 
 export function getHeaderMenu() {
@@ -47,7 +50,10 @@ export function getHeaderMenu() {
 		}
 	`;
 
-	return request(import.meta.env.WORDPRESS_API_URL, query);
+	return request({
+		url: import.meta.env.WORDPRESS_API_URL,
+		document: query,
+	});
 }
 
 export function getHomePage() {
@@ -66,7 +72,10 @@ export function getHomePage() {
 		}
 	`;
 
-	return request(import.meta.env.WORDPRESS_API_URL, query);
+	return request({
+		url: import.meta.env.WORDPRESS_API_URL,
+		document: query,
+	});
 }
 
 export function getBlogArchive() {
@@ -79,7 +88,10 @@ export function getBlogArchive() {
     }
   }`;
 
-	return request(import.meta.env.WORDPRESS_API_URL, query);
+	return request({
+		url: import.meta.env.WORDPRESS_API_URL,
+		document: query,
+	});
 }
 
 const tagLinkFragment = gql`

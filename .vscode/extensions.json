@@ -4,7 +4,8 @@
 		"csstools.postcss",
 		"graphql.vscode-graphql",
 		"graphql.vscode-graphql-syntax",
-		"tamasfe.even-better-toml"
+		"tamasfe.even-better-toml",
+		"editorconfig.editorconfig"
 	],
 	"unwantedRecommendations": []
 }

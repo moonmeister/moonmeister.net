@@ -1,1 +1,15 @@
-{"image":"mcr.microsoft.com/devcontainers/universal:2"}
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"astro-build.astro-vscode",
+				"csstools.postcss",
+				"GraphQL.vscode-graphql",
+				"GraphQL.vscode-graphql-syntax",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}
+}

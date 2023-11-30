@@ -19,7 +19,7 @@
 		"@unpic/astro": "^0.0.18",
 		"astro": "^2.10.15",
 		"astro-feather": "^1.0.0",
-		"autoprefixer": "^10.4.14",
+		"autoprefixer": "^10.4.16",
 		"graphql-request": "^6.1.0",
 		"netlify-cli": "^15.9.1",
 		"reading-time": "^1.5.0",

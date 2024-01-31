@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/netlify':
-    specifier: ^3.0.4
-    version: 3.0.4(astro@3.6.4)
+    specifier: ^3.1.1
+    version: 3.1.1(astro@3.6.4)
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.6.4)(tailwindcss@3.4.1)
@@ -101,10 +101,10 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@3.0.4(astro@3.6.4):
-    resolution: {integrity: sha512-zVDr53WEAyrsAIvKNgi1DfER5Vq83/z8rT71r2Id/4ygw5dH04fPGjBroovJYMDXSip/rZQIvNa52A0iMFs7Ng==}
+  /@astrojs/netlify@3.1.1(astro@3.6.4):
+    resolution: {integrity: sha512-zXApWH3uaW0/sxu75S4XfVO7xe8pmPtlGzBDFWyeceIi9u2oWgnFdVdNEnZ/bb5//+54b4y/LeL4yzL5kDjX6Q==}
     peerDependencies:
-      astro: ^3.3.0
+      astro: ^3.0.0 || ^4.0.0
     dependencies:
       '@astrojs/underscore-redirects': 0.3.3
       '@netlify/functions': 2.4.0

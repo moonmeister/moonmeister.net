@@ -17,7 +17,7 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/ts-plugin": "^1.3.1",
 		"@tailwindcss/typography": "^0.5.10",
-		"@unpic/astro": "^0.0.35",
+		"@unpic/astro": "^0.0.44",
 		"astro": "^3.6.4",
 		"astro-feather": "^1.0.0",
 		"autoprefixer": "^10.4.16",

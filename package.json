@@ -21,6 +21,7 @@
 		"astro": "^3.6.4",
 		"astro-feather": "^1.0.0",
 		"autoprefixer": "^10.4.16",
+		"decap-cms-app": "^3.1.4",
 		"graphql-request": "^6.1.0",
 		"netlify-cli": "^17.11.0",
 		"reading-time": "^1.5.0",

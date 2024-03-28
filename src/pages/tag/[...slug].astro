@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ArchivePage from '../../components/ArchivePage.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const tagEntries = await getCollection('tags');
+	const builtTags = [];
+
+	for (const tagEntry of tagEntries) {
+		const blogEntries = await getCollection('posts', ({ data }) => {
+			if ( data.tags === undefined ) {
+				return false;
+			}
+
+			for (const tag of data.tags) {
+				if (tag.id === tagEntry.id) {
+					return true;
+				}
+			}
+		});
+
+		builtTags.push({
+			params: { slug: tagEntry.id },
+			props: { entry: tagEntry, posts: blogEntries },
+		});
+	}
+
+	return builtTags;
+}
+
+const { entry, posts } = Astro.props;
+---
+
+<ArchivePage pageTitle={entry.data.name} {posts} />

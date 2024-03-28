@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const get: APIRoute = async function get({ params, request, redirect }) {
+export const GET: APIRoute = async function get({ params, request, redirect }) {
 	const { type } = params;
 
 	const url = new URL(request.url);

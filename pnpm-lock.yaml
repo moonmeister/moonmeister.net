@@ -17,9 +17,6 @@ dependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.1)
-  '@unpic/astro':
-    specifier: ^0.0.35
-    version: 0.0.35(astro@3.6.4)
   astro:
     specifier: ^3.6.4
     version: 3.6.4(@types/node@20.10.1)(typescript@5.3.2)
@@ -3089,21 +3086,6 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
-    dev: false
-
-  /@unpic/astro@0.0.35(astro@3.6.4):
-    resolution: {integrity: sha512-Q6fyjL4qyFeDC8ZBY4c9B3QADVTvOU9myOoNicw14H1aC1KEz5oUGt9QfFT0/NSrY+tmVZfYlJUYnAURADSqNw==}
-    peerDependencies:
-      astro: ^2.0.0 || ^3.0.0
-    dependencies:
-      '@unpic/core': 0.0.40
-      astro: 3.6.4(@types/node@20.10.1)(typescript@5.3.2)
-    dev: false
-
-  /@unpic/core@0.0.40:
-    resolution: {integrity: sha512-CESfRLJ09PawmBbpor9WLTwFZri9BtDfk/eEOBfYAYYGvOWo0UTuU8kDaoluOZZLBhgf6dKaBMQMdMldJQs1Ww==}
-    dependencies:
-      unpic: 3.14.1
     dev: false
 
   /@vercel/nft@0.23.1(supports-color@9.4.0):
@@ -10933,10 +10915,6 @@ packages:
     dependencies:
       normalize-path: 2.1.1
     dev: true
-
-  /unpic@3.14.1:
-    resolution: {integrity: sha512-MTr2ktf65nAjxSoX6YGnbZv+YfHcz41H5UJ6v+Bz/cMjNmOxPfcTRfkOOR8RaxI4p4SR126JAiaRizlZvcMHAw==}
-    dev: false
 
   /unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}

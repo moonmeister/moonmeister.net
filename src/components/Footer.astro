@@ -1,25 +1,36 @@
 ---
-import { getFooterMenu } from '../api';
 import SocialLink from './SocialLink.astro';
-const {
-	menu: {
-		menuItems: { socials },
+
+const socials = [
+	{
+		name: 'GitHub',
+		url: 'https://github.com/moonmeister',
+		primaryColor: '#24292e',
+		textColor: '#fafbfc',
 	},
-} = await getFooterMenu();
+	{
+		name: 'LinkedIn',
+		url: 'https://linkedin.com/in/aj-moon/',
+		primaryColor: '#2867b2',
+		textColor: '#ffffff',
+	},
+	{
+		name: 'Twitter',
+		url: 'https://twitter.com/moon_meister',
+		primaryColor: '#1da1f2',
+		textColor: '#14171a',
+	},
+];
 ---
 
 <section class="flex flex-col items-center my-16" id="footer-right">
 	<ul class="social justify-center flex flex-wrap">
 		{
-			socials.map(({ connectedNode }) => {
-				if (!connectedNode?.social) {
-					return null;
-				}
+			socials.map(({name, url, textColor, primaryColor}) => {
 
-				const { social } = connectedNode;
 				return (
 					<li>
-						<SocialLink class="inline-block mb-2 shadow-lg" data={social} />
+						<SocialLink class="inline-block mb-2 shadow-lg" title={name} {url} {primaryColor} {textColor} />
 					</li>
 				);
 			})

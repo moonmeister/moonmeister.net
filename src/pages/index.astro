@@ -1,24 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BaseHead from '../components/BaseHead.astro';
-import Blocks from '../components/Blocks.astro';
-import { Image } from '@unpic/astro';
+
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.jpg';
 
 import { SITE_DESCRIPTION } from '../consts';
-import { getHomePage } from '../api/';
-
-const data = await getHomePage();
-const {
-	page: {
-		title,
-		content,
-		featuredImage: { node: featuredImage },
-	},
-} = data;
 ---
 
 <BaseLayout>
-	<BaseHead slot="head" {title} description={SITE_DESCRIPTION} />
+	<BaseHead slot="head" title="Alex Moon" description={SITE_DESCRIPTION} />
 	<section
 		class="floating p-1 pt-8 md:p-8 flex flex-col md:flex-row-reverse items-center justify-between"
 	>
@@ -26,15 +17,26 @@ const {
 			class="flex sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg"
 		>
 			<Image
-				alt={featuredImage.altText}
-				src={featuredImage.sourceUrl}
+				alt={'headshot of Alex Moon'}
+				src={headshot}
 				width={400}
-				aspectRatio={1}
 				loading="eager"
 			/>
 		</figure>
 		<div class="md:w-7/12 m-6">
-			<Blocks {content} />
+			<p>
+				Hello! I am <b>Alex Moon</b> – a full-stack software developer and technologist.
+				My career has spanned a help desk, systems administration, software development,
+				and more. I’m currently a consultant helping folks build headless WordPress,
+				Gatsby, and other web projects.
+			</p>
+			</br>
+			<p>
+				When I am not working, I can be found hiking, skiing, contributing to
+				Open Source, or wishing I was sailing (you can read more about my
+				outdoor adventures on my <a href="https://www.gurugoes.net" target="_blank"><u>personal blog</u></a>). I am a vagabond, so I might be
+				in any number of beautiful places.
+			</p>
 		</div>
 	</section>
 </BaseLayout>

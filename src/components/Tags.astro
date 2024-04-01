@@ -2,20 +2,28 @@
 import { TagIcon } from 'astro-feather';
 import WpTag from './Tag.astro';
 
+export type Props = {
+	tags: {
+		collection: "tags",
+		id: string;
+	}[];
+};
+
 const { tags } = Astro.props;
+
 ---
 
 <TagIcon aria-hidden customClasses="inline-block text-xl" />
 <div class="inline-flex items-center box-border">
 	{
-		tags?.length > 0 ? (
-			tags.map((tag) => (
+		tags?.length > 0 && tags != null ? (
+		tags.map((tag) => (
 				<span class="ml-2">
-					<WpTag key={tag.id} aria-label="Post Tags" data={tag} />
+					<WpTag aria-label="Post Tags" {tag} />
 				</span>
 			))
 		) : (
-			<WpTag data={{ name: 'none' }} />
+			<WpTag tag={{ id: 'none'}} />
 		)
 	}
 </div>

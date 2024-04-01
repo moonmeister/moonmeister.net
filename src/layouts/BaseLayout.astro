@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 <html lang="en">
 	<head>
 		<slot name="head" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 	</head>
 	<body>
 		<div class="h-screen" id="page-layout">
@@ -14,8 +15,6 @@ import Footer from '../components/Footer.astro';
 			</header>
 			<main
 				class="max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg"
-				eslint-disable-next-line
-				no-dupe-keys
 				style={{ margin: '5vmin auto' }}
 			>
 				<slot />

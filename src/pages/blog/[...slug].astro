@@ -1,46 +1,42 @@
 ---
+
+import { getCollection } from 'astro:content';
+
 import { Edit3Icon, ClockIcon } from 'astro-feather';
 import readingTime from 'reading-time';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BaseHead from '../../components/BaseHead.astro';
-import Blocks from '../../components/Blocks.astro';
+// import Blocks from '../../components/Blocks.astro';
 import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-import { getBlogPost } from '../../api';
-
-const data = await getBlogPost(Astro.params.slug);
-
-if (!data?.post) {
-	return Astro.redirect('/404');
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('posts');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
 }
 
-const {
-	post: {
-		title,
-		content,
-		excerpt,
-		dateGmt,
-		author: { node: author },
-		tags: { nodes: allTags },
-	},
-} = data;
+export const prerender = true;
 
-const { avatar } = author;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 
-const { text: readingText } = readingTime(excerpt);
+const { text: readingText } = readingTime(entry.body);
 ---
 
 <BaseLayout>
-	<BaseHead slot="head" {title} description={excerpt} />
+	<!-- <BaseHead slot="head" {entry.data.title } description={excerpt} /> -->
+	<BaseHead slot="head" title={entry.data.title} description='TODO' />
 	<article class="m-auto floating max-w-64 px-6">
 		<header
 			class="max-w-prose border-b flex flex-col items-center text-center py-3"
 		>
-			<h1 class="text-4xl font-bold z-0">{title}</h1>
+			<h1 class="text-4xl font-bold z-0">{entry.data.title}</h1>
 
 			<div class="flex m-4">
-				{
+				<!-- {
 					avatar.foundAvatar && avatar.rating === 'g' && (
 						<img
 							alt={`${author.name} headshot`}
@@ -51,7 +47,7 @@ const { text: readingText } = readingTime(excerpt);
 							width={avatar.width}
 						/>
 					)
-				}
+				} -->
 				<div class="flex flex-col justify-center">
 					<div class="text-left text-gray-600 row-auto">
 						<Edit3Icon
@@ -59,22 +55,22 @@ const { text: readingText } = readingTime(excerpt);
 							customClasses="inline-svg text-gray-700 mr-2"
 						/>
 
-						<span aria-label="author">{author.name}</span>
+						<span aria-label="author">Alex Moon</span>
 					</div>
 					<p class="text-gray-600 row-auto">
 						<ClockIcon
 							aria-hidden
 							customClasses="inline-svg text-gray-700 mr-2"
 						/>
-						{readingText} · <FormattedDate date={new Date(dateGmt)} />
+						{readingText} · <FormattedDate date={new Date(entry.data.date)} />
 					</p>
 				</div>
 			</div>
 			<div id="blog-content">
-				<Blocks {content} />
+				<Content />
 			</div>
 			<footer class="border-t py-6 text-sm text-gray-600">
-				<Tags data={allTags} />
+				<Tags tags={entry.data.tags} />
 			</footer>
 		</header>
 	</article>

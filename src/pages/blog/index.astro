@@ -1,10 +1,9 @@
 ---
-import ArchivePage from '../../components/ArchivePage.astro';
-import { getBlogArchive } from '../../api';
+import { getCollection } from 'astro:content';
 
-const {
-	posts: { allPosts },
-} = await getBlogArchive();
+import ArchivePage from '../../components/ArchivePage.astro';
+
+const posts = await getCollection('posts');
 ---
 
-<ArchivePage pageTitle={'Blog'} posts={allPosts} />
+<ArchivePage pageTitle={'Blog'} {posts} />

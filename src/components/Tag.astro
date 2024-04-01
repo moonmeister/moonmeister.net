@@ -1,17 +1,26 @@
 ---
+import { getDataEntryById } from 'astro:content';
 import { getRandomInt } from '../utils';
 
-const {
-	data: { name, uri },
-	...props
-} = Astro.props;
+type Props = {
+	tag: {
+		id: string;
+	};
+};
+
+const { tag, ...props } = Astro.props;
+
+const tagData =
+	tag.id == 'none'
+		? { id: '', data: { name: 'None!' } }
+		: await getDataEntryById('tags', tag.id);
 ---
 
-<a href={uri}>
+<a href={`/tag/${tagData.id}`}>
 	<div class="gradient-border relative rounded z-10">
 		{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 		<p class="tag capitalize px-1 bg-gray-100 rounded-sm" {...props}>
-			{name}
+			{tagData.data.name}
 		</p>
 		<div
 			class="inset-0 absolute"

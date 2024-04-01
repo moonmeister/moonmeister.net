@@ -1,10 +1,16 @@
 ---
-import { getHeaderMenu } from '../api';
-const {
-	menu: {
-		menuItems: { nodes: menuItems },
+const menuItems = [
+	{
+		label: 'Home',
+		title: 'Home',
+		url: '/',
 	},
-} = await getHeaderMenu();
+	{
+		label: 'Blog',
+		title: 'Blog',
+		url: '/blog',
+	},
+];
 ---
 
 <nav>

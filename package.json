@@ -13,13 +13,13 @@
 		"test:format": "prettier --check . --plugin-search-dir=."
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^3.1.1",
+		"@astrojs/netlify": "^5.2.0",
 		"@astrojs/rss": "^4.0.5",
 		"@astrojs/sitemap": "^3.1.2",
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/ts-plugin": "^1.6.1",
 		"@tailwindcss/typography": "^0.5.12",
-		"astro": "^3.6.5",
+		"astro": "^4.5.12",
 		"astro-feather": "^1.0.0",
 		"autoprefixer": "^10.4.19",
 		"reading-time": "^1.5.0",

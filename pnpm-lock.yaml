@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^17.31.0
     version: 17.31.0(@types/node@20.12.2)
   prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
+    specifier: ^3.3.2
+    version: 3.3.2
   prettier-plugin-astro:
     specifier: ^0.14.0
     version: 0.14.0
@@ -8679,12 +8679,12 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       '@astrojs/compiler': 1.8.2
-      prettier: 3.2.5
+      prettier: 3.3.2
       sass-formatter: 0.7.8
     dev: true
 
-  /prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  /prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

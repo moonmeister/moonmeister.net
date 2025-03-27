@@ -18,7 +18,7 @@
 		"@astrojs/sitemap": "^3.3.0",
 		"@astrojs/tailwind": "^5.1.5",
 		"@astrojs/ts-plugin": "^1.10.4",
-		"@tailwindcss/typography": "^0.5.13",
+		"@tailwindcss/typography": "^0.5.16",
 		"astro": "^4.16.18",
 		"astro-feather": "^1.0.0",
 		"autoprefixer": "^10.4.19",

@@ -1,10 +1,10 @@
 ---
-title: "Gatsby Incremental Builds: The Backstory"
+title: 'Gatsby Incremental Builds: The Backstory'
 date: 2020-12-30
 tags:
-  - "builds"
-  - "gatsby"
-  - "web"
+  - 'builds'
+  - 'gatsby'
+  - 'web'
 ---
 
 I spent spent almost 5 months at Gatsby writing documentation and helping Gatsby's partners build better data source plugins. In that time I basically wrote the [documentation](https://support.gatsbyjs.com/hc/en-us/articles/360052503494-Developing-a-first-class-CMS-integration-for-Gatsby-Cloud) on creating first-class integrations (which includes support for incremental builds) for Gatsby Cloud. I've also been involved in the Gatsby OSS community since early 2018 and thus have a wealth of history and context many don't. I thought I'd take the time to share some of that experience to hopefully help others looking to understand and build [Gatsby source plugins](https://www.gatsbyjs.com/docs/creating-a-source-plugin/).

@@ -1,8 +1,8 @@
 ---
-title: "Choosing a Tech Stack (part 1): Method to the Madness"
+title: 'Choosing a Tech Stack (part 1): Method to the Madness'
 date: 2020-04-27
 tags:
-  - "web"
+  - 'web'
 ---
 
 I recently saw a tweet suggesting we all these JS frameworks are a waste of time and we needed to go back to what the web was meant to be, PHP. I honestly don't know if this person was serious...and I'm not going to try and hunt down a random comment on a random thread to find out.
@@ -75,7 +75,7 @@ You're a legend Dave. 🖖
 
 ## "But you forgot!!!!"
 
-Did I? Before you complain let me talk about some other terms floating around you might be wondering about. If you read the following and still think I missed something please let me know over on twitter ([@moon\_meister](https://twitter.com/moon_meister)) or send me a message at the bottom of the page 👇!
+Did I? Before you complain let me talk about some other terms floating around you might be wondering about. If you read the following and still think I missed something please let me know over on twitter ([@moon_meister](https://twitter.com/moon_meister)) or send me a message at the bottom of the page 👇!
 
 ### JAMStack ([https://jamstack.org/](https://jamstack.org/))
 
@@ -99,4 +99,4 @@ There's a lot more to say in the area of choosing a method and is exactly what w
 
 Thanks for reading! I set out to write about a completely different topic and in the process realized I had a lot more to say. Stay tuned for part 2 where we'll talk more specifically about how to define you project's needs and pick a method (or several).
 
-I hope this was an insightful read. If you have questions or comments I would love to here from you on my twitter ([@moon\_meister](https://twitter.com/moon_meister)) or bellow via the contact form.
+I hope this was an insightful read. If you have questions or comments I would love to here from you on my twitter ([@moon_meister](https://twitter.com/moon_meister)) or bellow via the contact form.

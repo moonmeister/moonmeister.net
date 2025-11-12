@@ -1,6 +1,5 @@
 ---
-
-import { getCollection } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 import { Edit3Icon, ClockIcon } from 'astro-feather';
 import readingTime from 'reading-time';
@@ -12,23 +11,28 @@ import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
+	const blogEntries = await getCollection('posts');
+	return blogEntries.map((post: CollectionEntry<'posts'>) => ({
+		params: { slug: post.id },
+		props: { entry: post },
+	}));
 }
 
 export const prerender = true;
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+type Props = {
+	entry: CollectionEntry<'posts'>;
+};
 
-const { text: readingText } = readingTime(entry.body);
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const { text: readingText } = readingTime(entry.body ?? '');
 ---
 
 <BaseLayout>
 	<!-- <BaseHead slot="head" {entry.data.title } description={excerpt} /> -->
-	<BaseHead slot="head" title={entry.data.title} description='TODO' />
+	<BaseHead slot="head" title={entry.data.title} description="TODO" />
 	<article class="m-auto floating max-w-64 px-6">
 		<header
 			class="max-w-prose border-b flex flex-col items-center text-center py-3"
@@ -70,7 +74,7 @@ const { text: readingText } = readingTime(entry.body);
 				<Content />
 			</div>
 			<footer class="border-t py-6 text-sm text-gray-600">
-				<Tags tags={entry.data.tags} />
+				<Tags tags={entry.data.tags ?? []} />
 			</footer>
 		</header>
 	</article>

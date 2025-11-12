@@ -26,11 +26,16 @@ const socials = [
 <section class="flex flex-col items-center my-16" id="footer-right">
 	<ul class="social justify-center flex flex-wrap">
 		{
-			socials.map(({name, url, textColor, primaryColor}) => {
-
+			socials.map(({ name, url, textColor, primaryColor }) => {
 				return (
 					<li>
-						<SocialLink class="inline-block mb-2 shadow-lg" title={name} {url} {primaryColor} {textColor} />
+						<SocialLink
+							class="inline-block mb-2 shadow-lg"
+							title={name}
+							{url}
+							{primaryColor}
+							{textColor}
+						/>
 					</li>
 				);
 			})
@@ -47,7 +52,7 @@ const socials = [
 		>
 			Astro</a
 		>
-		 .
+		.
 	</p>
 </section>
 <style>

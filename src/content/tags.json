@@ -1,0 +1,38 @@
+[
+	{
+		"id": "auth",
+		"name": "Auth"
+	},
+	{
+		"id": "builds",
+		"name": "Builds"
+	},
+	{
+		"id": "gatsby",
+		"name": "Gatsby"
+	},
+	{
+		"id": "jamstack",
+		"name": "Jamstack"
+	},
+	{
+		"id": "javascript",
+		"name": "JavaScript"
+	},
+	{
+		"id": "next-js",
+		"name": "NextJS"
+	},
+	{
+		"id": "react",
+		"name": "React"
+	},
+	{
+		"id": "web",
+		"name": "Web"
+	},
+	{
+		"id": "wordpress",
+		"name": "WordPress"
+	}
+]

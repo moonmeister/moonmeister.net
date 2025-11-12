@@ -1,9 +1,9 @@
 ---
-title: "Updating the `classnames` package for 2021"
+title: 'Updating the `classnames` package for 2021'
 date: 2021-01-08
 tags:
-  - "javascript"
-  - "web"
+  - 'javascript'
+  - 'web'
 ---
 
 I was recently using the invaluable [`classnames`](https://www.npmjs.com/package/classnames) tool in a project and thought to myself, what’s under the hood? Well here it is:

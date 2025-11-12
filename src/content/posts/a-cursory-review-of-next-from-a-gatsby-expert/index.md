@@ -1,11 +1,11 @@
 ---
-title: "A Cursory Review of Next from a Gatsby Expert"
+title: 'A Cursory Review of Next from a Gatsby Expert'
 date: 2021-03-09
 tags:
-  - "gatsby"
-  - "next-js"
-  - "react"
-  - "web"
+  - 'gatsby'
+  - 'next-js'
+  - 'react'
+  - 'web'
 ---
 
 I started in Gatsby open source in late 2017. It was a welcoming project and I was there to learn through building OSS. Since then, every React site I've built has been in Gatsby. I've built site's in Vue and Svelte but that's not important for this post.

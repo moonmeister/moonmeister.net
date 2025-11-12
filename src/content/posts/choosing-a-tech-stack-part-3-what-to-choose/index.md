@@ -1,9 +1,9 @@
 ---
-title: "Choosing a Tech Stack (part 3): What to choose"
+title: 'Choosing a Tech Stack (part 3): What to choose'
 date: 2021-07-11
 tags:
-  - "jamstack"
-  - "web"
+  - 'jamstack'
+  - 'web'
 ---
 
 Since writing [part 2](/blog/choosing-a-tech-stack-part-2-how-to-choose/) I've been reminded in several conversations of the importance of the human element of choosing a tech stack. So far I've presented a very clinical approach to this problem. In this part we're going to cover the human element and then discuss actual technologies in the "modern" web development world and the methods they employ.
@@ -28,18 +28,18 @@ In picking Svelte, I did choose speed, but I also chose it because of familiarit
 
 Okay, let's get down to brass tax, what JavaScript frameworks exist and what rendering methods do they employ? But first, a couple notes...You'll also notice I added another "category" of build "SSG + Hydration". This is to differentiate whether the SSR is happening at build or at request. This is an important distinction I didn't think about in the original post. It's probably worth noting that "Hydration" could more simply be described as "SPA". Meaning we have singular and compound rendering methods. I've also dropped "Static" cause by definition a framework will never be static.
 
-|  | **SSG** | **SSR** | **SPA** | **SSG + Hydration** | **SSR + Hydration** |
-| --- | --- | --- | --- | --- | --- |
-| **Gatsby** |  |  |  | ✔ | Maybe be in the future |
-| **Next.js** | ✔ |  |  | ✔ (ISR) | ✔ |
-| **Create React App** |  |  | ✔ |  |  |
-| **Nuxt** | ✔ |  |  | coming v3 | ✔ |
-| **Gridsome** |  |  |  | ✔ |  |
-| **Vue CLI** |  |  | ✔ |  |  |
-| **Svelte Kit** | ✔ | ✔ | ✔ | ✔ | ✔ |
-| **Svelte** |  |  | ✔ |  |  |
-| **Sapper** | ✔ |  |  |  | ✔ |
-| **Elder.js** | ✔ |  |  | ✔ | ✔ |
+|                      | **SSG** | **SSR** | **SPA** | **SSG + Hydration** | **SSR + Hydration**    |
+| -------------------- | ------- | ------- | ------- | ------------------- | ---------------------- |
+| **Gatsby**           |         |         |         | ✔                  | Maybe be in the future |
+| **Next.js**          | ✔      |         |         | ✔ (ISR)            | ✔                     |
+| **Create React App** |         |         | ✔      |                     |                        |
+| **Nuxt**             | ✔      |         |         | coming v3           | ✔                     |
+| **Gridsome**         |         |         |         | ✔                  |                        |
+| **Vue CLI**          |         |         | ✔      |                     |                        |
+| **Svelte Kit**       | ✔      | ✔      | ✔      | ✔                  | ✔                     |
+| **Svelte**           |         |         | ✔      |                     |                        |
+| **Sapper**           | ✔      |         |         |                     | ✔                     |
+| **Elder.js**         | ✔      |         |         | ✔                  | ✔                     |
 
 You'll notice a trend. The root UI toolkit (React, Vue, and svelte) only provide SPA. This makes sense give that's the context these libraries were originally invented. Since then we've realized only running our code client side and not preregistering via SSR or SSG in many contexts was silly. Thus "meta-frameworks" became a thing and implemented SSG and SSR for these underlying technologies.
 

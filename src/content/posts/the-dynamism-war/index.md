@@ -1,9 +1,9 @@
 ---
-title: "The Dynamism War"
+title: 'The Dynamism War'
 date: 2021-09-13
 tags:
-  - "builds"
-  - "web"
+  - 'builds'
+  - 'web'
 ---
 
 In the web development world there are two warring priorities. Speed vs Dynamism. There are lots of things we can do to increase speed; but, static/pre-rendered sites have become synonymous with performance and good SEO, every millisecond you can shave [directly affects](https://www.cloudflare.com/learning/performance/more/website-performance-conversion-rates/) conversion rates. On the other hand any eCommerce marketer will tell you that dynamic content that's tailored to a specific viewer drives conversion rates. 

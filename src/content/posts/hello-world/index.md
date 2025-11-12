@@ -1,10 +1,10 @@
 ---
-title: "Hello world (Gatsby + WP)!"
+title: 'Hello world (Gatsby + WP)!'
 date: 2020-03-25
 tags:
-  - "gatsby"
-  - "jamstack"
-  - "wordpress"
+  - 'gatsby'
+  - 'jamstack'
+  - 'wordpress'
 ---
 
 I have a blog. Guess I have to write content now...

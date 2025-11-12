@@ -36,21 +36,20 @@ const rotation = Math.floor(Math.random() * 18) * 20; // 0, 20, 40, ... 340
 		border-radius: 0.1875rem; /* 3px */
 		background: conic-gradient(
 			from var(--rotation, 0deg),
-			hsl(0, 100%, 50%),
-			/* red */ hsl(30, 100%, 50%),
-			/* orange */ hsl(60, 100%, 50%),
-			/* yellow */ hsl(120, 100%, 50%),
-			/* green */ hsl(180, 100%, 50%),
-			/* cyan */ hsl(240, 100%, 50%),
-			/* blue */ hsl(280, 100%, 50%),
-			/* violet */ hsl(0, 100%, 50%) /* back to red */
+			hsl(0, 90%, 45%) 0deg,
+			hsl(30, 90%, 45%) 51.43deg,
+			hsl(60, 90%, 45%) 102.86deg,
+			hsl(120, 90%, 45%) 154.29deg,
+			hsl(180, 90%, 45%) 205.71deg,
+			hsl(240, 90%, 45%) 257.14deg,
+			hsl(280, 90%, 45%) 308.57deg,
+			hsl(0, 90%, 45%) 360deg
 		);
-		filter: brightness(0.9);
 	}
 
 	.tag-content {
 		display: block;
-		background: #f3f4f6; /* bg-gray-100 */
+		background: #f3f4f6;
 		border-radius: 0.125rem; /* 2px */
 	}
 </style>

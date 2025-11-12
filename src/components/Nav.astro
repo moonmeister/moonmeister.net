@@ -27,7 +27,7 @@ const currentPath = Astro.url.pathname;
 					<li class="group list-none m-1">
 						<a
 							class:list={[
-								'inline-block mx-2 p-1 text-2xl uppercase drop-shadow-xl group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:ease-in',
+								'inline-block mx-2 p-1 text-2xl uppercase drop-shadow-xl can-hover:group-hover:text-pink-600 can-hover:group-hover:-translate-y-1 can-hover:group-hover:ease-in can-hover:transform can-hover:transition-transform can-hover:duration-100 can-hover:ease-out',
 								isActive
 									? 'active-links text-pink-600 relative content-box'
 									: 'text-blue-600',
@@ -52,12 +52,6 @@ const currentPath = Astro.url.pathname;
 			&::after {
 				@apply border-b-4 border-blue-500 w-full absolute left-0 bottom-0;
 				content: '';
-			}
-		}
-
-		@media (hover: hover) {
-			a {
-				@apply transform transition-transform duration-100 ease-out;
 			}
 		}
 	}

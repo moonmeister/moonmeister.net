@@ -44,8 +44,12 @@
 	--transition-layout: margin, padding, height, width;
 }
 
-/* Custom media query for hover capability */
-@custom-media --canhover (hover: hover);
+/* Custom variant for hover capability */
+@custom-variant can-hover {
+	@media (hover: hover) {
+		@slot;
+	}
+}
 
 /*components*/
 

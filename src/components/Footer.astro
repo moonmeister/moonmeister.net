@@ -30,7 +30,7 @@ const socials = [
 				return (
 					<li>
 						<SocialLink
-							class="inline-block mb-2 shadow-lg"
+							class="inline-block mb-2 shadow-lg can-hover:transform can-hover:transition-transform can-hover:duration-100 can-hover:ease-out can-hover:hover:shadow-lg can-hover:hover:-translate-y-1 can-hover:hover:ease-in"
 							title={name}
 							{url}
 							{primaryColor}
@@ -61,17 +61,6 @@ const socials = [
 	.social {
 		a {
 			outline-color: var(--color-gray-100);
-		}
-
-		@media (hover: hover) {
-			a {
-				@apply transform transition-transform duration-100 ease-out;
-			}
-
-			li:hover a,
-			li:focus a {
-				@apply shadow-lg -translate-y-1 ease-in;
-			}
 		}
 	}
 </style>

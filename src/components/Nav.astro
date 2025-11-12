@@ -11,6 +11,8 @@ const menuItems = [
 		url: '/blog',
 	},
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav>
@@ -18,18 +20,23 @@ const menuItems = [
 		class="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4"
 	>
 		{
-			menuItems?.map(({ label, title, url }) => (
-				<li class="group list-none m-1">
-					<a
-						activeClassName="active-links text-pink-600 relative content-box"
-						class="inline-block mx-2 p-1 text-2xl text-blue-600 uppercase drop-shadow-xl group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:ease-in"
-						title={title}
-						href={url}
-					>
-						{label}
-					</a>
-				</li>
-			))
+			menuItems?.map(({ label, title, url }) => {
+				const isActive = currentPath === url || (url !== '/' && currentPath.startsWith(url));
+				return (
+					<li class="group list-none m-1">
+						<a
+							class:list={[
+								"inline-block mx-2 p-1 text-2xl uppercase drop-shadow-xl group-hover:text-pink-600 group-hover:-translate-y-1 group-hover:ease-in",
+								isActive ? "active-links text-pink-600 relative content-box" : "text-blue-600"
+							]}
+							title={title}
+							href={url}
+						>
+							{label}
+						</a>
+					</li>
+				);
+			})
 		}
 	</ul>
 </nav>

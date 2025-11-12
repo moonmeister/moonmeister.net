@@ -35,7 +35,7 @@ Incremental data fetching is not built into the gatsby data-layer. Gatsby provid
 
 When you start up your development environment you are starting a long running process to monitor your source code files. When the Gatsby team was working towards incremental builds this is the first place they decided to work towards incremental data fetching. The reason being once you started `gatsby develop` if you made content changes in your CMS those changes wouldn't be reflected in your development site. This meant regularly stopping and restarting Gatsby due to the lack of incremental data fetching; resulting in a cumbersome and very slow development experience.
 
-The Gatsby Node APIs `[sourceNodes](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#sourceNodes)` and `[createSchemaCusomization](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createSchemaCustomization)` are responsible for handling all data layer integrations. Meaning these are the APIs all source plugins implement for adding raw data to the data layer. There are some others that get triggered when data is added or modified, but we don't need to worry about those. In order for Gatsby to fetch changed data for a given source plugin it simply needs to re-run these APIs for a source plugin and it will fetch new data and any schema changes.
+The Gatsby Node APIs `[sourceNodes](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#sourceNodes)` and `[createSchemaCustomization](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createSchemaCustomization)` are responsible for handling all data layer integrations. Meaning these are the APIs all source plugins implement for adding raw data to the data layer. There are some others that get triggered when data is added or modified, but we don't need to worry about those. In order for Gatsby to fetch changed data for a given source plugin it simply needs to re-run these APIs for a source plugin and it will fetch new data and any schema changes.
 
 ## **Gatsby** **and caching**
 
@@ -73,7 +73,7 @@ When triggered by an event coming from the subscription (WebSocket, GraphQL Subs
 
 The downside of subscriptions is it really works for \`gatsby develop\` and by extension the Gatsby Cloud “Previews” product. Builds don’t persist and thus can’t listen on a persistent connection. If you use a subscription your source plugin must also rely on a webhook to trigger the build and then establish this connection over-which to fetch changes. This basically means reverting to the server request method. The conversation is just happening over a persistent connection instead of disparate HTTP requests. While not inherently bad we must keep in mind we’re not relying on a single “when”.
 
-Finally, when triggered by webhook there is another option. I have a secret to share. Gatsby has secret, undocumented APIs. One allows you to access the body of the incoming webhook. Meaning the server can provide data to the client. Secret, undocumented APIs always come with caveats, and there are good reasons Gatsby doesn’t make these more widely known. But I’ll get to that in a second. When \`gatsby develop\` recieves a webhook on \`/\_\_refresh\` it will pass the body of the webhook to Gatsby and make it available in the \`sourceNodes\` API.
+Finally, when triggered by webhook there is another option. I have a secret to share. Gatsby has secret, undocumented APIs. One allows you to access the body of the incoming webhook. Meaning the server can provide data to the client. Secret, undocumented APIs always come with caveats, and there are good reasons Gatsby doesn't make these more widely known. But I'll get to that in a second. When \`gatsby develop\` receives a webhook on \`/\_\_refresh\` it will pass the body of the webhook to Gatsby and make it available in the \`sourceNodes\` API.
 
 Remember how Gatsby Cloud is different? Well like Netlify or any other build service you can actually trigger builds with webhooks. This is part of any build pipeline’s proprietary cloud architecture...but Gatsby Cloud is unique in that it will make the body of the incoming webhook available to your client just like using the \`/\_\_refresh\` endpoint with \`gatsby develop\`.
 
@@ -95,7 +95,7 @@ This all gets really complicated real fast. There’s things that could be done 
 4. Fetch changed data based on list of changed data.
 5. Preferably work in all cloud environments not just with Gatsby Cloud.
 
-Finally, based on our discussion here are some key take aways:
+Finally, based on our discussion here are some key takeaways:
 
 1. Incremental data fetching gives huge performance improvements to all users if implemented in a way that meets all these requirements, not just those using Gatsby Cloud.
 2. Webhooks are easy and they’ll get you incremental data fetching for Gatsby Cloud, but you’re not helping the rest of your users in production or development.

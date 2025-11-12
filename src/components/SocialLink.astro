@@ -14,6 +14,7 @@ const { title, url, primaryColor, textColor } = Astro.props;
 	href={url}
 	class:list={['m-2 p-2 rounded', Astro.props.class]}
 	style={{ color: textColor, 'background-color': primaryColor }}
+	target="_blank"
 >
 	{title}
 </a>

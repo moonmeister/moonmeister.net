@@ -14,17 +14,19 @@ export type Props = {
 const { tags } = Astro.props;
 ---
 
-<TagIcon aria-hidden customClasses="inline-block text-xl" />
-<div class="inline-flex items-center box-border">
+<div class="inline-flex flex-wrap items-center box-border gap-2">
+	<TagIcon aria-hidden customClasses="inline-block text-xl" />
 	{
 		tags && tags.length > 0 ? (
 			tags.map((tag) => (
-				<span class="ml-2">
+				<span class="">
 					<WpTag aria-label="Post Tags" {tag} />
 				</span>
 			))
 		) : (
-			<WpTag tag={{ id: 'none' }} />
+			<span class="">
+				<WpTag tag={{ id: 'none' }} />
+			</span>
 		)
 	}
 </div>

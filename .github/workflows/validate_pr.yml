@@ -78,6 +78,6 @@ jobs:
 
       - uses: ./.github/actions/enable-corepack
 
-      - uses: streetsidesoftware/cspell-action@v7
+      - uses: streetsidesoftware/cspell-action@v8
         with:
           config: ./cspell.json

@@ -5,7 +5,9 @@
   "ignorePaths": [
     "pnpm-lock.yaml",
     "pnpm-workspace.yaml",
-    ".vscode/extensions.json"
+    ".vscode/extensions.json",
+    "package.json",
+    ".devcontainer/devcontainer.json"
   ],
   "words": [
     "aallll",

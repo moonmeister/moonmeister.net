@@ -1,0 +1,14 @@
+name: 'Enable Corepack'
+description: 'Setup Corepack with latest version and enable'
+
+runs:
+  using: 'composite' # Mandatory parameter
+  steps:
+    - name: Update & Enable Corepack
+      shell: bash
+      run: |
+        echo "Before: corepack version => $(corepack --version || echo 'not installed')"
+        npm install -g corepack@latest
+        echo "After : corepack version => $(corepack --version)"
+        corepack enable
+        pnpm --version

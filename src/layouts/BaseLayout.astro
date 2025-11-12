@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -14,7 +15,7 @@ import Footer from '../components/Footer.astro';
 				<Nav />
 			</header>
 			<main
-				class="max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-screen-lg"
+				class="max-w-full self-center px-2 my-6 md:mb-16 md:mt-12 md:w-4/5 md:max-w-(--breakpoint-lg)"
 				style={{ margin: '5vmin auto' }}
 			>
 				<slot />
@@ -26,6 +27,8 @@ import Footer from '../components/Footer.astro';
 			</footer>
 		</div>
 	</body><style>
+		@reference '#styles';
+
 		#page-layout {
 			/* grd layout */
 			@supports (display: grid) {
@@ -33,17 +36,9 @@ import Footer from '../components/Footer.astro';
 				grid-template-columns: 0.03fr 1fr 0.03fr;
 				grid-template-rows: max-content auto max-content;
 				grid-row-gap: 1rem;
-
-				@screen sm {
-					grid-row-gap: 5%;
-					grid-row-gap: 5vmin;
-				}
-
-				@screen md {
-					grid-template-columns: 10vmin auto 10vmin;
-				}
-
 				justify-items: stretch;
+
+				@apply sm:gap-y-[5vmin] md:grid-cols-[10vmin_auto_10vmin];
 
 				header {
 					grid-area: 1 / 1 / 2 / 4;

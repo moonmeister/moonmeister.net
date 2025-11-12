@@ -22,9 +22,9 @@ const { pageTitle, posts } = Astro.props;
 	</header>
 	<div aria-live="polite" id="blog-list" role="region">
 		{
-			posts.map(({ slug, body, data: { title, date, tags } }) => (
-				<article class="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out canhover:hover:-translate-y-1 canhover:hover:translate-x-1 canhover:hover:shadow-lg reduceMotion:translate-x-0 reduceMotion:translate-y-0">
-					<a rel="author" href={`/blog/${slug}/`}>
+			posts.map(({ id, data: { title, date, tags } }) => (
+				<article class="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out can-hover:hover:-translate-y-1 can-hover:hover:translate-x-1 can-hover:hover:shadow-lg motion-reduce:translate-x-0 motion-reduce:translate-y-0">
+					<a rel="author" href={`/blog/${id}/`}>
 						<header class="max-w-prose mb-6">
 							<h1
 								aria-label="Blog Title"
@@ -37,8 +37,6 @@ const { pageTitle, posts } = Astro.props;
 								<FormattedDate date={new Date(date)} />
 							</div>
 						</header>
-
-						<!-- <div class="prose text-primary-800" set:html={body.substring(0, 140)} /> -->
 					</a>
 
 					<footer class="mt-6 text-sm text-gray-600">

@@ -1,3 +1,56 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	/* Custom breakpoints */
+	--breakpoint-sm: 600px;
+	--breakpoint-md: 900px;
+	--breakpoint-lg: 1200px;
+	--breakpoint-xl: 1800px;
+
+	/* Custom gray scale */
+	--color-gray-100: hsl(190 5% 95%);
+	--color-gray-200: hsl(190 5% 88%);
+	--color-gray-300: hsl(190 5% 75%);
+	--color-gray-400: hsl(190 5% 62%);
+	--color-gray-500: hsl(190 5% 50%);
+	--color-gray-600: hsl(190 5% 40%);
+	--color-gray-700: hsl(190 5% 30%);
+	--color-gray-800: hsl(190 5% 20%);
+	--color-gray-900: hsl(190 5% 10%);
+
+	/* Primary color scale */
+	--color-primary-100: hsl(270 18% 90%);
+	--color-primary-200: hsl(270 18% 80%);
+	--color-primary-300: hsl(271 18% 70%);
+	--color-primary-400: hsl(270 17% 60%);
+	--color-primary-500: hsl(271 17% 50%);
+	--color-primary-600: hsl(270 17% 40%);
+	--color-primary-700: hsl(271 18% 30%);
+	--color-primary-800: hsl(270 18% 20%);
+	--color-primary-900: hsl(273 18% 15%);
+
+	/* Color: inherit */
+	--color-inherit: inherit;
+
+	/* Custom translate values */
+	--translate-sm: 4px;
+	--translate--sm: -4px;
+
+	/* Custom box shadow */
+	--shadow-footer: inset 0px 10px 10px -10px hsl(0 0% 5%);
+
+	/* Custom transition property */
+	--transition-layout: margin, padding, height, width;
+}
+
+/* Custom variant for hover capability */
+@custom-variant can-hover {
+	@media (hover: hover) {
+		@slot;
+	}
+}
+
 /*components*/
 
 html {

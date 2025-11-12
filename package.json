@@ -1,33 +1,41 @@
 {
-	"name": "moonmeister-site-gatsby",
-	"private": true,
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev --host 127.0.0.1",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro",
-		"format": "prettier --write . --plugin-search-dir=.",
-		"test:format": "prettier --check . --plugin-search-dir=."
-	},
-	"dependencies": {
-		"@astrojs/netlify": "^5.5.4",
-		"@astrojs/rss": "^4.0.12",
-		"@astrojs/sitemap": "^3.6.0",
-		"@astrojs/tailwind": "^5.1.5",
-		"@astrojs/ts-plugin": "^1.10.4",
-		"@tailwindcss/typography": "^0.5.16",
-		"astro": "^4.16.19",
-		"astro-feather": "^1.0.0",
-		"autoprefixer": "^10.4.21",
-		"reading-time": "^1.5.0",
-		"tailwindcss": "^3.4.17"
-	},
-	"devDependencies": {
-		"netlify-cli": "^17.38.1",
-		"prettier": "^3.6.2",
-		"prettier-plugin-astro": "^0.14.1"
-	}
+  "name": "moonmeister-site",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#styles": "./src/styles/global.css"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write . --plugin-search-dir=.",
+    "check:format": "prettier --check . --plugin-search-dir=.",
+    "check:spell": "cspell \"./src/**/*.{astro,ts,md,css}\"",
+    "check:types": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/netlify": "^6.6.0",
+    "@astrojs/rss": "4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/ts-plugin": "1.10.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.5",
+    "astro-feather": "^1.0.0",
+    "autoprefixer": "^10.4.21",
+    "reading-time": "^1.5.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "cspell": "^9.3.0",
+    "netlify-cli": "^23.10.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40"
 }

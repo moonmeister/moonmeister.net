@@ -1,9 +1,9 @@
 {
-	"extends": ["config:base", "schedule:monthly", ":disablePeerDependencies"],
-	"major": {
-		"masterIssueApproval": true
-	},
-	"masterIssue": true,
-	"rangeStrategy": "bump",
-	"prHourlyLimit": 0
+  "extends": ["config:base", "schedule:monthly", ":disablePeerDependencies"],
+  "major": {
+    "masterIssueApproval": true
+  },
+  "masterIssue": true,
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 0
 }

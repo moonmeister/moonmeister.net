@@ -4,15 +4,15 @@ export type Props = {
 	url: string;
 	primaryColor: string;
 	textColor: string;
+	class?: string;
 };
 
 const { title, url, primaryColor, textColor } = Astro.props;
-
 ---
 
 <a
 	href={url}
-	class="m-2 p-2 rounded inline-block mb-2 shadow-lg"
+	class:list={['m-2 p-2 rounded', Astro.props.class]}
 	style={{ color: textColor, 'background-color': primaryColor }}
 >
 	{title}

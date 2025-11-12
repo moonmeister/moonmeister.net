@@ -1,9 +1,9 @@
 ---
-title: "Serverless Web Apps with Gatsby + Dgraph + Tina CMS"
+title: 'Serverless Web Apps with Gatsby + Dgraph + Tina CMS'
 date: 2020-12-29
 tags:
-  - "gatsby"
-  - "jamstack"
+  - 'gatsby'
+  - 'jamstack'
 ---
 
 A couple months back I did a talk on using Gatsby with [Tina CMS](https://tina.io/) and Dgraph's [Slash GraphQL](https://dgraph.io/slash-graphql). Here's that:

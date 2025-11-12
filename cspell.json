@@ -1,0 +1,29 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useGitignore": true,
+  "ignorePaths": [
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    ".vscode/extensions.json",
+    "package.json",
+    ".devcontainer/devcontainer.json"
+  ],
+  "words": [
+    "aallll",
+    "Interwebs",
+    "Dont",
+    "meister",
+    "Elon",
+    "HIPPA",
+    "CCPA",
+    "nuancing",
+    "hackiest",
+    "Gridsome",
+    "Dgraph",
+    "Dgraph's",
+    "classcat",
+    "vmin",
+    "headshot"
+  ]
+}

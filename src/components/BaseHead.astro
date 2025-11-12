@@ -1,8 +1,5 @@
 ---
 import { SITE_TITLE } from '../consts';
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
 
 export interface Props {
 	title: string;
@@ -14,7 +11,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 
-const tempateTitle = `${title} | ${SITE_TITLE}`;
+const templateTitle = `${title} | ${SITE_TITLE}`;
 ---
 
 <!-- Global Metadata -->
@@ -35,20 +32,20 @@ const tempateTitle = `${title} | ${SITE_TITLE}`;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{tempateTitle}</title>
-<meta name="title" content={tempateTitle} />
+<title>{templateTitle}</title>
+<meta name="title" content={templateTitle} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={tempateTitle} />
+<meta property="og:title" content={templateTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={tempateTitle} />
+<meta property="twitter:title" content={templateTitle} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />

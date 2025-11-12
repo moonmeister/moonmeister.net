@@ -1,8 +1,8 @@
 ---
-title: "Choosing a Tech Stack (part 2): How to choose"
+title: 'Choosing a Tech Stack (part 2): How to choose'
 date: 2020-11-03
 tags:
-  - "web"
+  - 'web'
 ---
 
 Welcome to part 2 of "Choosing a Tech Stack". This post is going to get into the finer details of how to choose a method for building a project. You may be hoping this is where I tell you to use framework X or language Y. Alas, that is not what I am here to do and you are here to understand why one size does not fit all and the factors to consider when choosing.
@@ -71,7 +71,6 @@ Because mobile apps are not my expertise I will not pretend to know all the thin
 ## Picking
 
 Now that Dave has some tangible requirements he can begin checking options off his list...
-
 
 - Static Files - Due to the Dynamic nature of his app this isn't an option, or at least not a scalable one.
 - Static Site Generator - Dave needs a bunch of unique pages, not a lot repetitive content (e.g. blog) and most importantly this method isn't conducive to secure content.

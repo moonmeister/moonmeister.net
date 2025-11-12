@@ -1,6 +1,5 @@
 ---
-import { getDataEntryById } from 'astro:content';
-import { getRandomInt } from '../utils';
+import { getEntry } from 'astro:content';
 
 type Props = {
 	tag: {
@@ -13,33 +12,48 @@ const { tag, ...props } = Astro.props;
 const tagData =
 	tag.id == 'none'
 		? { id: '', data: { name: 'None!' } }
-		: await getDataEntryById('tags', tag.id);
+		: await getEntry('tags', tag.id);
+
+// Random rotation for rainbow gradient
+const rotation = Math.floor(Math.random() * 18) * 20; // 0, 20, 40, ... 340
 ---
 
-<a href={`/tag/${tagData.id}`}>
-	<div class="gradient-border relative rounded z-10">
-		{/* eslint-disable-next-line react/jsx-props-no-spreading */}
-		<p class="tag capitalize px-1 bg-gray-100 rounded-sm" {...props}>
-			{tagData.data.name}
-		</p>
-		<div
-			class="inset-0 absolute"
-			style={{
-				content: '',
-				zIndex: '-1',
-				margin: '-1px',
-				borderRadius: 'inherit',
-				filter: 'brightness(0.9)',
-				background: `linear-gradient(
-				${getRandomInt(360, 20)}deg,
-				orange,
-				yellow,
-				green,
-				cyan,
-				indigo,
-				violet`,
-			}}
+{
+	tagData && (
+		<a
+			href={`/tag/${tagData.id}`}
+			class="rainbow-tag"
+			style={`--rotation: ${rotation}deg`}
 		>
-		</div>
-	</div>
-</a>
+			{/* eslint-disable-next-line react/jsx-props-no-spreading */}
+			<span class="tag-content capitalize px-1" {...props}>
+				{tagData.data.name}
+			</span>
+		</a>
+	)
+}
+
+<style>
+	.rainbow-tag {
+		display: inline-block;
+		padding: 1px;
+		border-radius: 0.1875rem; /* 3px */
+		background: conic-gradient(
+			from var(--rotation, 0deg),
+			hsl(0, 90%, 45%) 0deg,
+			hsl(30, 90%, 45%) 51.43deg,
+			hsl(60, 90%, 45%) 102.86deg,
+			hsl(120, 90%, 45%) 154.29deg,
+			hsl(180, 90%, 45%) 205.71deg,
+			hsl(240, 90%, 45%) 257.14deg,
+			hsl(280, 90%, 45%) 308.57deg,
+			hsl(0, 90%, 45%) 360deg
+		);
+	}
+
+	.tag-content {
+		display: block;
+		background: #f3f4f6;
+		border-radius: 0.125rem; /* 2px */
+	}
+</style>

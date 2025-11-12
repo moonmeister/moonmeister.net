@@ -1,10 +1,10 @@
 ---
-title: "Getting Started with JWTs, Session Management, and cookies..."
+title: 'Getting Started with JWTs, Session Management, and cookies...'
 date: 2021-01-05
 tags:
-  - "auth"
-  - "jamstack"
-  - "web"
+  - 'auth'
+  - 'jamstack'
+  - 'web'
 ---
 
 I'll admit it...I've made it this far in my career and never really had to deal with authentication. The one project I worked on that had authentication I did non design or build anything...I just relied (probably for the worse) on co-workers.

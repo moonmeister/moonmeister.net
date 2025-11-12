@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import ArchivePage from '../../components/ArchivePage.astro';
 
 export const prerender = true;
@@ -9,17 +9,20 @@ export async function getStaticPaths() {
 	const builtTags = [];
 
 	for (const tagEntry of tagEntries) {
-		const blogEntries = await getCollection('posts', ({ data }) => {
-			if ( data.tags === undefined ) {
-				return false;
-			}
+		const blogEntries = await getCollection(
+			'posts',
+			(entry: CollectionEntry<'posts'>) => {
+				if (entry.data.tags === undefined) {
+					return false;
+				}
 
-			for (const tag of data.tags) {
-				if (tag.id === tagEntry.id) {
-					return true;
+				for (const tag of entry.data.tags) {
+					if (tag.id === tagEntry.id) {
+						return true;
+					}
 				}
 			}
-		});
+		);
 
 		builtTags.push({
 			params: { slug: tagEntry.id },

@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "astro-mcp": {
+      "url": "https://mcp.docs.astro.build/mcp",
+      "type": "http"
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"],
+      "type": "stdio"
+    },
+    "tailwindcss-server": {
+      "command": "npx",
+      "args": ["-y", "tailwindcss-mcp-server"],
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}

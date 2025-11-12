@@ -18,16 +18,20 @@ const tagData =
 const rotation = Math.floor(Math.random() * 18) * 20; // 0, 20, 40, ... 340
 ---
 
-<a
-	href={`/tag/${tagData.id}`}
-	class="rainbow-tag"
-	style={`--rotation: ${rotation}deg`}
->
-	{/* eslint-disable-next-line react/jsx-props-no-spreading */}
-	<span class="tag-content capitalize px-1" {...props}>
-		{tagData.data.name}
-	</span>
-</a>
+{
+	tagData && (
+		<a
+			href={`/tag/${tagData.id}`}
+			class="rainbow-tag"
+			style={`--rotation: ${rotation}deg`}
+		>
+			{/* eslint-disable-next-line react/jsx-props-no-spreading */}
+			<span class="tag-content capitalize px-1" {...props}>
+				{tagData.data.name}
+			</span>
+		</a>
+	)
+}
 
 <style>
 	.rainbow-tag {

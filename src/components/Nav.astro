@@ -35,19 +35,17 @@ const menuItems = [
 </nav>
 
 <style>
+	@reference '#styles';
+
 	nav {
 		a.active-links {
 			&::after {
-				@apply border-b-4 border-blue-500 w-full absolute left-0;
+				@apply border-b-4 border-blue-500 w-full absolute left-0 bottom-0;
 				content: '';
-			}
-
-			&::after {
-				@apply bottom-0;
 			}
 		}
 
-		@screen canhover {
+		@media (hover: hover) {
 			a {
 				@apply transform transition-transform duration-100 ease-out;
 			}

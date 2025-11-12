@@ -6,6 +6,8 @@ const { content, class: className } = Astro.props;
 <div class:list={['prose wp-blocks flow-root', className]} set:html={content} />
 
 <style>
+	@reference '#styles';
+
 	/* WordPress Core Block Styling */
 	.wp-blocks {
 		@apply overflow-x-hidden;
@@ -145,7 +147,7 @@ const { content, class: className } = Astro.props;
 		/* Block: Quote  ------------------------- */
 
 		blockquote {
-			@apply my-8 px-8 border-l-2 border-yellow-600 flex flex-col justify-center;
+			@apply my-8 px-8 md:my-12 md:px-12 border-l-2 border-yellow-600 flex flex-col justify-center;
 
 			p {
 				@apply italic m-auto;
@@ -172,10 +174,6 @@ const { content, class: className } = Astro.props;
 					top: -1rem;
 					left: -1rem;
 				}
-			}
-
-			@screen md {
-				@apply my-12 px-12;
 			}
 
 			&.has-text-align-center {
@@ -215,7 +213,7 @@ const { content, class: className } = Astro.props;
 
 		/* Block: Cover  ------------------------- */
 		.wp-block-cover {
-			@apply relative mt-6 bg-black bg-cover overflow-hidden h-full w-full flex justify-center items-center overflow-hidden;
+			@apply relative mt-6 bg-black bg-cover h-full w-full flex justify-center items-center overflow-hidden;
 			min-height: 430px;
 
 			.wp-block-cover__inner-container {

@@ -13,9 +13,11 @@
     "astro": "astro",
     "format": "prettier --write . --plugin-search-dir=.",
     "check:format": "prettier --check . --plugin-search-dir=.",
-    "check:spell": "cspell \"./src/**/*.{astro,ts,md,css}\""
+    "check:spell": "cspell \"./src/**/*.{astro,ts,md,css}\"",
+    "check:types": "astro check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.5",
     "@astrojs/netlify": "^6.6.0",
     "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "^3.6.0",
@@ -26,7 +28,8 @@
     "astro-feather": "^1.0.0",
     "autoprefixer": "^10.4.21",
     "reading-time": "^1.5.0",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "cspell": "^9.3.0",

@@ -1,0 +1,83 @@
+name: Run Checks on PRs
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  setup:
+    name: Setup Dependencies
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: ./.github/actions/cache-restore
+        id: cache-node-modules
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: ./.github/actions/enable-corepack
+
+      - name: Install dependencies
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: pnpm install --frozen-lockfile
+
+  check_format:
+    name: Validate formatting with Prettier
+    runs-on: ubuntu-latest
+    needs: [setup]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: ./.github/actions/cache-restore
+
+      - uses: ./.github/actions/enable-corepack
+
+      - name: Format source code
+        run: pnpm run check:format
+
+  check_types:
+    name: Validate types with TypeScript
+    runs-on: ubuntu-latest
+    needs: [setup]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: ./.github/actions/cache-restore
+
+      - uses: ./.github/actions/enable-corepack
+
+      - name: Check Types
+        run: pnpm run check:types
+
+  spell_check:
+    name: Validate spelling with cspell
+    runs-on: ubuntu-latest
+    needs: [setup]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: ./.github/actions/cache-restore
+
+      - uses: ./.github/actions/enable-corepack
+
+      - uses: streetsidesoftware/cspell-action@v7
+        with:
+          config: ./cspell.json

@@ -1,6 +1,12 @@
 {
   "version": "0.2",
   "language": "en",
+  "useGitignore": true,
+  "ignorePaths": [
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    ".vscode/extensions.json"
+  ],
   "words": [
     "aallll",
     "Interwebs",

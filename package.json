@@ -17,23 +17,23 @@
     "check:types": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
-    "@astrojs/netlify": "^6.6.0",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/netlify": "^6.6.4",
     "@astrojs/rss": "4.0.13",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/ts-plugin": "1.10.5",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.5",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.11",
     "astro-feather": "^1.0.0",
     "reading-time": "^1.5.0",
-    "tailwindcss": "^4.1.17",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "cspell": "^9.3.0",
-    "netlify-cli": "^23.10.0",
-    "prettier": "^3.6.2",
+    "cspell": "^9.6.0",
+    "netlify-cli": "^23.13.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1"
   },
   "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40"

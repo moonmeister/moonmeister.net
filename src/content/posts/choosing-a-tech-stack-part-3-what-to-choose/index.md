@@ -30,16 +30,16 @@ Okay, let's get down to brass tax, what JavaScript frameworks exist and what ren
 
 |                      | **SSG** | **SSR** | **SPA** | **SSG + Hydration** | **SSR + Hydration**    |
 | -------------------- | ------- | ------- | ------- | ------------------- | ---------------------- |
-| **Gatsby**           |         |         |         | ✔                  | Maybe be in the future |
-| **Next.js**          | ✔      |         |         | ✔ (ISR)            | ✔                     |
-| **Create React App** |         |         | ✔      |                     |                        |
-| **Nuxt**             | ✔      |         |         | coming v3           | ✔                     |
-| **Gridsome**         |         |         |         | ✔                  |                        |
-| **Vue CLI**          |         |         | ✔      |                     |                        |
-| **Svelte Kit**       | ✔      | ✔      | ✔      | ✔                  | ✔                     |
-| **Svelte**           |         |         | ✔      |                     |                        |
-| **Sapper**           | ✔      |         |         |                     | ✔                     |
-| **Elder.js**         | ✔      |         |         | ✔                  | ✔                     |
+| **Gatsby**           |         |         |         | ✔                   | Maybe be in the future |
+| **Next.js**          | ✔       |         |         | ✔ (ISR)             | ✔                      |
+| **Create React App** |         |         | ✔       |                     |                        |
+| **Nuxt**             | ✔       |         |         | coming v3           | ✔                      |
+| **Gridsome**         |         |         |         | ✔                   |                        |
+| **Vue CLI**          |         |         | ✔       |                     |                        |
+| **Svelte Kit**       | ✔       | ✔       | ✔       | ✔                   | ✔                      |
+| **Svelte**           |         |         | ✔       |                     |                        |
+| **Sapper**           | ✔       |         |         |                     | ✔                      |
+| **Elder.js**         | ✔       |         |         | ✔                   | ✔                      |
 
 You'll notice a trend. The root UI toolkit (React, Vue, and svelte) only provide SPA. This makes sense give that's the context these libraries were originally invented. Since then we've realized only running our code client side and not preregistering via SSR or SSG in many contexts was silly. Thus "meta-frameworks" became a thing and implemented SSG and SSR for these underlying technologies.
 

@@ -17,7 +17,7 @@ jobs:
         node-version: [24]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: ./.github/actions/cache-restore
@@ -39,7 +39,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: ./.github/actions/cache-restore
@@ -55,7 +55,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: ./.github/actions/cache-restore
@@ -71,7 +71,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: ./.github/actions/cache-restore

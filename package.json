@@ -31,7 +31,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "cspell": "^9.6.0",
+    "cspell": "^9.7.0",
     "netlify-cli": "^23.13.4",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1"

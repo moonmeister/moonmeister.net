@@ -23,11 +23,11 @@
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/ts-plugin": "1.10.7",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.3.0",
     "astro": "^5.18.1",
     "astro-feather": "^1.0.0",
     "reading-time": "^1.5.0",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {

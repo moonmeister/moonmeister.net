@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 
 import ArchivePage from '../../components/ArchivePage.astro';
 
-const posts = await getCollection('posts');
+const posts = (await getCollection('posts')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
 <ArchivePage pageTitle={'Blog'} {posts} />

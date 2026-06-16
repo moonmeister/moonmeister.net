@@ -8,7 +8,9 @@ tags:
   - 'wordpress'
 ---
 
-> Astro is working on [Advanced Routing functionality](https://docs.astro.build/en/reference/experimental-flags/advanced-routing/) that will likely render this method outdated.
+:::note
+Astro is working on [Advanced Routing functionality](https://docs.astro.build/en/reference/experimental-flags/advanced-routing/) that will likely render this method outdated.
+:::
 
 I’ve been using headless WordPress since before it was cool. I’ve built numerous sites using Gatsby, Next.js, SvelteKit, and now Astro! 
 
@@ -79,7 +81,7 @@ We need the URI, the whole thing, not just a sub-path. This is easy in Astro wit
 
 We’ll then need to fetch the data associated with that URL. The good news is that WPGraphQL has the perfect tool for the job!
 
-```
+```gql
 query SeedQuery($uri: String!) {
   nodeByUri($uri) {
     __typename
@@ -119,9 +121,9 @@ These are distinct from more common “redirects” because we don’t tell the 
 
 Rewrites let our catch-all route determine what template to use and rewrite the user's request to the template route. So my [routes in Astro](https://github.com/wpengine/hwptoolkit/tree/main/examples/astro/template-hierarchy-data-fetching-urql/example-app/src/pages/) now look like this: 
 
-```
+```text
 pages/
-  ↳  &#91;...uri].astro
+  ↳  [...uri].astro
   ↳  wp-templates/
       ↳  index.astro
       ↳  home.astro
@@ -143,7 +145,7 @@ A [quick bit of JavaScript](https://github.com/wpengine/hwptoolkit/blob/main/exa
 
 Now that we’ve built all the pieces, we can put this into a [single function](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/template-hierarchy-data-fetching-urql/example-app/src/lib/templateHierarchy.ts#L20-L79) that takes a URI and returns the template. Our [catch-all route](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/template-hierarchy-data-fetching-urql/example-app/src/pages/%5B...uri%5D.astro) now looks something like this:
 
-```
+```js
 ---
 // ...
 
@@ -176,7 +178,7 @@ Once you [set up a client](https://github.com/wpengine/hwptoolkit/blob/main/exam
 
 Luckily this is Astro, whether page or component, I can easily make asynchronous calls to fetch data!
 
-```
+```js
 ---
 // …
 
@@ -201,12 +203,12 @@ if (error) {
 
 If you need more data, remember to keep queries specific, one or more queries can be made in parallel:
 
-```
+```js
 ---
 
 // ...
 
-const &#91;query1Results, query2Results] = Promise.all(&#91;
+const [query1Results, query2Results] = Promise.all([
   client.query(query1,variables1),
   client.query(query2,variables2),
 ]);

@@ -8,7 +8,7 @@ tags:
 
 I was recently using the invaluable [`classnames`](https://www.npmjs.com/package/classnames) tool in a project and thought to myself, what’s under the hood? Well here it is:
 
-```
+```js
 (function () {
   'use strict';
 
@@ -61,7 +61,7 @@ I was recently using the invaluable [`classnames`](https://www.npmjs.com/package
 
 By looking at it, I'm guessing this code is ES3 compatible. This is on purpose and means without transpilation, the code can be run in just about any browser since IE 8. `Array.isArray` is the only reason it doesn’t run in anything older (and that can be polyfilled). But here is the thing, we’ve had a lot of cool additions to JavaScript since ES3, what would it look like in modern JavaScript? I wondered that myself, so here you go:
 
-```
+```js
 export function classNames(...args) {
   const classes = args.reduce((acc, arg) => {
     if (!arg) return acc;
@@ -101,7 +101,7 @@ They didn't go well. I'm using the [benchmarks](https://github.com/lukeed/clsx/t
 
 We're already iterating through the args once with the reduce...this join does so a second time. Instead We can modify our reducer to be a accumulator to be a string and append args. This significantly improves performance.
 
-```
+```js
 function append(acc, arg) {
   return acc + arg + " "
 }
@@ -135,7 +135,7 @@ exports.noJoin = function classNames(...args) {
 
 I was curious if a for loop would be faster...sure enough, it was again a measurable improvement.
 
-```
+```js
 exports.noReduce = function classNames(...args) {
   let classes = ""
 
@@ -180,7 +180,7 @@ I'm very happy with these results. I quite easily matched or beat `classnames` r
 
 Here are the results:
 
-```
+```text
 # Strings
   classcat*       x 6,186,310 ops/sec ±0.67% (89 runs sampled)
   classnames      x 3,501,755 ops/sec ±0.88% (93 runs sampled)

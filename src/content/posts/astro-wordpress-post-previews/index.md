@@ -67,7 +67,9 @@ As we discussed before, the database ID is required by WordPress for previews. I
 
 The goal of this article is to show you previews, not implement authentication. Because of that, I’ve opted for the simplest possible authentication method, which is not secure. I’ve opted to hard-code my admin credentials in my code and use them for [Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication). 
 
-> **Note**: I can do this because the WordPress server used in this example is not public; its entire DB and front-end example are running on your computer if you start it from the [repo](https://github.com/wpengine/hwptoolkit/tree/main/examples/astro/previews). If you’re going to implement previews, you’ll need to implement proper authentication if you don’t want a security breach. I’d highly recommend the [WPGraphQL Headless Login](https://github.com/AxeWP/wp-graphql-headless-login) plugin by Dovid Levine.
+:::caution
+I can do this because the WordPress server used in this example is not public; its entire DB and front-end example are running on your computer if you start it from the [repo](https://github.com/wpengine/hwptoolkit/tree/main/examples/astro/previews). If you’re going to implement previews, you’ll need to implement proper authentication if you don’t want a security breach. I’d highly recommend the [WPGraphQL Headless Login](https://github.com/AxeWP/wp-graphql-headless-login) plugin by Dovid Levine.
+:::
 
 ## Configuring WordPress
 
@@ -90,13 +92,13 @@ Alright, now that WordPress is configured and our basic strategy is in place, le
 Our first changes will be in the [catch-all route,](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/previews/example-app/src/pages/%5B...uri%5D.astro) where we fetch the template. We’ll start by capturing and storing our `preview` and `post_id` search params.
 
 ```javascript
-const isPreview = Astro.url.searchParams.get("preview") === "true";
-const postId = Astro.url.searchParams.get("post_id") || undefined;
+const isPreview = Astro.url.searchParams.get('preview') === 'true';
+const postId = Astro.url.searchParams.get('post_id') || undefined;
 ```
 
 We’ll also want to store this search parameter for later use. Because we’re using Astro’s rewrite functionality, this param gets stripped from the URL accessed by templates. Thus, we’ll save this for use later.
 
-```
+```js
 // Locals is an Astro pattern for sharing route data.
 Astro.locals.isPreview = isPreview;
 ```
@@ -105,29 +107,28 @@ Astro.locals.isPreview = isPreview;
 
 I’ve told you I did some really basic things. Are you ready for it?
 
-```
+```js
 export const authHeaders = (isPreview) => {
-  return isPreview
-    ? {
-        Authorization: `Basic ${Buffer.from(
-          `admin:password`
-        ).toString("base64")}`,
-      }
-    : undefined;
+	return isPreview
+		? {
+				Authorization: `Basic ${Buffer.from(`admin:password`).toString(
+					'base64'
+				)}`,
+			}
+		: undefined;
 };
 ```
 
 As you can see, if `isPreview` is `true`, we add the `Authorization` header; otherwise, we don’t. This is used in combination with a great feature of the URQL GraphQL client.
 
-```
-const response = await client.query(QUERY, VARIABLES,{
-    fetchOptions: {
-      headers: {
-        ...authHeaders(isPreview),
-      },
-    },
-  }
-);
+```js
+const response = await client.query(QUERY, VARIABLES, {
+	fetchOptions: {
+		headers: {
+			...authHeaders(isPreview),
+		},
+	},
+});
 ```
 
 On top of taking the query and variables for a query, the third parameter of URQL’s query function takes a config. This is the identical config you can pass when creating the client. That means I can create a single client with good defaults and override as needed. I don’t have to select between any number of clients. I can use a single client and add headers and other config as needed. 
@@ -136,45 +137,45 @@ On top of taking the query and variables for a query, the third parameter of URQ
 
 In the last article, we built the `uriToTemplate` function for handling our template-hierarchy routing. Now that we want to implement previews, we need this to handle the database ID or URI to the template. If you happened to pay attention to the original [seed query](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/previews/example-app/src/lib/seedQuery.js#L13-L91) we were using, you would have noticed that because we copied it from Faust, the query was already set up to handle this.
 
-```
+```gql
 query GetSeedNode(
-    $id: ID! = 0
-    $uri: String! = ""
-    $asPreview: Boolean = false
-  ) {
-    ... on RootQuery @skip(if: $asPreview) {
-      nodeByUri(uri: $uri) {
-        __typename
-        ...GetNode
-      }
-    }
+	$id: ID! = 0
+	$uri: String! = ""
+	$asPreview: Boolean = false
+) {
+	... on RootQuery @skip(if: $asPreview) {
+		nodeByUri(uri: $uri) {
+			__typename
+			...GetNode
+		}
+	}
 
-    ... on RootQuery @include(if: $asPreview) {
-      contentNode(id: $id, idType: DATABASE_ID, asPreview: true) {
-        __typename
-        ...GetNode
-      }
-    }
-  }
+	... on RootQuery @include(if: $asPreview) {
+		contentNode(id: $id, idType: DATABASE_ID, asPreview: true) {
+			__typename
+			...GetNode
+		}
+	}
+}
 ```
 
 Thus, I updated my `getSeedQuery` function to handle the additional variables. Auth was also handled [here](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/previews/example-app/src/lib/seedQuery.js#L3-L11)_._
 
-```
+```js
 export async function getSeedQuery(variables) {
-  return client.query(SEED_QUERY, variables, {
-    fetchOptions: {
-      headers: {
-        ...authHeaders(variables.asPreview),
-      },
-    },
-  });
+	return client.query(SEED_QUERY, variables, {
+		fetchOptions: {
+			headers: {
+				...authHeaders(variables.asPreview),
+			},
+		},
+	});
 }
 ```
 
 Finally, I updated `uriToTemplate` to `[idToTemplate](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/previews/example-app/src/lib/templateHierarchy.ts#L27-L98)`, which handles both `uri` and `databaseId`.
 
-```
+```js
 export async function idToTemplate(
   options: ToTemplateArgs
 ): Promise<TemplateData> {
@@ -195,7 +196,7 @@ export async function idToTemplate(
 
 Finally, we update the call to this function from the [catch-all route](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/previews/example-app/src/pages/%5B...uri%5D.astro#L14).
 
-```
+```js
 const results = await idToTemplate({ uri, asPreview: isPreview, id: postId });
 ```
 
@@ -207,82 +208,78 @@ While we could make our templates use the `@skip` and `@include` pattern like th
 
 Let’s start by grabbing those `isPreview` and `databaseId` variables so they’re handy.
 
-```
+```js
 const isPreview = Astro.locals.isPreview;
 const databaseId = Astro.locals.templateData?.databaseId;
 ```
 
 Like with our seed query, we will also need to add authentication when appropriate.
 
-```
+```js
 const { data, error } = await client.query(
-  gql`
-    #...
-  `,
-  {
-    databaseId,
-    isPreview,
-  },
-  {
-    fetchOptions: {
-      headers: {
-        ...authHeaders(isPreview),
-      },
-    },
-  }
+	gql`
+		#...
+	`,
+	{
+		databaseId,
+		isPreview,
+	},
+	{
+		fetchOptions: {
+			headers: {
+				...authHeaders(isPreview),
+			},
+		},
+	}
 );
 ```
 
 Next, we need to update our query. [Previously](https://github.com/wpengine/hwptoolkit/blob/main/examples/astro/template-hierarchy-data-fetching-urql/example-app/src/pages/wp-templates/single.astro#L23-L48), we used `nodeByUri` for all of our queries. This works great, but it doesn’t accept database IDs or support returning preview data. Thus, for posts and pages, we need to use `contentNode`.
 
-```
+```js
 const { data, error } = await client.query(
-  gql`
-    query singleTemplatePageQuery(
-      $databaseId: ID!
-      $isPreview: Boolean = false
-    ) {
-      contentNode(
-        id: $databaseId
-        idType: DATABASE_ID
-        asPreview: $isPreview
-      ) {
-        id
-        uri
-        ... on NodeWithTitle {
-          title
-        }
-        ... on NodeWithContentEditor {
-          content
-        }
-        ... on Post {
-          categories {
-            nodes {
-              name
-              uri
-            }
-          }
-          tags {
-            nodes {
-              name
-              uri
-            }
-          }
-        }
-      }
-    }
-  `,
-  {
-    databaseId,
-    isPreview,
-  },
-  {
-    fetchOptions: {
-      headers: {
-        ...authHeaders(isPreview),
-      },
-    },
-  }
+	gql`
+		query singleTemplatePageQuery(
+			$databaseId: ID!
+			$isPreview: Boolean = false
+		) {
+			contentNode(id: $databaseId, idType: DATABASE_ID, asPreview: $isPreview) {
+				id
+				uri
+				... on NodeWithTitle {
+					title
+				}
+				... on NodeWithContentEditor {
+					content
+				}
+				... on Post {
+					categories {
+						nodes {
+							name
+							uri
+						}
+					}
+					tags {
+						nodes {
+							name
+							uri
+						}
+					}
+				}
+			}
+		}
+	`,
+	{
+		databaseId,
+		isPreview,
+	},
+	{
+		fetchOptions: {
+			headers: {
+				...authHeaders(isPreview),
+			},
+		},
+	}
 );
 ```
 
@@ -290,10 +287,11 @@ For this change, I didn’t have to alter any of the actual query that defines t
 
 Finally, I added a quick check to validate that I got a post back. If you’re not aware, having no or incorrect credentials for a query in GraphQL doesn’t result in an `HTTP/401` error, but a `null` value. I’ll add a check to return `HTTP/404` if the value is `null`. This handles incorrect database IDs and unauthorized queries.
 
-```
+```js
 if (!data.post) {
-  console.error("HTTP/404 - Not Found in WordPress:", databaseId);
-  return Astro.rewrite("/404");
+	console.error('HTTP/404 - Not Found in WordPress:', databaseId);
+
+	return Astro.rewrite('/404');
 }
 ```
 

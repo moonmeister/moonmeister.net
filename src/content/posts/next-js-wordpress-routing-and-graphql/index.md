@@ -18,8 +18,6 @@ When Faust was first conceived years ago, I don't think the team fully understoo
 
 For a working example of what we discuss here, check out the [wpengine/hwptoolkit](https://github.com/wpengine/hwptoolkit/tree/main/examples/next/template-hierarchy/) repo.
 
-> **Note**: We [recently announced](https://github.com/wpengine/faustjs/discussions/2140) that we’re working on improving Faust. The work I did for this article and much more is going into improving Faust.
-
 ## Routing
 
 In the [article on Astro](/blog/astro-wordpress-routing-and-graphql/#basics-of-the-template-hierarchy), we discussed four major steps in the template hierarchy that must be recreated for a front-end framework. URI => Data => Template => Render: Data + Template.
@@ -34,11 +32,11 @@ Let’s put this all together in Next.js. The steps are:
 
 1.  Get the URI
 2.  Determine the template
-    -   Make a “seed query” to WordPress to fetch template data
-    -   Collect available templates for rendering
-    -   Calculate possible templates the data could use
-    -   Figure out which of the available templates to use based on the prioritized order of most to least specific possible templates
-    -   Use the dynamically imported template
+    - Make a “seed query” to WordPress to fetch template data
+    - Collect available templates for rendering
+    - Calculate possible templates the data could use
+    - Figure out which of the available templates to use based on the prioritized order of most to least specific possible templates
+    - Use the dynamically imported template
 3.  Fetch more data from WordPress to actually render the template
 4.  Merge the selected template and data for rendering
 
@@ -46,7 +44,9 @@ Let’s put this all together in Next.js. The steps are:
 
 To get the full `URI`, we’ll use Next’s file-system router and _optional_ [catch-all route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes#optional-catch-all-segments): `src/pages/[[...uri]].js`. 
 
-> **Note**: The `[...uri].js` pattern may be more common, but  it requires a value for `uri`. This means root (`/`) routes aren’t included. This is commonly not understood, and folks also include an `index.js` to handle this usecase. However, the double brackets make `uri` optional and thus inclusive of `/`. This `undefined` value will need to be handled later.
+:::caution
+The `[...uri].js` pattern may be more common, but  it requires a value for `uri`. This means root (`/`) routes aren’t included. This is commonly not understood, and folks also include an `index.js` to handle this usecase. However, the double brackets make `uri` optional and thus inclusive of `/`. This `undefined` value will need to be handled later.
+:::
 
 ### Seed Query
 
@@ -62,7 +62,7 @@ Because we’re using dynamic imports to import our WordPress templates, they do
 
 src
 
-```
+```text
 src
   ↳ wp-templates/
     ↳ index.js
@@ -87,34 +87,34 @@ A [quick bit of JavaScript](https://github.com/wpengine/hwptoolkit/blob/main/exa
 Now that we’ve built all the pieces, we can make a single function that takes a URI and returns the template. The `getServerSideProps` function of our catch-all route now looks something like this:
 
 ```javascript
-// src/pages/&#91;&#91;...uri]].js
-import { uriToTemplate } from "@/lib/templateHierarchy";
+// src/pages/[[...uri]].js
+import { uriToTemplate } from '@/lib/templateHierarchy';
 
 export async function getServerSideProps(context) {
-  const { params } = context;
+	const { params } = context;
 
-  const uri = Array.isArray(params.uri)
-    ? "/" + params.uri.join("/") + "/"
-    : "/";
+	const uri = Array.isArray(params.uri)
+		? '/' + params.uri.join('/') + '/'
+		: '/';
 
-  const templateData = await uriToTemplate({ uri });
+	const templateData = await uriToTemplate({ uri });
 
-  if (
-    !templateData?.template?.id ||
-    templateData?.template?.id === "404 Not Found"
-  ) {
-    return {
-      notFound: true,
-    };
-  }
+	if (
+		!templateData?.template?.id ||
+		templateData?.template?.id === '404 Not Found'
+	) {
+		return {
+			notFound: true,
+		};
+	}
 
-  return {
-    props: {
-      uri,
-      // https://github.com/vercel/next.js/discussions/11209#discussioncomment-35915
-      templateData: JSON.parse(JSON.stringify(templateData)),
-    },
-  };
+	return {
+		props: {
+			uri,
+			// https://github.com/vercel/next.js/discussions/11209#discussioncomment-35915
+			templateData: JSON.parse(JSON.stringify(templateData)),
+		},
+	};
 }
 ```
 
@@ -125,18 +125,18 @@ Loading templates is done manually in the wp-templates/index.js. That will look 
 ```javascript
 // src/wp-templates/index.js
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-const home = dynamic(() => import("./home.js"), {
-  loading: () => <p>Loading Home Template...</p>,
+const home = dynamic(() => import('./home.js'), {
+	loading: () => <p>Loading Home Template...</p>,
 });
 
-const index = dynamic(() => import("./default.js"), {
-  loading: () => <p>Loading Index Template...</p>,
+const index = dynamic(() => import('./default.js'), {
+	loading: () => <p>Loading Index Template...</p>,
 });
 
-const single = dynamic(() => import("./single.js"), {
-  loading: () => <p>Loading Single Template...</p>,
+const single = dynamic(() => import('./single.js'), {
+	loading: () => <p>Loading Single Template...</p>,
 });
 
 export default { home, index, single };
@@ -147,13 +147,13 @@ export default { home, index, single };
 Okay! Our `getServerSideProps` function does the hard work of figuring out which template to render and loading the seed query. Now, in our page component, we can handle rendering the template. 
 
 ```javascript
-// src/pages/&#91;&#91;...uri]].js
+// src/pages/[[...uri]].js
 import availableTemplates from "@/wp-templates";
 
 export default function Page(props) {
   const { templateData } = props;
 
-  const PageTemplate = availableTemplates&#91;templateData.template?.id];
+  const PageTemplate = availableTemplates[templateData.template?.id];
 
   return (
     <PageTemplate {...props} />
@@ -172,15 +172,15 @@ As mentioned previously, we want to improve this by allowing multiple queries pe
 While a full implementation might need some more advanced features, we’re going to keep ours fairly simple to start. 
 
 ```javascript
-Component.queries = &#91;
-  {
-    name: myQuery,
-    query: gql`
+Component.queries = [
+	{
+		name: myQuery,
+		query: gql`
       //...
     `,
-    variables: (_context, { uri }) => ({ uri })
-  }
-]
+		variables: (_context, { uri }) => ({ uri }),
+	},
+];
 ```
 
 Instead of relying on complex hash algorithms to identify our queries, we’re going to use simple names. The GraphQL query name is used as a fallback if one is not provided. However, if you’re running one query with different variables, you may need to give it a unique name, so we provide the name field.
@@ -190,7 +190,7 @@ Instead of relying on complex hash algorithms to identify our queries, we’re g
 In our `getServerSideProps` function, we’re already handling the loading of our template. Now, we can access this `queries` array from there and execute our queries. Initially, I thought this would look something like: 
 
 ```javascript
-const PageTemplate = availableTemplates&#91;templateData.template?.id];
+const PageTemplate = availableTemplates[templateData.template?.id];
 
 //Queries would then be available at
 PageTemplate.queries
@@ -202,8 +202,8 @@ This didn’t work. Some console logs quickly made sense of the issue: 
 {
   PageTemplate: {
     '$$typeof': Symbol(react.forward_ref),
-    render: &#91;Function: LoadableComponent] {
-      preload: &#91;Function (anonymous)],
+    render: [Function: LoadableComponent] {
+      preload: [Function (anonymous)],
       displayName: 'LoadableComponent'
     }
   },
@@ -212,7 +212,7 @@ This didn’t work. Some console logs quickly made sense of the issue: 
 
 What’s actually being loaded is the wrapper component from `next/dynamic`, not the component itself. Thus, it doesn’t have the `queries` value I added. But since this is an async component, I suspected I should be able to access `queries` if I load the component itself via the `preload` function.
 
-```
+```javascript
 const component = await PageTemplate.render.preload();
 ```
 
@@ -222,13 +222,13 @@ Sure enough, this worked:
 const component = await PageTemplate.render.preload();
 
 // Queries available at:
-component.default.queries
+component.default.queries;
 ```
 
 Now that we have loaded our module and have access to queries, our array of queries will be handed off to a purpose-built function that can handle executing all the queries with their given config and variables, returning them in the expected structure. All together this will look something like:
 
 ```javascript
-// src/pages/&#91;&#91;...uri]].js
+// src/pages/[[...uri]].js
 import { uriToTemplate } from "@/lib/templateHierarchy";
 import availableTemplates from "@/wp-templates";
 import { fetchQueries } from "@/lib/queryHandler";
@@ -251,7 +251,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const PageTemplate = availableTemplates&#91;templateData.template?.id];
+  const PageTemplate = availableTemplates[templateData.template?.id];
 
   const component = await PageTemplate.render.preload();
 
@@ -288,7 +288,7 @@ import { useRouteData } from "@/lib/context";
 export default function RecentPosts() {
   const { graphqlData } = useRouteData();
 
-  const posts = graphqlData?.RecentPosts?.data?.posts?.nodes || &#91;];
+  const posts = graphqlData?.RecentPosts?.data?.posts?.nodes || [];
 
   if (graphqlData?.RecentPosts?.error) {
     console.error("Error fetching RecentPosts:", graphqlData.RecentPosts.error);
@@ -330,7 +330,7 @@ You may have noticed I used custom context to fetch the data. While I could pass
 export default function Page(props) {
   const { templateData } = props;
 
-  const PageTemplate = availableTemplates&#91;templateData.template?.id];
+  const PageTemplate = availableTemplates[templateData.template?.id];
 
   return (
     <RouteDataProvider value={props}>

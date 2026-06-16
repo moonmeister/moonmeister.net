@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import remarkDirective from 'remark-directive';
+import astroStarlightRemarkAsides from 'astro-starlight-remark-asides';
+
 // https://astro.build/config
 export default defineConfig({
 	output: 'static',
@@ -17,6 +20,10 @@ export default defineConfig({
 			lastmod: new Date(),
 		}),
 	],
+
+	markdown: {
+		remarkPlugins: [remarkDirective, astroStarlightRemarkAsides],
+	},
 
 	adapter: netlify(),
 

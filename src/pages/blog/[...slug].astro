@@ -10,6 +10,8 @@ import BaseHead from '../../components/BaseHead.astro';
 import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+import 'astro-starlight-remark-asides/styles.css';
+
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('posts');
 	return blogEntries.map((post: CollectionEntry<'posts'>) => ({

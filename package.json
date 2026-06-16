@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "cspell": "^9.8.0",
-    "netlify-cli": "^23.13.4",
+    "netlify-cli": "^23.15.1",
     "prettier": "^3.8.4",
     "prettier-plugin-astro": "^0.14.1"
   },

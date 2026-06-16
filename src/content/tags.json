@@ -1,5 +1,9 @@
 [
   {
+    "id": "astro",
+    "name": "Astro"
+  },
+  {
     "id": "auth",
     "name": "Auth"
   },
@@ -10,6 +14,14 @@
   {
     "id": "gatsby",
     "name": "Gatsby"
+  },
+  {
+    "id": "graphql",
+    "name": "GraphQL"
+  },
+  {
+    "id": "headless",
+    "name": "Headless"
   },
   {
     "id": "jamstack",
@@ -26,6 +38,10 @@
   {
     "id": "react",
     "name": "React"
+  },
+  {
+    "id": "sveltekit",
+    "name": "SvelteKit"
   },
   {
     "id": "web",

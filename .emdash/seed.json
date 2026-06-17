@@ -14650,156 +14650,867 @@
               ]
             },
             {
-              "_type": "block",
-              "_key": "qcsjz32av7q",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+              "_type": "table",
+              "_key": "tbl_stack_p3",
+              "hasHeaderRow": true,
+              "rows": [
                 {
-                  "_type": "span",
-                  "_key": "oclw50mtk1",
-                  "text": " | SSG | SSR | SPA | SSG + Hydration | SSR + Hydration",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "302a18ecnl",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r0",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c0_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": true
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c1_s",
+                          "text": "SSG"
+                        }
+                      ],
+                      "isHeader": true
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c2_s",
+                          "text": "SSR"
+                        }
+                      ],
+                      "isHeader": true
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c3_s",
+                          "text": "SPA"
+                        }
+                      ],
+                      "isHeader": true
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c4_s",
+                          "text": "SSG + Hydration"
+                        }
+                      ],
+                      "isHeader": true
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r0_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r0_c5_s",
+                          "text": "SSR + Hydration"
+                        }
+                      ],
+                      "isHeader": true
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "out18czpgj",
-                  "text": "Gatsby |  |  |  | ✔ | Maybe be in the future",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "h9gsmoj0plc",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r1",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c0_s",
+                          "text": "Gatsby"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c1_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c4_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r1_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r1_c5_s",
+                          "text": "Maybe be in the future"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "vgj8f51yvf",
-                  "text": "Next.js | ✔ |  |  | ✔ (ISR) | ✔",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "6o7khgjn4r4",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r2",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c0_s",
+                          "text": "Next.js"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c1_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c4_s",
+                          "text": "✔ (ISR)"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r2_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r2_c5_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "ki30gimmi",
-                  "text": "Create React App |  |  | ✔ |  | ",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "tx4a3bkyawi",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r3",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c0_s",
+                          "text": "Create React App"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c1_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c3_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c4_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r3_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r3_c5_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "yrkaqi38r7r",
-                  "text": "Nuxt | ✔ |  |  | coming v3 | ✔",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "mur9o7m84u",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r4",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c0_s",
+                          "text": "Nuxt"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c1_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c4_s",
+                          "text": "coming v3"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r4_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r4_c5_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "0esyv9fwyvv6",
-                  "text": "Gridsome |  |  |  | ✔ | ",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "4kgjbkb70cn",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r5",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c0_s",
+                          "text": "Gridsome"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c1_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c4_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r5_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r5_c5_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "7z8btjr98hh",
-                  "text": "Vue CLI |  |  | ✔ |  | ",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "tt7d74alksd",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r6",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c0_s",
+                          "text": "Vue CLI"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c1_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c3_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c4_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r6_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r6_c5_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "p8h4ugo0n0m",
-                  "text": "Svelte Kit | ✔ | ✔ | ✔ | ✔ | ✔",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "pt6eihms40s",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r7",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c0_s",
+                          "text": "Svelte Kit"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c1_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c2_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c3_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c4_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r7_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r7_c5_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "qo3fhp51qb8",
-                  "text": "Svelte |  |  | ✔ |  | ",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "rm3dfh5d5jn",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r8",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c0_s",
+                          "text": "Svelte"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c1_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c3_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c4_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r8_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r8_c5_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "ps6br1fzh5",
-                  "text": "Sapper | ✔ |  |  |  | ✔",
-                  "marks": []
-                }
-              ]
-            },
-            {
-              "_type": "block",
-              "_key": "8br1tc7olf3",
-              "style": "normal",
-              "markDefs": [],
-              "children": [
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r9",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c0_s",
+                          "text": "Sapper"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c1_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c4_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r9_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r9_c5_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
+                },
                 {
-                  "_type": "span",
-                  "_key": "0rivdpru0e3",
-                  "text": "Elder.js | ✔ |  |  | ✔ | ✔",
-                  "marks": []
+                  "_type": "tableRow",
+                  "_key": "tbl_stack_p3_r10",
+                  "cells": [
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c0",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c0_s",
+                          "text": "Elder.js"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c1",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c1_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c2",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c2_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c3",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c3_s",
+                          "text": ""
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c4",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c4_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    },
+                    {
+                      "_type": "tableCell",
+                      "_key": "tbl_stack_p3_r10_c5",
+                      "content": [
+                        {
+                          "_type": "span",
+                          "_key": "tbl_stack_p3_r10_c5_s",
+                          "text": "✔"
+                        }
+                      ],
+                      "isHeader": false
+                    }
+                  ]
                 }
               ]
             },

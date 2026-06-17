@@ -1,5 +1,6 @@
 ---
 import { getEmDashEntry } from 'emdash';
+import { PortableText } from 'emdash/ui';
 
 import { Edit3Icon, ClockIcon } from 'astro-feather';
 
@@ -80,12 +81,12 @@ const readingDuration =
 			</div>
 		</header>
 
-		<div id="blog-content" class="prose my-6">
-			{/* TODO: Render PortableText body content */}
+		<div class="prose max-w-none">
+			<PortableText value={entry.data.body} />
 		</div>
-
-		<footer class="border-t text-sm text-gray-600 py-6">
-			<Tags tags={entry.data.terms?.tag ?? []} />
-		</footer>
 	</article>
+
+	<footer class="border-t text-sm text-gray-600 py-6">
+		<Tags tags={entry.data.terms?.tag ?? []} />
+	</footer>
 </BaseLayout>

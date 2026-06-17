@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 import emdash from 'emdash/astro';
 import { d1, r2 } from '@emdash-cms/cloudflare';
 import { readingTimePlugin } from '@moonmeister/plugin-reading-time';
+import { asidesPlugin } from '@moonmeister/plugin-asides';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +21,7 @@ export default defineConfig({
 		emdash({
 			database: d1({ binding: 'DB' }),
 			storage: r2({ binding: 'MEDIA' }),
-			plugins: [readingTimePlugin({ collections: ['posts'] })],
+			plugins: [readingTimePlugin({ collections: ['posts'] }), asidesPlugin()],
 		}),
 		sitemap({
 			changefreq: 'weekly',
@@ -34,10 +35,16 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 		ssr: {
-			noExternal: ['@moonmeister/plugin-reading-time'],
+			noExternal: [
+				'@moonmeister/plugin-reading-time',
+				'@moonmeister/plugin-asides',
+			],
 		},
 		optimizeDeps: {
-			exclude: ['@moonmeister/plugin-reading-time'],
+			exclude: [
+				'@moonmeister/plugin-reading-time',
+				'@moonmeister/plugin-asides',
+			],
 		},
 	},
 });

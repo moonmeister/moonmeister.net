@@ -10,6 +10,7 @@
       "slug": "posts",
       "label": "Posts",
       "labelSingular": "Post",
+      "urlPattern": "/blog/{slug}",
       "supports": [
         "drafts",
         "revisions"

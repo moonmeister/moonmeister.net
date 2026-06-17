@@ -29,6 +29,9 @@ importers:
       '@emdash-cms/cloudflare':
         specifier: ^0.20.0
         version: 0.20.0(b330f0de4fda82646e46dd99002d5c63)
+      '@moonmeister/plugin-asides':
+        specifier: workspace:*
+        version: link:plugins/asides
       '@moonmeister/plugin-reading-time':
         specifier: workspace:*
         version: link:plugins/reading-time
@@ -78,6 +81,18 @@ importers:
       wrangler:
         specifier: ^4.101.0
         version: 4.101.0(@cloudflare/workers-types@4.20260617.1)
+
+  plugins/asides:
+    dependencies:
+      astro:
+        specifier: ^6.0.0
+        version: 6.4.7(@netlify/blobs@10.7.9)(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.55.1)(yaml@2.9.0)
+      emdash:
+        specifier: '*'
+        version: 0.20.0(fe8089cd834d2a581365ea9931cd6005)
+      marked:
+        specifier: ^14.1.3
+        version: 14.1.4
 
   plugins/reading-time:
     dependencies:
@@ -5350,6 +5365,11 @@ packages:
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
+
+  marked@14.1.4:
+    resolution: {integrity: sha512-vkVZ8ONmUdPnjCKc5uTRvmkRbx4EAi2OkTOXmfTDhZz3OFqMNBM1oTTWwTr4HY4uAEojhzPf+Fy8F1DWa3Sndg==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   marked@17.0.6:
     resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
@@ -11511,7 +11531,7 @@ snapshots:
       svgo: 4.0.1
       tinyclip: 0.1.14
       tinyexec: 1.2.4
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.17
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
@@ -11521,7 +11541,7 @@ snapshots:
       vitefu: 1.1.3(vite@7.3.5(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
-      zod: 4.3.6
+      zod: 4.4.3
     optionalDependencies:
       sharp: 0.34.5
     transitivePeerDependencies:
@@ -11604,7 +11624,7 @@ snapshots:
       svgo: 4.0.1
       tinyclip: 0.1.14
       tinyexec: 1.2.4
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.17
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
@@ -11614,7 +11634,7 @@ snapshots:
       vitefu: 1.1.3(vite@7.3.5(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
-      zod: 4.3.6
+      zod: 4.4.3
     optionalDependencies:
       sharp: 0.34.5
     transitivePeerDependencies:
@@ -14033,6 +14053,8 @@ snapshots:
   map-obj@5.0.2: {}
 
   markdown-table@3.0.4: {}
+
+  marked@14.1.4: {}
 
   marked@17.0.6: {}
 

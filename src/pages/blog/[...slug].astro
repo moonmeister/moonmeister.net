@@ -6,7 +6,7 @@ import { Edit3Icon, ClockIcon } from 'astro-feather';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BaseHead from '../../components/BaseHead.astro';
-// import Blocks from '../../components/Blocks.astro';
+import PortableTextCode from '../../components/PortableTextCode.astro';
 import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -82,7 +82,10 @@ const readingDuration =
 		</header>
 
 		<div class="prose max-w-none">
-			<PortableText value={entry.data.body} />
+			<PortableText
+				value={entry.data.body}
+				components={{ type: { code: PortableTextCode } }}
+			/>
 		</div>
 	</article>
 

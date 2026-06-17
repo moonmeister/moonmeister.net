@@ -1,0 +1,44 @@
+---
+import { Code } from 'astro:components';
+import type { ComponentProps } from 'astro/types';
+
+type CodeLang = ComponentProps<typeof Code>['lang'];
+
+export interface Props {
+	node: {
+		_type: 'code';
+		_key?: string;
+		code: string;
+		language?: string;
+		filename?: string;
+	};
+}
+
+const { node } = Astro.props;
+
+if (!node?.code) {
+	return null;
+}
+
+const { code, language, filename } = node;
+const lang = (language || 'plaintext') as CodeLang;
+---
+
+<figure class="not-prose my-6">
+	{
+		filename && (
+			<figcaption class="bg-gray-800 text-gray-100 text-xs font-mono px-3 py-1 rounded-t-md">
+				{filename}
+			</figcaption>
+		)
+	}
+	<Code
+		{code}
+		{lang}
+		theme="github-dark"
+		class:list={[
+			'text-sm rounded-md p-4 overflow-x-auto',
+			filename && 'rounded-t-none',
+		]}
+	/>
+</figure>

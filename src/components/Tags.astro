@@ -1,14 +1,10 @@
 ---
+import type { TaxonomyTerm } from 'emdash';
 import { TagIcon } from 'astro-feather';
 import WpTag from './Tag.astro';
 
 export type Props = {
-	tags:
-		| {
-				collection: 'tags';
-				id: string;
-		  }[]
-		| undefined;
+	tags: TaxonomyTerm[] | undefined;
 };
 
 const { tags } = Astro.props;
@@ -20,12 +16,12 @@ const { tags } = Astro.props;
 		tags && tags.length > 0 ? (
 			tags.map((tag) => (
 				<span class="">
-					<WpTag aria-label="Post Tags" {tag} />
+					<WpTag aria-label="Post Tags" tag={tag} />
 				</span>
 			))
 		) : (
 			<span class="">
-				<WpTag tag={{ id: 'none' }} />
+				<WpTag tag={null} />
 			</span>
 		)
 	}

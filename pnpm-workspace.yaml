@@ -1,5 +1,9 @@
+packages:
+  - 'plugins/*'
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
+  - better-sqlite3
   - esbuild
   - netlify-cli
   - sharp

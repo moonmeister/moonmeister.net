@@ -6,11 +6,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 import { SITE_DESCRIPTION } from '../consts';
 
-import type { CollectionEntry } from 'astro:content';
+import type { ContentEntry } from 'emdash';
+import type { Post } from '../../emdash-env';
 
 type Props = {
 	pageTitle: string;
-	posts: CollectionEntry<'posts'>[];
+	posts: ContentEntry<Post>[];
 };
 const { pageTitle, posts } = Astro.props;
 ---
@@ -22,28 +23,32 @@ const { pageTitle, posts } = Astro.props;
 	</header>
 	<div aria-live="polite" id="blog-list" role="region">
 		{
-			posts.map(({ id, data: { title, date, tags } }) => (
-				<article class="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out can-hover:hover:-translate-y-1 can-hover:hover:translate-x-1 can-hover:hover:shadow-lg motion-reduce:translate-x-0 motion-reduce:translate-y-0">
-					<a rel="author" href={`/blog/${id}/`}>
-						<header class="max-w-prose mb-6">
-							<h1
-								aria-label="Blog Title"
-								class="font-bold text-primary-900 text-2xl md:text-4xl leading-relaxed"
-							>
-								{`${title}`}
-							</h1>
-							<div class="text-sm text-gray-600">
-								<span>Alex Moon on </span>
-								<FormattedDate date={new Date(date)} />
-							</div>
-						</header>
-					</a>
+			posts.map((post) => {
+				const { slug, title, date, terms } = post.data;
+				const tags = terms?.tag;
+				return (
+					<article class="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out can-hover:hover:-translate-y-1 can-hover:hover:translate-x-1 can-hover:hover:shadow-lg motion-reduce:translate-x-0 motion-reduce:translate-y-0">
+						<a rel="author" href={`/blog/${slug}/`}>
+							<header class="max-w-prose mb-6">
+								<h1
+									aria-label="Blog Title"
+									class="font-bold text-primary-900 text-2xl md:text-4xl leading-relaxed"
+								>
+									{`${title}`}
+								</h1>
+								<div class="text-sm text-gray-600">
+									<span>Alex Moon on </span>
+									<FormattedDate date={new Date(date)} />
+								</div>
+							</header>
+						</a>
 
-					<footer class="mt-6 text-sm text-gray-600">
-						<Tags {tags} />
-					</footer>
-				</article>
-			))
+						<footer class="mt-6 text-sm text-gray-600">
+							<Tags tags={tags ?? []} />
+						</footer>
+					</article>
+				);
+			})
 		}
 	</div>
 </BaseLayout>

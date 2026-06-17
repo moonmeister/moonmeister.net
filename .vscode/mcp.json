@@ -13,6 +13,18 @@
       "command": "npx",
       "args": ["-y", "tailwindcss-mcp-server"],
       "type": "stdio"
+    },
+    "emdash": {
+      "url": "https://docs.emdashcms.com/mcp",
+      "type": "http"
+    },
+    "astro": {
+      "url": "https://mcp.docs.astro.build/mcp",
+      "type": "http"
+    },
+    "cloudflare docs": {
+      "url": "https://docs.mcp.cloudflare.com/mcp",
+      "type": "http"
     }
   },
   "inputs": []

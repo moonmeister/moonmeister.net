@@ -1,8 +1,7 @@
 ---
-import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getEmDashEntry } from 'emdash';
 
 import { Edit3Icon, ClockIcon } from 'astro-feather';
-import readingTime from 'reading-time';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BaseHead from '../../components/BaseHead.astro';
@@ -10,26 +9,18 @@ import BaseHead from '../../components/BaseHead.astro';
 import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-import 'astro-starlight-remark-asides/styles.css';
+const { slug } = Astro.params;
+const { entry } = await getEmDashEntry('posts', slug!);
 
-export async function getStaticPaths() {
-	const blogEntries = await getCollection('posts');
-	return blogEntries.map((post: CollectionEntry<'posts'>) => ({
-		params: { slug: post.id },
-		props: { entry: post },
-	}));
+if (!entry) {
+	return Astro.redirect('/404');
 }
 
-export const prerender = true;
-
-type Props = {
-	entry: CollectionEntry<'posts'>;
-};
-
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-
-const { text: readingText } = readingTime(entry.body ?? '');
+const { reading_minutes, reading_text, word_count } = entry.data;
+const readingDuration =
+	typeof reading_minutes === 'number'
+		? `PT${Math.max(1, Math.round(reading_minutes))}M`
+		: undefined;
 ---
 
 <BaseLayout>
@@ -66,18 +57,35 @@ const { text: readingText } = readingTime(entry.body ?? '');
 							aria-hidden
 							customClasses="inline-svg text-gray-700 mr-2"
 						/>
-						{readingText} · <FormattedDate date={new Date(entry.data.date)} />
+						{
+							reading_text && (
+								<>
+									<time
+										datetime={readingDuration}
+										title={
+											word_count
+												? `${word_count.toLocaleString()} words`
+												: undefined
+										}
+									>
+										{reading_text}
+									</time>
+									·
+								</>
+							)
+						}
+						<FormattedDate date={new Date(entry.data.date)} />
 					</p>
 				</div>
 			</div>
 		</header>
 
 		<div id="blog-content" class="prose my-6">
-			<Content />
+			{/* TODO: Render PortableText body content */}
 		</div>
 
 		<footer class="border-t text-sm text-gray-600 py-6">
-			<Tags tags={entry.data.tags ?? []} />
+			<Tags tags={entry.data.terms?.tag ?? []} />
 		</footer>
 	</article>
 </BaseLayout>

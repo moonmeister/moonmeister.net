@@ -10,6 +10,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy",
+    "admin": "open 'http://localhost:4321/_emdash/api/setup/dev-bypass?redirect=/_emdash/admin'",
     "astro": "astro",
     "format": "prettier --write . --plugin-search-dir=.",
     "check:format": "prettier --check . --plugin-search-dir=.",
@@ -19,24 +21,29 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/netlify": "^7.0.13",
+    "@astrojs/react": "^5.0.7",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/ts-plugin": "1.10.9",
+    "@emdash-cms/cloudflare": "^0.20.0",
+    "@moonmeister/plugin-reading-time": "workspace:*",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^6.4.7",
     "astro-feather": "^1.0.0",
-    "astro-starlight-remark-asides": "^0.0.7",
-    "reading-time": "^1.5.0",
-    "remark-directive": "^3.0.1",
+    "emdash": "^0.20.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@astrojs/cloudflare": "^13.7.0",
     "cspell": "^9.7.0",
     "netlify-cli": "^23.13.4",
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.101.0"
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }

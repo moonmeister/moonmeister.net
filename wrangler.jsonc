@@ -1,0 +1,20 @@
+{
+	"$schema": "https://developers.cloudflare.com/workers/platform/configuration-reference/",
+	"name": "moonmeister-net",
+	"compatibility_date": "2025-01-15",
+	"compatibility_flags": ["nodejs_compat"],
+
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "moonmeister-db"
+		}
+	],
+
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "moonmeister-media"
+		}
+	]
+}

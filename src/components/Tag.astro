@@ -1,33 +1,29 @@
 ---
-import { getEntry } from 'astro:content';
+import type { TaxonomyTerm } from 'emdash';
 
 type Props = {
-	tag: {
-		id: string;
-	};
+	tag: TaxonomyTerm | null;
 };
 
 const { tag, ...props } = Astro.props;
 
-const tagData =
-	tag.id == 'none'
-		? { id: '', data: { name: 'None!' } }
-		: await getEntry('tags', tag.id);
+const tagSlug = tag?.slug ?? '';
+const tagName = tag?.label ?? 'None!';
 
 // Random rotation for rainbow gradient
 const rotation = Math.floor(Math.random() * 18) * 20; // 0, 20, 40, ... 340
 ---
 
 {
-	tagData && (
+	tag && (
 		<a
-			href={`/tag/${tagData.id}`}
+			href={`/tag/${tagSlug}`}
 			class="rainbow-tag"
 			style={`--rotation: ${rotation}deg`}
 		>
 			{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 			<span class="tag-content capitalize px-1" {...props}>
-				{tagData.data.name}
+				{tagName}
 			</span>
 		</a>
 	)

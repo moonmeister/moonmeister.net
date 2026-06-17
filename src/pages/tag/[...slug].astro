@@ -1,39 +1,23 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getEmDashCollection, getTerm } from 'emdash';
 import ArchivePage from '../../components/ArchivePage.astro';
 
-export const prerender = true;
+const { slug } = Astro.params;
+const tagSlug = slug!;
 
-export async function getStaticPaths() {
-	const tagEntries = await getCollection('tags');
-	const builtTags = [];
+const term = await getTerm('tag', tagSlug);
 
-	for (const tagEntry of tagEntries) {
-		const blogEntries = await getCollection(
-			'posts',
-			(entry: CollectionEntry<'posts'>) => {
-				if (entry.data.tags === undefined) {
-					return false;
-				}
+const { entries: filteredPosts } = await getEmDashCollection('posts', {
+	status: 'published',
+	where: { tag: tagSlug },
+});
 
-				for (const tag of entry.data.tags) {
-					if (tag.id === tagEntry.id) {
-						return true;
-					}
-				}
-			}
-		);
+// Sort posts by date (newest first)
+const posts = filteredPosts.toSorted(
+	(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
 
-		builtTags.push({
-			params: { slug: tagEntry.id },
-			props: { entry: tagEntry, posts: blogEntries },
-		});
-	}
-
-	return builtTags;
-}
-
-const { entry, posts } = Astro.props;
+const pageTitle = term?.label ?? tagSlug;
 ---
 
-<ArchivePage pageTitle={entry.data.name} {posts} />
+<ArchivePage {pageTitle} {posts} />

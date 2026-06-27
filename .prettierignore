@@ -3,4 +3,3 @@ node_modules/
 gatsby/
 public/
 pnpm-lock.yaml
-.netlify

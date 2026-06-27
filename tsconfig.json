@@ -4,6 +4,8 @@
   "exclude": ["dist", "plugins"],
   "compilerOptions": {
     "strictNullChecks": true,
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "preserve",
+    "jsxImportSource": "astro"
   }
 }

@@ -27,7 +27,6 @@
     "@astrojs/ts-plugin": "1.10.9",
     "@emdash-cms/cloudflare": "^0.20.0",
     "@moonmeister/plugin-asides": "workspace:*",
-    "@moonmeister/plugin-reading-time": "workspace:*",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.8",

@@ -22,7 +22,7 @@
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/ts-plugin": "1.10.9",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^6.4.7",
     "astro-feather": "^1.0.0",

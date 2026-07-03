@@ -2,12 +2,14 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "moonmeister-net",
 	"compatibility_date": "2026-01-14",
-	// disable_nodejs_process_v2 needed until unenv fix lands in Pages
-	// See: https://github.com/withastro/astro/issues/14511
+  "main": "@astrojs/cloudflare/entrypoints/server",
+	  "assets": {
+    "directory": "./dist"
+  },
 	"compatibility_flags": [
 		"nodejs_compat",
-		"disable_nodejs_process_v2"
 	],
+
 	"d1_databases": [
 		{
 			"binding": "DB",

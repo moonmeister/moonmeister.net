@@ -23,13 +23,9 @@ export interface Post {
   slug: string | null;
   status: string;
   title: string;
-  description?: string;
-  date: string;
-  body?: PortableTextBlock[];
-  word_count?: number;
-  reading_minutes?: number;
-  reading_ms?: number;
-  reading_text?: string;
+  featured_image?: { id: string; src?: string; alt?: string; width?: number; height?: number; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  content?: PortableTextBlock[];
+  excerpt?: string;
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date | null;

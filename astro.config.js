@@ -19,7 +19,6 @@ export default defineConfig({
 			database: d1({ binding: 'DB' }),
 			storage: r2({ binding: 'MEDIA' }),
 			sandboxRunner: sandbox(),
-			marketplace: 'https://marketplace.emdashcms.com',
 			plugins: [asidesPlugin()],
 			sandboxed: [atProtoPlugin],
 			cache: {

@@ -61,7 +61,7 @@ const readingDuration = `PT${readingMinutes}M`;
 							{readingText}
 						</time>
 						·
-						<FormattedDate date={new Date(entry.data.date)} />
+						<FormattedDate date={entry.data.publishedAt!} />
 					</p>
 				</div>
 			</div>

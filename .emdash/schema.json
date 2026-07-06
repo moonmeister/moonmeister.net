@@ -1,0 +1,32 @@
+{
+  "collections": [
+    {
+      "slug": "posts",
+      "label": "Posts",
+      "labelSingular": "Post",
+      "supports": [
+        "drafts",
+        "revisions",
+        "search",
+        "preview"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "unique": false
+        },
+        {
+          "slug": "body",
+          "label": "Content",
+          "type": "portableText",
+          "required": false,
+          "unique": false
+        }
+      ]
+    }
+  ],
+  "version": "5ba5d24f32e3ace0"
+}

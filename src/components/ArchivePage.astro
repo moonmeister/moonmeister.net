@@ -24,7 +24,7 @@ const { pageTitle, posts } = Astro.props;
 	<div aria-live="polite" id="blog-list" role="region">
 		{
 			posts.map((post) => {
-				const { slug, title, date, terms } = post.data;
+				const { slug, title, publishedAt, terms } = post.data;
 				const tags = terms?.tag;
 				return (
 					<article class="m-auto floating mb-6 p-6 transition-all duration-200 ease-in-out can-hover:hover:-translate-y-1 can-hover:hover:translate-x-1 can-hover:hover:shadow-lg motion-reduce:translate-x-0 motion-reduce:translate-y-0">
@@ -38,7 +38,7 @@ const { pageTitle, posts } = Astro.props;
 								</h1>
 								<div class="text-sm text-gray-600">
 									<span>Alex Moon on </span>
-									<FormattedDate date={new Date(date)} />
+									<FormattedDate date={publishedAt!} />
 								</div>
 							</header>
 						</a>

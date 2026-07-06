@@ -8,7 +8,9 @@ const { entries: posts } = await getEmDashCollection('posts', {
 });
 
 const sortedPosts = posts.toSorted(
-	(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+	(a, b) =>
+		new Date(b.data.publishedAt!).valueOf() -
+		new Date(a.data.publishedAt!).valueOf()
 );
 ---
 

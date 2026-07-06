@@ -1,5 +1,5 @@
 {
-  "mcpServers": {
+  "servers": {
     "emdash-docs": {
       "type": "http",
       "url": "https://docs.emdashcms.com/mcp"

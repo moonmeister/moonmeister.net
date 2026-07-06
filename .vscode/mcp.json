@@ -1,31 +1,24 @@
 {
-  "servers": {
-    "astro-mcp": {
-      "url": "https://mcp.docs.astro.build/mcp",
-      "type": "http"
+  "mcpServers": {
+    "emdash-docs": {
+      "type": "http",
+      "url": "https://docs.emdashcms.com/mcp"
     },
-    "chrome-devtools": {
-      "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"],
-      "type": "stdio"
+    "astro-docs": {
+      "type": "http",
+      "url": "https://mcp.docs.astro.build/mcp"
+    },
+    "cloudflare-docs": {
+      "type": "http",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
     },
     "tailwindcss-server": {
+      "type": "stdio",
       "command": "npx",
-      "args": ["-y", "tailwindcss-mcp-server"],
-      "type": "stdio"
-    },
-    "emdash": {
-      "url": "https://docs.emdashcms.com/mcp",
-      "type": "http"
-    },
-    "astro": {
-      "url": "https://mcp.docs.astro.build/mcp",
-      "type": "http"
-    },
-    "cloudflare docs": {
-      "url": "https://docs.mcp.cloudflare.com/mcp",
-      "type": "http"
+      "args": [
+        "-y",
+        "tailwindcss-mcp-server"
+      ]
     }
-  },
-  "inputs": []
+  }
 }

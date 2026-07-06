@@ -26,6 +26,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/ts-plugin": "1.10.9",
     "@emdash-cms/cloudflare": "^0.27.0",
+    "@emdash-cms/plugin-atproto": "^0.2.1",
     "@moonmeister/plugin-asides": "workspace:*",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",

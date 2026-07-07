@@ -15,10 +15,7 @@
     "tailwindcss-server": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "tailwindcss-mcp-server"
-      ]
+      "args": ["-y", "tailwindcss-mcp-server"]
     }
   }
 }

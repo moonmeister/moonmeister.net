@@ -6,12 +6,7 @@
       "slug": "posts",
       "label": "Posts",
       "labelSingular": "Post",
-      "supports": [
-        "drafts",
-        "revisions",
-        "search",
-        "preview"
-      ],
+      "supports": ["drafts", "revisions", "search", "preview"],
       "fields": [
         {
           "slug": "title",

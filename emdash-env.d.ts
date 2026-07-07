@@ -3,23 +3,27 @@
 
 /// <reference types="emdash/locals" />
 
-import type { ContentBylineCredit, TaxonomyTerm, PortableTextBlock } from "emdash";
+import type {
+	ContentBylineCredit,
+	TaxonomyTerm,
+	PortableTextBlock,
+} from 'emdash';
 
 export interface Post {
-  id: string;
-  slug: string | null;
-  status: string;
-  title: string;
-  body?: PortableTextBlock[];
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date | null;
-  bylines?: ContentBylineCredit[];
-  terms?: Record<string, TaxonomyTerm[]>;
+	id: string;
+	slug: string | null;
+	status: string;
+	title: string;
+	body?: PortableTextBlock[];
+	createdAt: Date;
+	updatedAt: Date;
+	publishedAt: Date | null;
+	bylines?: ContentBylineCredit[];
+	terms?: Record<string, TaxonomyTerm[]>;
 }
 
-declare module "emdash" {
-  interface EmDashCollections {
-    posts: Post;
-  }
+declare module 'emdash' {
+	interface EmDashCollections {
+		posts: Post;
+	}
 }

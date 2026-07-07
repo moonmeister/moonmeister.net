@@ -3,7 +3,7 @@
 ## Site Settings
 
 ```typescript
-import { getSiteSettings, getSiteSetting } from "emdash";
+import { getSiteSettings, getSiteSetting } from 'emdash';
 
 // All settings
 const settings = await getSiteSettings();
@@ -13,7 +13,7 @@ settings.logo?.url; // Resolved media URL
 settings.favicon?.url;
 
 // Single setting
-const title = await getSiteSetting("title");
+const title = await getSiteSetting('title');
 ```
 
 Available keys: `title`, `tagline`, `logo`, `favicon`, `social`, `timezone`, `dateFormat`.
@@ -23,10 +23,10 @@ Use these instead of hard-coding site name, logo, etc.
 ## Navigation Menus
 
 ```typescript
-import { getMenu, getMenus } from "emdash";
+import { getMenu, getMenus } from 'emdash';
 
 // Fetch a named menu
-const menu = await getMenu("primary");
+const menu = await getMenu('primary');
 
 // List all menus
 const menus = await getMenus();
@@ -36,31 +36,40 @@ const menus = await getMenus();
 
 ```astro
 ---
-import { getMenu } from "emdash";
-const primaryMenu = await getMenu("primary");
+import { getMenu } from 'emdash';
+const primaryMenu = await getMenu('primary');
 ---
+
 <nav>
-	{primaryMenu?.items.map(item => (
-		<a href={item.url} target={item.target}>{item.label}</a>
-	))}
+	{
+		primaryMenu?.items.map((item) => (
+			<a href={item.url} target={item.target}>
+				{item.label}
+			</a>
+		))
+	}
 </nav>
 ```
 
 ### Nested menus (dropdowns)
 
 ```astro
-{primaryMenu?.items.map(item => (
-	<li>
-		<a href={item.url}>{item.label}</a>
-		{item.children.length > 0 && (
-			<ul class="submenu">
-				{item.children.map(child => (
-					<li><a href={child.url}>{child.label}</a></li>
-				))}
-			</ul>
-		)}
-	</li>
-))}
+{
+	primaryMenu?.items.map((item) => (
+		<li>
+			<a href={item.url}>{item.label}</a>
+			{item.children.length > 0 && (
+				<ul class="submenu">
+					{item.children.map((child) => (
+						<li>
+							<a href={child.url}>{child.label}</a>
+						</li>
+					))}
+				</ul>
+			)}
+		</li>
+	))
+}
 ```
 
 ### MenuItem shape
@@ -78,22 +87,27 @@ interface MenuItem {
 ## Taxonomies
 
 ```typescript
-import { getTaxonomyTerms, getTerm, getEntryTerms, getEntriesByTerm } from "emdash";
+import {
+	getTaxonomyTerms,
+	getTerm,
+	getEntryTerms,
+	getEntriesByTerm,
+} from 'emdash';
 
 // All terms in a taxonomy (name must match your seed's "name" field exactly)
-const categories = await getTaxonomyTerms("category");
-const tags = await getTaxonomyTerms("tag");
+const categories = await getTaxonomyTerms('category');
+const tags = await getTaxonomyTerms('tag');
 
 // Single term by slug
-const term = await getTerm("category", "news");
+const term = await getTerm('category', 'news');
 // { id, name, slug, label, children, count }
 
 // Terms for a specific entry (use data.id, not entry.id!)
-const postCategories = await getEntryTerms("posts", post.data.id, "category");
-const postTags = await getEntryTerms("posts", post.data.id, "tag");
+const postCategories = await getEntryTerms('posts', post.data.id, 'category');
+const postTags = await getEntryTerms('posts', post.data.id, 'tag');
 
 // Entries with a specific term
-const newsPosts = await getEntriesByTerm("posts", "category", "news");
+const newsPosts = await getEntriesByTerm('posts', 'category', 'news');
 ```
 
 **Important:** The taxonomy name argument must match exactly what your seed defines in `"name"`. The blog seed uses `"category"` and `"tag"` (singular). Using `"categories"` returns empty results with no error.
@@ -104,20 +118,19 @@ const newsPosts = await getEntriesByTerm("posts", "category", "news");
 
 ```astro
 ---
-const tags = await getEntryTerms("posts", post.data.id, "tag");
+const tags = await getEntryTerms('posts', post.data.id, 'tag');
 ---
-{tags.map(t => (
-	<a href={`/tag/${t.slug}`}>{t.label}</a>
-))}
+
+{tags.map((t) => <a href={`/tag/${t.slug}`}>{t.label}</a>)}
 ```
 
 ### Filtering by taxonomy
 
 ```astro
 ---
-const { entries: posts } = await getEmDashCollection("posts", {
+const { entries: posts } = await getEmDashCollection('posts', {
 	where: { category: term.slug },
-	orderBy: { published_at: "desc" },
+	orderBy: { published_at: 'desc' },
 });
 ---
 ```
@@ -128,8 +141,9 @@ Render a named widget area:
 
 ```astro
 ---
-import { WidgetArea } from "emdash/ui";
+import { WidgetArea } from 'emdash/ui';
 ---
+
 <aside>
 	<WidgetArea name="sidebar" />
 </aside>
@@ -143,19 +157,22 @@ For more control, use the `getWidgetArea` function:
 
 ```astro
 ---
-import { getWidgetArea } from "emdash";
-import { PortableText } from "emdash/ui";
+import { getWidgetArea } from 'emdash';
+import { PortableText } from 'emdash/ui';
 
-const sidebar = await getWidgetArea("sidebar");
+const sidebar = await getWidgetArea('sidebar');
 ---
-{sidebar?.widgets.map(widget => (
-	<div class="widget">
-		{widget.title && <h3>{widget.title}</h3>}
-		{widget.type === "content" && widget.content && (
-			<PortableText value={widget.content} />
-		)}
-	</div>
-))}
+
+{
+	sidebar?.widgets.map((widget) => (
+		<div class="widget">
+			{widget.title && <h3>{widget.title}</h3>}
+			{widget.type === 'content' && widget.content && (
+				<PortableText value={widget.content} />
+			)}
+		</div>
+	))
+}
 ```
 
 ## Search
@@ -164,12 +181,10 @@ const sidebar = await getWidgetArea("sidebar");
 
 ```astro
 ---
-import LiveSearch from "emdash/ui/search";
+import LiveSearch from 'emdash/ui/search';
 ---
-<LiveSearch
-	placeholder="Search..."
-	collections={["posts", "pages"]}
-/>
+
+<LiveSearch placeholder="Search..." collections={['posts', 'pages']} />
 ```
 
 Customizable CSS classes:
@@ -181,8 +196,8 @@ Customizable CSS classes:
 	inputClass="site-search-input"
 	resultsClass="site-search-results"
 	resultClass="site-search-result"
-	collections={["posts", "pages"]}
-	expandOnFocus={{ collapsed: "180px", expanded: "280px" }}
+	collections={['posts', 'pages']}
+	expandOnFocus={{ collapsed: '180px', expanded: '280px' }}
 />
 ```
 
@@ -202,11 +217,11 @@ Theme via CSS variables:
 ### Programmatic search
 
 ```typescript
-import { search } from "emdash";
+import { search } from 'emdash';
 
-const results = await search("hello world", {
-	collections: ["posts", "pages"],
-	status: "published",
+const results = await search('hello world', {
+	collections: ['posts', 'pages'],
+	status: 'published',
 	limit: 20,
 });
 // { results: SearchResult[], total, nextCursor? }
@@ -218,17 +233,15 @@ Each result has: `collection`, `id`, `title`, `slug`, `snippet` (HTML with `<mar
 
 ```astro
 ---
-import LiveSearch from "emdash/ui/search";
-import Base from "../layouts/Base.astro";
+import LiveSearch from 'emdash/ui/search';
+import Base from '../layouts/Base.astro';
 
-const query = Astro.url.searchParams.get("q") || "";
+const query = Astro.url.searchParams.get('q') || '';
 ---
+
 <Base title="Search">
 	<h1>Search</h1>
-	<LiveSearch
-		placeholder="Search posts..."
-		collections={["posts", "pages"]}
-	/>
+	<LiveSearch placeholder="Search posts..." collections={['posts', 'pages']} />
 </Base>
 ```
 
@@ -238,10 +251,10 @@ Add Cmd+K / Ctrl+K to focus search:
 
 ```html
 <script>
-	document.addEventListener("keydown", (e) => {
-		if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+	document.addEventListener('keydown', (e) => {
+		if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
 			e.preventDefault();
-			document.querySelector(".site-search-input")?.focus();
+			document.querySelector('.site-search-input')?.focus();
 		}
 	});
 </script>
@@ -260,10 +273,10 @@ Search requires per-collection enablement:
 Generate SEO meta from content entries:
 
 ```typescript
-import { getSeoMeta } from "emdash";
+import { getSeoMeta } from 'emdash';
 
 const seo = getSeoMeta(post, {
-	siteTitle: "My Blog",
+	siteTitle: 'My Blog',
 	siteUrl: Astro.url.origin,
 	path: `/posts/${slug}`,
 	defaultOgImage: featuredImageUrl, // Optional fallback
@@ -288,8 +301,9 @@ Built-in comments system:
 
 ```astro
 ---
-import { Comments, CommentForm } from "emdash/ui";
+import { Comments, CommentForm } from 'emdash/ui';
 ---
+
 <Comments collection="posts" contentId={post.data.id} threaded />
 <CommentForm collection="posts" contentId={post.data.id} />
 ```
@@ -302,21 +316,22 @@ Plugins can inject content into the `<head>` and `<body>` of pages. To support t
 
 ```astro
 ---
-import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
-import { createPublicPageContext } from "emdash/page";
+import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from 'emdash/ui';
+import { createPublicPageContext } from 'emdash/page';
 
 const pageCtx = createPublicPageContext({
 	Astro,
-	kind: content ? "content" : "custom",
-	pageType: "article",
+	kind: content ? 'content' : 'custom',
+	pageType: 'article',
 	title: fullTitle,
 	pageTitle: post.data.title,
 	description,
 	canonical,
 	image,
-	content: { collection: "posts", id: post.data.id, slug },
+	content: { collection: 'posts', id: post.data.id, slug },
 });
 ---
+
 <html>
 	<head>
 		<!-- your meta tags -->
@@ -342,17 +357,17 @@ Bylines are automatically attached to every entry by the query layer:
 
 ```astro
 {/* Primary author */}
-{post.data.byline && (
-	<span>{post.data.byline.displayName}</span>
-)}
+{post.data.byline && <span>{post.data.byline.displayName}</span>}
 
 {/* All credits (includes roleLabel for co-authors, guest essays, etc.) */}
-{post.data.bylines?.map(credit => (
-	<span>
-		{credit.byline.displayName}
-		{credit.roleLabel && <em> ({credit.roleLabel})</em>}
-	</span>
-))}
+{
+	post.data.bylines?.map((credit) => (
+		<span>
+			{credit.byline.displayName}
+			{credit.roleLabel && <em> ({credit.roleLabel})</em>}
+		</span>
+	))
+}
 ```
 
 - `entry.data.byline` -- primary `BylineSummary` or `null`
@@ -361,10 +376,10 @@ Bylines are automatically attached to every entry by the query layer:
 ### Standalone query functions
 
 ```typescript
-import { getByline, getBylineBySlug } from "emdash";
+import { getByline, getBylineBySlug } from 'emdash';
 
 // Look up a specific byline
-const byline = await getBylineBySlug("jane-doe");
+const byline = await getBylineBySlug('jane-doe');
 ```
 
 ### BylineSummary shape
@@ -388,7 +403,7 @@ interface ContentBylineCredit {
 	byline: BylineSummary;
 	sortOrder: number;
 	roleLabel: string | null; // e.g., "Guest essay", "Photographer"
-	source?: "explicit" | "inferred"; // "inferred" = fallback from author_id
+	source?: 'explicit' | 'inferred'; // "inferred" = fallback from author_id
 }
 ```
 
@@ -401,12 +416,12 @@ Cookie-based theme switching (no flash on load):
 <script is:inline>
 	(function () {
 		var c = document.cookie;
-		var i = c.indexOf("theme=");
-		var theme = i >= 0 ? c.slice(i + 6).split(";")[0] : null;
-		if (theme === "dark" || theme === "light") {
+		var i = c.indexOf('theme=');
+		var theme = i >= 0 ? c.slice(i + 6).split(';')[0] : null;
+		if (theme === 'dark' || theme === 'light') {
 			document.documentElement.classList.add(theme);
-		} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			document.documentElement.classList.add("dark");
+		} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark');
 		}
 	})();
 </script>
@@ -431,10 +446,15 @@ A typical base layout:
 
 ```astro
 ---
-import { getMenu, getEmDashCollection } from "emdash";
-import { WidgetArea, EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
-import { createPublicPageContext } from "emdash/page";
-import LiveSearch from "emdash/ui/search";
+import { getMenu, getEmDashCollection } from 'emdash';
+import {
+	WidgetArea,
+	EmDashHead,
+	EmDashBodyStart,
+	EmDashBodyEnd,
+} from 'emdash/ui';
+import { createPublicPageContext } from 'emdash/page';
+import LiveSearch from 'emdash/ui/search';
 
 interface Props {
 	title: string;
@@ -444,12 +464,12 @@ interface Props {
 }
 
 const { title, pageTitle, description, image, content } = Astro.props;
-const menu = await getMenu("primary");
+const menu = await getMenu('primary');
 
 const pageCtx = createPublicPageContext({
 	Astro,
-	kind: content ? "content" : "custom",
-	pageType: "website",
+	kind: content ? 'content' : 'custom',
+	pageType: 'website',
 	title,
 	pageTitle: pageTitle ?? title,
 	description,
@@ -457,6 +477,7 @@ const pageCtx = createPublicPageContext({
 	content,
 });
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -471,10 +492,8 @@ const pageCtx = createPublicPageContext({
 		<header>
 			<nav>
 				<a href="/">My Site</a>
-				<LiveSearch placeholder="Search..." collections={["posts", "pages"]} />
-				{menu?.items.map(item => (
-					<a href={item.url}>{item.label}</a>
-				))}
+				<LiveSearch placeholder="Search..." collections={['posts', 'pages']} />
+				{menu?.items.map((item) => <a href={item.url}>{item.label}</a>)}
 			</nav>
 		</header>
 		<main>

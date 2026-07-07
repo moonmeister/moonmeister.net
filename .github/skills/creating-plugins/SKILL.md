@@ -47,14 +47,14 @@ The simplest possible plugin -- just hooks:
 
 ```typescript
 // src/index.ts — descriptor factory, runs in Vite at build time
-import type { PluginDescriptor } from "emdash";
+import type { PluginDescriptor } from 'emdash';
 
 export function myPlugin(): PluginDescriptor {
 	return {
-		id: "my-plugin",
-		version: "1.0.0",
-		format: "standard",
-		entrypoint: "@my-org/my-plugin/sandbox",
+		id: 'my-plugin',
+		version: '1.0.0',
+		format: 'standard',
+		entrypoint: '@my-org/my-plugin/sandbox',
 		options: {},
 	};
 }
@@ -62,12 +62,12 @@ export function myPlugin(): PluginDescriptor {
 
 ```typescript
 // src/sandbox-entry.ts — plugin definition, runs at request time
-import { definePlugin } from "emdash";
-import type { PluginContext } from "emdash";
+import { definePlugin } from 'emdash';
+import type { PluginContext } from 'emdash';
 
 export default definePlugin({
 	hooks: {
-		"content:afterSave": {
+		'content:afterSave': {
 			handler: async (event: any, ctx: PluginContext) => {
 				ctx.log.info(`Saved ${event.collection}/${event.content.id}`);
 			},
@@ -97,7 +97,7 @@ Key differences from native format:
 The descriptor is imported in `astro.config.mjs` (Vite context):
 
 ```typescript
-import { myPlugin } from "@my-org/my-plugin";
+import { myPlugin } from '@my-org/my-plugin';
 
 export default defineConfig({
 	integrations: [
@@ -154,18 +154,18 @@ Write the same code. Develop locally in trusted mode (faster iteration, easier d
 
 ```typescript
 // src/sandbox-entry.ts -- works in both trusted and sandboxed modes
-import { definePlugin } from "emdash";
-import type { PluginContext } from "emdash";
+import { definePlugin } from 'emdash';
+import type { PluginContext } from 'emdash';
 
 export default definePlugin({
 	hooks: {
-		"content:afterSave": {
+		'content:afterSave': {
 			handler: async (event: any, ctx: PluginContext) => {
 				// Trusted: ctx.http present because descriptor declares network:request
 				// Sandboxed: ctx.http present and enforced via RPC bridge
 				if (!ctx.http) return;
-				await ctx.http.fetch("https://api.analytics.example.com/track", {
-					method: "POST",
+				await ctx.http.fetch('https://api.analytics.example.com/track', {
+					method: 'POST',
 					body: JSON.stringify({ contentId: event.content.id }),
 				});
 			},
@@ -206,13 +206,13 @@ Storage (`ctx.storage`) and KV (`ctx.kv`) are **always available** — no capabi
 // In the descriptor (index.ts)
 export function myPlugin(): PluginDescriptor {
 	return {
-		id: "my-plugin",
-		version: "1.0.0",
-		format: "standard",
-		entrypoint: "@my-org/my-plugin/sandbox",
+		id: 'my-plugin',
+		version: '1.0.0',
+		format: 'standard',
+		entrypoint: '@my-org/my-plugin/sandbox',
 		options: {},
-		capabilities: ["content:read", "network:request"],
-		allowedHosts: ["api.example.com", "*.googleapis.com"], // Wildcards supported
+		capabilities: ['content:read', 'network:request'],
+		allowedHosts: ['api.example.com', '*.googleapis.com'], // Wildcards supported
 	};
 }
 ```
@@ -289,38 +289,40 @@ See the reference files for detailed syntax:
 
 ```typescript
 // src/index.ts — descriptor factory, runs in Vite at build time
-import type { PluginDescriptor } from "emdash";
+import type { PluginDescriptor } from 'emdash';
 
 export function submissionsPlugin(): PluginDescriptor {
 	return {
-		id: "submissions",
-		version: "1.0.0",
-		format: "standard",
-		entrypoint: "@my-org/plugin-submissions/sandbox",
+		id: 'submissions',
+		version: '1.0.0',
+		format: 'standard',
+		entrypoint: '@my-org/plugin-submissions/sandbox',
 		options: {},
-		capabilities: ["content:read"],
+		capabilities: ['content:read'],
 		storage: {
 			submissions: {
-				indexes: ["formId", "status", "createdAt"],
+				indexes: ['formId', 'status', 'createdAt'],
 			},
 		},
-		adminPages: [{ path: "/submissions", label: "Submissions", icon: "list" }],
-		adminWidgets: [{ id: "recent-submissions", title: "Recent Submissions", size: "half" }],
+		adminPages: [{ path: '/submissions', label: 'Submissions', icon: 'list' }],
+		adminWidgets: [
+			{ id: 'recent-submissions', title: 'Recent Submissions', size: 'half' },
+		],
 	};
 }
 ```
 
 ```typescript
 // src/sandbox-entry.ts — plugin definition, runs at request time
-import { definePlugin } from "emdash";
-import type { PluginContext } from "emdash";
+import { definePlugin } from 'emdash';
+import type { PluginContext } from 'emdash';
 
 export default definePlugin({
 	hooks: {
-		"plugin:install": {
+		'plugin:install': {
 			handler: async (_event: any, ctx: PluginContext) => {
-				ctx.log.info("Submissions plugin installed");
-				await ctx.kv.set("settings:maxSubmissions", 1000);
+				ctx.log.info('Submissions plugin installed');
+				await ctx.kv.set('settings:maxSubmissions', 1000);
 			},
 		},
 	},
@@ -332,17 +334,18 @@ export default definePlugin({
 				const { formId, ...data } = routeCtx.input as Record<string, unknown>;
 
 				const count = await ctx.storage.submissions.count({ formId });
-				const max = (await ctx.kv.get<number>("settings:maxSubmissions")) ?? 1000;
+				const max =
+					(await ctx.kv.get<number>('settings:maxSubmissions')) ?? 1000;
 
 				if (count >= max) {
-					return { success: false, error: "Submission limit reached" };
+					return { success: false, error: 'Submission limit reached' };
 				}
 
 				const id = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 				await ctx.storage.submissions.put(id, {
 					formId,
 					data,
-					status: "pending",
+					status: 'pending',
 					createdAt: new Date().toISOString(),
 				});
 
@@ -355,18 +358,24 @@ export default definePlugin({
 				const url = new URL(routeCtx.request.url);
 				const limit = Math.max(
 					1,
-					Math.min(parseInt(url.searchParams.get("limit") || "50", 10) || 50, 100),
+					Math.min(
+						parseInt(url.searchParams.get('limit') || '50', 10) || 50,
+						100
+					)
 				);
-				const cursor = url.searchParams.get("cursor") || undefined;
+				const cursor = url.searchParams.get('cursor') || undefined;
 
 				const result = await ctx.storage.submissions.query({
-					orderBy: { createdAt: "desc" },
+					orderBy: { createdAt: 'desc' },
 					limit,
 					cursor,
 				});
 
 				return {
-					items: result.items.map((item: any) => ({ id: item.id, ...item.data })),
+					items: result.items.map((item: any) => ({
+						id: item.id,
+						...item.data,
+					})),
 					cursor: result.cursor,
 					hasMore: result.hasMore,
 				};
@@ -378,21 +387,24 @@ export default definePlugin({
 			handler: async (routeCtx: any, ctx: PluginContext) => {
 				const interaction = routeCtx.input as { type: string; page?: string };
 
-				if (interaction.type === "page_load" && interaction.page === "/submissions") {
+				if (
+					interaction.type === 'page_load' &&
+					interaction.page === '/submissions'
+				) {
 					const result = await ctx.storage.submissions.query({
-						orderBy: { createdAt: "desc" },
+						orderBy: { createdAt: 'desc' },
 						limit: 50,
 					});
 					return {
 						blocks: [
-							{ type: "header", text: "Submissions" },
+							{ type: 'header', text: 'Submissions' },
 							{
-								type: "table",
-								blockId: "submissions-table",
+								type: 'table',
+								blockId: 'submissions-table',
 								columns: [
-									{ key: "formId", label: "Form", format: "text" },
-									{ key: "status", label: "Status", format: "badge" },
-									{ key: "createdAt", label: "Date", format: "relative_time" },
+									{ key: 'formId', label: 'Form', format: 'text' },
+									{ key: 'status', label: 'Status', format: 'badge' },
+									{ key: 'createdAt', label: 'Date', format: 'relative_time' },
 								],
 								rows: result.items.map((item: any) => item.data),
 							},
@@ -432,14 +444,14 @@ Capabilities are declared in the **descriptor** (not in `definePlugin()` for sta
 // In the descriptor
 export function myPlugin(): PluginDescriptor {
 	return {
-		id: "my-plugin",
-		version: "1.0.0",
-		format: "standard",
-		entrypoint: "@my-org/my-plugin/sandbox",
+		id: 'my-plugin',
+		version: '1.0.0',
+		format: 'standard',
+		entrypoint: '@my-org/my-plugin/sandbox',
 		options: {},
-		capabilities: ["content:read", "network:request"],
-		allowedHosts: ["api.example.com"],
-		storage: { events: { indexes: ["timestamp"] } },
+		capabilities: ['content:read', 'network:request'],
+		allowedHosts: ['api.example.com'],
+		storage: { events: { indexes: ['timestamp'] } },
 	};
 }
 ```

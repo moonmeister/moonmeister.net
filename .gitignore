@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # Cloudflare
 .wrangler/
+
+# EmDash generated artifacts
+.emdash/schema.json
+.emdash/types.ts

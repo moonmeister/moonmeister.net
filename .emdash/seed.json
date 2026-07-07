@@ -1,0 +1,57 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "collections": [
+    {
+      "slug": "posts",
+      "label": "Posts",
+      "labelSingular": "Post",
+      "supports": [
+        "drafts",
+        "revisions",
+        "search",
+        "preview"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "unique": false
+        },
+        {
+          "slug": "body",
+          "label": "Content",
+          "type": "portableText",
+          "required": false,
+          "unique": false
+        }
+      ]
+    }
+  ],
+  "content": {
+    "posts": [
+      {
+        "id": "post-hello-world",
+        "slug": "hello-world",
+        "status": "published",
+        "data": {
+          "title": "Hello World",
+          "body": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Welcome to the blog. This is your default seeded post."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

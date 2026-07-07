@@ -23,6 +23,11 @@
 			"bucket_name": "moonmeister-media",
 		},
 	],
+	"send_email": [
+		{
+			"name": "EMAIL",
+		},
+	],
 	// Observability
 	"observability": {
 		"enabled": true,

@@ -21,6 +21,18 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 
+## EmDash Email Sending (Cloudflare)
+
+This site is configured to use EmDash's Cloudflare email provider plugin when
+`EMDASH_EMAIL_FROM` is set.
+
+1. Configure sender env vars in your local `.env` (see `.env.example`).
+2. Onboard your sender domain in Cloudflare Email Service.
+3. Keep the Worker `send_email` binding in `wrangler.jsonc` as `EMAIL`.
+4. Deploy and then activate/select the provider in EmDash Admin:
+   Extensions -> activate Cloudflare Email provider
+   Settings -> Email -> select that provider
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:

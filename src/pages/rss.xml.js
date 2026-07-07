@@ -18,7 +18,7 @@ export async function GET(context) {
 		// See "Generating items" section for examples using content collections and glob imports
 		items: posts.map((post) => ({
 			title: post.data.title,
-			pubDate: post.data.date,
+			pubDate: post.data.publishedAt,
 			link: `${context.site}blog/${post.slug}/`,
 		})),
 		// (optional) inject custom xml

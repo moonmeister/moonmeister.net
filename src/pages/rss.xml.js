@@ -4,6 +4,7 @@ import { getEmDashCollection } from 'emdash';
 export async function GET(context) {
 	const { entries: posts, cacheHint } = await getEmDashCollection('posts', {
 		status: 'published',
+		orderBy: { published_at: 'desc' },
 	});
 
 	context.cache.set(cacheHint);

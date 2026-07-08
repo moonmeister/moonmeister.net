@@ -73,9 +73,9 @@ const readingDuration = `PT${readingMinutes}M`;
 				components={{ type: { code: PortableTextCode } }}
 			/>
 		</div>
-	</article>
 
-	<footer class="border-t text-sm text-gray-600 py-6">
-		<Tags tags={entry.data.terms?.tag ?? []} />
-	</footer>
+		<footer class="border-t text-sm text-gray-600 py-6">
+			<Tags tags={entry.data.terms?.tag ?? []} />
+		</footer>
+	</article>
 </BaseLayout>

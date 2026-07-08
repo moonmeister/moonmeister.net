@@ -1,35 +1,26 @@
 ---
-import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getEmDashEntry } from 'emdash';
+import { PortableText } from 'emdash/ui';
 
 import { Edit3Icon, ClockIcon } from 'astro-feather';
-import readingTime from 'reading-time';
+import { getReadingTime, formatReadingTime } from '../../utils/reading-time';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BaseHead from '../../components/BaseHead.astro';
-// import Blocks from '../../components/Blocks.astro';
+import PortableTextCode from '../../components/PortableTextCode.astro';
 import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-import 'astro-starlight-remark-asides/styles.css';
+const { slug } = Astro.params;
+const { entry } = await getEmDashEntry('posts', slug!);
 
-export async function getStaticPaths() {
-	const blogEntries = await getCollection('posts');
-	return blogEntries.map((post: CollectionEntry<'posts'>) => ({
-		params: { slug: post.id },
-		props: { entry: post },
-	}));
+if (!entry) {
+	return Astro.redirect('/404');
 }
 
-export const prerender = true;
-
-type Props = {
-	entry: CollectionEntry<'posts'>;
-};
-
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-
-const { text: readingText } = readingTime(entry.body ?? '');
+const readingMinutes = getReadingTime(entry.data.body);
+const readingText = formatReadingTime(readingMinutes);
+const readingDuration = `PT${readingMinutes}M`;
 ---
 
 <BaseLayout>
@@ -66,18 +57,25 @@ const { text: readingText } = readingTime(entry.body ?? '');
 							aria-hidden
 							customClasses="inline-svg text-gray-700 mr-2"
 						/>
-						{readingText} · <FormattedDate date={new Date(entry.data.date)} />
+						<time datetime={readingDuration}>
+							{readingText}
+						</time>
+						·
+						<FormattedDate date={entry.data.publishedAt!} />
 					</p>
 				</div>
 			</div>
 		</header>
 
-		<div id="blog-content" class="prose my-6">
-			<Content />
+		<div class="prose max-w-none">
+			<PortableText
+				value={entry.data.body}
+				components={{ type: { code: PortableTextCode } }}
+			/>
 		</div>
-
-		<footer class="border-t text-sm text-gray-600 py-6">
-			<Tags tags={entry.data.tags ?? []} />
-		</footer>
 	</article>
+
+	<footer class="border-t text-sm text-gray-600 py-6">
+		<Tags tags={entry.data.terms?.tag ?? []} />
+	</footer>
 </BaseLayout>

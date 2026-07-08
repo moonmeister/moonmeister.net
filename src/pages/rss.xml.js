@@ -1,8 +1,10 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getEmDashCollection } from 'emdash';
 
 export async function GET(context) {
-	const posts = await getCollection('posts');
+	const { entries: posts } = await getEmDashCollection('posts', {
+		status: 'published',
+	});
 
 	return rss({
 		// `<title>` field in output xml
@@ -16,8 +18,8 @@ export async function GET(context) {
 		// See "Generating items" section for examples using content collections and glob imports
 		items: posts.map((post) => ({
 			title: post.data.title,
-			pubDate: post.data.date,
-			link: `${context.site}blog/${post.id}/`,
+			pubDate: post.data.publishedAt,
+			link: `${context.site}blog/${post.slug}/`,
 		})),
 		// (optional) inject custom xml
 		customData: `<language>en-us</language>`,

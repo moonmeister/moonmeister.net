@@ -1,0 +1,56 @@
+---
+import { marked } from 'marked';
+import type { AsideVariant } from '../index.ts';
+
+export interface Props {
+	node: {
+		_type: 'aside';
+		variant?: AsideVariant;
+		title?: string;
+		body?: string;
+	};
+}
+
+const { node } = Astro.props;
+
+const variant: AsideVariant = (node.variant ?? 'note') as AsideVariant;
+
+const LABELS: Record<AsideVariant, string> = {
+	note: 'Note',
+	tip: 'Tip',
+	caution: 'Caution',
+	danger: 'Danger',
+};
+
+const STYLES: Record<AsideVariant, { box: string; title: string }> = {
+	note: {
+		box: 'border-sky-400 bg-sky-50 text-sky-900',
+		title: 'text-sky-700',
+	},
+	tip: {
+		box: 'border-emerald-400 bg-emerald-50 text-emerald-900',
+		title: 'text-emerald-700',
+	},
+	caution: {
+		box: 'border-amber-400 bg-amber-50 text-amber-900',
+		title: 'text-amber-700',
+	},
+	danger: {
+		box: 'border-rose-400 bg-rose-50 text-rose-900',
+		title: 'text-rose-700',
+	},
+};
+
+const styles = STYLES[variant] ?? STYLES.note;
+const title = node.title?.trim() || LABELS[variant];
+const bodyHtml = node.body ? marked.parse(node.body, { async: false }) : '';
+---
+
+<aside
+	class:list={['not-prose my-6 border-l-4 rounded-r-md px-4 py-3', styles.box]}
+	role="note"
+	aria-label={title}
+>
+	<p class:list={['font-semibold mb-1', styles.title]}>{title}</p>
+	<div class="prose prose-sm max-w-none" set:html={bodyHtml} />
+</aside>

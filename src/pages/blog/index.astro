@@ -1,11 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+import { getEmDashCollection } from 'emdash';
 
 import ArchivePage from '../../components/ArchivePage.astro';
 
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+const { entries: posts } = await getEmDashCollection('posts', {
+	status: 'published',
+});
+
+const sortedPosts = posts.toSorted(
+	(a, b) =>
+		new Date(b.data.publishedAt!).valueOf() -
+		new Date(a.data.publishedAt!).valueOf()
 );
 ---
 
-<ArchivePage pageTitle={'Blog'} {posts} />
+<ArchivePage pageTitle={'Blog'} posts={sortedPosts} />

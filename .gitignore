@@ -20,5 +20,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-#Netlify
-.netlify/
+# Cloudflare
+.wrangler/
+
+# EmDash generated artifacts
+.emdash/schema.json
+.emdash/types.ts

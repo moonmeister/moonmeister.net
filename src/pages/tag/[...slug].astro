@@ -10,14 +10,10 @@ const term = await getTerm('tag', tagSlug);
 const { entries: filteredPosts } = await getEmDashCollection('posts', {
 	status: 'published',
 	where: { tag: tagSlug },
+	orderBy: { published_at: 'desc' },
 });
-
-// Sort posts by date (newest first)
-const posts = filteredPosts.toSorted(
-	(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
-);
 
 const pageTitle = term?.label ?? tagSlug;
 ---
 
-<ArchivePage {pageTitle} {posts} />
+<ArchivePage {pageTitle} posts={filteredPosts} />

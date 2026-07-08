@@ -12,11 +12,13 @@ import Tags from '../../components/Tags.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const { slug } = Astro.params;
-const { entry } = await getEmDashEntry('posts', slug!);
+const { entry, cacheHint } = await getEmDashEntry('posts', slug!);
 
 if (!entry) {
 	return Astro.redirect('/404');
 }
+
+Astro.cache.set(cacheHint);
 
 const readingMinutes = getReadingTime(entry.data.body);
 const readingText = formatReadingTime(readingMinutes);

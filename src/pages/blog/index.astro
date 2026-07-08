@@ -3,10 +3,12 @@ import { getEmDashCollection } from 'emdash';
 
 import ArchivePage from '../../components/ArchivePage.astro';
 
-const { entries: posts } = await getEmDashCollection('posts', {
+const { entries: posts, cacheHint } = await getEmDashCollection('posts', {
 	status: 'published',
 	orderBy: { published_at: 'desc' },
 });
+
+Astro.cache.set(cacheHint);
 ---
 
 <ArchivePage pageTitle={'Blog'} posts={posts} />

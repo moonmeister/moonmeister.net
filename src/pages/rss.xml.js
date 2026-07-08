@@ -2,9 +2,11 @@ import rss from '@astrojs/rss';
 import { getEmDashCollection } from 'emdash';
 
 export async function GET(context) {
-	const { entries: posts } = await getEmDashCollection('posts', {
+	const { entries: posts, cacheHint } = await getEmDashCollection('posts', {
 		status: 'published',
 	});
+
+	context.cache.set(cacheHint);
 
 	return rss({
 		// `<title>` field in output xml

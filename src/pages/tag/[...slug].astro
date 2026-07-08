@@ -7,11 +7,16 @@ const tagSlug = slug!;
 
 const term = await getTerm('tag', tagSlug);
 
-const { entries: filteredPosts } = await getEmDashCollection('posts', {
-	status: 'published',
-	where: { tag: tagSlug },
-	orderBy: { published_at: 'desc' },
-});
+const { entries: filteredPosts, cacheHint } = await getEmDashCollection(
+	'posts',
+	{
+		status: 'published',
+		where: { tag: tagSlug },
+		orderBy: { published_at: 'desc' },
+	}
+);
+
+Astro.cache.set(cacheHint);
 
 const pageTitle = term?.label ?? tagSlug;
 ---

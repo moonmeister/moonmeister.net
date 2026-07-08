@@ -661,6 +661,9 @@ packages:
   '@cspell/dict-data-science@2.0.14':
     resolution: {integrity: sha512-jl6Ds4u5u5JT+yY30pWQpAbdCHfy3lCcNkLbpL/AZKoUaLEoXbaYsps9xQtvD7DyaiXxiLZkdH2yHHXtoFtZyg==}
 
+  '@cspell/dict-data-science@2.0.14':
+    resolution: {integrity: sha512-jl6Ds4u5u5JT+yY30pWQpAbdCHfy3lCcNkLbpL/AZKoUaLEoXbaYsps9xQtvD7DyaiXxiLZkdH2yHHXtoFtZyg==}
+
   '@cspell/dict-django@4.1.6':
     resolution: {integrity: sha512-SdbSFDGy9ulETqNz15oWv2+kpWLlk8DJYd573xhIkeRdcXOjskRuxjSZPKfW7O3NxN/KEf3gm3IevVOiNuFS+w==}
 
@@ -6370,6 +6373,8 @@ snapshots:
   '@cspell/dict-css@4.1.2': {}
 
   '@cspell/dict-dart@2.3.2': {}
+
+  '@cspell/dict-data-science@2.0.14': {}
 
   '@cspell/dict-data-science@2.0.14': {}
 

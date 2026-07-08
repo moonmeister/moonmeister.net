@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -26,3 +27,4 @@ pnpm-debug.log*
 # EmDash generated artifacts
 .emdash/schema.json
 .emdash/types.ts
+emdash-env.d.ts

@@ -12,3 +12,4 @@ allowBuilds:
 
 patchedDependencies:
   '@emdash-cms/cloudflare@0.27.0': patches/@emdash-cms__cloudflare@0.27.0.patch
+  '@emdash-cms/plugin-atproto@0.2.1': patches/@emdash-cms__plugin-atproto@0.2.1.patch

@@ -7,6 +7,10 @@ const tagSlug = slug!;
 
 const term = await getTerm('tag', tagSlug);
 
+if (!term) {
+	return Astro.redirect('/404');
+}
+
 const { entries: filteredPosts, cacheHint } = await getEmDashCollection(
 	'posts',
 	{
@@ -18,7 +22,7 @@ const { entries: filteredPosts, cacheHint } = await getEmDashCollection(
 
 Astro.cache.set(cacheHint);
 
-const pageTitle = term?.label ?? tagSlug;
+const pageTitle = term.label;
 ---
 
 <ArchivePage {pageTitle} posts={filteredPosts} />

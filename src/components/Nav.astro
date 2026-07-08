@@ -1,16 +1,8 @@
 ---
-const menuItems = [
-	{
-		label: 'Home',
-		title: 'Home',
-		url: '/',
-	},
-	{
-		label: 'Blog',
-		title: 'Blog',
-		url: '/blog',
-	},
-];
+import { getMenu } from 'emdash';
+
+const primaryMenu = await getMenu('primary');
+const menuItems = primaryMenu?.items ?? [];
 
 const currentPath = Astro.url.pathname;
 ---
@@ -20,7 +12,7 @@ const currentPath = Astro.url.pathname;
 		class="m-0 flex flex-wrap flex-row justify-center items-center md:justify-end px-10 pt-4"
 	>
 		{
-			menuItems?.map(({ label, title, url }) => {
+			menuItems.map(({ label, url, target }) => {
 				const isActive =
 					currentPath === url || (url !== '/' && currentPath.startsWith(url));
 				return (
@@ -32,8 +24,9 @@ const currentPath = Astro.url.pathname;
 									? 'active-links text-pink-600 relative content-box'
 									: 'text-blue-600',
 							]}
-							title={title}
+							title={label}
 							href={url}
+							target={target}
 						>
 							{label}
 						</a>

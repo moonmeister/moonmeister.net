@@ -47,6 +47,24 @@
       ]
     }
   ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary Navigation",
+      "items": [
+        {
+          "type": "custom",
+          "label": "Home",
+          "url": "/"
+        },
+        {
+          "type": "custom",
+          "label": "Blog",
+          "url": "/blog"
+        }
+      ]
+    }
+  ],
   "content": {
     "posts": [
       {
@@ -91,6 +109,11 @@
                 }
               ]
             }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "seeded"
           ]
         }
       }

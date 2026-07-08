@@ -6,7 +6,12 @@
       "slug": "posts",
       "label": "Posts",
       "labelSingular": "Post",
-      "supports": ["drafts", "revisions", "search", "preview"],
+      "supports": [
+        "drafts",
+        "revisions",
+        "search",
+        "preview"
+      ],
       "fields": [
         {
           "slug": "title",
@@ -21,6 +26,23 @@
           "type": "portableText",
           "required": false,
           "unique": false
+        }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "tag",
+      "label": "Tags",
+      "labelSingular": "Tag",
+      "hierarchical": false,
+      "collections": [
+        "posts"
+      ],
+      "terms": [
+        {
+          "slug": "seeded",
+          "label": "Seeded"
         }
       ]
     }
@@ -41,6 +63,31 @@
                 {
                   "_type": "span",
                   "text": "Welcome to the blog. This is your default seeded post."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "seeded"
+          ]
+        }
+      },
+      {
+        "id": "post-sorting-check",
+        "slug": "sorting-check",
+        "status": "published",
+        "data": {
+          "title": "Sorting Check",
+          "body": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "This second seeded post exists to validate published-date ordering in blog and tag archives."
                 }
               ]
             }

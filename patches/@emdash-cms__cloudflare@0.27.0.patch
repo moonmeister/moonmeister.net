@@ -1,0 +1,83 @@
+diff --git a/dist/plugins/index.d.mts b/dist/plugins/index.d.mts
+index 3beb131d06b84886055a5c5adf56032071337758..63cb9b25d66270251381b4fcbba2c075846dbf95 100644
+--- a/dist/plugins/index.d.mts
++++ b/dist/plugins/index.d.mts
+@@ -1,4 +1,4 @@
+-import { PluginContext, PluginDefinition } from "emdash";
++import { PluginContext, PluginDefinition, PluginDescriptor } from "emdash";
+ import { EmailDeliverEvent } from "emdash/plugin";
+ 
+ //#region src/plugins/vectorize-search.d.ts
+@@ -68,6 +68,10 @@ declare function createCloudflareEmailDeliver(config: CloudflareEmailConfig, loa
+  * Pass it to the emdash() integration's plugins array, activate it under
+  * Admin → Extensions, then select it under Settings → Email.
+  */
+-declare function cloudflareEmail(config: CloudflareEmailConfig): PluginDefinition;
++declare function cloudflareEmail(config: CloudflareEmailConfig): PluginDescriptor<CloudflareEmailConfig>;
++/**
++ * Runtime factory loaded by the EmDash Astro integration from `entrypoint`.
++ */
++declare function createPlugin(options?: CloudflareEmailConfig): PluginDefinition;
+ //#endregion
+-export { type CloudflareEmailConfig, type VectorizeSearchConfig, cloudflareEmail, createCloudflareEmailDeliver, vectorizeSearch };
+\ No newline at end of file
++export { type CloudflareEmailConfig, type VectorizeSearchConfig, cloudflareEmail, createCloudflareEmailDeliver, createPlugin, vectorizeSearch };
+diff --git a/dist/plugins/index.mjs b/dist/plugins/index.mjs
+index 770a44a8f6688fc6405aed547a49f2d391e62bc1..f3c52ca869992b224e07f163610e8c51f99cc7d5 100644
+--- a/dist/plugins/index.mjs
++++ b/dist/plugins/index.mjs
+@@ -1,4 +1,4 @@
+-import { extractPlainText } from "emdash";
++import { extractPlainText, definePlugin } from "emdash";
+ 
+ //#region src/plugins/vectorize-search.ts
+ /** Safely extract a string from an unknown value */
+@@ -205,6 +205,20 @@ function createCloudflareEmailDeliver(config, loadEnv = loadWorkerEnv) {
+ 		});
+ 	};
+ }
++
++function createCloudflareEmailPlugin(config) {
++	const fromEmail = typeof config.from === "string" ? config.from : config.from?.email;
++	if (!fromEmail || !fromEmail.includes("@")) throw new Error("[cloudflare-email] config.from is required (e.g. { from: \"cms@mails.example.com\" }) — Cloudflare Email Sending rejects messages without a verified sender address.");
++	return definePlugin({
++		id: "cloudflare-email",
++		version: "1.0.0",
++		capabilities: ["hooks.email-transport:register"],
++		hooks: { "email:deliver": {
++			exclusive: true,
++			handler: createCloudflareEmailDeliver(config)
++		} }
++	});
++}
+ /**
+ * Create a Cloudflare Email Sending provider plugin definition.
+ *
+@@ -212,18 +226,18 @@ function createCloudflareEmailDeliver(config, loadEnv = loadWorkerEnv) {
+ * Admin → Extensions, then select it under Settings → Email.
+ */
+ function cloudflareEmail(config) {
+-	const fromEmail = typeof config.from === "string" ? config.from : config.from?.email;
+-	if (!fromEmail || !fromEmail.includes("@")) throw new Error("[cloudflare-email] config.from is required (e.g. { from: \"cms@mails.example.com\" }) — Cloudflare Email Sending rejects messages without a verified sender address.");
+ 	return {
+ 		id: "cloudflare-email",
+ 		version: "1.0.0",
+-		capabilities: ["hooks.email-transport:register"],
+-		hooks: { "email:deliver": {
+-			exclusive: true,
+-			handler: createCloudflareEmailDeliver(config)
+-		} }
++		format: "native",
++		entrypoint: "@emdash-cms/cloudflare/plugins",
++		options: config
+ 	};
+ }
+ 
++function createPlugin(options = {}) {
++	return createCloudflareEmailPlugin(options);
++}
++
+ //#endregion
+-export { cloudflareEmail, createCloudflareEmailDeliver, vectorizeSearch };
+\ No newline at end of file
++export { cloudflareEmail, createCloudflareEmailDeliver, createPlugin, vectorizeSearch };

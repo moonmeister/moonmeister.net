@@ -9,3 +9,6 @@ allowBuilds:
   sharp: true
   unix-dgram: true
   workerd: false
+
+patchedDependencies:
+  '@emdash-cms/cloudflare@0.27.0': patches/@emdash-cms__cloudflare@0.27.0.patch

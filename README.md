@@ -33,6 +33,12 @@ This site is configured to use EmDash's Cloudflare email provider plugin when
    Extensions -> activate Cloudflare Email provider
    Settings -> Email -> select that provider
 
+## TODO
+
+- Replace the blog post route's fallback/derived meta description with first-class EmDash-managed excerpt or SEO metadata.
+- Decide whether menu and taxonomy routes should get manual Astro cache tags, or wait for EmDash to expose public `cacheHint` support for `getMenu()` and `getTerm()`.
+- Implement site search for posts and pages.
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:

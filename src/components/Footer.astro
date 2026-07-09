@@ -1,56 +1,92 @@
 ---
+import { getSiteSetting } from 'emdash';
 import SocialLink from './SocialLink.astro';
 
-const socials = [
+const social = await getSiteSetting('social');
+
+type SocialLinkItem = {
+	name: string;
+	url: string;
+	primaryColor: string;
+	textColor: string;
+};
+
+const platforms = [
 	{
+		key: 'github',
 		name: 'GitHub',
-		url: 'https://github.com/moonmeister',
+		baseUrl: 'https://github.com/',
 		primaryColor: '#24292e',
 		textColor: '#fafbfc',
 	},
 	{
+		key: 'linkedin',
 		name: 'LinkedIn',
-		url: 'https://linkedin.com/in/aj-moon/',
+		baseUrl: 'https://linkedin.com/in/',
 		primaryColor: '#2867b2',
 		textColor: '#ffffff',
 	},
 	{
+		key: 'twitter',
 		name: 'Twitter',
-		url: 'https://twitter.com/moon_meister',
+		baseUrl: 'https://twitter.com/',
 		primaryColor: '#1da1f2',
 		textColor: '#14171a',
 	},
-];
+] as const;
+
+const socials: SocialLinkItem[] = platforms.flatMap(
+	({ key, name, baseUrl, primaryColor, textColor }) => {
+		const value = social?.[key];
+
+		if (!value) {
+			return [];
+		}
+
+		return [
+			{
+				name,
+				url: `${baseUrl}${value}`,
+				primaryColor,
+				textColor,
+			},
+		];
+	}
+);
+
+socials.push({
+	name: 'Bluesky',
+	url: 'https://bsky.app/profile/moonmeister.net',
+	primaryColor: '#0F89FF',
+	textColor: '#ffffff',
+});
 ---
 
 <section class="flex flex-col items-center my-16" id="footer-right">
-	<ul class="social justify-center flex flex-wrap">
-		{
-			socials.map(({ name, url, textColor, primaryColor }) => {
-				return (
-					<li>
-						<SocialLink
-							class="inline-block mb-2 shadow-lg can-hover:transform can-hover:transition-transform can-hover:duration-100 can-hover:ease-out can-hover:hover:shadow-lg can-hover:hover:-translate-y-1 can-hover:hover:ease-in"
-							title={name}
-							{url}
-							{primaryColor}
-							{textColor}
-						/>
-					</li>
-				);
-			})
-		}
-	</ul>
+	{
+		socials.length > 0 && (
+			<ul class="social justify-center flex flex-wrap">
+				{socials.map(({ name, url, textColor, primaryColor }) => {
+					return (
+						<li>
+							<SocialLink
+								class="inline-block mb-2 shadow-lg can-hover:transform can-hover:transition-transform can-hover:duration-100 can-hover:ease-out can-hover:hover:shadow-lg can-hover:hover:-translate-y-1 can-hover:hover:ease-in"
+								title={name}
+								{url}
+								{primaryColor}
+								{textColor}
+							/>
+						</li>
+					);
+				})}
+			</ul>
+		)
+	}
 
 	<p class="justify-inherit display-inherit mt-8 tracking-tight">
 		&copy;{new Date().getFullYear()} Alex Moon. Built with&nbsp;
-		<a
-			aria-label="Astro Site"
-			rel="noopener"
-			target="_blank"
-			href="https://astro.build"
-		>
-			Astro</a
+		<a aria-label="Emdash CMS" target="_blank" href="https://emdashcms.com/">
+			Emdash</a
 		>
 		.
 	</p>

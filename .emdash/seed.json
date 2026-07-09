@@ -3,7 +3,12 @@
   "version": "1",
   "settings": {
     "title": "Stevie Wonder",
-    "tagline": "Notes on software, systems, and building on the web."
+    "tagline": "Notes on software, systems, and building on the web.",
+    "social": {
+      "github": "moonmeister",
+      "linkedin": "aj-moon",
+      "twitter": "moon_meister"
+    }
   },
   "collections": [
     {

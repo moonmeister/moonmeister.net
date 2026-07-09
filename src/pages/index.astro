@@ -1,45 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BaseHead from '../components/BaseHead.astro';
+import { getEmDashEntry, getSiteSettings } from 'emdash';
+import { Image as EmDashImage, PortableText } from 'emdash/ui';
 
-import { Image } from 'astro:assets';
-import headshot from '../assets/headshot.jpg';
+const { entry: homePage, cacheHint } = await getEmDashEntry('pages', 'home');
+const siteSettings = await getSiteSettings();
+const siteTitle = siteSettings.title ?? 'Site';
+const siteDescription = siteSettings.tagline ?? '';
 
-import { SITE_DESCRIPTION } from '../consts';
+if (!homePage) {
+	return Astro.redirect('/404');
+}
+
+Astro.cache.set(cacheHint);
 ---
 
 <BaseLayout>
-	<BaseHead slot="head" title="Alex Moon" description={SITE_DESCRIPTION} />
+	<BaseHead slot="head" title={siteTitle} description={siteDescription} />
 	<section
 		class="floating p-1 pt-8 md:p-8 flex flex-col md:flex-row-reverse items-center justify-between"
 	>
-		<figure
-			class="flex sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg"
-		>
-			<Image
-				alt={'headshot of Alex Moon'}
-				src={headshot}
-				width={400}
-				loading="eager"
-			/>
-		</figure>
+		{
+			homePage.data.hero_image && (
+				<figure class="flex sm:w-1/2 md:w-4/12 overflow-hidden w-4/5 rounded-full shadow-lg">
+					<EmDashImage image={homePage.data.hero_image} />
+				</figure>
+			)
+		}
 		<div class="prose md:w-7/12 m-6">
-			<p>
-				Hello! I am <b>Alex Moon</b> – a full-stack software developer and technologist.
-				My career has spanned a help desk, systems administration, software development,
-				developer relations, and more. I currently work as a developer advocate at&nbsp;
-				<a href="https://wpengine.com" target="_blank" rel="nofollow"
-					>WP Engine</a
-				>.
-			</p>
-			<p>
-				When I am not working, I can be found hiking, skiing, contributing to
-				Open Source, or wishing I was sailing (you can read more about my
-				outdoor adventures on my <a
-					href="https://www.gurugoes.net"
-					target="_blank"><u>personal blog</u></a
-				>).
-			</p>
+			<PortableText value={homePage.data.body ?? []} />
 		</div>
 	</section>
 </BaseLayout>

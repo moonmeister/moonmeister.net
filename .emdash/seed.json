@@ -1,6 +1,10 @@
 {
   "$schema": "https://emdashcms.com/seed.schema.json",
   "version": "1",
+  "settings": {
+    "title": "Stevie Wonder",
+    "tagline": "Notes on software, systems, and building on the web."
+  },
   "collections": [
     {
       "slug": "posts",
@@ -24,6 +28,39 @@
           "slug": "body",
           "label": "Content",
           "type": "portableText",
+          "required": false,
+          "unique": false
+        }
+      ]
+    },
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "unique": false
+        },
+        {
+          "slug": "body",
+          "label": "Content",
+          "type": "portableText",
+          "required": false,
+          "unique": false
+        },
+        {
+          "slug": "hero_image",
+          "label": "Hero Image",
+          "type": "image",
           "required": false,
           "unique": false
         }
@@ -66,6 +103,55 @@
     }
   ],
   "content": {
+    "pages": [
+      {
+        "id": "page-home",
+        "slug": "home",
+        "status": "published",
+        "data": {
+          "title": "Welcome",
+          "hero_image": {
+            "$media": {
+              "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=1200&fit=crop",
+              "alt": "A laptop, notebook, and coffee on a desk",
+              "filename": "home-hero.jpg"
+            }
+          },
+          "body": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Welcome to your new site. This homepage is managed in EmDash so you can update it without changing code."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Use this space to introduce the site, explain what readers will find here, and point them toward the most important content."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "You can replace this seeded copy and image from the EmDash admin once the site is initialized."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
     "posts": [
       {
         "id": "post-hello-world",

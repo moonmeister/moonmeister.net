@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { getSiteSettings } from 'emdash';
 
 export interface Props {
 	title: string;
@@ -8,10 +8,12 @@ export interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteSettings = await getSiteSettings();
+const siteTitle = siteSettings.title ?? 'Site';
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 
-const templateTitle = `${title} | ${SITE_TITLE}`;
+const templateTitle = `${title} | ${siteTitle}`;
 ---
 
 <!-- Global Metadata -->

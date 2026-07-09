@@ -1,10 +1,10 @@
 ---
+import { getSiteSettings } from 'emdash';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Tags from '../components/Tags.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-
-import { SITE_DESCRIPTION } from '../consts';
 
 import type { ContentEntry } from 'emdash';
 import type { Post } from '../../emdash-env';
@@ -14,10 +14,12 @@ type Props = {
 	posts: ContentEntry<Post>[];
 };
 const { pageTitle, posts } = Astro.props;
+const siteSettings = await getSiteSettings();
+const siteDescription = siteSettings.tagline ?? '';
 ---
 
 <BaseLayout>
-	<BaseHead slot="head" title={pageTitle} description={SITE_DESCRIPTION} />
+	<BaseHead slot="head" title={pageTitle} description={siteDescription} />
 	<header class="sr-only">
 		<h1>{pageTitle}</h1>
 	</header>
